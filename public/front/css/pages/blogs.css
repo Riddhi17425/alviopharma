@@ -1,0 +1,60 @@
+.blogs_data {
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.blogs_details .title-24 {
+  margin-top: 40px;
+}
+
+.blogs_details_bg {
+  /* background: url(../../images/noise-2.svg);
+  background-size: cover; */
+  text-align: center;
+  padding: 23px 24rem;
+  margin: 25px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.blogs_details_bg .com_btn2 {
+  margin-top: 24px;
+}
+
+.blo_imgs_noise_1 {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+}
+
+.blo_imgs_noise_2 {
+  position: absolute;
+  bottom: -25%;
+  right: 40px;
+}
+
+.blogs {
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blogs:hover {
+  transform: translateY(-8px);
+}
+
+.blogs img {
+  transition: transform 0.4s ease;
+}
+
+.blogs:hover img {
+  transform: scale(1.05);
+}
+
+.blogs .title-24 {
+  transition: color 0.3s ease;
+}
+
+.blogs:hover .title-24 {
+  color: var(--blue-heading);
+}

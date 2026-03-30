@@ -1,0 +1,16 @@
+.indications {
+    border: 1px solid var(--grey-ddd);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.indications .title-80 {
+    color: var(--blue-heading);
+    /* font-family: var(--para-font); */
+    margin-bottom: 40px;
+}
+
+.indications .title-24 {
+    margin-bottom: 14px;
+    color: var(--black-color);
+}

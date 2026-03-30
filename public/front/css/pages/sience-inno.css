@@ -1,0 +1,62 @@
+.mastering_img {
+  position: relative;
+}
+
+.mastering_img img {
+  position: absolute;
+  top: -12em;
+  left: 0;
+  z-index: -1;
+}
+
+.modern-tabs .nav-tabs {
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.modern-tabs .nav-item {
+  padding-left: 0px;
+}
+
+.modern-tabs .nav-link {
+  padding: 14px 24px;
+  border-radius: 100px;
+  border: 1px solid #ddd;
+  color: var(--grey-666);
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  border-color: var(--black-color);
+  color: var(--black-color);
+}
+
+.modern-tabs .nav-link.active {
+  padding: 14px 24px;
+  border-radius: 100px;
+  border: 1px solid #ddd;
+  color: var(--white-color);
+  background: var(--black-color);
+}
+
+.state-accordion .accordion-button img
+{
+ display: none;
+ opacity: 0;
+}
+
+.state-accordion .accordion-button:not(.collapsed) img
+{
+  display: block;
+  opacity: 1;
+}
+
+.state-accordion .accordion-button:not(.collapsed) span
+{
+  margin-left: 12px;
+}

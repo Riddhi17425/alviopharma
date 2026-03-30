@@ -1,0 +1,324 @@
+/* Theme color variables (root) */
+:root {
+  --blue-heading: #307abd;
+  --white-color: #ffffff;
+  --grey-666: #666666;
+  --grey-ddd: #dddddd;
+  --grey-eee: #eeeeee;
+  --black-color: #373435;
+  --bg-blue: #e4f2ff;
+  --blue-light: #6698c5;
+  --slider-blue: #88b8e4;
+  --title-font: "Be Vietnam Pro", sans-serif;
+  --para-font: "Geist", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--para-font);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--grey-666);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
+/*=========== Heading part ============= */
+
+.title-80 {
+  font-family: var(--title-font);
+  font-size: 80px;
+  line-height: 80px;
+  color: var(--blue-heading);
+  font-weight: 400;
+}
+
+.title-68 {
+  font-family: var(--title-font);
+  font-size: 68px;
+  font-weight: 400;
+  color: var(--white-color);
+  line-height: 76px;
+}
+
+.title-54 {
+  font-family: var(--title-font);
+  font-size: 54px;
+  line-height: 66px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: var(--blue-heading);
+}
+
+.title-34 {
+  font-family: var(--title-font);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--blue-heading);
+}
+
+.title-24 {
+  font-family: var(--para-font);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black-color);
+  line-height: 28px;
+}
+
+/*=========== Button part ============= */
+
+.commo-btn,
+.com_btn2 {
+  background-color: var(--black-color);
+  padding: 14px 52px;
+  border-radius: 999px;
+  margin: 2px;
+  color: var(--color, var(--white-color));
+  transition: all 0.3s ease;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.com_btn2 {
+  border: 1px solid var(--blue-heading);
+  color: var(--blue-heading);
+  background: transparent;
+}
+
+.btn_main {
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  padding-right: 10px;
+}
+
+.btn_main:hover {
+  background: var(--black-color);
+}
+
+.commo-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  width: fit-content;
+  padding: 14px 15px;
+  transition: transform 0.3s ease;
+  background-color: var(--black-color);
+}
+
+.btn_main:hover .commo-btn-arrow,
+.commo-btn-arrow:hover {
+  transform: rotate(45deg);
+  background: var(--white-color);
+}
+
+.btn_main:hover .commo-btn-arrow svg path {
+  stroke: var(--black-color);
+}
+
+.common-arrow-icon {
+  font-size: 80px;
+  color: var(--color, var(--white-color));
+  cursor: pointer;
+}
+
+.page-header-btn {
+  background-color: var(--black-color);
+  width: fit-content;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+}
+
+/*=========== Color name part ============= */
+
+.title--blue {
+  color: var(--blue-heading);
+}
+
+.title--blue--bg {
+  background-color: var(--blue-heading);
+}
+
+.title--light-blue {
+  color: var(--blue-light);
+}
+
+.title--light-blue--bg {
+  background-color: var(--blue-light);
+}
+
+.title--dark {
+  color: var(--black-color);
+}
+
+.title--dark--bg {
+  background-color: var(--black-color);
+}
+
+.text--white {
+  color: var(--white-color);
+}
+
+.text--white--bg {
+  background-color: var(--white-color);
+}
+
+.text--para {
+  color: var(--grey-666);
+}
+
+.text--para--bg {
+  background-color: var(--grey-666);
+}
+
+.text--para-alt {
+  color: var(--grey-666-alt);
+}
+
+.page-header-para {
+  font-size: 16px;
+  color: var(--title-color, var(--white-color));
+  line-height: 24px;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.p-x {
+  padding: 0 60px;
+}
+
+.mb-54 {
+  margin-bottom: clamp(1.5rem, 5vw, 3.375rem);
+}
+
+.mt-100 {
+  margin-top: clamp(2rem, 6vw, 6.25rem);
+}
+
+.mb-100 {
+  margin-bottom: clamp(2rem, 6vw, 6.25rem);
+}
+
+.mt_80 {
+  margin-top: clamp(40px, 6vw, 80px);
+}
+
+.mt-40 {
+  margin-top: clamp(1rem, 4vw, 2.5rem);
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* ============ Inner header in website ================= */
+
+.com_bg_black {
+  background: url(../images/black_noise.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--black-color);
+}
+
+.com_bg_blue {
+  background: url(../images/noise_blue.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: var(--blue-heading); */
+}
+
+.com_bg_pink {
+  background: url(../images/pink_noise.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--grey-eee);
+}
+
+.com_bg_light_blue {
+  background: url(../images/noise_light_blue.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--bg-blue);
+}
+
+.page-header img {
+  position: relative;
+  width: 100%;
+}
+
+.page-header-text {
+  text-align: center;
+  padding: 21px 0;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.page-header-content {
+  display: flex;
+  justify-content: center;
+  margin-top: -4em;
+  position: relative;
+  z-index: 99;
+}
+
+.our_com_focus_icon {
+  position: absolute;
+  top: 5em;
+  right: 3em;
+}
+
+.our_com_heart_icon {
+  position: absolute;
+  bottom: 2em;
+  left: 10em;
+}
+
+.our_com_code_1 {
+  position: absolute;
+  top: 2em;
+  left: 10em;
+}
+
+.our_com_code_2 {
+  position: absolute;
+  bottom: 2em;
+  right: 10em;
+}
+
+.our_com_code_1 {
+  position: absolute;
+  top: 0em;
+  left: 2em;
+}
+
+.our_com_code_2 {
+  position: absolute;
+  bottom: 1em;
+  right: 0em;
+}

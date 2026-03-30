@@ -1,0 +1,63 @@
+.year-info{
+    position: relative;
+}
+.year-info-item{
+    display:flex;
+    margin-bottom: 70px;
+    justify-content: flex-start;
+}
+.year-info-item:nth-child(odd){
+    justify-content: flex-end;
+    margin-left: 100px;
+}
+.year-info-item:nth-child(even){
+    justify-content: flex-start;
+    margin-right: 100px;   
+}
+.year-info-item:nth-child(odd) .year-content, .year-info-item:nth-child(even) .year{
+   margin-left: 55px;
+}
+.year-info-item:nth-child(even) .year-content, .year-info-item:nth-child(odd) .year{
+   margin-right: 55px;
+}
+.year{
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 81px;
+    justify-content: center; 
+}
+.year .title-24{
+    margin: 0;
+}
+.year-content{
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+    border-radius: 10px;
+}
+.line-img-section{
+    position: relative;
+    text-align: center;
+    background-image: url('../../images/spiral-animation.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-position-x: 30%;
+    background-size: contain;
+    background-size: 19%;
+}
+.year-info-section{
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+.line-img-section img{
+    text-align: center;
+}
+.year-wraper{
+    width: 80%;
+    margin:0 auto;
+}
