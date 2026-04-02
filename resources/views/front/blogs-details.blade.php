@@ -46,9 +46,27 @@
         </div>
 
         <div class="col-12">
+            <div class="blogs_details_bg com_bg_light_blue">
+                <h3 class="title-34 mb-3">Support Better Long-Term Patient Outcomes</h3>
+                <p class="mb-0" style="color:var(--blue-heading);">Lorem ipsum dolor sit amet consectetur. Feugiat eu ipsum quam
+                    accumsan porttitor dolor dolor.
+                    Elementum dolor tellus rhoncus non vestibulum magna neque. Senectus lacus nec tristique viverra
+                    dignissim. Gravida varius augue odio est </p>
+                <a href="#" class="com_btn2">Learn About Chronic Care Approaches</a>
+                <span class="blo_imgs_noise_1">
+                    <img src="{{asset('public/front/images/blogs-vectoer.png')}}" alt="image">
+                </span>
+                 <span class="blo_imgs_noise_2">
+                    <img src="{{asset('public/front/images/blogs-vectoer.png')}}" alt="image">
+                </span>
+ 
+            </div>
+        </div>
+
+        {{-- <div class="col-12">
             <img src="{{ asset('public/Blogs/cta_image/'.$blogsdetail->cta_image) }}" alt="{{  str_replace(['-', '_'],' ', pathinfo($blogsdetail->cta_image, PATHINFO_FILENAME)) }}" class="img-fluid">
            
-        </div>
+        </div> --}}
 
         <div class="col-12">
             <h4 class="title-24">Conclusion</h4>
