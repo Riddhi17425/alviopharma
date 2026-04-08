@@ -47,12 +47,9 @@
 
         <div class="col-12">
             <div class="blogs_details_bg com_bg_light_blue">
-                <h3 class="title-34 mb-3">Support Better Long-Term Patient Outcomes</h3>
-                <p class="mb-0" style="color:var(--blue-heading);">Lorem ipsum dolor sit amet consectetur. Feugiat eu ipsum quam
-                    accumsan porttitor dolor dolor.
-                    Elementum dolor tellus rhoncus non vestibulum magna neque. Senectus lacus nec tristique viverra
-                    dignissim. Gravida varius augue odio est </p>
-                <a href="#" class="com_btn2">Learn About Chronic Care Approaches</a>
+                <h3 class="title-34 mb-3">{{ $blogsdetail->cta_title }}</h3>
+                <p class="mb-0" style="color:var(--blue-heading);">{{ $blogsdetail->cta_descriptions }}</p>
+                <a href="#" class="com_btn2">{!! $blogsdetail->cta_button !!}</a>
                 <span class="blo_imgs_noise_1">
                     <img src="{{asset('public/front/images/blogs-vectoer.png')}}" alt="image">
                 </span>

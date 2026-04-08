@@ -3,7 +3,7 @@
 @section('title', 'Edit Blog')
 
 @section('content')
-<div class="container-xxl">
+<div class="container-xxl"> 
     <div class="row align-items-center">
         <div class="border-0 mb-4">
             <div
@@ -104,6 +104,18 @@
                             <label class="form-label" for="alt_tag">Blog Detail Image Alt</label>
                             <input type="text" id="detail_alt_tag" name="detail_alt_tag" value="{{$data->detail_alt_tag}}" class="form-control">
                         </div>
+                        
+                        
+                        <div class="col-md-6">
+                            <label class="form-label" for="cta_title">CTA Title</label>
+                            <input type="text" id="cta_title" name="cta_title" value="{{ $data->cta_title }}" class="form-control">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="cta_button">CTA Button</label>
+                            <input type="text" id="cta_button" name="cta_button" value="{{ $data->cta_button }}" class="form-control">
+                        </div>
+
                         <div class="card mb-3">
                             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                                 <h6 class="mb-0 fw-bold">Blog CTA Image</h6>
@@ -121,8 +133,11 @@
                                 </div>
                             </div>
                         </div>
-                        
 
+                        <div class="col-md-12 mt-2">
+                            <label for="cta_description" class="form-label">CTA Descriptions</label>
+                            <textarea id="cta_description" name="cta_description" class="form-control">{{ $data->cta_descriptions }}</textarea>
+                        </div>
 
                         <div class="col-md-12">
                             <label for="conclusion" class="form-label">Conclusion</label>
@@ -226,6 +241,23 @@ $(document).ready(function() {
             ['help', ['help']]
         ]
     });
+
+    $('#cta_description').summernote({
+        placeholder: 'Enter Blog CTA Description here...',
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['link', 'picture', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]
+        ]
+    });
+
     $('#short_description').summernote({
         placeholder: 'Enter Blog Short Description here...',
         height: 300,
@@ -303,53 +335,7 @@ $(document).ready(function() {
     });
 });
 </script>
-<script>
-    function addImageInput() {
-        const container = document.getElementById('imageInputs');
-        const html = `
-            <div class="row mb-3">
-                <div class="col-md-6 mb-2">
-                    <input type="file" name="cta_image[]" class="form-control">
-                </div>
-                <div class="col-md-6 mb-2">
-                   <input type="text" name="cta_alt[]" class="form-control" placeholder="Enter Alt Here">
-                </div>
-                <div class="col-md-6 mb-2">
-                    <input type="text" name="cta_title[]" class="form-control" placeholder="Enter CTA Title">
-                </div>
-                <div class="col-md-12 mb-2">
-                    <textarea name="cta_description[]" class="form-control summernote" placeholder="Enter CTA Description" rows="2"></textarea>
-                </div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-danger" onclick="removeInput(this)">Remove</button>
-                </div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', html);
-        $('.summernote').summernote({
-            placeholder: 'Enter CTA Description here...',
-            height: 150,
-        });
-    }
 
-    // Initialize Summernote for existing elements
-    $(document).ready(function () {
-        $('.summernote').summernote({
-            placeholder: 'Enter CTA Description here...',
-            height: 150,
-        });
-    });
-    function removeInput(button) {
-    const container = document.getElementById('imageInputs');
-    const rows = container.querySelectorAll('.row.mb-3');
-    if (rows.length > 1) {
-        button.closest('.row').remove();
-    } else {
-        alert("At least one CTA block must remain.");
-    }
-}
-
-</script>
 
 <script>
     $(document).ready(function () {

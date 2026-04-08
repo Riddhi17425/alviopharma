@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container-xxl">
-    <div class="row align-items-center">
+    <div class="row align-items-center"> 
         <div class="border-0 mb-4">
             <div
                 class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
@@ -70,10 +70,28 @@
                             <label class="form-label" for="image">Blog Detail Image Alt</label>
                             <input type="text" id="detail_alt_tag" name="detail_alt_tag" class="form-control">
                         </div>
-                        <div class="col-md-12">
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="cta_title">CTA Title</label>
+                            <input type="text" id="cta_title" name="cta_title" class="form-control">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="cta_button">CTA Button</label>
+                            <input type="text" id="cta_button" name="cta_button" class="form-control">
+                        </div>
+                        
+                        <div class="col-md-6">
                             <label class="form-label" for="cta_image">Blog CTA Image</label>
                             <input type="file" id="cta_image" name="cta_image" class="form-control">
                         </div>
+
+                        <div class="col-md-12">
+                            <label for="cta_description" class="form-label">CTA Descriptions</label>
+                            <textarea id="cta_description" name="cta_description" class="form-control"></textarea>
+                        </div>
+                        
+                        
                         <div class="col-md-12">
                             <label for="conclusion" class="form-label">Conclusion</label>
                             <textarea id="conclusion" name="conclusion" class="form-control"></textarea>
@@ -182,6 +200,21 @@ $(document).ready(function() {
     });
     $('#header_description').summernote({
         placeholder: 'Enter Blog Header Description here...',
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['link', 'picture', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]
+        ]
+    });
+     $('#cta_description').summernote({
+        placeholder: 'Enter Blog CTA Description here...',
         height: 300,
         toolbar: [
             ['style', ['style']],
@@ -348,60 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<script>
-    function addImageInput() {
-    const container = document.getElementById('imageInputs');
-    const div = document.createElement('div');
-    div.classList.add('row', 'mb-3');
 
-    const randomId = 'summernote-' + Math.floor(Math.random() * 100000);
-
-    div.innerHTML = `
-        <div class="col-md-6 mb-2">
-            <input type="file" name="cta_image[]" class="form-control">
-        </div>
-        <div class="col-md-6 mb-2">
-            <input type="text" name="cta_alt[]" class="form-control" placeholder="Enter Alt Here">
-        </div>
-        <div class="col-md-6 mb-2">
-            <input type="text" name="cta_title[]" class="form-control" placeholder="Enter CTA Title">
-        </div>
-        <div class="col-md-12 mb-2">
-            <textarea id="${randomId}" name="cta_description[]" class="form-control summernote" placeholder="Enter CTA Description" rows="2"></textarea>
-        </div>
-        <div class="col-md-12">
-            <button type="button" class="btn btn-danger" onclick="removeInput(this)">Remove</button>
-        </div>
-    `;
-
-    container.appendChild(div);
-
-    $('#' + randomId).summernote({
-        placeholder: 'Enter CTA Description here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-}
-function removeInput(button) {
-    const container = document.getElementById('imageInputs');
-    const rows = container.querySelectorAll('.row.mb-3');
-    if (rows.length > 1) {
-        button.closest('.row').remove();
-    } else {
-        alert("At least one CTA block must remain.");
-    }
-}
-</script>
 
 <script>
     $(document).ready(function () {
