@@ -48,7 +48,8 @@
         <div class="col-12">
             <div class="blogs_details_bg com_bg_light_blue">
                 <h3 class="title-34 mb-3">{{ $blogsdetail->cta_title }}</h3>
-                <p class="mb-0" style="color:var(--blue-heading);">{{ $blogsdetail->cta_descriptions }}</p>
+                <p class="mb-0" style="color:var(--blue-heading);">
+                    {!! $blogsdetail->cta_descriptions !!}</p>
                 <a href="#" class="com_btn2">{!! $blogsdetail->cta_button !!}</a>
                 <span class="blo_imgs_noise_1">
                     <img src="{{asset('public/front/images/blogs-vectoer.png')}}" alt="image">
