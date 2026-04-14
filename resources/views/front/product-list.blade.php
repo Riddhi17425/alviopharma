@@ -105,7 +105,7 @@
                 <li>
                     <a class="dropdown-item"
                         href="{{ route('product',['sort'=>'desc']) }}#product-section">
-                        Alphabetical - Z-A
+                        Alphabetical - Z-A 
                     </a>
                 </li>
             </ul>
@@ -117,7 +117,7 @@
             @foreach($groupedProducts as $letter => $products)
                 <div class="mt-100">
                     <h3 class="title-54 mb-40">
-                        {{ $letter }}
+                        {{ $letter }} s
                     </h3>
                     @foreach($products as $product)
                         <div class="brand_item">
@@ -138,7 +138,7 @@
                             </div>
                             <div class="brand_item_rt">
                                 <p class="title-24">{{ $product->brand->title ?? '' }}</p>
-                                    <a href="{{ url('product/'.$product->url) }}"
+                                    <a href="{{ route('product.detail', ['url' => $product->url]) }}"
                                         class="title-24">
                                         <span class="text--para">view details</span>
                                     </a>

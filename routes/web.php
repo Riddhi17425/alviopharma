@@ -45,32 +45,33 @@ use App\Http\Controllers\CaptchaController;
     Route::get('therapeutic-area', [dashboardController::class, 'therapeuticArea'])->name('therapeutic.area');
 
     Route::get('products', [dashboardController::class,'productlist'])->name('product');
+    Route::get('products-details/{url}', [dashboardController::class,'productdetail'])->name('product.detail');
     
 
     Route::get('/captcha-image', [CaptchaController::class, 'image'])->name('captcha.image');  
     Route::get('/thank-you', [dashboardController::class, 'thankyou'])->name('thank-you');
 
-Route::get('login', [dashboardController::class, 'login'])->name('login');
-Auth::routes();
+    Route::get('login', [dashboardController::class, 'login'])->name('login');
+    Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => 'auth'], function () {
-Route::get('/user', [usersController::class, 'user'])->name('user');
-Route::get('/admin/dashboard',[dashboardController::class, 'admin'])->name('/admin/dashboard');
-Route::get('/superAdmin', [superAdminController::class, 'superAdmin'])->name('superAdmin');  
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/user', [usersController::class, 'user'])->name('user');
+        Route::get('/admin/dashboard',[dashboardController::class, 'admin'])->name('/admin/dashboard');
+        Route::get('/superAdmin', [superAdminController::class, 'superAdmin'])->name('superAdmin');  
 
-Route::get('/admin/dashboard', [adminController::class, 'admin'])->name('admin/dashboard');
-Route::resource('menubanner', MenuBannerController::class);
-Route::resource('homemap', HomeMapController::class);
-Route::resource('ourproduction', OurProductionController::class);
-Route::resource('ourteam', OurTeamController::class);
-Route::resource('blog', BlogController::class);
-Route::resource('milestone', MilestoneController::class);
-Route::resource('brand', BrandController::class);
-Route::resource('clientel', ClientelController::class);
-Route::resource('product', ProductController::class);
-Route::prefix('backend')->group(function () {
-	// Route::get('home', [adminController::class, 'index'])->name('home');
-});
-});
+        Route::get('/admin/dashboard', [adminController::class, 'admin'])->name('admin/dashboard');
+        Route::resource('menubanner', MenuBannerController::class);
+        Route::resource('homemap', HomeMapController::class);
+        Route::resource('ourproduction', OurProductionController::class);
+        Route::resource('ourteam', OurTeamController::class);
+        Route::resource('blog', BlogController::class);
+        Route::resource('milestone', MilestoneController::class);
+        Route::resource('brand', BrandController::class);
+        Route::resource('clientel', ClientelController::class);
+        Route::resource('product', ProductController::class);
+        Route::prefix('backend')->group(function () {
+            // Route::get('home', [adminController::class, 'index'])->name('home');
+        });
+    });
