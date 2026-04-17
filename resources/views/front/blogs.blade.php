@@ -2,12 +2,13 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+       <img src="{{ asset('public/front/images/blogs-banner.webp') }}" class="img-fluid" alt="page-header-img">
+         <p class="text-white inner_hero_nav_link
+         "><a href="{{ url('/') }}">Home</a> / Insights</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Insights</p>
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>

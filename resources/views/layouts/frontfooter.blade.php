@@ -1,18 +1,18 @@
 <footer>
     <div class="footer-wrapper p-x">
         <div class="footer-item">
-            <a href="javascript:void(0)"><img src="{{ asset('public/front/images/logo.svg') }}" alt="alvio-logo" class="img-fluid"></a>
-            <p class="text--white pt-3">We are committed to delivering quality-driven pharmaceutical solutions with a focus on accessibility, trust, and long-term healthcare impact.</p>
-            <div class="subcription-form pt-5">
+            <a href="javascript:void(0)"><img src="{{ asset('public/front/images/logo.svg') }}" alt="alvio-logo"
+                    class="img-fluid"></a>
+            <p class="text--white pt-3">Delivering high-quality pharmaceutical solutions with a strong focus on trust, accessibility, and long-term healthcare impact across India.</p>
+            <div class="subcription-form pt-lg-5">
                 <form>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <label for="floatingInput">Enter your email</label>
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">By subscribing you agree to the Privacy
-                            Policy</label>
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" placeholder=" Enter your email ">
+                        <label class="form-check-label" for="exampleCheck1">Subscribe to get updates on new launches, insights , & events.  </label>
                     </div>
                     <button type="submit" class="btn"><svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -49,12 +49,18 @@
         <div class="footer-item">
             <h5 class="footer-title"><a href="therapeutic-area">Therapeutic Areas</a></h5>
             <ul class="footer-list">
-                <li><a href="javascript:void(0)">DermaScience Division</a></li>
-                <li><a href="javascript:void(0)">CardioMet Care Division</a></li>
+                <li><a href="javascript:void(0)">Cardiology & Chronic Care  </a></li>
+                <li><a href="javascript:void(0)">Diabetology (Metabolic care) </a></li>
+                <li><a href="javascript:void(0)">Dermatology & Cosmetology</a></li>
+                <li><a href="javascript:void(0)">Nutraceuticals</a></li>
+
             </ul>
             <h5 class="footer-title">Contact</h5>
             <ul class="footer-list">
-                <li><a href="tel:917966176465">M: +91 79 6617 6465</a></li>
+                <li><a href="tel:917966176465">M: +91 79 6617 6465</a>
+              <br>
+              <a href="tel:917966176465">M: +91 79 6617 7475</a>
+            </li>
                 <li><a href="mailto:info@alviopharma.com"></a>E: info@alviopharma.com</li>
             </ul>
         </div>
@@ -63,17 +69,17 @@
     <div class="bottom-footer">
         <div class="bottom-footer-wrapper p-x">
             <div class="social-icons">
-                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/linkedin-icon.svg') }}" alt="LinkedIn"
-                        class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/insta-icon.svg') }}" alt="Instagram"
-                        class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/facebook-icon.svg') }}" alt="Facebook"
-                        class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp"
-                        class="me-3"></a>
+                <a href="javascript:void(0)" rel="nofollow"><img
+                        src="{{ asset('public/front/images/linkedin-icon.svg') }}" alt="LinkedIn" class="me-3"></a>
+                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/insta-icon.svg') }}"
+                        alt="Instagram" class="me-3"></a>
+                <a href="javascript:void(0)" rel="nofollow"><img
+                        src="{{ asset('public/front/images/facebook-icon.svg') }}" alt="Facebook" class="me-3"></a>
+                <a href="javascript:void(0)" rel="nofollow"><img
+                        src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp" class="me-3"></a>
             </div>
             <div class="footer-content ">
-                <p class="text-white mb-0">© <?php echo date("Y"); ?> Alvio Pharma. All Rights Reserved.</p>
+                <p class="text-white mb-0">2026 Alvio Pharmaceuticals Pvt. Ltd. All Rights Reserved.</p>
             </div>
             <div class="footer-content">
                 <p class="common-para text--white"><a href="javascript:void(0)">Privacy Policy</a></p>

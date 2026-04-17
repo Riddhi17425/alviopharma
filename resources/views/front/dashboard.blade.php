@@ -4,9 +4,8 @@
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-1.webp') }}" alt="hero image">
             <div class="hero-content">
-                <h1 class="title-68">Advancing Healthcare with Purpose.</h1>
-                <p class="text--white col-lg-5">At Alvio Pharma, every breakthrough begins with one belief that science
-                    is only meaningful when it improves human life.</p>
+                <h1 class="title-68">Advancing Healthcare with Science & Purpose</h1>
+                <p class="text--white col-lg-6">Alvio Pharmaceuticals Pvt. Ltd. delivers high-quality, scientifically advanced formulations across Pharma, Nutraceuticals, and Cosmeceuticals. Backed by ethical practices and global standards for India and beyond.</p>
                 <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -21,8 +20,8 @@
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.webp') }}" alt="hero image">
             <div class="hero-content">
-                <h1 class="title-68">Growing Burden of Chronic therapy , we are there to support patients.</h1>
-                <p class="text--white col-lg-5">Chronic Therapy understands the challenges you face and is committed to providing the support you need to navigate your journey. Let us help you manage the growing burden of chronic therapy together.
+                <h1 class="title-68">Addressing the Growing Burden of Chronic Diseases </h1>
+                <p class="text--white col-lg-6">With a strong focus on long-term therapies, we aim to support patients and physicians through dependable treatment solutions.
                 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,8 +37,8 @@
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-3.webp') }}" alt="hero image">
             <div class="hero-content">
-                <h1 class="title-68">Your health is our priority</h1>
-                <p class="text--white col-lg-5">Alvio Pharma is a proud pharmaceutical product marketer that helps improve the lives of you and your loved ones.
+                <h1 class="title-68">Redefining Skin Health & Aesthetic Care</h1>
+                <p class="text--white col-lg-6"> Spanning dermatology, cosmetology, and nutraceuticals, we are building the future of integrated healthcare.
 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,11 +75,12 @@
             <p>Where Science Meets Scalable Excellence</p>
         </div>
         <div class="col-xl-9 col-lg-7 col-md-12">
-            <h2 class="title-54 mb-40">At Alvio Pharma, quality isn’t a claim — it’s a system, built on trust and consistency.
+            <h2 class="title-54 mb-40">Alvio Pharma Built on Trust. Driven by Quality. 
 </h2>
 
-            <p>Alvio Pharmaceuticals is engaged in the <b>marketing of Finished Pharmaceutical Formulations</b>, guided by a purpose to <b>Improve Lives</b> through high-quality, affordable healthcare alternatives. We work with carefully evaluated manufacturing partners and maintain defined quality expectations across sourcing, documentation, and batch review to support consistent outcomes. By combining therapy-focused portfolio planning, ethical market presence, and continuous improvement in how we monitor and deliver products, we aim to keep dependable healthcare within reach across the markets we serve.
+            <p>Alvio Pharmaceuticals is engaged in the marketing of Finished Pharmaceutical Formulations, with a clear focus on delivering reliable and effective healthcare solutions.
 </p>
+<p>We collaborate with carefully evaluated manufacturing partners and maintain stringent quality standards across sourcing, documentation, and batch review - ensuring consistency, safety, and trust in every product. </p>
             <div class="mt-40">
                 <div class="btn_main">
                     <a href="{{ route('our.company') }}" target="_blank" class="commo-btn">Learn About Alvio Pharma
@@ -104,7 +104,7 @@
     <div class="row gx-md-5">
         <div class="col-xl-4">
             <div class="counter-item com_bg_light_blue">
-                <p class="title-24 title--light-blue">Professional Partnerships</p>
+                <p class="title-24 title--light-blue">Strategic Partnerships </p>
                 <h3 class="counter-number" data-target="50">50+</h3>
             </div>
         </div>
@@ -315,9 +315,9 @@
 </section>
 
 <section class="blog-section p-x mt-100">
-    <div class="blog-header">
+    <div class="blog-header mb-40">
         <div>
-            <h2 class="title-54 title--blue mb-5">Latest Insights & <br />Healthcare Knowledge</h2>
+            <h2 class="title-54 title--blue">Latest Insights & <br />Healthcare Knowledge</h2>
         </div>
         <div class="btn_main">
             <a href="{{ route('blogs') }}" class="commo-btn ">View All</a>

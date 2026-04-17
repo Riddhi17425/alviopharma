@@ -31,12 +31,14 @@
   border: 1px solid #dddddd;
   border-radius: 10px;
   padding: 30px;
+  width: 25%;
 }
 
 .principles-item .title-80 {
   font-family: var(--para-font);
   color: var(--slider-blue);
   margin-bottom: 50px;
+
 }
 
 .principles-title {
@@ -125,6 +127,7 @@
   position: absolute;
   top: 0;
   transform: translate(-115px, 107px);
+  display: none;
 }
 
 .vision-item {
@@ -228,6 +231,7 @@
   animation: fadeInSVG2 3s ease-in-out forwards;
   animation-iteration-count: infinite;
   animation-duration: 6s;
+  display: none;
 }
 
 @keyframes fadeInSVG2 {
@@ -244,12 +248,14 @@
 
 .sco_wra_our_val {
   position: relative;
-  height: 300vh;
+  height: 100vh;
 }
 
 .sti_con_our_val {
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;

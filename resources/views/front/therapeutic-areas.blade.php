@@ -2,12 +2,12 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+        <img src="{{ asset('public/front/images/therapeutic-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Contact</p>
             <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
@@ -128,7 +128,7 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-md-7">
                 <div class="state-content">
-                    <h2 class="title-54 title--blue mb-5">A Framework for Evidence-Led Therapeutic Decisions</h2>
+                    <h2 class="title-54 title--blue mb-4">A Framework for Evidence-Led Therapeutic Decisions</h2>
                     <p>Every molecule within the Alvio Pharma portfolio is selected through a structured clinical
                         evaluation model designed to balance efficacy, safety, and real-world usability. Our selection
                         matrix integrates gap analysis, pathway synergy, and adherence science to ensure that each

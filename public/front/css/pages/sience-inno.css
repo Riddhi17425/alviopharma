@@ -4,9 +4,11 @@
 
 .mastering_img img {
   position: absolute;
-  top: -12em;
-  left: 0;
+  top: -10em;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: -1;
+  max-width: 560px;
 }
 
 .modern-tabs .nav-tabs {
@@ -59,4 +61,15 @@
 .state-accordion .accordion-button:not(.collapsed) span
 {
   margin-left: 12px;
+}
+
+.our_respons
+{
+  position: relative;
+}
+
+.our_respons p {
+    position: absolute;
+    top: 10em;
+    left: -4em;
 }

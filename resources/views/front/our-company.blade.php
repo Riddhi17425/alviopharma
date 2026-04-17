@@ -2,12 +2,12 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/front/images/company-header-img.webp')}}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+         <img src="{{ asset('public/front/images/our-company-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Company</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Company</p>
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
@@ -33,52 +33,41 @@
             <p>About Alvio Pharma</p>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12">
-            <h2 class="title-54 title--blue mb-40">A Purpose-Driven Pharmaceutical Organization</h2>
+            <h2 class="title-54 title--blue mb-40">A Trusted Partner in Modern Healthcare. </h2>
 
-            <p>Alvio Pharmaceuticals is a new generation Pharmaceutical Company engaged in the marketing of Finished
-                Pharmaceutical Formulations. Alvio has committed itself to the task of Improving Lives by providing high
-                quality and affordable health care alternative to patients by identifying critical markets in different
-                parts of the India.
-                Alvio targets different therapeutic segment customized to the market we are presently based on the
-                customer’s needs and the requirements. Today Alvio Pharmaceuticals has strongly established in the
-                Ethical Pharmaceuticals Market as a trusted source of high-quality Formulations. Alvio has expanded its
-                range from Chronic Therapy segments like Cardiovascular Medicines, Anti-Diabetics, Derma and
-                Nutraceuticals products.</p>
+            <p>Alvio Pharmaceuticals Pvt. Ltd. is a fast-growing healthcare company engaged in the marketing of high-quality finished pharmaceutical formulations. Driven by a clear purpose to improve lives, we focus on delivering reliable and affordable healthcare solutions across diverse therapeutic segments. </p>
 
-            <p>Alvio is currently marketing its products in over 16 states in India. With a Team of over 300 highly
-                motivated and trained professionals, Alvio is always looking to expand its boundaries and aims to be
-                within reach of every single patient who needs quality medical care. Alvio owes its success to
-                continuous focus on cutting-edge technology and innovative solutions to provide better results and
-                efficacy to the patients while adhering to strict WHO GMP compliance and Manufacturing Practices.</p>
+            <p>With a strong foundation in ethical marketing and a growing presence across India, Alvio has established itself as a trusted partner among healthcare professionals. Our portfolio spans chronic therapies including cardiovascular and anti-diabetic segments, along with expanding focus areas in dermatology, cosmetology, and nutraceuticals. </p>
 
+            <p>Backed by a dedicated team of professionals and a commitment to quality, consistency, and innovation, we continue to strengthen our reach and build meaningful healthcare impact across the markets we serve. </p>
         </div>
     </div>
 
-    <div class="row counter-section">
+    <div class="row gy-3 gy-lg-0 counter-section">
         <div class="col-xl-3">
             <div class="counter-item company-counter-item com_bg_light_blue">
 
-                <h3 class="counter-number" data-target="8">8</h3>
-                <p class="title-24 title--light-blue">Years Of Experiance</p>
+                <h3 class="counter-number" data-target="10">10+</h3>
+                <p class="title-24 title--light-blue">Years of Excellence </p>
 
             </div>
         </div>
         <div class="col-xl-3">
             <div class="counter-item company-counter-item com_bg_light_blue">
-                <h3 class="counter-number" data-target="350">350</h3>
-                <p class="title-24 title--light-blue">Team Members</p>
+                <h3 class="counter-number" data-target="350">350+</h3>
+                <p class="title-24 title--light-blue">Team Members </p>
             </div>
         </div>
         <div class="col-xl-3">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="300">300+</h3>
-                <p class="title-24 title--light-blue">Molecules Handled</p>
+                <p class="title-24 title--light-blue">Molecules in Portfolio</p>
             </div>
         </div>
         <div class="col-xl-3">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="35">35K+</h3>
-                <p class="title-24 title--light-blue">Ointments, Creams, and Gels.</p>
+                <p class="title-24 title--light-blue">Healthcare professionals connected</p>
             </div>
         </div>
     </div>
@@ -86,18 +75,17 @@
 
 @include('layouts.vision-mission')
 
-<section class="explore-state p-x mt-100">
-    <div class="row align-items-center">
-        <h2 class="title-54 mb-40">Expanding Horizons, Building Healthier Futures.</h2>
+<section class="explore-state mt-100">
+   <div class="p-x">   
+     <div class="row align-items-center">
+        <h2 class="title-54 mb-40">Expanding Horizons. Strengthening Healthcare Across India.</h2>
         <p class="mb-3">Alvio Pharma’s national operations are the foundation of our growth story. With a team of over
             300+ motivated professionals and a network that reaches 35,000+ healthcare providers across India, we are
             committed to making advanced, affordable healthcare accessible to every community.</p>
         <div class="col-xl-6">
             <div class="state-content">
                 
-                <p>Our national operations reflect a disciplined approach to growth guided by ethical governance, compliance-led practices, 
-                    and a commitment to improving lives. By combining market insight with therapy-driven portfolio planning, we work to support
-                     healthcare needs across diverse geographies with consistency and responsibility.</p>
+                <p>Our approach is guided by ethical practices, compliance, and a deep understanding of regional healthcare needs-ensuring consistent delivery and long-term impact. </p>
             </div>
 
             <div class="state-accordion mt-40">
@@ -157,6 +145,7 @@
         </div>
 
     </div>
+   </div>
 </section>
 
 <section class="principles-section p-x mt-100">
@@ -245,22 +234,11 @@
 
 </section>
 
-<section class="mt-100 p-x">
-    <div class="mb-40 text-center">
-        <h2 class="title-54 title--blue mb-2">Our Values</h2>
-        <p>Our Group Companies</p>
-    </div>
-    <div class="man_par_slider">
-        @foreach($clientels as $clientel)
-        <img class="img-fluid" src="{{ asset('public/clientelimage/'.$clientel->image) }}" alt="{{ $clientel->title }}">
-        @endforeach
-        <!-- <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners2.webp')}}" alt="manufacturing partners">
-        <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners3.webp')}}" alt="manufacturing partners"> -->
-    </div>
-</section>
+
 
 <section class="mt-100 p-x">
     <div class="mb-40 text-center">
+        <!-- <p>Our Values</p> -->
         <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2>
         <p>We encapsulate our core values through B.A.B Believe,
             Adapt, and Behave, creating a dynamic and purpose-driven organizational culture.</p>
@@ -302,6 +280,20 @@
             </div>
         </div>
 
+    </div>
+</section>
+
+<section class="mt-100 p-x">
+    <div class="mb-40 text-center">
+        <h2 class="title-54 title--blue mb-2">Our Group of Companies</h2>
+        <!-- <p>Values Drivers</p> our -->
+    </div>
+    <div class="man_par_slider">
+        @foreach($clientels as $clientel)
+        <img class="img-fluid mx-2" src="{{ asset('public/clientelimage/'.$clientel->image) }}" alt="{{ $clientel->title }}">
+        @endforeach
+        <!-- <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners2.webp')}}" alt="manufacturing partners">
+        <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners3.webp')}}" alt="manufacturing partners"> -->
     </div>
 </section>
 

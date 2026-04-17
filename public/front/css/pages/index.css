@@ -52,7 +52,14 @@
     padding: 42px;
     border-radius: 12px;
     /* margin-right: 20px; */
+    height: 100%;
 }
+
+.counter-item p
+{
+    margin-bottom: 0;
+}
+
 .counter-number {
     font-family: var(--title-font);
     font-size: 120px;
@@ -140,7 +147,7 @@
 
 .explore-state {
     background-color: var(--bg-blue);
-    padding: 40px 60px;
+    padding: 60px 0;
 }
 
 /* Accordion Transparent Background Styles */

@@ -9,12 +9,80 @@
   color: var(--blue-heading);
 }
 
+.manu_card p {
+  margin-bottom: 0;
+
+}
+
 .our_principles {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px 0;
 }
 
-.man_par_slider img {
-  margin: 0 20px;
+.man_par_slider {
+  width: 100%;
+}
+
+.man_par_slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  /* min-height: 120px; */
+}
+
+.man_par_slider-item img {
+  margin: 0;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ---- Manufacturing Globe ---- */
+.manufacturing_globe {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.manufacturing_globe img {
+  width: 100%;
+  display: block;
+}
+
+.manufacturing_globe_para_1,
+.manufacturing_globe_para_2,
+.manufacturing_globe_para_3,
+.manufacturing_globe_para_4 {
+  position: absolute;
+  margin: 0;
+  font-size: 14px;
+  color: var(--blue-heading);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Health First — left middle */
+.manufacturing_globe_para_1 {
+  left: -7%;
+  top: 35%;
+}
+
+/* Excellence — bottom left */
+.manufacturing_globe_para_2 {
+  left: 20%;
+  bottom: 10%;
+}
+
+/* Accountability — top right */
+.manufacturing_globe_para_3 {
+  right: 10%;
+  top: 2%;
+}
+
+/* Longevity — bottom right */
+.manufacturing_globe_para_4 {
+  right: 2%;
+  bottom: 10%;
 }

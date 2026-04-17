@@ -2,14 +2,14 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+       <img src="{{ asset('public/front/images/manufacturing-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Manufacturing</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Manufacturing</p>
             <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
-            <p class="text-white page-header-para">{!! $menubanner->description !!}
+            <p class="text-white page-header-para">Alvio Pharmaceuticals partners with Salud Care India Limited and Rebase Lifesciences for pharmaceutical manufacturing, ensuring compliance-driven quality and reliability. For nutraceutical, cosmetic, and herbal products, we collaborate with Stelvio Healthcare, enabling us to deliver high-quality solutions across diverse healthcare segments.
             </p>
         </div>
         <div class="page-header-btn">
@@ -29,29 +29,28 @@
 @endif
 
 <section class="intro-section p-x mt-100">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-xl-4 col-lg-5 col-md-12">
             <p>Manufacturing Partners: <br />
-                Salud Care India Limited | Stelvio Healthcare
+                Salud Care India Limited | Stelvio Healthcare | Rebase Lifesciences
             </p>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12">
             <h2 class="title-54 title--blue mb-40">Quality-Driven Manufacturing Through Trusted Partners
             </h2>
 
-            <p>Alvio Pharmaceuticals is engaged in the <b>ethical marketing of finished pharmaceutical formulations</b> across
-                India. To ensure dependable quality and consistent availability, we collaborate with carefully evaluated
-                manufacturing partners that follow documented systems and compliance-led operations.
+            <p>Alvio Pharmaceuticals collaborates with a strong network of compliance-driven manufacturing partners to ensure quality, scalability, and reliability. Our pharmaceutical formulations are supported by Salud Care India Limited and Rebase Lifesciences, operating from WHO-GMP certified and PIC/S-compliant facilities with robust quality and regulatory systems.
+ 
             </p>
+            <p>For our nutraceutical, cosmetic, and herbal range, we partner with Stelvio Healthcare, enabling innovative and consumer-focused formulations aligned with evolving wellness and skincare trends.</p>
 
-            <p>Our partner ecosystem includes <b>Salud Care India Limited</b> and <b>Stelvio Healthcare</b>, enabling us to support
-                diverse dosage forms and therapeutic needs while maintaining strong standards for process discipline,
-                documentation, and batch-level quality checks.</p>
+            <p>Together, this integrated ecosystem ensures consistent quality, multiple dosage capabilities, and delivery of safe, effective, and market-ready products.</p>
 
         </div>
 
-        <div class="row mt-40">
-            <div class="col-md-6 col-lg-3">
+        <div class="col-12">
+            <div class="row mt-40 gy-3 gy-lg-0 ">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-3">Solids</h4>
                     <p>Tablets (Coated/Uncoated), Capsules, and Dry Powders.</p>
@@ -59,20 +58,20 @@
 
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-3">Liquids</h4>
                     <p>Oral Syrups, Suspensions, and Drops.</p>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-3">Specialized</h4>
                     <p>Soft Gelatin Capsules and Critical Care Injectables.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-3">Topicals</h4>
                     <p>Ointments, Creams, and Gels.</p>
@@ -80,13 +79,14 @@
             </div>
 
         </div>
+        </div>
     </div>
     </div>
 </section>
 
-<section class="intro-section  p-x mt-100">
+<section class="intro-section  p-x mt-100 d-none">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-3 mb-md-0">
             <img src="{{ asset('public/front/images/manufacturing.png') }}" alt="images" class="img-fluid">
         </div>
 
@@ -121,13 +121,13 @@
 </section>
 
 
-<section class="our_principles com_bg_pink mt-100">
+<section class="our_principles com_bg_pink mt-100 d-none">
     <div class="p-x">
         <div class="row justify-content-between align-items-center">
             <div class="col-md-7">
 
                 <div class="state-content">
-                    <h2 class="title-54 title--blue mb-5">Our Principles are at the Heart of Our Production.</h2>
+                    <h2 class="title-54 title--blue mb-40">Our Principles are at the Heart of Our Production.</h2>
                     <p>Our manufacturing philosophy is guided by core values that reflect our responsibility to
                         patients, healthcare professionals, and global healthcare systems. Represented through our Globe
                         Design, these values symbolize our interconnected approach to quality, ethics, and innovation
@@ -235,13 +235,19 @@
             </div>
 
             <div class="col-md-4">
-                <img src="{{ asset('public/ourproductionimage/'.$production->image) }}" alt="{{ $production->title }}" class="img-fluid">
+                <div class="manufacturing_globe">
+                    <img src="{{ asset('public/ourproductionimage/'.$production->image) }}" alt="{{ $production->title }}" class="img-fluid">
+                    <p class="manufacturing_globe_para_1">Health First</p>
+                    <p class="manufacturing_globe_para_2">Excellence</p>
+                    <p class="manufacturing_globe_para_3">Accountability</p>
+                    <p class="manufacturing_globe_para_4">Longevity</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="p-x mt-100 text-center mb-100">
+<section class="p-x mt-100 text-center mb-100 d-none">
     <h2 class="title-54 title--dark mb-40">Where Science Shapes Manufacturing
         Precision</h2>
 
@@ -261,12 +267,18 @@
     <div>
         <h4 class="title-34 title--dark mb-40 mt-40"> Explore Our Manufacturing Partners</h4>
 
-        <div class="man_par_slider">
-            @foreach($clientels as $clientel)
-            <img class="img-fluid" src="{{ asset('public/clientelimage/'.$clientel->image) }}" alt="{{ $clientel->title }}">
-            <!-- <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners2.webp') }}" alt="manufacturing partners"> -->
-            @endforeach
-        </div>
+        @if($clientels->isNotEmpty())
+            <div class="man_par_slider" role="list" aria-label="Manufacturing partner logos">
+                @foreach($clientels as $clientel)
+                    <div class="man_par_slider-item" role="listitem">
+                        <img class="img-fluid" src="{{ asset('public/clientelimage/'.$clientel->image) }}"
+                            alt="{{ $clientel->title }}" title="{{ $clientel->title }}">
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <p class="text-center text-muted">We will highlight our manufacturing partners here soon.</p>
+        @endif
     </div>
 </section>
 

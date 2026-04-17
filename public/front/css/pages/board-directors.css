@@ -9,18 +9,21 @@
 
 .testimonial-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  gap: 0;
 }
 
 .profile-card {
   position: relative;
   z-index: 1;
-  flex: 0 0 auto; 
+  flex: 0 0 auto;
+  max-width: 50%;
 }
 
 .profile-img {
   border-radius: 10px;
-  max-width: 560px; 
+  max-width: 560px;
+  width: 100%;
   display: block;
 }
 
@@ -29,13 +32,15 @@
 }
 
 .quote-box {
-  padding: 60px 60px; 
+  padding: 60px;
   border-radius: 10px;
-  margin-left: -80px; 
+  margin-left: -80px;
   transform: translateY(80px);
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   max-width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .quote-icon {
@@ -44,7 +49,7 @@
 }
 
 .quote-icon svg {
-  width: 80px; 
+  width: 80px;
   height: auto;
 }
 

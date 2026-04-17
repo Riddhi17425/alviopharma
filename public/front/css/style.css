@@ -218,11 +218,11 @@ a {
 }
 
 .mt-100 {
-  margin-top: clamp(2rem, 6vw, 6.25rem);
+  margin-top: 100px;
 }
 
 .mb-100 {
-  margin-bottom: clamp(2rem, 6vw, 6.25rem);
+  margin-bottom: 100px;
 }
 
 .mt_80 {
@@ -282,7 +282,7 @@ a {
 .page-header-content {
   display: flex;
   justify-content: center;
-  margin-top: -4em;
+  margin-top: -5em;
   position: relative;
   z-index: 99;
 }
@@ -321,4 +321,15 @@ a {
   position: absolute;
   bottom: 1em;
   right: 0em;
+}
+
+.con_links p
+{
+  width: 90%;
+}
+
+.map_iframe
+{
+  width: 100%;
+   height: 700px;
 }

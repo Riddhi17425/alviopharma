@@ -2,72 +2,78 @@ const offcanvasEl = document.getElementById("offcanvasRight");
 const toggleBtn = document.querySelector(".menu-toggle-btn");
 const body = document.body;
 
-// Prevent scroll inside offcanvas
-function preventScroll(e) {
-  e.preventDefault();
+if (offcanvasEl && toggleBtn) {
+  offcanvasEl.addEventListener("show.bs.offcanvas", () => {
+    toggleBtn.classList.add("active");
+    body.style.overflow = "hidden";
+  });
+
+  offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
+    toggleBtn.classList.remove("active");
+    body.style.overflow = "auto";
+  });
 }
-
-offcanvasEl.addEventListener("show.bs.offcanvas", () => {
-  toggleBtn.classList.add("active");
-  // Disable body scroll completely when offcanvas opens
-  body.style.overflow = "hidden";
-
-  // Disable scroll in offcanvas completely
-  offcanvasEl.addEventListener("touchmove", preventScroll, false);
-  offcanvasEl.addEventListener("wheel", preventScroll, false);
-  offcanvasEl.addEventListener("mousewheel", preventScroll, false);
-});
-
-offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
-  toggleBtn.classList.remove("active");
-  // Re-enable body scroll when offcanvas closes
-  body.style.overflow = "auto";
-
-  // Re-enable scroll in offcanvas
-  offcanvasEl.removeEventListener("touchmove", preventScroll, false);
-  offcanvasEl.removeEventListener("wheel", preventScroll, false);
-  offcanvasEl.removeEventListener("mousewheel", preventScroll, false);
-});
 // ===== HEADER HIDE/SHOW ON SCROLL =====
 const header = document.querySelector(".header");
 let lastScrollTop = 0;
 let isHeaderVisible = true;
+let lastScrollDirection = "up";
+let directionChangePoint = 0;
+const SHOW_HEADER_UP_SCROLL = 180;
+const HIDE_HEADER_DOWN_SCROLL = 24;
 
-window.addEventListener("scroll", () => {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+if (header) {
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-  // Add black background when scrolled down
-  if (currentScroll > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+    // Add black background when scrolled down
+    if (currentScroll > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
 
-  // Show header when scrolling up
-  if (currentScroll < lastScrollTop) {
-    if (!isHeaderVisible) {
+    // Always show header near the top of the page
+    if (currentScroll <= 50) {
       header.classList.remove("header-hidden");
       header.classList.add("header-visible");
       isHeaderVisible = true;
+      lastScrollDirection = "up";
+      directionChangePoint = 0;
+      lastScrollTop = 0;
+      return;
     }
-  }
-  // Hide header when scrolling down (but not at top)
-  else if (currentScroll > lastScrollTop && currentScroll > 50) {
-    if (isHeaderVisible) {
-      header.classList.remove("header-visible");
-      header.classList.add("header-hidden");
-      isHeaderVisible = false;
-    }
-  }
-  // Always show header when at top
-  else if (currentScroll <= 50) {
-    header.classList.remove("header-hidden");
-    header.classList.add("header-visible");
-    isHeaderVisible = true;
-  }
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
+    const currentDirection = currentScroll > lastScrollTop ? "down" : "up";
+
+    if (currentDirection !== lastScrollDirection) {
+      directionChangePoint = lastScrollTop;
+      lastScrollDirection = currentDirection;
+    }
+
+    // Hide header after a small, intentional downward scroll
+    if (currentDirection === "down") {
+      if (isHeaderVisible && currentScroll - directionChangePoint >= HIDE_HEADER_DOWN_SCROLL) {
+        header.classList.remove("header-visible");
+        header.classList.add("header-hidden");
+        isHeaderVisible = false;
+        directionChangePoint = currentScroll;
+      }
+    }
+
+    // Show header only after enough upward scroll distance
+    if (currentDirection === "up") {
+      if (!isHeaderVisible && directionChangePoint - currentScroll >= SHOW_HEADER_UP_SCROLL) {
+        header.classList.remove("header-hidden");
+        header.classList.add("header-visible");
+        isHeaderVisible = true;
+        directionChangePoint = currentScroll;
+      }
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+}
 
 //------------------------ slider js ------------------------//
 
@@ -155,7 +161,12 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter-number");
+  const counterSection = document.querySelector(".counter-section");
   let started = false;
+
+  if (!counters.length || !counterSection) {
+    return;
+  }
 
   const startCounter = () => {
     counters.forEach((counter) => {
@@ -189,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.4 },
   );
 
-  observer.observe(document.querySelector(".counter-section"));
+  observer.observe(counterSection);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

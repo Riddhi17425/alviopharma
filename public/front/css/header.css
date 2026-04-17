@@ -147,6 +147,7 @@
 /*----------------------- mega menu--------------------------------- */
 
 .menu-toggle-btn {
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -196,14 +197,105 @@
   opacity: 1;
 }
 
-/* Disable scroll in offcanvas */
+/* Offcanvas must stay scrollable on small screens */
 .offcanvas {
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   padding-top: 10em;
 }
 
 .offcanvas-body {
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.mobile-menu-wrap {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.mobile-menu-list,
+.mobile-submenu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mobile-menu-list li,
+.mobile-submenu-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mobile-menu-list a,
+.mobile-submenu-list a {
+  display: block;
+  text-decoration: none;
+  color: var(--white-color);
+  padding: 13px 0;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.mobile-menu-accordion {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mobile-menu-accordion .accordion-item {
+  background: transparent;
+  border: 0;
+}
+
+.mobile-menu-accordion .accordion-button {
+  padding: 13px 0;
+  background: transparent;
+  color: var(--white-color);
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.mobile-menu-accordion .accordion-button::after {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.mobile-menu-accordion .accordion-button:not(.collapsed) {
+  background: transparent;
+  box-shadow: none;
+}
+
+.mobile-menu-accordion .accordion-body {
+  padding: 0;
+}
+
+.mobile-submenu-list a {
+  font-size: 15px;
+  line-height: 22px;
+  opacity: 0.9;
+  padding: 10px 0 10px 14px;
+}
+
+.mobile-submenu-list li:last-child {
+  border-bottom: 0;
+}
+
+.mobile-contact-btn {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Fullscreen */
@@ -211,62 +303,4 @@
   width: 100vw !important;
   height: 100vh !important;
   max-width: 100% !important;
-}
-
-/* ----------------  mega menu --------------- */
-
-.mega_menu {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10em;
-  color: var(--white-color);
-}
-
-.mega_menu_tabs .nav-link {
-  font-size: 44px;
-  line-height: 44px;
-  margin-bottom: 24px;
-  font-weight: 400;
-  font-family: var(--title-font);
-  display: flex;
-  gap: 20px;
-}
-
-.mega_menu_tabs .nav-link.active {
-  font-weight: 600;
-}
-
-.mega_menu_tabs .nav-link svg {
-  opacity: 0;
-  transition: all 0.3s ease;
-  transform: translateX(-20%);
-}
-
-.mega_menu_tabs .nav-link.active svg {
-  opacity: 1;
-}
-
-.mega_menu_content {
-  width: 35%;
-}
-
-.mega_menu_content .tab-content {
-  border-left: 1px solid var(--white-color);
-  padding-left: 60px;
-}
-
-.mega_menu_content .tab-content ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.mega_menu_content .tab-content ul li {
-  margin-bottom: 30px;
-}
-
-.mega_menu_content .tab-content ul li a {
-  font-size: 34px;
-  line-height: 32px;
-  font-weight: 400;
 }

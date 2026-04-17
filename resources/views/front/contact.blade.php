@@ -1,12 +1,12 @@
 @include('layouts.frontheader')
 @if($menubanner)
 <section class="page-header">
-   <div>
-      <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+   <div class="inner_hero">
+      <img src="{{ asset('public/front/images/contact-banner.webp') }}" class="img-fluid" alt="page-header-img">
+      <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
    </div>
    <div class="page-header-content p-x">
       <div class="page-header-text com_bg_blue">
-         <p class="text-white"><a href="{{ url('/') }}">Home</a> / Contact</p>
          <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
          <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
       </div>
@@ -21,19 +21,21 @@
                <h5 class="title-24 title--blue">Registered & Corporate Office</h5>
                <div class="con_links">
                   <span>
-                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M18.0609 2.25781C14.7691 2.2617 11.6132 3.57109 9.28551 5.89878C6.95783 8.22646 5.64843 11.3824 5.64454 14.6742C5.6406 17.3643 6.51931 19.9814 8.14588 22.124C8.14588 22.124 8.48451 22.5699 8.53982 22.6342L18.0609 33.8632L27.5866 22.6286C27.6362 22.5688 27.976 22.124 27.976 22.124L27.9771 22.1206C29.6029 19.9789 30.4812 17.3631 30.4773 14.6742C30.4734 11.3824 29.164 8.22646 26.8364 5.89878C24.5087 3.57109 21.3528 2.2617 18.0609 2.25781ZM18.0609 19.1892C17.1679 19.1892 16.295 18.9244 15.5525 18.4283C14.81 17.9322 14.2313 17.2271 13.8896 16.402C13.5478 15.577 13.4584 14.6692 13.6326 13.7934C13.8069 12.9175 14.2369 12.113 14.8683 11.4816C15.4998 10.8501 16.3043 10.4201 17.1801 10.2459C18.0559 10.0717 18.9637 10.1611 19.7888 10.5028C20.6138 10.8446 21.3189 11.4233 21.8151 12.1658C22.3112 12.9083 22.576 13.7812 22.576 14.6742C22.5745 15.8712 22.0983 17.0188 21.2519 17.8652C20.4055 18.7116 19.2579 19.1878 18.0609 19.1892Z"
-                           fill="url(#paint0_linear_570_1370)" />
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2132 27.8711C21.9796 28.1297 21.7335 28.3924 21.4751 28.6551C23.8982 28.9803 25.5581 29.6518 25.5581 30.4233C25.5581 31.516 22.2385 32.4001 18.1386 32.4001C14.039 32.4001 10.719 31.516 10.719 30.4233C10.719 29.6768 12.2705 29.026 14.56 28.6926C14.3014 28.434 14.0596 28.1754 13.826 27.917C10.5814 28.5344 8.3457 29.8232 8.3457 31.3161C8.3457 33.4055 12.7289 35.103 18.1384 35.103C23.5433 35.103 27.9311 33.4055 27.9311 31.3161C27.9354 29.7853 25.5872 28.4675 22.2132 27.8711Z" fill="url(#paint0_linear_907_2142)"/>
+                        <path d="M28.7902 11.6942C28.7902 5.73421 23.9607 0.904297 18.0011 0.904297C12.0415 0.904297 7.21191 5.73384 7.21191 11.6942C7.21191 16.6818 14.7795 26.8911 17.239 30.0774C17.6249 30.5773 18.3773 30.5773 18.7632 30.0774C21.2226 26.891 28.7902 16.6815 28.7902 11.6942ZM13.651 11.6942C13.651 9.29179 15.5987 7.34443 17.9968 7.34443C20.3992 7.34443 22.3465 9.29209 22.3465 11.6942C22.3465 14.0966 20.3989 16.04 17.9968 16.04C15.5984 16.04 13.651 14.0963 13.651 11.6942Z" fill="url(#paint1_linear_907_2142)"/>
                         <defs>
-                           <linearGradient id="paint0_linear_570_1370" x1="18.0609" y1="2.25781" x2="18.0609"
-                              y2="33.8632" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#307ABD" />
-                              <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                           </linearGradient>
+                        <linearGradient id="paint0_linear_907_2142" x1="-7.18112" y1="3.07312" x2="28.2735" y2="42.6184" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#97E0FF"/>
+                        <stop offset="1" stop-color="#1075FF"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_907_2142" x1="1.73123" y1="-4.91618" x2="37.1858" y2="34.6295" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#97E0FF"/>
+                        <stop offset="1" stop-color="#1075FF"/>
+                        </linearGradient>
                         </defs>
                      </svg>
+
                   </span>
                   <p class="mb-0">
                      <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">Registered & Corporate
@@ -43,19 +45,31 @@
                </div>
                <div class="con_links">
                   <span>
-                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M33.1121 6.01562H3.01172V30.0959H33.1121V6.01562ZM30.102 12.0357L18.0619 19.5608L6.02175 12.0357V9.02566L18.0619 16.5507L30.102 9.02566V12.0357Z"
-                           fill="url(#paint0_linear_570_1375)" />
-                        <defs>
-                           <linearGradient id="paint0_linear_570_1375" x1="18.0619" y1="6.01562" x2="18.0619"
-                              y2="30.0959" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#307ABD" />
-                              <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                           </linearGradient>
-                        </defs>
-                     </svg>
+                    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.60164 6.17188C3.98449 6.17188 3.42682 6.38007 2.96582 6.7221L16.7736 19.9499C17.4205 20.5671 18.4243 20.5671 19.0712 19.9499L32.9534 6.64775C32.5147 6.35033 31.9867 6.17188 31.4142 6.17188L4.60164 6.17188Z" fill="url(#paint0_linear_907_2148)"/>
+<path d="M34.1493 27.3284V8.90316C34.1493 8.43472 34.0229 7.99602 33.8073 7.60938L22.8398 18.1158L33.7998 28.6222C34.0155 28.2356 34.1493 27.7969 34.1493 27.3284Z" fill="url(#paint1_linear_907_2148)"/>
+<path d="M19.9635 20.8761C19.3909 21.4263 18.6548 21.7014 17.9261 21.7014C17.1975 21.7014 16.4539 21.4263 15.8888 20.8761L13.9407 19.0098L2.96582 29.5162C3.42682 29.8582 3.98449 30.0664 4.60164 30.0664H31.4142C31.9867 30.0664 32.5147 29.888 32.9534 29.5905L21.9116 19.0098L19.9635 20.8761Z" fill="url(#paint2_linear_907_2148)"/>
+<path d="M1.84863 8.90258V27.3204C1.84863 27.7517 1.96017 28.1532 2.13118 28.5101L12.9945 18.1152L2.13862 7.71289C1.96017 8.07723 1.84863 8.47875 1.84863 8.90258Z" fill="url(#paint3_linear_907_2148)"/>
+<defs>
+<linearGradient id="paint0_linear_907_2148" x1="6.65469" y1="-5.70403" x2="37.9405" y2="28.5819" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_907_2148" x1="9.23105" y1="-8.0608" x2="40.5168" y2="26.2248" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint2_linear_907_2148" x1="-4.73327" y1="4.68444" x2="26.5525" y2="38.97" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint3_linear_907_2148" x1="-7.30111" y1="7.0234" x2="23.9847" y2="41.3093" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+</defs>
+</svg>
+
                   </span>
                   <p class="mb-0">
                      <a href="mailto:demo@gmail.com" target="_blank">demo@gmail.com</a>
@@ -63,27 +77,21 @@
                </div>
                <div class="con_links">
                   <span>
-                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M30.097 16.5593H33.1071C33.1071 8.83853 27.2781 3.01562 19.5469 3.01562V6.02566C25.6603 6.02566 30.097 10.4549 30.097 16.5593Z"
-                           fill="url(#paint0_linear_570_1380)" />
-                        <path
-                           d="M19.5662 12.0431C22.7313 12.0431 24.0813 13.3931 24.0813 16.5581H27.0913C27.0913 11.7044 24.4199 9.03303 19.5662 9.03303V12.0431ZM24.7164 20.2349C24.4272 19.972 24.0472 19.8318 23.6566 19.8439C23.2659 19.856 22.8953 20.0194 22.6229 20.2996L19.0214 24.0034C18.1545 23.8379 16.4117 23.2946 14.6177 21.5051C12.8237 19.7096 12.2804 17.9623 12.1194 17.1014L15.8202 13.4984C16.1008 13.2262 16.2644 12.8555 16.2765 12.4648C16.2886 12.0741 16.1481 11.694 15.8849 11.4049L10.3239 5.29006C10.0606 5.00013 9.69463 4.82426 9.30374 4.79981C8.91285 4.77536 8.52782 4.90426 8.23043 5.15912L4.96454 7.95996C4.70434 8.2211 4.54904 8.56866 4.52809 8.93671C4.50551 9.31297 4.07508 18.2257 10.9861 25.1397C17.0152 31.1673 24.5674 31.6083 26.6473 31.6083C26.9513 31.6083 27.138 31.5993 27.1876 31.5962C27.5556 31.5756 27.903 31.4196 28.1629 31.1583L30.9622 27.8909C31.2173 27.5937 31.3464 27.2088 31.3222 26.8179C31.2981 26.427 31.1225 26.0609 30.8328 25.7974L24.7164 20.2349Z"
-                           fill="url(#paint1_linear_570_1380)" />
-                        <defs>
-                           <linearGradient id="paint0_linear_570_1380" x1="26.327" y1="3.01562" x2="26.327"
-                              y2="16.5593" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#307ABD" />
-                              <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                           </linearGradient>
-                           <linearGradient id="paint1_linear_570_1380" x1="17.9204" y1="4.79687" x2="17.9204"
-                              y2="31.6083" gradientUnits="userSpaceOnUse">
-                              <stop stop-color="#307ABD" />
-                              <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                           </linearGradient>
-                        </defs>
-                     </svg>
+                    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_907_2158)">
+<path d="M27.4611 23.4988C25.9532 22.2291 23.717 22.3909 22.4473 23.8988L21.02 25.6C20.7046 25.9865 20.117 26.0331 19.7387 25.7558C15.8929 22.8769 12.8219 19.1542 10.6974 14.8297C10.4849 14.3973 10.6832 13.8367 11.0694 13.5943L12.9868 12.505C14.692 11.541 15.3029 9.37775 14.3307 7.63442L11.6129 2.95929C10.7823 1.50426 8.83687 1.1653 7.55337 2.23794C2.71302 6.22635 0.605891 13.2929 10.0201 24.6568C19.4262 35.9827 26.7577 35.2439 31.5899 31.2174C32.8734 30.1448 32.8913 28.1887 31.6229 27.1066L27.4611 23.4988Z" fill="url(#paint0_linear_907_2158)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_907_2158" x1="-0.964601" y1="0.888575" x2="30.3212" y2="35.1745" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<clipPath id="clip0_907_2158">
+<rect width="34" height="34" fill="white" transform="translate(1 0.757812)"/>
+</clipPath>
+</defs>
+</svg>
+
                   </span>
                   <p class="mb-0">
                      <a href="tel:+917966176465" target="_blank">+91 79 6617 6465</a><br>
@@ -98,19 +106,26 @@
                   <h5 class="title-24 title--blue">Works Units</h5>
                   <div class="con_links">
                      <span>
-                        <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M18.0609 2.25781C14.7691 2.2617 11.6132 3.57109 9.28551 5.89878C6.95783 8.22646 5.64843 11.3824 5.64454 14.6742C5.6406 17.3643 6.51931 19.9814 8.14588 22.124C8.14588 22.124 8.48451 22.5699 8.53982 22.6342L18.0609 33.8632L27.5866 22.6286C27.6362 22.5688 27.976 22.124 27.976 22.124L27.9771 22.1206C29.6029 19.9789 30.4812 17.3631 30.4773 14.6742C30.4734 11.3824 29.164 8.22646 26.8364 5.89878C24.5087 3.57109 21.3528 2.2617 18.0609 2.25781ZM18.0609 19.1892C17.1679 19.1892 16.295 18.9244 15.5525 18.4283C14.81 17.9322 14.2313 17.2271 13.8896 16.402C13.5478 15.577 13.4584 14.6692 13.6326 13.7934C13.8069 12.9175 14.2369 12.113 14.8683 11.4816C15.4998 10.8501 16.3043 10.4201 17.1801 10.2459C18.0559 10.0717 18.9637 10.1611 19.7888 10.5028C20.6138 10.8446 21.3189 11.4233 21.8151 12.1658C22.3112 12.9083 22.576 13.7812 22.576 14.6742C22.5745 15.8712 22.0983 17.0188 21.2519 17.8652C20.4055 18.7116 19.2579 19.1878 18.0609 19.1892Z"
-                              fill="url(#paint0_linear_570_1370)" />
-                           <defs>
-                              <linearGradient id="paint0_linear_570_1370" x1="18.0609" y1="2.25781"
-                                 x2="18.0609" y2="33.8632" gradientUnits="userSpaceOnUse">
-                                 <stop stop-color="#307ABD" />
-                                 <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                              </linearGradient>
-                           </defs>
-                        </svg>
+                       <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_907_2167)">
+<path d="M22.2132 27.6289C21.9796 27.8875 21.7335 28.1502 21.4751 28.4129C23.8982 28.7381 25.5581 29.4096 25.5581 30.1811C25.5581 31.2738 22.2385 32.1579 18.1386 32.1579C14.039 32.1579 10.719 31.2738 10.719 30.1811C10.719 29.4346 12.2705 28.7838 14.56 28.4504C14.3014 28.1918 14.0596 27.9332 13.826 27.6749C10.5814 28.2922 8.3457 29.581 8.3457 31.074C8.3457 33.1633 12.7289 34.8609 18.1384 34.8609C23.5433 34.8609 27.9311 33.1633 27.9311 31.074C27.9354 29.5431 25.5872 28.2253 22.2132 27.6289Z" fill="url(#paint0_linear_907_2167)"/>
+<path d="M28.5783 11.5438C28.5783 5.58382 23.7488 0.753906 17.7892 0.753906C11.8295 0.753906 7 5.58345 7 11.5438C7 16.5314 14.5676 26.7407 17.027 29.927C17.413 30.4269 18.1653 30.4269 18.5513 29.927C21.0107 26.7406 28.5783 16.5311 28.5783 11.5438ZM13.4391 11.5438C13.4391 9.1414 15.3868 7.19404 17.7848 7.19404C20.1872 7.19404 22.1346 9.1417 22.1346 11.5438C22.1346 13.9462 20.1869 15.8896 17.7848 15.8896C15.3865 15.8896 13.4391 13.9459 13.4391 11.5438Z" fill="url(#paint1_linear_907_2167)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_907_2167" x1="-7.18112" y1="2.83093" x2="28.2735" y2="42.3762" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_907_2167" x1="1.51932" y1="-5.06657" x2="36.9739" y2="34.4791" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<clipPath id="clip0_907_2167">
+<rect width="36.1204" height="36.1204" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
                      </span>
                      <p class="mb-0">
                         <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">434, Kishanpur, Opp.
@@ -120,19 +135,31 @@
                   </div>
                   <div class="con_links">
                      <span>
-                        <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M33.1121 6.01562H3.01172V30.0959H33.1121V6.01562ZM30.102 12.0357L18.0619 19.5608L6.02175 12.0357V9.02566L18.0619 16.5507L30.102 9.02566V12.0357Z"
-                              fill="url(#paint0_linear_570_1375)" />
-                           <defs>
-                              <linearGradient id="paint0_linear_570_1375" x1="18.0619" y1="6.01562"
-                                 x2="18.0619" y2="30.0959" gradientUnits="userSpaceOnUse">
-                                 <stop stop-color="#307ABD" />
-                                 <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                              </linearGradient>
-                           </defs>
-                        </svg>
+                      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.60164 5.05469C2.98449 5.05469 2.42682 5.26288 1.96582 5.60492L15.7736 18.8327C16.4205 19.4499 17.4243 19.4499 18.0712 18.8327L31.9534 5.53056C31.5147 5.23314 30.9867 5.05469 30.4142 5.05469L3.60164 5.05469Z" fill="url(#paint0_linear_907_2176)"/>
+<path d="M33.1493 26.2112V7.78597C33.1493 7.31753 33.0229 6.87884 32.8073 6.49219L21.8398 16.9986L32.7998 27.505C33.0155 27.1184 33.1493 26.6797 33.1493 26.2112Z" fill="url(#paint1_linear_907_2176)"/>
+<path d="M18.9635 19.7589C18.3909 20.3091 17.6548 20.5842 16.9261 20.5842C16.1975 20.5842 15.4539 20.3091 14.8888 19.7589L12.9407 17.8926L1.96582 28.399C2.42682 28.741 2.98449 28.9492 3.60164 28.9492H30.4142C30.9867 28.9492 31.5147 28.7708 31.9534 28.4734L20.9116 17.8926L18.9635 19.7589Z" fill="url(#paint2_linear_907_2176)"/>
+<path d="M0.848633 7.78539V26.2032C0.848633 26.6345 0.960166 27.036 1.13118 27.3929L11.9945 16.998L1.13862 6.5957C0.960166 6.96004 0.848633 7.36156 0.848633 7.78539Z" fill="url(#paint3_linear_907_2176)"/>
+<defs>
+<linearGradient id="paint0_linear_907_2176" x1="5.65469" y1="-6.82121" x2="36.9405" y2="27.4647" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_907_2176" x1="8.23105" y1="-9.17799" x2="39.5168" y2="25.1076" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint2_linear_907_2176" x1="-5.73327" y1="3.56725" x2="25.5525" y2="37.8529" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<linearGradient id="paint3_linear_907_2176" x1="-8.30111" y1="5.90621" x2="22.9847" y2="40.1922" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+</defs>
+</svg>
+
                      </span>
                      <p class="mb-0">
                         <a href="mailto:info@alviopharma.com" target="_blank">info@alviopharma.com</a>
@@ -140,27 +167,21 @@
                   </div>
                   <div class="con_links">
                      <span>
-                        <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M30.097 16.5593H33.1071C33.1071 8.83853 27.2781 3.01562 19.5469 3.01562V6.02566C25.6603 6.02566 30.097 10.4549 30.097 16.5593Z"
-                              fill="url(#paint0_linear_570_1380)" />
-                           <path
-                              d="M19.5662 12.0431C22.7313 12.0431 24.0813 13.3931 24.0813 16.5581H27.0913C27.0913 11.7044 24.4199 9.03303 19.5662 9.03303V12.0431ZM24.7164 20.2349C24.4272 19.972 24.0472 19.8318 23.6566 19.8439C23.2659 19.856 22.8953 20.0194 22.6229 20.2996L19.0214 24.0034C18.1545 23.8379 16.4117 23.2946 14.6177 21.5051C12.8237 19.7096 12.2804 17.9623 12.1194 17.1014L15.8202 13.4984C16.1008 13.2262 16.2644 12.8555 16.2765 12.4648C16.2886 12.0741 16.1481 11.694 15.8849 11.4049L10.3239 5.29006C10.0606 5.00013 9.69463 4.82426 9.30374 4.79981C8.91285 4.77536 8.52782 4.90426 8.23043 5.15912L4.96454 7.95996C4.70434 8.2211 4.54904 8.56866 4.52809 8.93671C4.50551 9.31297 4.07508 18.2257 10.9861 25.1397C17.0152 31.1673 24.5674 31.6083 26.6473 31.6083C26.9513 31.6083 27.138 31.5993 27.1876 31.5962C27.5556 31.5756 27.903 31.4196 28.1629 31.1583L30.9622 27.8909C31.2173 27.5937 31.3464 27.2088 31.3222 26.8179C31.2981 26.427 31.1225 26.0609 30.8328 25.7974L24.7164 20.2349Z"
-                              fill="url(#paint1_linear_570_1380)" />
-                           <defs>
-                              <linearGradient id="paint0_linear_570_1380" x1="26.327" y1="3.01562" x2="26.327"
-                                 y2="16.5593" gradientUnits="userSpaceOnUse">
-                                 <stop stop-color="#307ABD" />
-                                 <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                              </linearGradient>
-                              <linearGradient id="paint1_linear_570_1380" x1="17.9204" y1="4.79687"
-                                 x2="17.9204" y2="31.6083" gradientUnits="userSpaceOnUse">
-                                 <stop stop-color="#307ABD" />
-                                 <stop offset="1" stop-color="#307ABD" stop-opacity="0.6" />
-                              </linearGradient>
-                           </defs>
-                        </svg>
+                      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_907_2186)">
+<path d="M26.4611 22.741C24.9532 21.4713 22.717 21.6331 21.4473 23.141L20.02 24.8422C19.7046 25.2287 19.117 25.2753 18.7387 24.998C14.8929 22.1191 11.8219 18.3964 9.6974 14.0719C9.48494 13.6394 9.68323 13.0789 10.0694 12.8365L11.9868 11.7472C13.692 10.7831 14.3029 8.61994 13.3307 6.8766L10.6129 2.20148C9.78228 0.746447 7.83687 0.407486 6.55337 1.48013C1.71302 5.46854 -0.394109 12.5351 9.02014 23.899C18.4262 35.2248 25.7577 34.4861 30.5899 30.4596C31.8734 29.387 31.8913 27.4308 30.6229 26.3488L26.4611 22.741Z" fill="url(#paint0_linear_907_2186)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_907_2186" x1="-1.9646" y1="0.130763" x2="29.3212" y2="34.4167" gradientUnits="userSpaceOnUse">
+<stop stop-color="#97E0FF"/>
+<stop offset="1" stop-color="#1075FF"/>
+</linearGradient>
+<clipPath id="clip0_907_2186">
+<rect width="34" height="34" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
                      </span>
                      <p class="mb-0">
                         <a href="tel:+91 9690020836" target="_blank">+91 9690020836</a>
@@ -222,20 +243,20 @@
                             <textarea id="message" name="message" placeholder="Write your requirements" rows="1"></textarea>
                         </div>
                     </div>
-                    <div class="form_group row align-items-end">
-                        <div class="col-4" style="margin: 12px 0; display: flex; align-items: center; gap: 12px;">
+                    <div class="form_group d-flex align-items-end gap-4">
+                        <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
                             <span id="captcha-text"
-                            style="font-size: 26px; font-weight: bold; letter-spacing: 6px; padding: 10px 18px;
+                            style="font-size: 20px; font-weight: bold; letter-spacing: 6px; padding: 8px 18px;
                             background: #f8f8f8; border: 1px solid #aaa; border-radius: 8px;
                             user-select: none; cursor: pointer; min-width: 140px; text-align: center;">
                             </span>
                             <button type="button" id="refresh-captcha"
-                            style="font-size: 22px; width: 44px; height: 44px; border-radius: 50%;
+                            style="font-size: 20px; width: 40px; height: 40px; border-radius: 50%;
                             background: #f0f0f0; border: 1px solid #ccc; cursor: pointer;">
                             ↻
                             </button>
                         </div>
-                        <div class="contact_items col-4">
+                        <div class="contact_items">
                             <input type="text" id="captcha" name="captcha" maxlength="6"
                             placeholder="Enter the number" inputmode="numeric" autocomplete="off"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '');">
@@ -267,10 +288,9 @@
 </section>
 <section class="p-x mt-100">
    <h2 class="mb-4 text-center title-54">Locate Us</h2>
-   <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.9708598274915!2d72.49073417603567!3d22.98809901761238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b76496224b9%3A0xacbe0e6f8cdb9468!2sAlvio%20Pharmaceuticals!5e0!3m2!1sen!2sin!4v1768996992692!5m2!1sen!2sin"
-      width="100%" height="700px" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div>
+   <iframe class="map_iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3672.971485801041!2d72.4906224!3d22.988076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b76496224b9%3A0xacbe0e6f8cdb9468!2sAlvio%20Pharmaceuticals!5e0!3m2!1sen!2sin!4v1775455035720!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 </section>
 @include('layouts.fronttop-footer')
 @include('layouts.frontfooter')

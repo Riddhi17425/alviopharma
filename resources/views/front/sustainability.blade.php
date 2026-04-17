@@ -2,12 +2,12 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+       <img src="{{ asset('public/front/images/sustainability-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Sustainability & Responsibility</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Who We Are / Sustainability & Responsibility</p>
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}
             </p>
@@ -122,7 +122,7 @@
 
                 <div class="col-md-6 ps-md-5">
                     <div class="mb-40">
-                        <h2 class="title-54 title--dark mb-4">Improving lives by strengthening access, awareness, and
+                        <h2 class="title-54 title--dark mb-3">Improving lives by strengthening access, awareness, and
                             support.
                         </h2>
                         <p>Alvio’s purpose, <b>Improving Lives</b>, is reflected in how we serve patients and healthcare
@@ -135,7 +135,7 @@
                         </p>
                     </div>
 
-                    <h5 class="title-24 title--blue mb-4">People & Communities</h5>
+                    <h5 class="title-24 title--blue mb-3">People & Communities</h5>
                     <ul>
                         <li class="mb-2"> <b>Access & Availability:</b> Supporting continuity of care through consistent
                             market
@@ -165,7 +165,7 @@
 
                 <div class="col-md-6 ps-md-5">
                     <div class="mb-40">
-                        <h2 class="title-54 title--dark mb-4">Practical sustainability across sourcing, packaging, and distribution.
+                        <h2 class="title-54 title--dark mb-3">Practical sustainability across sourcing, packaging, and distribution.
 
                         </h2>
                         <p>We recognise that healthcare progress must be responsible. While Alvio does not operate manufacturing 
@@ -176,7 +176,7 @@
                         </p>
                     </div>
 
-                    <h5 class="title-24 title--blue mb-4">Environment & Value Chain</h5>
+                    <h5 class="title-24 title--blue mb-3">Environment & Value Chain</h5>
                     <ul>
                         <li class="mb-2"> <b>Responsible Partner Collaboration:</b> Encouraging aligned standards and review-driven improvements.
 
@@ -202,7 +202,7 @@
 
                 <div class="col-md-6 ps-md-5">
                     <div class="mb-40">
-                        <h2 class="title-54 title--dark mb-4">Accountability that protects trust in healthcare.
+                        <h2 class="title-54 title--dark mb-3">Accountability that protects trust in healthcare.
                         </h2>
                         <p>Trust is essential in healthcare, and governance is how we protect it. Alvio’s approach is
                              built on ethical conduct, compliance-first processes, and documentation discipline. By 
@@ -211,7 +211,7 @@
                         </p>
                     </div>
 
-                    <h5 class="title-24 title--blue mb-4">Governance & Integrity</h5>
+                    <h5 class="title-24 title--blue mb-3">Governance & Integrity</h5>
                     <ul>
                         <li class="mb-2"> <b>Compliance-First Operations: </b> Processes aligned to applicable regulations and ethical standards.</li>
                         <li class="mb-2"> <b>Documentation Discipline:</b> Traceability-led review practices that strengthen consistency.
@@ -254,7 +254,8 @@
                                         data-bs-toggle="collapse"
                                         data-bs-target="#{{ $collapseId }}"
                                         aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
-                                        aria-controls="{{ $collapseId }}">
+                                        aria-controls="{{ $collapseId }}"
+                                        data-label="{{ $principles->title }}">
                                         {{ $principles->title }}
                                     </button>
                                 </h4>
@@ -274,7 +275,10 @@
 
             <div class="col-md-4">
                 
-                <img src="{{ asset('public/ourproductionimage/'.$principles->image) }}" alt="{{ $principles->title }}" class="img-fluid">
+               <div class="our_respons">
+                 <img src="{{ asset('public/ourproductionimage/'.$principles->image) }}" alt="{{ $principles->title }}" class="img-fluid">
+                 <p class="mb-0 font-weight-bold" id="principlesActiveLabel">Patient & HCP Confidence</p>
+               </div>
                
                 <!-- <img src="{{ asset('public/front/images/new_test.png') }}" alt="images" class="img-fluid"> -->
             </div>
@@ -283,7 +287,7 @@
 </section>
 
 
-<section class="our_principles mt-100 mb-100">
+<section class=" mt-100 mb-100">
     <div class="p-x">
         <div class="row justify-content-between align-items-center">
             <div class="col-md-7">
@@ -373,6 +377,25 @@
 
 
 <script>
+// Sync active label for principlesAccordion
+const principlesAccordion = document.getElementById("accordionPrinciples");
+const principlesLabel = document.getElementById("principlesActiveLabel");
+
+if (principlesAccordion && principlesLabel) {
+    principlesAccordion.addEventListener("shown.bs.collapse", function (e) {
+        const btn = principlesAccordion.querySelector('[data-bs-target="#' + e.target.id + '"]');
+        if (btn && btn.dataset.label) {
+            principlesLabel.textContent = btn.dataset.label;
+        }
+    });
+
+    // Set initial label from the first open accordion button
+    const firstActiveBtn = principlesAccordion.querySelector(".accordion-button:not(.collapsed)");
+    if (firstActiveBtn && firstActiveBtn.dataset.label) {
+        principlesLabel.textContent = firstActiveBtn.dataset.label;
+    }
+}
+
 const accordionEl = document.getElementById("accordionExample");
 const exploreState = document.querySelector(".explore-state");
 const previewImgs = document.querySelectorAll(".images-only .accordion-preview-img");
