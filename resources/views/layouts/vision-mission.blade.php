@@ -2,7 +2,7 @@
         <div class="vision-mission-wrapper">
             <div class="vision-mission-item">
                 <div>
-                    <p>Our Vision</p>
+                    <p class="title--blue title-24 ">Our Vision</p>
                     <h3 class="vision-mission-title mb-3">To be a trusted brand known for its medicines & culture
                     </h3>
                     <p>Our vision serves as our North Star, guiding us in our pursuit of excellence. It embodies our commitment to not only delivering high-quality pharmaceuticals but also fostering a culture that resonates with our Purpose of 'Improving Lives'
@@ -76,7 +76,7 @@
 
                 </div>
                 <div class="mt-5">
-                    <p>Our Mission </p>
+                    <p class="title--blue title-24 ">Our Mission </p>
                     <h3 class="vision-mission-title mb-3">To be a PAN India brand, fostering awareness among doctors, ensuring they choose to prescribe our medicines</h3>
                     <p class="text-justify">This mission serves as our compass, directing our efforts towards becoming a brand of choice for doctors across the nation. It represents our dedication to not only reach every corner of the country but to do so with a resounding endorsement from healthcare professionals who recognize and trust our medicines.</p>
                 </div>

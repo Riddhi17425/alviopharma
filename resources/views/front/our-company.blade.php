@@ -3,7 +3,7 @@
 @if($menubanner)
 <section class="page-header">
     <div class="inner_hero">
-         <img src="{{ asset('public/front/images/our-company-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <img src="{{ asset('public/front/images/our-company-banner.webp') }}" class="img-fluid" alt="page-header-img">
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Company</p>
     </div>
     <div class="page-header-content p-x">
@@ -15,8 +15,8 @@
             <a href="{{ route('contact') }}" target="_blank">
                 <p class="title-24 text--white">Contact us</p>
             </a>
-            <a href="{{ route('contact') }}" target="_blank" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <a href="{{ route('contact') }}" target="_blank" class="common-arrow-img"><svg width="32" height="32"
+                    viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z"
                         fill="white" />
                     <path d="M0.75013 30.821L30.8213 0.749882M30.8213 0.749882H7.43255M30.8213 0.749882V24.1385"
@@ -35,11 +35,18 @@
         <div class="col-xl-8 col-lg-7 col-md-12">
             <h2 class="title-54 title--blue mb-40">A Trusted Partner in Modern Healthcare. </h2>
 
-            <p>Alvio Pharmaceuticals Pvt. Ltd. is a fast-growing healthcare company engaged in the marketing of high-quality finished pharmaceutical formulations. Driven by a clear purpose to improve lives, we focus on delivering reliable and affordable healthcare solutions across diverse therapeutic segments. </p>
+            <p>Alvio Pharmaceuticals Pvt. Ltd. is a fast-growing healthcare company engaged in the marketing of
+                high-quality finished pharmaceutical formulations. Driven by a clear purpose to improve lives, we focus
+                on delivering reliable and affordable healthcare solutions across diverse therapeutic segments. </p>
 
-            <p>With a strong foundation in ethical marketing and a growing presence across India, Alvio has established itself as a trusted partner among healthcare professionals. Our portfolio spans chronic therapies including cardiovascular and anti-diabetic segments, along with expanding focus areas in dermatology, cosmetology, and nutraceuticals. </p>
+            <p>With a strong foundation in ethical marketing and a growing presence across India, Alvio has established
+                itself as a trusted partner among healthcare professionals. Our portfolio spans chronic therapies
+                including cardiovascular and anti-diabetic segments, along with expanding focus areas in dermatology,
+                cosmetology, and nutraceuticals. </p>
 
-            <p>Backed by a dedicated team of professionals and a commitment to quality, consistency, and innovation, we continue to strengthen our reach and build meaningful healthcare impact across the markets we serve. </p>
+            <p>Backed by a dedicated team of professionals and a commitment to quality, consistency, and innovation, we
+                continue to strengthen our reach and build meaningful healthcare impact across the markets we serve.
+            </p>
         </div>
     </div>
 
@@ -76,76 +83,72 @@
 @include('layouts.vision-mission')
 
 <section class="explore-state mt-100">
-   <div class="p-x">   
-     <div class="row align-items-center">
-        <h2 class="title-54 mb-40">Expanding Horizons. Strengthening Healthcare Across India.</h2>
-        <p class="mb-3">Alvio Pharma’s national operations are the foundation of our growth story. With a team of over
-            300+ motivated professionals and a network that reaches 35,000+ healthcare providers across India, we are
-            committed to making advanced, affordable healthcare accessible to every community.</p>
-        <div class="col-xl-6">
-            <div class="state-content">
-                
-                <p>Our approach is guided by ethical practices, compliance, and a deep understanding of regional healthcare needs-ensuring consistent delivery and long-term impact. </p>
+    <div class="p-x">
+        <div class="row align-items-center">
+            <h2 class="title-54 mb-40">Expanding Horizons. Strengthening Healthcare Across India.</h2>
+            <p class="mb-3">Alvio Pharma’s national operations form the foundation of our growth. With a team of 350+
+                professionals and a strong network reaching over 35,000 healthcare providers, we are committed to making
+                advanced and affordable healthcare accessible across India.</p>
+            <div class="col-xl-7">
+                <div class="state-content">
+
+                    <p>Our approach is guided by ethical practices, compliance, and a deep understanding of regional
+                        healthcare needs-ensuring consistent delivery and long-term impact. </p>
+                </div>
+
+                <div class="state-accordion mt-40">
+                    <div class="accordion" id="accordionExample">
+
+                        @foreach($units as $unit)
+
+                        @php
+                        $collapseId = "collapse".$loop->index;
+                        $headingId = "heading".$loop->index;
+                        @endphp
+
+                        <div class="accordion-item">
+                            <h4 class="accordion-header" id="{{ $headingId }}">
+                                <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
+                                    aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                    aria-controls="{{ $collapseId }}">
+
+                                    {{ $unit->title }}
+
+                                </button>
+                            </h4>
+
+                            <div id="{{ $collapseId }}"
+                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
+
+                                <div class="accordion-body">
+                                    {!! $unit->description !!}
+                                </div>
+
+                            </div>
+                        </div>
+
+                        @endforeach
+
+                    </div>
+                </div>
             </div>
 
-            <div class="state-accordion mt-40">
-                <div class="accordion" id="accordionExample">
+            <div class="col-xl-5">
+                <div class="images-only">
 
                     @foreach($units as $unit)
 
-                    @php
-                        $collapseId = "collapse".$loop->index;
-                        $headingId = "heading".$loop->index;
-                    @endphp
-
-                    <div class="accordion-item">
-                        <h4 class="accordion-header" id="{{ $headingId }}">
-                            <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#{{ $collapseId }}"
-                                aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
-                                aria-controls="{{ $collapseId }}">
-
-                                {{ $unit->title }}
-
-                            </button>
-                        </h4>
-
-                        <div id="{{ $collapseId }}"
-                            class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
-                            aria-labelledby="{{ $headingId }}"
-                            data-bs-parent="#accordionExample">
-
-                            <div class="accordion-body">
-                                {!! $unit->description !!}
-                            </div>
-
-                        </div>
-                    </div>
-
+                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}" alt="{{ $unit->title }}"
+                        class="accordion-preview-img img-fluid" data-panel="collapse{{ $loop->index }}">
                     @endforeach
 
                 </div>
             </div>
+
         </div>
-
-        <div class="col-xl-6">
-            <div class="images-only">
-
-                @foreach($units as $unit)
-
-               <img src="{{ asset('public/homemapimage/'.$unit->image) }}"
-                    alt="{{ $unit->title }}"
-                    class="accordion-preview-img img-fluid"
-                    data-panel="collapse{{ $loop->index }}">
-                @endforeach
-
-            </div>
-        </div>
-
     </div>
-   </div>
 </section>
 
 <section class="principles-section p-x mt-100">
@@ -263,7 +266,8 @@
 
             <div class="bab-col-center">
                 <div class="circle-large">
-                    <img src="{{ asset('public/front/images/logo_red.svg')}}" alt="ALVIO Logo" style="max-width: 180px;">
+                    <img src="{{ asset('public/front/images/logo_red.svg')}}" alt="ALVIO Logo"
+                        style="max-width: 180px;">
                 </div>
 
                 <div class="bab-col-side bab-col-side-bottom">
@@ -290,7 +294,8 @@
     </div>
     <div class="man_par_slider">
         @foreach($clientels as $clientel)
-        <img class="img-fluid mx-2" src="{{ asset('public/clientelimage/'.$clientel->image) }}" alt="{{ $clientel->title }}">
+        <img class="img-fluid mx-2" src="{{ asset('public/clientelimage/'.$clientel->image) }}"
+            alt="{{ $clientel->title }}">
         @endforeach
         <!-- <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners2.webp')}}" alt="manufacturing partners">
         <img class="img-fluid" src="{{ asset('public/front/images/manufacturing-partners3.webp')}}" alt="manufacturing partners"> -->
@@ -304,51 +309,51 @@ const previewImgs = document.querySelectorAll(".images-only .accordion-preview-i
 
 if (accordionEl && exploreState && previewImgs.length) {
 
-  function clearActive() {
-    previewImgs.forEach((img) => {
-      img.classList.remove("active");
-      img.style.display = "none";
+    function clearActive() {
+        previewImgs.forEach((img) => {
+            img.classList.remove("active");
+            img.style.display = "none";
+        });
+    }
+
+    function setActiveImage(panelId) {
+        clearActive();
+        const img = document.querySelector('.accordion-preview-img[data-panel="' + panelId + '"]');
+        if (img) {
+            img.classList.add("active");
+            img.style.display = "block";
+        }
+    }
+
+    accordionEl.addEventListener("shown.bs.collapse", function(e) {
+        const id = e.target.id;
+        if (id) {
+            setActiveImage(id);
+        }
+        exploreState.classList.add("accordion-open");
     });
-  }
 
-  function setActiveImage(panelId) {
+    accordionEl.addEventListener("hidden.bs.collapse", function() {
+        const openPanel = accordionEl.querySelector(".accordion-collapse.show");
+
+        if (openPanel) {
+            setActiveImage(openPanel.id);
+            exploreState.classList.add("accordion-open");
+        } else {
+            clearActive();
+            exploreState.classList.remove("accordion-open");
+        }
+    });
+
+    // Initial state on page load
+    const initialOpen = accordionEl.querySelector(".accordion-collapse.show");
+
     clearActive();
-    const img = document.querySelector('.accordion-preview-img[data-panel="' + panelId + '"]');
-    if (img) {
-      img.classList.add("active");
-      img.style.display = "block";
+
+    if (initialOpen) {
+        setActiveImage(initialOpen.id);
+        exploreState.classList.add("accordion-open");
     }
-  }
-
-  accordionEl.addEventListener("shown.bs.collapse", function (e) {
-    const id = e.target.id;
-    if (id) {
-      setActiveImage(id);
-    }
-    exploreState.classList.add("accordion-open");
-  });
-
-  accordionEl.addEventListener("hidden.bs.collapse", function () {
-    const openPanel = accordionEl.querySelector(".accordion-collapse.show");
-
-    if (openPanel) {
-      setActiveImage(openPanel.id);
-      exploreState.classList.add("accordion-open");
-    } else {
-      clearActive();
-      exploreState.classList.remove("accordion-open");
-    }
-  });
-
-  // Initial state on page load
-  const initialOpen = accordionEl.querySelector(".accordion-collapse.show");
-
-  clearActive();
-
-  if (initialOpen) {
-    setActiveImage(initialOpen.id);
-    exploreState.classList.add("accordion-open");
-  }
 }
 </script>
 

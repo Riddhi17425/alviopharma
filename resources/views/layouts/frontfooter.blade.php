@@ -69,11 +69,11 @@
     <div class="bottom-footer">
         <div class="bottom-footer-wrapper p-x">
             <div class="social-icons">
-                <a href="javascript:void(0)" rel="nofollow"><img
+                <a href="https://in.linkedin.com/company/alviopharma" rel="nofollow"><img
                         src="{{ asset('public/front/images/linkedin-icon.svg') }}" alt="LinkedIn" class="me-3"></a>
                 <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/insta-icon.svg') }}"
                         alt="Instagram" class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img
+                <a href="https://www.facebook.com/alviopharma" rel="nofollow"><img
                         src="{{ asset('public/front/images/facebook-icon.svg') }}" alt="Facebook" class="me-3"></a>
                 <a href="javascript:void(0)" rel="nofollow"><img
                         src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp" class="me-3"></a>

@@ -114,7 +114,8 @@
 
 .vision-mission-title {
   font-size: 28px;
-  color: var(--blue-heading);
+    font-weight: normal;
+  color: var( --black-color);
   font-family: var(--title-font);
 }
 

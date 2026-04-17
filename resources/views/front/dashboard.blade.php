@@ -5,8 +5,8 @@
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-1.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68">Advancing Healthcare with Science & Purpose</h1>
-                <p class="text--white col-lg-6">Alvio Pharmaceuticals Pvt. Ltd. delivers high-quality, scientifically advanced formulations across Pharma, Nutraceuticals, and Cosmeceuticals. Backed by ethical practices and global standards for India and beyond.</p>
-                <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
+                <p class="text--white col-lg-9">Alvio Pharmaceuticals Pvt. Ltd. delivers high-quality, scientifically advanced formulations across Pharma, Nutraceuticals, and Cosmeceuticals. Backed by ethical practices and global standards for India and beyond.</p>
+                <!-- <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0.749996 13.478L13.4779 0.750116L0.749996 13.478ZM13.4779 0.750116H3.5784H13.4779ZM13.4779 0.750116V10.6496V0.750116Z"
@@ -14,14 +14,14 @@
                         <path d="M0.749996 13.478L13.4779 0.750116M13.4779 0.750116H3.5784M13.4779 0.750116V10.6496"
                             stroke="#307ABD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68">Addressing the Growing Burden of Chronic Diseases </h1>
-                <p class="text--white col-lg-6">With a strong focus on long-term therapies, we aim to support patients and physicians through dependable treatment solutions.
+                <p class="text--white col-lg-9">With a strong focus on long-term therapies, we aim to support patients and physicians through dependable treatment solutions.
                 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-3.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68">Redefining Skin Health & Aesthetic Care</h1>
-                <p class="text--white col-lg-6"> Spanning dermatology, cosmetology, and nutraceuticals, we are building the future of integrated healthcare.
+                <p class="text--white col-lg-9"> Spanning dermatology, cosmetology, and nutraceuticals, we are building the future of integrated healthcare.
 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,26 +101,35 @@
 </section>
 
 <section class="counter-section p-x mt-100">
-    <div class="row gx-md-5">
-        <div class="col-xl-4">
-            <div class="counter-item com_bg_light_blue">
-                <p class="title-24 title--light-blue">Strategic Partnerships </p>
-                <h3 class="counter-number" data-target="50">50+</h3>
+       <div class="row gy-3 gy-lg-0">
+        <div class="col-xl-3">
+            <div class="counter-item company-counter-item com_bg_light_blue">
+
+                <h3 class="counter-number" data-target="10">10+</h3>
+                <p class="title-24 title--light-blue">Years of Excellence </p>
+
             </div>
         </div>
-        <div class="col-xl-4">
-            <div class="counter-item com_bg_light_blue">
-                <p class="title-24 title--light-blue">Formulation Success Rate</p>
-                <h3 class="counter-number" data-target="73">73%</h3>
+        <div class="col-xl-3">
+            <div class="counter-item company-counter-item com_bg_light_blue">
+                <h3 class="counter-number" data-target="350">350+</h3>
+                <p class="title-24 title--light-blue">Team Members </p>
             </div>
         </div>
-        <div class="col-xl-4">
-            <div class="counter-item com_bg_light_blue">
-                <p class="title-24 title--light-blue">Employees Strong</p>
-                <h3 class="counter-number" data-target="2000">2000+</h3>
+        <div class="col-xl-3">
+            <div class="counter-item company-counter-item com_bg_light_blue">
+                <h3 class="counter-number" data-target="300">300+</h3>
+                <p class="title-24 title--light-blue">Molecules in Portfolio</p>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="counter-item company-counter-item com_bg_light_blue">
+                <h3 class="counter-number" data-target="35">35K+</h3>
+                <p class="title-24 title--light-blue">Healthcare professionals connected</p>
             </div>
         </div>
     </div>
+
 </section>
 
 <section class="product-section mt-100">
