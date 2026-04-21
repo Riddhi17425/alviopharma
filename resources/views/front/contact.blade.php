@@ -6,7 +6,7 @@
       <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
    </div>
    <div class="page-header-content p-x">
-      <div class="page-header-text com_bg_blue">
+      <div class="page-header-text com_bg_blue" data-aos="fade-up">
          <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
          <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
       </div>
@@ -15,7 +15,7 @@
 @endif
 <section class="contact p-x mt_80">
    <div class="row gx-0">
-      <div class="col-lg-5">
+      <div class="col-lg-5" data-aos="fade-right">
          <div class="contact_left com_bg_light_blue">
             <div class="contact_left_child">
                <h5 class="title-24 title--blue">Registered & Corporate Office</h5>

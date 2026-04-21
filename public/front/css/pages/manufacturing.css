@@ -86,3 +86,48 @@
   right: 2%;
   bottom: 10%;
 }
+
+
+
+.explore_our_tabs
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.explore_our_tabs .tabs_left
+{
+  width: 30%;
+}
+
+.explore_our_tabs .tabs_left .tabs_link
+{
+  cursor: pointer;
+  border-bottom: 1px solid var(--grey-ddd);
+  padding:40px;
+  transition: all 0.3s ease;
+}
+
+.explore_our_tabs .tabs_left .tabs_link img
+{
+  filter: grayscale(1);
+  transition: all 0.3s ease;
+}
+
+.explore_our_tabs .tabs_left .tabs_link.active img
+{
+  filter: grayscale(0);
+  scale: 1.1;
+}
+
+.explore_our_tabs .tabs_left .tabs_link:hover img
+{
+  scale: 1.1;
+}
+
+
+.explore_our_tabs .tabs_right
+{
+  width: 60%;
+}

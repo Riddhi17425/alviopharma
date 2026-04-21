@@ -70,6 +70,7 @@
 
 .our_respons p {
     position: absolute;
-    top: 10em;
+    top: 11em;
     left: -4em;
+    font-weight: bold;
 }

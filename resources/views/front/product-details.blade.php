@@ -2,11 +2,12 @@
 
 <section class="page-header">
     <div class="inner_hero">
-       <img src="{{ asset('public/front/images/rasavio-banner.webp') }}" class="img-fluid" alt="page-header-img">
-        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> /<a href="{{ url('/') }}">Therapeutic Areas </a> / Rasavio™ Nomo Spot Serum</p>
+        <img src="{{ asset('public/front/images/rasavio-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> /<a href="{{ url('/') }}">
+                Therapeutic Areas </a> / DermaScience Division /Rasavio™ Nomo Spot Serum</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">Targeted Management of Hyperpigmentation & Uneven Skin Tone</h1>
             <p class="text-white page-header-para">Lorem ipsum dolor sit amet consectetur. Vulputate ut dictum
                 ullamcorper hendrerit. Mattis pretium sit metus consectetur dictum nunc ullamcorper. Pretium turpis
@@ -28,15 +29,15 @@
 </section>
 
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
-        <div class="col-md-4">
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-md-4" data-aos="fade-right">
             <img src="{{ asset('public/front/images/product-detail.png') }}" alt="images" class="img-fluid">
         </div>
 
-        <div class="col-md-8 ps-md-5">
-            <h2 class="title-54">Rasavio™ Nomo Spot Serum</h2>
-            <p>Advanced Skin Brightening & Pigmentation Control</p>
+        <div class="col-md-8 ps-md-5" data-aos="fade-left">
+            <p>Carefully chosen world class ingredients for</p>
+            <h2 class="title-54">Under Eye Care</h2>
             <p> <b class="title--blue">Category:</b> Dermaceutical / Prescription-Supportive Topical</p>
             <p>Division: DermaScience</p>
 
@@ -60,12 +61,13 @@
 </section>
 
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-8 pe-md-5">
+        <div class="col-md-8 pe-md-5" data-aos="fade-right">
             <h2 class="title-54 title--dark">Optimized for Compliance and Daily Integration</h2>
-            <p class="my-4">Rasavio™ Nomo Spot Serum features an ultra-light, fast-absorbing liquid formulation designed to integrate
+            <p class="my-4">Rasavio™ Nomo Spot Serum features an ultra-light, fast-absorbing liquid formulation designed
+                to integrate
                 effortlessly into daily skincare routines. The texture ensures high patient compliance without
                 compromising treatment effectiveness.</p>
 
@@ -81,7 +83,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-left">
             <img src="{{ asset('public/front/images/manufacturing.png') }}" alt="images" class="img-fluid">
         </div>
 
@@ -89,126 +91,87 @@
 </section>
 
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
-        <div class="col-xl-4 col-lg-5 col-md-12">
-            <p>Precision in Every Dose. Excellence in Every Batch.</p>
-             <div class="text-center">
-                <img class="img-fluid every_batch_img" src="{{ asset('public/front/images/mastering.png') }}" alt="Mastering">
+<section class="intro-section p-x mt-100 mb-100 text-center">
+    <h2 class="title-54">Ingredient Descriptions</h2>
+    <div class="mt-40">
+        <p>Rasavio™ Nomo Spot Serum is indicated for the management of pigmentation disorders associated with melanin dysregulation, inflammatory processes, and environmental exposure. It may be recommended as a standalone topical or as part of combination dermatological therapy.</p>
+    </div>
+
+
+  <div class="row g-4 mt-40 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+    
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Gosulin Agave</h4>
+            <p class="mb-0">Reduces depth of wrinkles, smoothens the skin surface, effectively retains hydration, and provides a visible, much faster lifting effect.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Hyaluronic Acid</h4>
+            <p class="mb-0">Acts as a potent anti-aging agent, reduces fine wrinkles, increases skin elasticity, and provides deep, long-lasting essential moisturizing.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Coffee Arabica</h4>
+            <p class="mb-0">Specialized extract that reduces the appearance of cellulite, gently exfoliates the surface, and significantly brightens those stubborn dark circles.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Sweet Almond Oil</h4>
+            <p class="mb-0">Nourishes the delicate skin, reduces puffiness, treats chronic dryness, reverses sun damage, and ensures a very smooth skin texture.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Jojoba Oil</h4>
+            <p class="mb-0">Helps in natural collagen synthesis, is exceptionally rich in Vitamin E, and effectively reduces the visible effects of aging.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="manu_card com_bg_light_blue">
+            <h4 class="title-34 mb-3">Vitamin E</h4>
+            <p class="mb-0">Helps smooth the skin, works on reducing scars and stretch marks, and provides deep nourishment with essential Vitamin E.</p>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-right">
+            <p>Lorem ipsums</p>
+            <div class="text-center">
+                <img class="img-fluid every_batch_img" src="{{ asset('public/front/images/product-details-gif.png') }}"
+                    alt="Mastering">
             </div>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12">
-            <h2 class="title-54 title--blue mb-40">Advanced Manufacturing Facilities Designed for Global Healthcare</h2>
+            <h2 class="title-54 title--blue mb-40">Ingredient Concentration List</h2>
 
-            <p>Our manufacturing infrastructure is designed to meet the demands of modern pharmaceutical production
-                while maintaining absolute consistency, safety, and scalability. Each facility integrates automated
-                systems, precision-controlled environments, and validated production lines that support high-quality
-                formulation development across multiple therapeutic segments.</p>
-
-            <p>Every stage — from material handling and formulation to packaging and dispatch — is executed within
-                strictly monitored environments. Automation minimizes variability, enhances accuracy, and ensures that
-                every batch produced reflects uniformity, reliability, and compliance with international manufacturing
-                benchmarks.</p>
-
-            <p>Beyond capacity and technology, our infrastructure reflects a long-term commitment to responsible
-                manufacturing. Built with future-ready systems and sustainability-focused operations, our facilities
-                enable us to scale efficiently while maintaining uncompromised quality standards.</p>
-        </div>
-    </div>
-</section>
-
-<section class="mt-100 mb-100">
-    <div class="p-x">
-        <div class="row gx-md-5">
-            <div class="col-md-3">
-                <div class="indications">
-                    <h3 class="title-80 fw-medium">01.</h3>
-                    <h5 class="title-24">Prepare the Skin</h5>
-                    <p class="mb-0">Begin with clean, dry skin. Gently cleanse the face using a mild, non-irritating cleanser to
-                        remove impurities, excess oil, and environmental residue.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="indications">
-                    <h3 class="title-80 fw-medium">01.</h3>
-                    <h5 class="title-24">Prepare the Skin</h5>
-                    <p class="mb-0">Begin with clean, dry skin. Gently cleanse the face using a mild, non-irritating cleanser to
-                        remove impurities, excess oil, and environmental residue.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="indications">
-                    <h3 class="title-80 fw-medium">01.</h3>
-                    <h5 class="title-24">Prepare the Skin</h5>
-                    <p class="mb-0">Begin with clean, dry skin. Gently cleanse the face using a mild, non-irritating cleanser to
-                        remove impurities, excess oil, and environmental residue.</p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="indications">
-                    <h3 class="title-80 fw-medium">01.</h3>
-                    <h5 class="title-24">Prepare the Skin</h5>
-                    <p class="mb-0">Begin with clean, dry skin. Gently cleanse the face using a mild, non-irritating cleanser to
-                        remove impurities, excess oil, and environmental residue.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="intro-section p-x mt-100 mb-100">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="{{ asset('public/front/images/manufacturing.png') }}" alt="images" class="img-fluid">
-        </div>
-
-        <div class="col-md-6 ps-md-5">
-            <h2 class="title-54" style="color: var(--black-color);">Mastering the Cardio-Metabolic Continuum</h2>
-            <p>CardioMet Care is dedicated to managing the interconnected nature of cardiovascular and metabolic
-                disorders through an integrated therapeutic approach. Rather than treating conditions in isolation, we
-                address the shared physiological pathways that link hypertension, diabetes, and dyslipidemia, enabling
-                more stable and sustainable long-term outcomes.</p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li>4-n-Butyl Resorcinol :- A high-potency tyrosinase inhibitor that directly targets melanin
-                    overproduction, offering effective depigmenting action with improved tolerability compared to
-                    traditional agents.</li>
-                <li>Bellis Perennis (Daisy Flower) Extract :- Supports gradual skin brightening while enhancing overall
-                    clarity and radiance.</li>
-                <li>Niacinamide :- Strengthens the skin barrier, reduces inflammation-associated pigmentation, and
-                    improves skin</li>
-                <li>Ptero White Complex :- A botanical-based complex that supports luminosity and promotes a more
-                    uniform complexion through antioxidant activity.</li>
+            <p>Gosulin Agave - 2% (Maltose Agave Tequilana Extract From Netherlands), Hyaluronic Acid - 1%, Sweet Almond
+                Oil - 2%, Shea Butter - 1%, Jojoba Oil - 2%, Vitamin E - 0.2%, Coffee Arabica Seed Oil - 3% (From
+                France) Under Eye Cream</p>
+            <h5 class="title-24 title--blue">Key Benefits</h5>
+            <ul class="mt-40">
+                <li>Reduces dark circles</li>
+                <li>Reduces tired eyes</li>
+                <li>Reduces puffiness</li>
+                <li>Enhances the skin moisture content</li>
+                <li>Helps with dry skin and reduces signs of ageing</li>
             </ul>
         </div>
     </div>
 </section>
-
-<section class="intro-section p-x mt-100 mb-100 text-center">
-    <h2 class="title-54">Quality, Manufacturing, Compliance & Professional Notice</h2>
-    <div class="mt-40">
-        <p>Rasavio™ Nomo Spot Serum is manufactured in WHO-GMP and ISO 9001 certified facilities, reflecting Alvio
-            Pharma’s
-            commitment to stringent quality systems, controlled manufacturing environments, and formulation consistency.
-            Each batch is dermatologically evaluated for safety and tolerability, and the formulation undergoes
-            stability
-            testing across multiple climatic conditions to ensure sustained performance, efficacy, and shelf-life
-            integrity
-            under real-world storage and usage scenarios.</p>
-
-        <p>The information provided on this page is intended for healthcare professionals and informed consumers and
-            does
-            not replace medical advice or clinical judgment. Treatment decisions should always be based on individual
-            patient assessment, clinical indication, and professional discretion.</p>
-    </div>
-
-</section>
-
 
 @include('layouts.fronttop-footer')
 @include('layouts.frontfooter')

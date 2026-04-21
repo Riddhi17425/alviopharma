@@ -43,6 +43,8 @@ use App\Http\Controllers\CaptchaController;
     Route::get('our-company', [dashboardController::class, 'ourCompany'])->name('our.company');
     Route::get('sustainability', [dashboardController::class, 'sustainability'])->name('sustainability');
     Route::get('therapeutic-area', [dashboardController::class, 'therapeuticArea'])->name('therapeutic.area');
+    Route::get('values-purpose', [dashboardController::class, 'valuesPurpose'])->name('values.purpose');
+
 
     Route::get('products', [dashboardController::class,'productlist'])->name('product');
     Route::get('product-details/{id?}', [dashboardController::class,'productDetails'])->name('product.details');

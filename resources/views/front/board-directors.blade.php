@@ -9,7 +9,7 @@
         </p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}
             </p>
@@ -37,9 +37,9 @@
         </p>
     </div>
 
-    <div class="testimonial-container">
+    <div class="testimonial-container" data-aos="fade-up">
 
-        <div class="profile-card">
+        <div class="profile-card" data-aos="flip-left" data-aos-duration="800">
             <img class="img-fluid profile-img" src="{{ asset('public/front/images/leadership.webp') }}"
                 alt="leadership">
             <div class="profile-info">
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="quote-box com_bg_light_blue">
+        <div class="quote-box com_bg_light_blue" data-aos="fade-up" data-aos-delay="200">
             <span class="quote-icon">
                 <svg width="84" height="58" viewBox="0 0 84 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

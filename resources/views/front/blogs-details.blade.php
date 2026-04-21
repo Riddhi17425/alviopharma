@@ -6,7 +6,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Insights / {{ $blogsdetail->title }}</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white mb-3">{{ $blogsdetail->sub_title }}</h1>
             <p class="text-white page-header-para mb-0">{!! $blogsdetail->header_description !!}</p>
         </div>
@@ -26,18 +26,18 @@
 </section>
 
 @if($blogsdetail)
-<section class="p-x mt_80">
-    <div class="text-center col-lg-9 m-auto mb-3 mb-lg-5">
+<section class="p-x mt_80" data-aos="fade-up">
+    <div class="text-center col-lg-9 m-auto mb-3 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
         <p>{{ \Carbon\Carbon::parse($blogsdetail->date)->format('F d, Y') }}</p>
         <h2 class="title-54">{{ $blogsdetail->title }}</h2>
     </div>
-    <div class="row gx-lg-5 blogs_details">
+    <div class="row gx-lg-5 blogs_details" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-6 col-lg-5 mb-3 mb-md-0">
+        <div class="col-md-6 col-lg-5 mb-3 mb-md-0" data-aos="fade-right">
             <img src="{{ asset('public/Blogs/detail_image/'.$blogsdetail->detail_image) }}" alt="{{  str_replace(['-', '_'],' ', pathinfo($blogsdetail->detail_image, PATHINFO_FILENAME)) }}" class="img-fluid">
         </div>
 
-        <div class="col-md-6 col-lg-7">
+        <div class="col-md-6 col-lg-7" data-aos="fade-left">
            {!! $blogsdetail->short_description !!}
         </div>
 

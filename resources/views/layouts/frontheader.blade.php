@@ -27,6 +27,8 @@
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- 1️⃣ Variables (colors, fonts, spacing) -->
     <link rel="stylesheet" href="{{ asset('public/front/css/style.css') }}">
@@ -46,6 +48,7 @@
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/sience-inno.css') }}">
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/blogs.css') }}">
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/pages/value-purpose.css') }}">
 
     <!-- 6️⃣ Responsive (ALWAYS LAST) -->
     <link rel="stylesheet" href="{{ asset('public/front/css/responsive.css') }}">
@@ -84,7 +87,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown">
-                                    <!-- <a href="{{ route('our.company')}}">Our Company</a> -->
+                                    <a href="{{ route('our.company')}}">Our Company</a>
                                     <a href="{{ route('board.directors')}}">Board of Directors</a>
                                     <a href="{{ route('our.heritage')}}">Our Heritage</a>
                                     <a href="{{ route('sustainability')}}">Sustainability & Responsibility</a>

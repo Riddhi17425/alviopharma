@@ -6,7 +6,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Product List</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">Get in Touch</h1>
             <p class="text-white page-header-para">If you are a medical professional, distributor, or institutional
                 partner and would like to connect with Alvio Pharmaceuticals, please reach out using the details below
@@ -27,13 +27,13 @@
     </div>
 </section>
 
-<section  class="intro-section p-x mt-100">
+<section  class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row">
-        <div class="col-xl-4 col-lg-5 col-md-12">
+        <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-left">
             <p>Precision in Every Dose. Excellence in Every Batch.</p>
         </div>
 
-        <div class="col-xl-8 col-lg-7 col-md-12">
+        <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-right">
             <h2 class="title-54 title--blue mb-40">Advanced Manufacturing Facilities Designed for Global Healthcare</h2>
              <p>Our manufacturing infrastructure is designed to meet the demands of modern pharmaceutical production
                 while maintaining absolute consistency, safety, and scalability. Each facility integrates automated

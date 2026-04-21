@@ -6,7 +6,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Heritage</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}
             </p>

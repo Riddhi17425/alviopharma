@@ -7,7 +7,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Sustainability & Responsibility</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}
             </p>
@@ -28,14 +28,14 @@
 </section>
 @endif
 
-<section class="intro-section mastering_section p-x mt-100">
-    <div class="row align-items-center">
-        <div class="col-xl-4 col-lg-4 col-md-12">
+<section class="intro-section mastering_section p-x mt-100" data-aos="fade-up">
+    <div class="row align-items-center" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-xl-4 col-lg-4 col-md-12" data-aos="fade-right">
             <div class="mastering_img">
                 <img class="img-fluid" src="{{ asset('public/front/images/mastering.png') }}" alt="Mastering">
             </div>
         </div>
-        <div class="col-xl-8 col-lg-7 col-md-12">
+        <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-left">
             <h2 class="title-54 mb-40">Precision-led responsibility for long-term impact</h2>
 
             <p>Our sustainability approach is structured, measurable, and aligned with responsible healthcare delivery. 
@@ -44,8 +44,8 @@
                  and distribution readiness, we aim to reduce environmental impact while upholding consistency, compliance, and patient trust.</p>
         </div>
 
-        <div class="row mt-40">
-            <div class="col-md-6 col-lg-4">
+        <div class="row mt-40" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-40">Responsible Partner Standards</h4>
                     <p class="mb-0">We work with carefully evaluated partners and emphasize documentation discipline,
@@ -55,7 +55,7 @@
 
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-40">Compliance & Governance</h4>
                     <p class="mb-0">Our approach is anchored in ethical conduct and compliance-led processes. We focus
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-40">Value-Chain Sustainability</h4>
                     <p class="mb-0">We take a practical view of impact across the value chain—from sourcing and

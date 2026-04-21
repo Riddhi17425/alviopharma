@@ -7,7 +7,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
@@ -27,12 +27,12 @@
 </section>
 @endif
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
-        <div class="col-xl-4 col-lg-5 col-md-12">
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-right">
             <p>Browse by therapeutic area and find brands faster.</p>
         </div>
-        <div class="col-xl-8 col-lg-7 col-md-12">
+        <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-up">
             <h1 class="title-54 title--blue mb-40">Therapeutic Areas That Help You Navigate Our Portfolio</h1>
 
             <p>Alvio Pharma’s range of <b>finished pharmaceutical formulations</b> is built around therapy-led divisions—so 
@@ -48,13 +48,13 @@
     </div>
 </section>
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
-        <div class="col-md-6">
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-md-6" data-aos="fade-right">
             <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
         </div>
 
-        <div class="col-md-6 ps-md-5">
+        <div class="col-md-6 ps-md-5" data-aos="fade-left">
             <h2 class="title-54" style="color: var(--black-color);">Mastering the Cardio-Metabolic Continuum</h2>
             <p>CardioMet Care is dedicated to managing the interconnected nature of cardiovascular and metabolic
                 disorders through an integrated therapeutic approach. Rather than treating conditions in isolation, we
@@ -85,10 +85,10 @@
 </section>
 
 
-<section class="intro-section p-x mt-100">
-    <div class="row">
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-6 pe-md-5">
+        <div class="col-md-6 pe-md-5" data-aos="fade-right">
             <h2 class="title-54" style="color: var(--black-color);">Advanced Dermal Delivery & Barrier Integrity</h2>
             <p>Our Derma Science division applies rigorous pharmaceutical standards to the science of skin health
                 and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
@@ -116,16 +116,16 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-left">
             <img src="{{ asset('public/front/images/DermaScience.webp') }}" alt="images" class="img-fluid">
         </div>
 
     </div>
 </section>
 
-<section class="mt-100 mb-100">
+<section class="mt-100 mb-100" data-aos="fade-up">
     <div class="p-x">
-        <div class="row justify-content-between align-items-center">
+        <div class="row justify-content-between align-items-center" data-aos="zoom-in" data-aos-delay="100">
             <div class="col-md-7">
                 <div class="state-content">
                     <h2 class="title-54 title--blue mb-4">A Framework for Evidence-Led Therapeutic Decisions</h2>

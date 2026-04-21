@@ -215,6 +215,13 @@ class dashboardController extends Controller
     
         return view('front.product-details');
     }
+
+     public function valuesPurpose()
+    {
+    
+        return view('front.values-purpose');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
