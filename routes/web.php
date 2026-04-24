@@ -16,6 +16,7 @@ use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\MilestoneController;
 use App\Http\Controllers\admin\BrandController;
 use App\Http\Controllers\admin\ClientelController;
+use App\Http\Controllers\admin\KeyIngredientController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\CaptchaController;
 
@@ -70,6 +71,7 @@ use App\Http\Controllers\CaptchaController;
         Route::resource('milestone', MilestoneController::class);
         Route::resource('brand', BrandController::class);
         Route::resource('clientel', ClientelController::class);
+        Route::resource('keyingredient', KeyIngredientController::class)->except(['show']);
         Route::resource('product', ProductController::class);
         Route::prefix('backend')->group(function () {
             // Route::get('home', [adminController::class, 'index'])->name('home');

@@ -53,6 +53,14 @@
                 </a>
             </li>
 
+            <li>
+                <a class="m-link{{ Request::routeIs('keyingredient.*') ? ' active' : '' }}"
+                    href="{{ route('keyingredient.index') }}">
+                    <i class="icofont-ui-flask fs-5"></i>
+                    <span>Key Ingredients</span>
+                </a>
+            </li>
+
 
             <li>
                 <a class="m-link{{ Request::routeIs('blog.index') ? ' active' : '' }}"
