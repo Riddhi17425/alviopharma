@@ -6,8 +6,8 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white mb-3">Values & Purpose</h1>
-            <p class="text-white page-header-para">daf</p>
+            <h1 class="title-34 text--white mb-3">Advancing Science Caring for Life.</h1>
+            <p class="text-white page-header-para">A new generation pharmaceutical company committed to improving lives through innovative healthcare solutions, ethical practices, and unwavering dedication to excellence.</p>
         </div>
         <div class="page-header-btn">
             <a href="{{ route('contact') }}" target="_blank">
@@ -121,7 +121,6 @@
         </div>
       
     </div>
-
 
      <div class="slider-wrapper mt-40">
         <div class="my-carousel">

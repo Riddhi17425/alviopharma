@@ -15,8 +15,8 @@
             <a href="{{ route('contact') }}" target="_blank">
                 <p class="title-24 text--white">Contact us</p>
             </a>
-            <a href="{{ route('contact') }}" target="_blank" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+            <a href="{{ route('contact') }}" target="_blank" class="common-arrow-img"><svg width="32" height="32"
+                    viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z"
                         fill="white" />
                     <path d="M0.75013 30.821L30.8213 0.749882M30.8213 0.749882H7.43255M30.8213 0.749882V24.1385"
@@ -35,21 +35,25 @@
         <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-up">
             <h1 class="title-54 title--blue mb-40">Therapeutic Areas That Help You Navigate Our Portfolio</h1>
 
-            <p>Alvio Pharma’s range of <b>finished pharmaceutical formulations</b> is built around therapy-led divisions—so 
-                the right products are easier to find, compare, and reference. Each division brings together brands 
-                designed for routine practice needs, patient preferences, and long-term care priorities across diverse markets.</p>
+            <p>Alvio Pharma’s range of <b>finished pharmaceutical formulations</b> is built around therapy-led
+                divisions—so
+                the right products are easier to find, compare, and reference. Each division brings together brands
+                designed for routine practice needs, patient preferences, and long-term care priorities across diverse
+                markets.</p>
 
-            <p>Whether you’re looking for <b>Derma Care, Cardio Care, Anti-Diabetes, Urology</b>, or <b>Chronic Supplements</b>, this page helps
-                 you move from therapeutic area to brand with minimal effort. Use the sections below to explore the portfolio and
-                  access the information you need—clearly and efficiently.
-</p>
+            <p>Whether you’re looking for <b>Derma Care, Cardio Care, Anti-Diabetes, Urology</b>, or <b>Chronic
+                    Supplements</b>, this page helps
+                you move from therapeutic area to brand with minimal effort. Use the sections below to explore the
+                portfolio and
+                access the information you need—clearly and efficiently.
+            </p>
         </div>
     </div>
     </div>
 </section>
 
 <section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row" data-aos="zoom-in" data-aos-delay="200">
+    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-md-6" data-aos="fade-right">
             <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
         </div>
@@ -68,14 +72,93 @@
                 <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
                 <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
             </ul>
-            <div class="mt-40 ">
-                <a href="#" class="commo-btn bg-black btn-color-white">Explore Cosmeceutical Portfolio</a>
-                <a href="#" class="commo-btn-arrow bg-black btn-color-white"><svg width="20" height="16"
-                        viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+            <div class="btn_main mt-40">
+                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M0.75001 7.75001L18.75 7.75001ZM18.75 7.75001L11.75 0.749999ZM18.75 7.75001L11.75 14.75Z"
+                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
                             fill="white" />
-                        <path d="M0.75001 7.75001L18.75 7.75001M18.75 7.75001L11.75 0.749999M18.75 7.75001L11.75 14.75"
+                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
+
+        <div class="col-md-6 pe-md-5" data-aos="fade-right">
+            <h2 class="title-54" style="color: var(--black-color);">Advanced Dermal Delivery & Barrier Integrity</h2>
+            <p>Our Derma Science division applies rigorous pharmaceutical standards to the science of skin health
+                and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
+                and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
+            </p>
+
+            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
+            <ul>
+                <li> <b>Biological Empathy:</b> Patient-centric, high-absorption formulations.</li>
+                <li> <b>Algorithmic Precision:</b> Solu-Enhance Tech for deep molecular penetration.</li>
+                <li> <b>Transparent Innovation:</b> Bio-stable, oxidation-resistant delivery systems.</li>
+                <li> <b>Future-Proofing Care: </b> Aceelerating post-procedure dermal regeneration.</li>
+            </ul>
+            <div class="btn_main mt-40">
+                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                            fill="white" />
+                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+            <img src="{{ asset('public/front/images/DermaScience.webp') }}" alt="images" class="img-fluid">
+        </div>
+
+    </div>
+</section>
+
+<section class="intro-section p-x mt-100" data-aos="fade-up">
+    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-md-6" data-aos="fade-right">
+            <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
+        </div>
+
+        <div class="col-md-6 ps-md-5" data-aos="fade-left">
+            <h2 class="title-54" style="color: var(--black-color);">Mastering the Cardio-Metabolic Continuum</h2>
+            <p>CardioMet Care is dedicated to managing the interconnected nature of cardiovascular and metabolic
+                disorders through an integrated therapeutic approach. Rather than treating conditions in isolation, we
+                address the shared physiological pathways that link hypertension, diabetes, and dyslipidemia, enabling
+                more stable and sustainable long-term outcomes.</p>
+
+            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
+            <ul>
+                <li> <b>Biological Empathy:</b> Unified management of the metabolic triad.</li>
+                <li> <b>Algorithmic Precision:</b> CPC Technology for steady-state stability.</li>
+                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
+                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
+            </ul>
+            <div class="btn_main mt-40">
+                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                            fill="white" />
+                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
                             stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
@@ -92,7 +175,7 @@
             <h2 class="title-54" style="color: var(--black-color);">Advanced Dermal Delivery & Barrier Integrity</h2>
             <p>Our Derma Science division applies rigorous pharmaceutical standards to the science of skin health
                 and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
-                 and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
+                and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
             </p>
 
             <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
@@ -102,18 +185,22 @@
                 <li> <b>Transparent Innovation:</b> Bio-stable, oxidation-resistant delivery systems.</li>
                 <li> <b>Future-Proofing Care: </b> Aceelerating post-procedure dermal regeneration.</li>
             </ul>
-            <div class="mt-40 ">
-                <a href="#" class="commo-btn bg-black btn-color-white">Explore Pharmaceutical Portfolio</a>
-                <a href="#" class="commo-btn-arrow bg-black btn-color-white"><svg width="20" height="16"
-                        viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.75001 7.75001L18.75 7.75001ZM18.75 7.75001L11.75 0.749999ZM18.75 7.75001L11.75 14.75Z"
-                            fill="white" />
-                        <path d="M0.75001 7.75001L18.75 7.75001M18.75 7.75001L11.75 0.749999M18.75 7.75001L11.75 14.75"
-                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
+
+
+              <div class="btn_main mt-40">
+            <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+            <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                        fill="white" />
+                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+
+
         </div>
 
         <div class="col-md-6" data-aos="fade-left">
@@ -122,6 +209,8 @@
 
     </div>
 </section>
+
+
 
 <section class="mt-100 mb-100" data-aos="fade-up">
     <div class="p-x">
@@ -224,10 +313,14 @@
 
                     </div>
 
-                    <img src="{{ asset('public/front/images/time-icon.png') }}" class="img-fluid heart-icon" alt="Focus Icon">
-                    <img src="{{ asset('public/front/images/men-icon.png') }}" class="img-fluid men-icon" alt="Focus Icon">
-                    <img src="{{ asset('public/front/images/alvio-logo.png') }}" class="img-fluid alvio-logo" alt="Alvio Logo">
-                    <img src="{{ asset('public/front/images/synergy-icon.png') }}" class="img-fluid puzzle-icon" alt="Heart Icon">
+                    <img src="{{ asset('public/front/images/time-icon.png') }}" class="img-fluid heart-icon"
+                        alt="Focus Icon">
+                    <img src="{{ asset('public/front/images/men-icon.png') }}" class="img-fluid men-icon"
+                        alt="Focus Icon">
+                    <img src="{{ asset('public/front/images/alvio-logo.png') }}" class="img-fluid alvio-logo"
+                        alt="Alvio Logo">
+                    <img src="{{ asset('public/front/images/synergy-icon.png') }}" class="img-fluid puzzle-icon"
+                        alt="Heart Icon">
 
                 </div>
             </div>

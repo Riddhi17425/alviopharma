@@ -238,3 +238,14 @@ footer {
   color: var(--white-color);
   transition: all 0.4s ease-in-out;
 }
+
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #ffffff !important; /* Yahan white ki jagah apna color daal dein (jaise Black ya Dark Blue) */
+}
+
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after {
+    background-color: transparent !important;
+}

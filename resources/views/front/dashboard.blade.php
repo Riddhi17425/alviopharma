@@ -5,7 +5,7 @@
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-1.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Advancing Healthcare with Science & Purpose</h1>
-                <p class="text--white col-lg-9" data-aos="fade-up">Alvio Pharmaceuticals Pvt. Ltd. delivers
+                <p class="text--white" data-aos="fade-up">Alvio Pharmaceuticals Pvt. Ltd. delivers
                     high-quality, scientifically advanced formulations across Pharma, Nutraceuticals, and
                     Cosmeceuticals. Backed by ethical practices and global standards for India and beyond.</p>
                 <!-- <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
@@ -23,7 +23,7 @@
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
-                <p class="text--white col-lg-9" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
+                <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
                     support patients and physicians through dependable treatment solutions.
                 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
@@ -41,7 +41,7 @@
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-3.webp') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Redefining Skin Health & Aesthetic Care</h1>
-                <p class="text--white col-lg-9" data-aos="fade-up"> Spanning dermatology, cosmetology, and
+                <p class="text--white" data-aos="fade-up"> Spanning dermatology, cosmetology, and
                     nutraceuticals, we are building the future of integrated healthcare.
                 </p>
                 <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
@@ -108,7 +108,7 @@
 </section>
 
 <section class="counter-section p-x mt-100">
-    <div class="row gy-3 gy-lg-0">
+    <div class="row">
         <div class="col-xl-3 " data-aos="flip-left" data-aos-duration="800" data-aos-delay="0">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="10">10+</h3>
@@ -261,8 +261,9 @@
     </div>
 </section>
 
-<section class="explore-state p-x mt-100">
-    <div class="row align-items-center">
+<section class="explore-state mt-100" style="margin-top: 100px;"">
+   <div class="p-x">
+     <div class="row align-items-center">
         <div class="col-xl-6">
             <div class="state-content">
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
@@ -324,6 +325,7 @@
         </div>
 
     </div>
+   </div>
 </section>
 
 <section class="blog-section p-x mt-100">

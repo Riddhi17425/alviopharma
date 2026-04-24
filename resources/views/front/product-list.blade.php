@@ -81,7 +81,7 @@
 
         <form method="GET" action="{{ route('product') }}#product-section">
             <div class="search-wrapper">
-                <input type="text" name="search" class="search-input" placeholder="Search product"
+                <input type="search" name="search" class="search-input" placeholder="Search product"
                     value="{{ request('search') }}">
 
             </div>

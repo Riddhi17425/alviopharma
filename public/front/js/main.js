@@ -272,9 +272,9 @@ $(document).ready(function () {
             {
                 breakpoint: 768,
                 settings: {
-                    centerPadding: "5%",
+                    centerPadding: "0%",
                     centerMode: false,
-                } /* Disable center mode on mobile for better fit */,
+                } 
             },
         ],
     });

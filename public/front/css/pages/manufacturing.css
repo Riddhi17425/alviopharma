@@ -131,3 +131,8 @@
 {
   width: 60%;
 }
+
+.quality_driven_slider > div
+{
+  display: grid;
+}

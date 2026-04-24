@@ -108,9 +108,9 @@
                                     </span>
                                 </a>
                                 <div class="dropdown">
-                                    <a href="#">Cardiology</a>
-                                    <a href="#">Neurology</a>
-                                    <a href="#">Oncology</a>
+                                    <a href="therapeutic-area">Cardiology</a>
+                                    <a href="javascript:void(0)">Neurology</a>
+                                    <a href="javascript:void(0)">Oncology</a>
                                 </div>
                             </li>
                         </ul>

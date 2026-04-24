@@ -38,6 +38,7 @@
                 Salud Care India Limited | Stelvio Healthcare | Rebase Lifesciences
             </p>
         </div>
+
         <div class="col-xl-8 col-lg-7 col-md-12">
             <h2 class="title-54 title--blue mb-40" data-aos="fade-right">Quality-Driven Manufacturing Through Trusted
                 Partners
@@ -57,33 +58,54 @@
 
         </div>
 
-        <div class="col-12">
-            <div class="row mt-40 gy-3 gy-lg-0 ">
-                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+    
+        <div class="col-12 mt-40">
+            <div class="featured-product-slider quality_driven_slider">
+                <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
-                        <h4 class="title-34 mb-3">Solids</h4>
-                        <p>Tablets (Coated/Uncoated), Capsules, and Dry Powders.</p>
+                        <h4 class="title-34 mb-3">Tablets</h4>
+                        <p>Precision-manufactured tablet formulations designed for consistent dosage, stability, and
+                            patient convenience.</p>
                     </div>
-
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="mx-2">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-3">Capsules</h4>
+                        <p>Carefully developed capsule formulations made for accurate delivery, reliable performance,
+                            and ease of use.</p>
+                    </div>
+                </div>
+
+                <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
                         <h4 class="title-34 mb-3">Liquids</h4>
-                        <p>Oral Syrups, Suspensions, and Drops.</p>
+                        <p>High-quality liquid formulations created for smooth administration, precise dosing, and
+                            dependable stability.</p>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
-                        <h4 class="title-34 mb-3">Specialized</h4>
-                        <p>Soft Gelatin Capsules and Critical Care Injectables.</p>
+                        <h4 class="title-34 mb-3">Ointments</h4>
+                        <p>Topical ointment formulations prepared for effective application, product consistency, and
+                            controlled performance.</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
-                        <h4 class="title-34 mb-3">Topicals</h4>
-                        <p>Ointments, Creams, and Gels.</p>
+                        <h4 class="title-34 mb-3">Dry Powder</h4>
+                        <p>Specialized dry powder formulations processed for uniformity, stability, and reliable
+                            therapeutic delivery.</p>
+                    </div>
+                </div>
+
+                <div class="mx-2">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-3">Nasal Sprays & Drops</h4>
+                        <p>Nasal formulations developed for accurate administration, product integrity, and convenient
+                            patient use.</p>
                     </div>
                 </div>
 
@@ -95,11 +117,11 @@
 
 
 <section class=" p-x mt-100">
-    <div class="mb-60 text-center">
+    <div class="text-center">
         <p class="mb-2">Our Group Companies</p>
         <h2 class="title-54">Explore Our Manufacturing Partners</h2>
     </div>
-    <div class="explore_our_tabs">
+    <div class="explore_our_tabs mt_80">
         <div class="tabs_left" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <div class="active tabs_link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
                 type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
@@ -169,6 +191,8 @@
         <div class="col-md-6 mb-3 mb-md-0">
             <img src="{{ asset('public/front/images/manufacturing.png') }}" alt="images" class="img-fluid">
         </div>
+
+
 
         <div class="col-md-6 ps-md-5">
             <h2 class="title-54 title--dark mb-40">Zero-Compromise Quality Oversight</h2>

@@ -44,7 +44,7 @@
                  and distribution readiness, we aim to reduce environmental impact while upholding consistency, compliance, and patient trust.</p>
         </div>
 
-        <div class="row mt-40" data-aos="fade-up" data-aos-delay="300">
+        <div class="row gy-3 gy-lg-0 mt-40 gx-0 gx-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                 <div class="manu_card com_bg_light_blue">
                     <h4 class="title-34 mb-40">Responsible Partner Standards</h4>

@@ -86,11 +86,11 @@ a {
   background-color: var(--black-color);
   padding: 14px 52px;
   border-radius: 999px;
-  margin: 2px;
+  margin-right: 2px;
   color: var(--color, var(--white-color));
-  transition: all 0.3s ease;
   border-radius: 100px;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .com_btn2 {
