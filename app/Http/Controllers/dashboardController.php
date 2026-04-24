@@ -209,6 +209,19 @@ class dashboardController extends Controller
         return view('front.product-list', compact('brands','groupedProducts','brandId',
                         'sortOrder','letterFilter','search'));
     }
+
+    public function productDetails()
+    {
+    
+        return view('front.product-details');
+    }
+
+     public function valuesPurpose()
+    {
+    
+        return view('front.values-purpose');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -113,7 +113,6 @@
     border-bottom: 1px solid var(--grey-ddd);
     padding: 24px 0;
     margin-bottom: 40px;
-
 }
 
 .brand_item_lt
@@ -121,5 +120,11 @@
     display: flex;
     align-items: center;
     gap: 50px;
+}
+
+.brand_item_img img
+{
+ width: 140px;
+ height: 140px;
 }
 

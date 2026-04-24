@@ -2,12 +2,13 @@
 
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+       <img src="{{ asset('public/front/images/blogs-banner.webp') }}" class="img-fluid" alt="page-header-img">
+         <p class="text-white inner_hero_nav_link
+         "><a href="{{ url('/') }}">Home</a> / Insights</p>
     </div>
     <div class="page-header-content p-x">
-        <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Insights</p>
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
@@ -31,7 +32,7 @@
 <section class="contact p-x mt_80">
     <div class="row g-lg-5">
          @foreach($blogs as $blog)
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                 <div class="blogs">
                     <img src="{{ asset('public/Blogs/front_image/'.$blog->front_image) }}" alt="blogs" class="w-100">
                     <p class="blogs_data">{{ \Carbon\Carbon::parse($blog->date)->format('F d, Y') }}</p>

@@ -1,0 +1,395 @@
+.values-purpose-section
+{
+    margin: 10em 0;
+}
+
+/* Layout Container */
+.values-container {
+    display: flex;
+    /* gap: 100px; */
+    align-items: center;
+    justify-content: space-between;
+
+    padding-right: 10em;
+}
+
+/* =========================================
+            LEFT COLUMN: TYPOGRAPHY & TABS
+            ========================================= */
+.text-content {
+    flex: 1;
+    max-width: 40%;
+}
+
+.overline {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.title {
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--blue-heading);
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+}
+
+/* --- THE NAV TABS --- */
+.nav-tabs {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 0px;
+}
+
+.tab-link {
+    cursor: pointer;
+    position: relative;
+    /* padding-bottom: 2px; */
+    transition: color 0.3s ease;
+}
+
+.tab-link::after {
+    /* content: ""; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+/* Active Tab Styling */
+.tab-link.active {
+    color: var(--blue-heading);
+    font-weight: 600;
+}
+
+.tab-link.active::after {
+    transform: scaleX(1);
+}
+
+/* --- TAB CONTENT PANES --- */
+.tab-content-container {
+    position: relative;
+    min-height: 150px;
+}
+
+.tab-pane {
+    display: none;
+    /* text-align: justify; */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+            RIGHT COLUMN: THE CLOVER GRAPHIC
+            ========================================= */
+.graphic-content {
+    position: relative;
+}
+
+.clover-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    width: 600px;
+    height: 600px;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+/* Petals */
+.petal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.petal-top {
+    border-radius: 50% 50% 0 50%;
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(48, 122, 189, 0.90) 0%,
+        rgba(136, 184, 228, 0.20) 84.93%
+    );
+}
+.petal-right {
+    border-radius: 50% 50% 50% 0;
+    background: radial-gradient(
+        circle at bottom left,
+       rgba(48, 122, 189, 0.90) 0%,
+        rgba(136, 184, 228, 0.20) 84.93%
+    );
+}
+.petal-bottom {
+    border-radius: 0 50% 50% 50%;
+    background: radial-gradient(
+        circle at top left,
+       rgba(48, 122, 189, 0.90) 0%,
+        rgba(136, 184, 228, 0.20) 84.93%
+    );
+}
+.petal-left {
+    border-radius: 50% 0 50% 50%;
+    background: radial-gradient(
+        circle at top right,
+        rgba(48, 122, 189, 0.90) 0%,
+        rgba(136, 184, 228, 0.20) 84.93%
+    );
+    /* position: relative; */
+}
+
+
+.petal-top .petal-content::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -6px;
+    border-top-style: inset;
+    width: 105%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.petal-bottom .petal-content::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    bottom: -20px;
+    border-bottom-style: groove;
+    width: 105%;
+    height: 100%;
+    border-radius: 50%;
+}
+.petal-left .petal-content::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    border-left-style: inset;
+    width: 100%;
+    height: 105%;
+    border-radius: 50%;
+}
+
+.petal-right .petal-content::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    border-right-style: groove;
+    width: 100%;
+    height: 105%;
+    border-radius: 50%;
+}
+
+.petal-content {
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 25px;
+    transition: opacity 0.3s ease;
+}
+
+.petal-top .petal-content {
+    padding-bottom: 50px;
+}
+.petal-right .petal-content {
+    padding-left: 50px;
+}
+.petal-bottom .petal-content {
+    padding-top: 50px;
+}
+.petal-left .petal-content {
+    padding-right: 50px;
+    position: relative;
+}
+
+/* Letters */
+.letter-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--blue-heading);
+    color: var(--blue-heading);
+    font-size: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.letter-h {
+    top: 0%;
+    left: 0%;
+}
+.letter-e {
+    top: 0%;
+    right: 0%;
+}
+.letter-a {
+    bottom: 0%;
+    right: 0%;
+}
+.letter-l {
+    bottom: 0%;
+    left: 0%;
+}
+
+/* --- ACTIVE STATE HIGHLIGHTS --- */
+.petal.active {
+    z-index: 10;
+}
+
+/* .petal.active p
+{
+    color: var(--blue-heading);
+} */
+
+.petal.active .petal-content::after
+{
+    border-color: #111;
+}
+
+.letter-circle.active {
+    background: var(--blue-heading);
+    color: var(--white-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .values-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-tabs {
+        justify-content: center;
+    }
+    .tab-pane {
+        text-align: center;
+    }
+    .graphic-content {
+        margin-top: 40px;
+        transform: scale(0.9);
+    }
+}
+@media (max-width: 600px) {
+    .graphic-content {
+        transform: scale(0.6);
+        margin-top: -80px;
+        margin-bottom: -80px;
+    }
+}
+
+/* ----------------- */
+
+.slide-item {
+    padding: 20px 15px;
+    outline: none;
+    transform: scale(0.85);
+    opacity: 0.5;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+.slick-center {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+/* The Lift Effect on Hover */
+.card:hover {
+    transform: translateY(-12px);
+}
+
+.img-container {
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 40px 30px 30px 30px;
+    text-align: left;
+}
+
+.card-content .title--dark {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+
+.slider-wrapper .slick-dots li {
+    margin: 0 5px;
+    width: auto;
+    height: auto;
+}
+
+ .slider-wrapper .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    padding: 0;
+    transition: all 0.4s ease;
+}
+
+ .slider-wrapper .slick-dots li button:before {
+    content: none;
+}
+
+ .slider-wrapper .slick-dots li.slick-active button {
+    width: 30px;
+    background-color: #666666;
+    border-radius: 5px;
+}

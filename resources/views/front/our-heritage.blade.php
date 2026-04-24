@@ -1,235 +1,274 @@
 @include('layouts.frontheader')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+
 @if($menubanner)
 <section class="page-header">
-    <div>
-        <img src="{{ asset('public/menubannerimage/'.  $menubanner->image) }}" class="img-fluid" alt="{{ $menubanner->title }}">
+    <div class="inner_hero">
+       <img src="{{ asset('public/front/images/heritage -banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Heritage</p>
     </div>
-    <div class="page-header-content">
-        <div class="page-header-text com_bg_blue">
-            <p class="text-white"><a href="{{ url('/') }}">Home</a> / Who We Are / Our Heritage</p>
+    <div class="page-header-content p-x">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
-            <p class="text-white page-header-para">{!! $menubanner->description !!}
-            </p>
+            <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
         <div class="page-header-btn">
             <a href="{{ route('contact') }}" target="_blank">
                 <p class="title-24 text--white">Contact us</p>
             </a>
-            <a href="{{ route('contact') }}" target="_blank"class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+            <a href="{{ route('contact') }}" target="_blank" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z"
-                        fill="white" />
-                    <path d="M0.75013 30.821L30.8213 0.749882M30.8213 0.749882H7.43255M30.8213 0.749882V24.1385"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z" fill="white" />
+                    <path d="M0.75013 30.821L30.8213 0.749882M30.8213 0.749882H7.43255M30.8213 0.749882V24.1385" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></a>
         </div>
     </div>
 </section>
 @endif
 
-<section class="line-img-section mt-100">
-    <img src="{{ asset('public/front/images/line-img.png') }}" alt="line img" class="line-img">
-    <div class="year-info-section">
-        <div class="year-wraper">
-            @foreach($milestones as $key => $milestone)
-            <div class="year-info-item">
-                @if($key % 2 == 0)
-                    <div class="year">
-                        <p class="title-24 text--white">{{ $milestone->year }}</p>
-                    </div>
-                    <div class="year-content com_bg_light_blue">
-                        <h2 class="title-54">{{ $milestone->title }}</h2>
-                        <p class="title--blue mb-3">{!! $milestone->short_description !!}</p>
-                        <p>{!! $milestone->description !!}</p>
-                    </div>
-                @else
-                    <div class="year-content com_bg_light_blue">
-                        <h2 class="title-54">{{ $milestone->title }}</h2>
-                        <p class="title--blue mb-3">{!! $milestone->short_description !!}</p>
-                        <p>{!! $milestone->description !!}</p>
-                        </div>
+<section class="heritage-timeline mt-100">
+  
+    <nav class="timeline-nav">
+        <button class="timeline-nav__btn timeline-nav__btn--active" data-target="#phase1">01. Foundation</button>
+        <button class="timeline-nav__btn" data-target="#phase2">02. Transformation</button>
+        <button class="timeline-nav__btn" data-target="#phase3">03. Growth</button>
+        <button class="timeline-nav__btn" data-target="#phase4">04. Vision</button>
+        <button class="timeline-nav__btn" data-target="#phase5">05. Expansion</button>
 
-                        <div class="year">
-                            <p class="title-24 text--white">{{ $milestone->year }}</p>
-                        </div>
+    </nav>
 
-                    @endif
-            </div>
-            @endforeach
-            {{-- <div class="year-info-item">
-                <div class="year">
-                    <p class="title-24 text--white">2024</p>
-                </div>
-                <div class="year-content com_bg_light_blue">
-                    <h2 class="title-54">The Aesthetic Frontier</h2>
-                    <p class="title--blue mb-3">Redefining Dermal Care</p>
-                    <p>Launch of "Uncap"—our dedicated cosmeceutical channel. By applying pharmaceutical rigor to
-                        skincare, we began treating skin conditions at the cellular level, merging medical science with
-                        daily wellness.</p>
-                </div>
-            </div>
-            <div class="year-info-item">
-                <div class="year-content com_bg_light_blue">
-                    <h2 class="title-54">Scientific Diversification</h2>
-                    <p class="title--blue mb-3">Beyond the Molecule</p>
-                    <p>Our founders, Manish and Nilesh Dudhwewala, identified a critical need for high-stability chronic
-                        therapies in India. Alvio was established with a singular focus on Ethical Cardio-Diabetology.
-                    </p>
-                </div>
-                <div class="year">
-                    <p class="title-24 text--white">2022</p>
-                </div>
-            </div>
-            <div class="year-info-item">
-                <div class="year">
-                    <p class="title-24 text--white">2020</p>
-                </div>
-                <div class="year-content com_bg_light_blue">
-                    <h2 class="title-54">The Reach of Healing</h2>
-                    <p class="title--blue mb-3">Crossing Borders</p>
-                    <p>Alvio expands its national presence to 16+ states and begins its international journey, exporting
-                        quality formulations to 11 countries. We became a trusted partner for over 35,000 Healthcare
-                        Professionals.</p>
-                </div>
-            </div>
-            <div class="year-info-item">
-                <div class="year-content com_bg_light_blue">
-                    <h2 class="title-54">Engineering Excellence</h2>
-                    <p class="title--blue mb-3">The Standard of Purity</p>
-                    <p>We established our state-of-the-art manufacturing facility in Roorkee, designed to meet stringent
-                        WHO-GMP and ISO standards. This milestone marked our transition into a self-reliant
-                        pharmaceutical manufacturer.</p>
-                </div>
-                <div class="year">
-                    <p class="title-24 text--white">2016</p>
-                </div>
-            </div>
-            <div class="year-info-item">
-                <div class="year">
-                    <p class="title-24 text--white">2012</p>
-                </div>
-                <div class="year-content com_bg_light_blue">
-                    <h2 class="title-54">The Genesis</h2>
-                    <p class="title--blue mb-3">The Foundation of Alvio Pharmaceuticals.</p>
-                    <p>Our founders, Manish and Nilesh Dudhwewala, identified a critical need for high-stability chronic
-                        therapies in India. Alvio was established with a singular focus on Ethical Cardio-Diabetology.
-                    </p>
-                </div>
+    <div class="timeline">
 
-            </div> --}}
+        <div class="timeline__mobile-line"><div class="timeline__mobile-draw"></div></div>
 
-            <svg class="position-absolute" style="top: 0px !important; left: 30% !important;z-index: -1;}" width="354" height="354" viewBox="0 0 354 354" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M67.473 171.481L139.819 74.2776L139.916 74.5613L177.458 184.057L177.221 184.043L67.4801 171.475L67.473 171.481ZM139.711 74.9543L68.085 171.191L176.995 183.706L139.711 74.9543Z" fill="#88B8E4"/>
-<path d="M177.168 184.2L177.075 183.936L139.518 74.3934L139.801 74.4575L243.872 98.0694L243.695 98.2705L177.168 184.2ZM140.009 74.8381L177.283 183.569L243.276 98.2693L140.009 74.8381Z" fill="#88B8E4"/>
-<path d="M243.801 98.3857L243.538 98.3238L139.31 74.6749L139.693 74.4708L224.492 29.2022L224.548 29.3968L243.801 98.3857ZM140.225 74.5561L243.347 97.9517L224.292 29.6736L140.225 74.5561Z" fill="#88B8E4"/>
-<path d="M139.678 74.8451L139.614 74.669L122.012 25.4026L122.249 25.4097L224.997 29.3031L139.678 74.8451ZM122.47 25.7397L139.852 74.3837L223.788 29.5775L122.47 25.7397Z" fill="#88B8E4"/>
-<path d="M122.234 25.733L122.225 25.4071L193.022 19.7907L193.054 19.7942L225.649 29.6489L122.246 25.7344L122.234 25.733ZM192.986 20.118L125.002 25.5155L223.145 29.233L192.986 20.118Z" fill="#88B8E4"/>
-<path d="M294.919 107.461L243.427 98.2859L243.4 98.1854L224.058 28.8357L294.913 107.461L294.919 107.461ZM243.684 98.0027L294.052 106.981L224.722 30.0468L243.678 98.002L243.684 98.0027Z" fill="#88B8E4"/>
-<path d="M294.767 107.958L223.684 28.8982L274.066 54.7722L274.086 54.8264L294.767 107.958ZM225.096 29.9849L293.829 106.437L273.809 55.0034L225.089 29.9841L225.096 29.9849Z" fill="#88B8E4"/>
-<path d="M294.383 107.408L273.397 53.9502L312.315 102.911L294.383 107.408ZM274.476 55.8249L294.58 107.027L311.75 102.718L274.476 55.8249Z" fill="#88B8E4"/>
-<path d="M323.496 126.951L294.091 107.147L312.122 102.629L323.495 126.958L323.496 126.951ZM294.875 107.287L322.715 126.039L311.945 103.005L294.875 107.287Z" fill="#88B8E4"/>
-<path d="M292.244 198.407L291.934 198.353L176.918 183.988L177.103 183.775L243.607 97.8758L243.712 98.0954L292.237 198.407L292.244 198.407ZM177.528 183.77L291.686 197.975L243.536 98.4591L177.535 183.771L177.528 183.77Z" fill="#88B8E4"/>
-<path d="M213.258 293.018L213.172 292.742L176.999 183.673L292.272 198.106L292.093 198.32L213.264 293.019L213.258 293.018ZM177.468 184.089L213.388 292.37L291.668 198.324L177.468 184.089Z" fill="#88B8E4"/>
-<path d="M115.335 267.123L115.215 266.875L67.5166 171.159L67.7979 171.177L177.507 183.859L177.346 184.095L115.335 267.123ZM68.0499 171.517L115.374 266.49L176.921 184.151L68.0499 171.517Z" fill="#88B8E4"/>
-<path d="M49.1801 263.335L49.2199 263.151L67.718 170.844L67.9288 171.264L115.627 266.98L115.352 266.962L49.1872 263.33L49.1801 263.335ZM67.8467 171.826L49.5679 263.034L115.087 266.627L67.8467 171.826Z" fill="#88B8E4"/>
-<path d="M132.605 327.853L48.865 262.995L49.3839 263.02L115.479 266.645L115.511 266.759L132.605 327.853ZM49.8854 263.375L132.036 327.003L115.232 266.956L49.8797 263.368L49.8854 263.375Z" fill="#88B8E4"/>
-<path d="M133.47 328.111L84.8433 306.533L48.3364 262.175L133.463 328.11L133.47 328.111ZM85.0692 306.298L131.175 326.737L50.4178 264.187L85.0692 306.298Z" fill="#88B8E4"/>
-<path d="M49.9074 264.32L33.1312 237.849L18.175 165.85L18.4806 165.767L49.9017 264.313L49.9074 264.32ZM33.4382 237.753L48.8472 262.045L19.1148 168.801L33.4318 237.752L33.4382 237.753Z" fill="#88B8E4"/>
-<path d="M157.945 334.189L157.92 334.186L130.884 327.22L227.326 330.007L227.329 330.332L157.939 334.189L157.945 334.189ZM133.756 327.625L157.975 333.861L223.496 330.216L133.75 327.624L133.756 327.625Z" fill="#88B8E4"/>
-<path d="M132.215 327.647L115.125 266.573L115.395 266.642L213.807 292.657L213.38 292.844L132.215 327.647ZM115.584 267.027L132.419 327.202L212.819 292.729L115.577 267.027L115.584 267.027Z" fill="#88B8E4"/>
-<path d="M131.593 327.571L132.256 327.281L213.408 292.482L213.468 292.639L227.567 330.345L227.323 330.337L131.593 327.571ZM213.231 292.911L133.054 327.292L227.09 330.006L213.231 292.911Z" fill="#88B8E4"/>
-<path d="M227.254 330.428L227.173 330.231L213.074 292.752L213.271 292.722L292.885 279.552L292.385 279.938L227.254 330.428ZM213.517 293.003L227.389 329.911L291.681 280.067L213.51 293.002L213.517 293.003Z" fill="#88B8E4"/>
-<path d="M49.4084 263.823L18.102 165.634L67.9741 171.198L67.942 171.37L49.4148 263.824L49.4084 263.823ZM18.5561 166.009L49.3381 262.548L67.5884 171.48L18.5561 166.009Z" fill="#88B8E4"/>
-<path d="M54.785 88.6271L55.173 88.2676L122.309 25.2846L122.393 25.5149L139.98 74.7406L54.785 88.6271ZM122.175 25.8544L55.7734 88.1396L139.545 74.4842L122.175 25.8544Z" fill="#88B8E4"/>
-<path d="M67.9723 171.523L18.0875 165.958L18.1875 165.755L55.3621 87.8503L67.9723 171.523ZM18.575 165.688L67.5946 171.156L55.2029 88.9307L18.575 165.688Z" fill="#88B8E4"/>
-<path d="M18.4742 165.889L18.1789 165.765L42.2653 99.5773L42.2943 99.548L55.7588 87.7496L18.4742 165.889ZM42.5344 99.7633L19.6169 162.748L54.799 89.02L42.5408 99.764L42.5344 99.7633Z" fill="#88B8E4"/>
-<path d="M41.7123 100.494L52.4967 82.984L122.142 25.4531L122.353 25.6976L55.3912 88.505L41.7123 100.494ZM52.7156 83.2163L43.0996 98.8554L55.1788 88.2734L118.417 28.9425L52.7156 83.2163Z" fill="#88B8E4"/>
-<path d="M67.683 171.743L67.6284 171.367L55.1036 88.2553L55.2613 88.2274L140.135 74.396L139.9 74.7141L67.6893 171.744L67.683 171.743ZM55.4666 88.5232L67.8891 170.934L139.396 74.8399L55.4603 88.5225L55.4666 88.5232Z" fill="#88B8E4"/>
-<path d="M213.564 292.928L213.277 292.85L115.096 266.9L115.226 266.713L177.292 183.646L177.393 183.956L213.564 292.928ZM115.62 266.705L213.081 292.465L177.192 184.369L115.62 266.705Z" fill="#88B8E4"/>
-<path d="M212.914 292.923L213.195 292.591L292.079 198.157L292.083 198.587L292.449 279.945L292.311 279.969L212.914 292.923ZM291.764 199.019L213.724 292.468L292.131 279.676L291.77 199.02L291.764 199.019Z" fill="#88B8E4"/>
-<path d="M292.135 280.435L291.804 198.015L333.133 203.769L333.16 203.993L292.135 280.435ZM292.131 198.376L292.449 279.183L332.773 204.054L292.131 198.376Z" fill="#88B8E4"/>
-<path d="M292.059 199.259L291.779 198.656L243.296 97.9597L294.652 107.087L294.649 107.23L292.065 199.266L292.059 199.259ZM243.848 98.3851L291.778 197.915L294.313 107.349L243.842 98.378L243.848 98.3851Z" fill="#88B8E4"/>
-<path d="M333.022 204.081L291.801 198.339L294.35 106.442L333.022 204.081ZM292.136 198.051L332.778 203.729L294.628 107.993L292.136 198.051Z" fill="#88B8E4"/>
-<path d="M333.161 203.994L332.873 203.975L294.144 106.79L323.254 126.399L323.265 126.472L333.161 203.994ZM294.829 107.64L332.702 202.682L322.956 126.587L294.829 107.64Z" fill="#88B8E4"/>
-<path d="M89.1572 112.282L88.8611 112.164L122.026 25.8007L122.323 25.9118L89.1572 112.282Z" fill="#88B8E4"/>
-<path d="M89.0909 112.359L88.9279 112.087L224.578 29.2569L224.741 29.5285L89.0909 112.359Z" fill="#88B8E4"/>
-<path d="M89.1145 112.096L88.9047 112.341L134.156 151.843L134.366 151.599L89.1145 112.096Z" fill="#88B8E4"/>
-<path d="M134.337 151.869L134.188 151.586L202.959 114.198L203.108 114.481L134.337 151.869Z" fill="#88B8E4"/>
-<path d="M203.19 114.382L202.877 114.301L224.502 29.3534L224.815 29.4338L203.19 114.382Z" fill="#88B8E4"/>
-<path d="M122.287 25.7446L122.051 25.9636L202.917 114.44L203.153 114.221L122.287 25.7446Z" fill="#88B8E4"/>
-<path d="M203.187 114.282L202.878 114.367L226.882 203.985L227.191 203.901L203.187 114.282Z" fill="#88B8E4"/>
-<path d="M226.952 204.093L134.182 151.866L134.336 151.584L227.112 203.812L226.952 204.093Z" fill="#88B8E4"/>
-<path d="M134.099 151.706L117.316 217.229L117.626 217.309L134.409 151.786L134.099 151.706Z" fill="#88B8E4"/>
-<path d="M227.012 203.865L117.421 217.039L117.459 217.36L227.05 204.186L227.012 203.865Z" fill="#88B8E4"/>
-<path d="M18.4351 166.001L18.2446 165.746L88.9135 112.091L89.1033 112.353L18.4351 166.001Z" fill="#88B8E4"/>
-<path d="M89.1628 112.178L88.8539 112.264L117.295 217.285L117.604 217.199L89.1628 112.178Z" fill="#88B8E4"/>
-<path d="M277.944 139.633L202.984 114.493L203.083 114.186L278.043 139.326L277.944 139.633Z" fill="#88B8E4"/>
-<path d="M227.156 204.057L226.908 203.854L277.869 139.379L278.117 139.582L227.156 204.057Z" fill="#88B8E4"/>
-<path d="M224.809 29.3272L224.521 29.4694L277.856 139.56L278.144 139.418L224.809 29.3272Z" fill="#88B8E4"/>
-<path d="M294.472 107.124L277.85 139.397L278.134 139.546L294.756 107.272L294.472 107.124Z" fill="#88B8E4"/>
-<path d="M332.788 204.16L277.872 139.587L278.115 139.374L333.036 203.954L332.788 204.16Z" fill="#88B8E4"/>
-<path d="M227.034 204.114L227.031 203.789L332.914 203.893L332.91 204.217L227.034 204.114Z" fill="#88B8E4"/>
-<path d="M223.892 257.969L226.872 203.949L227.193 203.965L224.212 257.985L223.892 257.969Z" fill="#88B8E4"/>
-<path d="M224.106 257.838L224.01 258.146L292.462 279.677L292.558 279.368L224.106 257.838Z" fill="#88B8E4"/>
-<path d="M224.119 258.122L223.977 257.834L332.84 203.911L332.982 204.2L224.119 258.122Z" fill="#88B8E4"/>
-<path d="M227.209 330.017L223.889 257.985L224.207 257.968L227.526 330.001L227.209 330.017Z" fill="#88B8E4"/>
-<path d="M223.941 257.795L132.157 327.522L132.349 327.78L224.134 258.053L223.941 257.795Z" fill="#88B8E4"/>
-<path d="M117.517 217.111L117.403 217.412L223.994 258.152L224.108 257.85L117.517 217.111Z" fill="#88B8E4"/>
-<path d="M117.277 217.184L96.5141 279.408L96.8175 279.51L117.581 217.287L117.277 217.184Z" fill="#88B8E4"/>
-<path d="M132.089 327.735L96.5112 279.549L96.771 279.357L132.348 327.543L132.089 327.735Z" fill="#88B8E4"/>
-<path d="M96.4797 279.403L84.7075 306.432L85.0005 306.562L96.7727 279.532L96.4797 279.403Z" fill="#88B8E4"/>
-<path d="M96.5888 279.607L49.4624 263.173L49.5675 262.866L96.6939 279.3L96.5888 279.607Z" fill="#88B8E4"/>
-<path d="M224.025 257.847L96.6108 279.272L96.6628 279.591L224.077 258.166L224.025 257.847Z" fill="#88B8E4"/>
-<path d="M96.5122 279.546L51.3303 212.485L51.5957 212.3L96.7776 279.361L96.5122 279.546Z" fill="#88B8E4"/>
-<path d="M117.466 217.087L51.4721 212.22L51.4482 212.542L117.442 217.409L117.466 217.087Z" fill="#88B8E4"/>
-<path d="M88.8165 112.155L51.3569 212.359L51.6564 212.473L89.116 112.268L88.8165 112.155Z" fill="#88B8E4"/>
-<path d="M51.3301 212.484L18.2134 165.97L18.4731 165.778L51.5891 212.298L51.3301 212.484Z" fill="#88B8E4"/>
-<path d="M33.3351 237.937L33.0716 237.758L51.3318 212.304L51.5952 212.483L33.3351 237.937Z" fill="#88B8E4"/>
-<path d="M88.9109 112.352L52.5016 83.0532L52.7035 82.8029L89.1134 112.095L88.9109 112.352Z" fill="#88B8E4"/>
-<path d="M160.647 68.4072L160.384 68.2284L193.015 19.7906L193.285 19.9701L160.647 68.4072Z" fill="#88B8E4"/>
-<path d="M203.136 114.458L202.932 114.214L273.738 54.474L273.95 54.7184L203.136 114.458Z" fill="#88B8E4"/>
-<path d="M136.061 151.796C135.956 152.74 135.113 153.419 134.178 153.315C133.243 153.21 132.571 152.362 132.676 151.419C132.781 150.475 133.624 149.796 134.559 149.9C135.494 150.005 136.166 150.853 136.061 151.796Z" fill="#88B8E4"/>
-<path d="M90.6086 112.443C90.5034 113.387 89.6611 114.066 88.7259 113.962C87.7907 113.857 87.1188 113.009 87.224 112.066C87.3293 111.122 88.1716 110.443 89.1068 110.547C90.042 110.652 90.7139 111.5 90.6086 112.443Z" fill="#88B8E4"/>
-<path d="M119.126 217.267C119.021 218.211 118.179 218.89 117.243 218.785C116.308 218.681 115.636 217.833 115.742 216.889C115.847 215.946 116.689 215.267 117.624 215.371C118.56 215.476 119.231 216.324 119.126 217.267Z" fill="#88B8E4"/>
-<path d="M53.0247 212.673C52.9194 213.617 52.0771 214.296 51.1419 214.192C50.2067 214.087 49.5348 213.239 49.6401 212.296C49.7453 211.352 50.5876 210.673 51.5228 210.777C52.458 210.882 53.1299 211.73 53.0247 212.673Z" fill="#88B8E4"/>
-<path d="M96.4993 281.056C97.434 281.161 98.2769 280.481 98.3821 279.538C98.4873 278.595 97.8149 277.746 96.8802 277.642C95.9456 277.538 95.1027 278.218 94.9975 279.16C94.8923 280.103 95.5647 280.952 96.4993 281.056Z" fill="#88B8E4"/>
-<path d="M225.732 258.002C225.626 258.945 224.784 259.625 223.849 259.52C222.914 259.416 222.242 258.568 222.347 257.624C222.452 256.681 223.295 256.002 224.23 256.106C225.165 256.21 225.837 257.059 225.732 258.002Z" fill="#88B8E4"/>
-<path d="M228.584 203.968C228.479 204.911 227.637 205.59 226.701 205.486C225.766 205.382 225.094 204.534 225.2 203.59C225.305 202.647 226.147 201.968 227.082 202.072C228.018 202.176 228.689 203.024 228.584 203.968Z" fill="#88B8E4"/>
-<path d="M204.827 114.562C204.722 115.505 203.88 116.184 202.945 116.08C202.009 115.975 201.338 115.127 201.443 114.184C201.548 113.241 202.39 112.561 203.326 112.666C204.261 112.77 204.933 113.618 204.827 114.562Z" fill="#88B8E4"/>
-<path d="M279.533 139.713C279.428 140.657 278.586 141.336 277.651 141.231C276.715 141.127 276.044 140.279 276.149 139.336C276.254 138.392 277.096 137.713 278.032 137.817C278.967 137.922 279.639 138.77 279.533 139.713Z" fill="#88B8E4"/>
-<path d="M162.768 68.6401C162.663 69.5836 161.82 70.2628 160.885 70.1585C159.95 70.0541 159.278 69.2059 159.383 68.2625C159.488 67.3191 160.331 66.6399 161.266 66.7442C162.201 66.8486 162.873 67.6967 162.768 68.6401Z" fill="#88B8E4"/>
-<path d="M334.686 204.184C334.556 205.352 333.509 206.197 332.357 206.069C331.206 205.94 330.37 204.885 330.5 203.717C330.631 202.549 331.671 201.71 332.829 201.839C333.987 201.968 334.816 203.023 334.686 204.184Z" fill="#88B8E4"/>
-<path d="M294.376 198.304C294.216 199.735 292.935 200.768 291.517 200.61C290.098 200.452 289.076 199.162 289.236 197.731C289.395 196.3 290.676 195.266 292.095 195.425C293.514 195.583 294.536 196.873 294.376 198.304Z" fill="#88B8E4"/>
-<path d="M215.48 293.268C215.32 294.699 214.039 295.732 212.62 295.574C211.201 295.416 210.179 294.126 210.339 292.694C210.499 291.263 211.78 290.23 213.199 290.388C214.617 290.547 215.639 291.837 215.48 293.268Z" fill="#88B8E4"/>
-<path d="M295.109 279.437C294.949 280.868 293.668 281.901 292.249 281.743C290.83 281.584 289.808 280.294 289.968 278.863C290.128 277.432 291.409 276.399 292.828 276.557C294.246 276.716 295.268 278.006 295.109 279.437Z" fill="#88B8E4"/>
-<path d="M229.196 330.646C229.079 331.692 228.145 332.445 227.108 332.33C226.071 332.214 225.326 331.273 225.443 330.227C225.559 329.181 226.494 328.427 227.531 328.543C228.568 328.659 229.313 329.6 229.196 330.646Z" fill="#88B8E4"/>
-<path d="M157.436 335.59C158.223 335.678 158.933 335.106 159.021 334.312C159.11 333.518 158.544 332.803 157.757 332.715C156.97 332.627 156.26 333.2 156.171 333.994C156.083 334.788 156.649 335.503 157.436 335.59Z" fill="#88B8E4"/>
-<path d="M134.418 327.888C134.258 329.319 132.977 330.352 131.559 330.194C130.14 330.036 129.118 328.746 129.278 327.315C129.437 325.884 130.718 324.85 132.137 325.009C133.556 325.167 134.578 326.457 134.418 327.888Z" fill="#88B8E4"/>
-<path d="M85.9593 306.705C85.8576 307.616 85.0443 308.266 84.1473 308.166C83.2502 308.066 82.6009 307.246 82.7019 306.341C82.8029 305.436 83.6168 304.78 84.5139 304.88C85.4109 304.98 86.0602 305.8 85.9593 306.705Z" fill="#88B8E4"/>
-<path d="M117.64 267.382C117.48 268.813 116.199 269.846 114.78 269.688C113.362 269.529 112.34 268.239 112.499 266.808C112.659 265.377 113.94 264.344 115.359 264.502C116.778 264.66 117.799 265.95 117.64 267.382Z" fill="#88B8E4"/>
-<path d="M51.63 263.611C51.4704 265.042 50.1892 266.075 48.7705 265.917C47.3518 265.758 46.3298 264.468 46.4895 263.037C46.6492 261.606 47.9303 260.573 49.349 260.731C50.7678 260.889 51.7897 262.18 51.63 263.611Z" fill="#88B8E4"/>
-<path d="M35.1802 238.494C35.0835 239.36 34.3113 239.989 33.4461 239.892C32.5808 239.796 31.9718 239.019 32.0692 238.147C32.1665 237.274 32.938 236.652 33.7969 236.747C34.6558 236.843 35.2776 237.621 35.1802 238.494Z" fill="#88B8E4"/>
-<path d="M180.065 184.029C179.905 185.46 178.624 186.494 177.205 186.335C175.786 186.177 174.764 184.887 174.924 183.456C175.084 182.025 176.365 180.992 177.784 181.15C179.202 181.308 180.224 182.598 180.065 184.029Z" fill="#88B8E4"/>
-<path d="M70.5089 172.125C70.3493 173.556 69.0681 174.589 67.6494 174.431C66.2307 174.273 65.2087 172.983 65.3684 171.552C65.5281 170.12 66.8092 169.087 68.2279 169.245C69.6467 169.404 70.6686 170.694 70.5089 172.125Z" fill="#88B8E4"/>
-<path d="M20.0841 165.947C19.9882 166.807 19.2238 167.424 18.3712 167.328C17.5187 167.233 16.9089 166.464 17.0049 165.604C17.1008 164.744 17.8653 164.127 18.7178 164.222C19.5703 164.317 20.1801 165.087 20.0841 165.947Z" fill="#88B8E4"/>
-<path d="M58.089 89C57.9293 90.4312 56.6482 91.4643 55.2295 91.306C53.8107 91.1477 52.7888 89.8577 52.9485 88.4265C53.1081 86.9953 54.3893 85.9622 55.808 86.1205C57.2267 86.2788 58.2487 87.5689 58.089 89Z" fill="#88B8E4"/>
-<path d="M142.535 75.1647C142.376 76.5958 141.094 77.629 139.676 77.4707C138.257 77.3124 137.235 76.0223 137.395 74.5912C137.554 73.16 138.836 72.1269 140.254 72.2852C141.673 72.4435 142.695 73.7335 142.535 75.1647Z" fill="#88B8E4"/>
-<path d="M124.897 26.2254C124.737 27.6565 123.456 28.6896 122.037 28.5314C120.618 28.3731 119.596 27.083 119.756 25.6518C119.916 24.2207 121.197 23.1876 122.616 23.3458C124.034 23.5041 125.056 24.7942 124.897 26.2254Z" fill="#88B8E4"/>
-<path d="M195.422 19.7671C195.305 20.8132 194.364 21.5724 193.327 21.4567C192.29 21.341 191.539 20.393 191.656 19.3469C191.772 18.3008 192.714 17.5417 193.751 17.6574C194.788 17.7731 195.539 18.721 195.422 19.7671Z" fill="#88B8E4"/>
-<path d="M227.159 30.3181C227 31.7493 225.719 32.7824 224.3 32.6241C222.881 32.4659 221.859 31.1758 222.019 29.7446C222.178 28.3135 223.46 27.2803 224.878 27.4386C226.297 27.5969 227.319 28.887 227.159 30.3181Z" fill="#88B8E4"/>
-<path d="M246.052 98.1505C245.892 99.5817 244.611 100.615 243.192 100.457C241.774 100.298 240.752 99.0082 240.911 97.577C241.071 96.1459 242.352 95.1127 243.771 95.271C245.19 95.4293 246.212 96.7194 246.052 98.1505Z" fill="#88B8E4"/>
-<path d="M275.601 54.196C275.464 55.4217 274.367 56.3065 273.152 56.1709C271.936 56.0353 271.061 54.9306 271.198 53.7048C271.335 52.479 272.432 51.5943 273.647 51.7298C274.862 51.8654 275.737 52.9702 275.601 54.196Z" fill="#88B8E4"/>
-<path d="M296.816 107.675C296.656 109.107 295.375 110.14 293.956 109.981C292.537 109.823 291.515 108.533 291.675 107.102C291.835 105.671 293.116 104.638 294.535 104.796C295.953 104.954 296.975 106.244 296.816 107.675Z" fill="#88B8E4"/>
-<path d="M312.113 104.748C313.114 104.86 314.017 104.132 314.13 103.122C314.242 102.111 313.522 101.202 312.521 101.09C311.519 100.979 310.616 101.707 310.503 102.717C310.391 103.727 311.111 104.637 312.113 104.748Z" fill="#88B8E4"/>
-<path d="M323.262 129.072C324.681 129.231 325.961 128.198 326.121 126.766C326.281 125.334 325.26 124.045 323.84 123.887C322.421 123.728 321.14 124.761 320.981 126.193C320.821 127.625 321.842 128.914 323.262 129.072Z" fill="#88B8E4"/>
-<path d="M54.4175 82.6922C54.3079 83.6741 53.4303 84.3819 52.4569 84.2733C51.4835 84.1647 50.7834 83.2809 50.8929 82.299C51.0025 81.317 51.8801 80.6093 52.8535 80.7179C53.8269 80.8264 54.527 81.7103 54.4175 82.6922Z" fill="#88B8E4"/>
-<path d="M43.3321 100.075C43.2354 100.941 42.4568 101.569 41.5979 101.473C40.7391 101.377 40.118 100.593 40.2147 99.727C40.3113 98.8606 41.0899 98.2327 41.9488 98.3286C42.8077 98.4244 43.4287 99.2084 43.3321 100.075Z" fill="#88B8E4"/>
+        <svg class="timeline__svg-desktop" viewBox="0 0 1200 3200">
+    <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#307abd"/>
+            <stop offset="50%" stop-color="#307abd"/>
+            <stop offset="100%" stop-color="#307abd"/>
+        </linearGradient>
+    </defs>
+    
+    <path class="timeline__path-base" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+    <path class="timeline__path-base" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+    <path class="timeline__path-base" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
+
+    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
 </svg>
-
+        
+        <div id="phase1" class="timeline__item timeline__item--right" style="--d-top: 200px;">
+            <div class="timeline__node">2003</div>
+            <div class="timeline__card"> 
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 1: Foundation</span></div>
+                <h2 class="timeline__title">The Beginning</h2>
+                <p class="timeline__desc">Salud Care was founded by Mr. Basudev Dudhwewala, Mr. Shiv Kumar Dudhwewala, and Mr. Manish Dudhwewala as a marketing-focused pharmaceutical firm operating in West Bengal and Bihar.</p>
+            </div>
         </div>
-    </div>
 
+        <div class="timeline__item timeline__item--left" style="--d-top: 500px;">
+            <div class="timeline__node">2007</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 1: Foundation</span></div>
+                <h2 class="timeline__title">First Expansion</h2>
+                <p class="timeline__desc">The company established its first manufacturing setup following relocation to Roorkee, Uttarakhand, marking a significant operational milestone.</p>
+            </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" style="--d-top: 800px;">
+            <div class="timeline__node">2010</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 1: Foundation</span></div>
+                <h2 class="timeline__title">Strategic Leadership</h2>
+                <p class="timeline__desc">Mr. Nilesh Dudhwewala joined the business. Alvio was introduced as a cardio-diabetic division, expanding into East and North-East India.</p>
+            </div>
+        </div>
+
+        <div id="phase2" class="timeline__item timeline__item--left" style="--d-top: 1100px;">
+            <div class="timeline__node">2013</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 2: Transformation</span></div>
+                <h2 class="timeline__title">Expansion & Shift</h2>
+                <p class="timeline__desc">Operations expanded into Gujarat and Maharashtra, with Ahmedabad becoming a key operational base.</p>
+            </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" style="--d-top: 1400px;">
+            <div class="timeline__node">2016</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 2: Transformation</span></div>
+                <h2 class="timeline__title">Structural Evolution</h2>
+                <p class="timeline__desc">Salud Care underwent restructuring into two entities. Alvio emerged as a separate cardio-diabetic-focused business.</p>
+            </div>
+        </div>
+
+        <div class="timeline__item timeline__item--left" style="--d-top: 1700px;">
+            <div class="timeline__node">2018</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 2: Transformation</span></div>
+                <h2 class="timeline__title">Division Strengthening</h2>
+                <p class="timeline__desc">The cardio division was further segmented into Hales and Osler, enhancing focus across therapeutic segments.</p>
+            </div>
+        </div>
+
+        <div id="phase3" class="timeline__item timeline__item--right" style="--d-top: 2000px;">
+            <div class="timeline__node">2020</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 3: Growth</span></div>
+                <h2 class="timeline__title">Global Vision</h2>
+                <p class="timeline__desc">Stelvio Healthcare LLP was established to expand nutraceutical exports across international markets.</p>
+            </div>
+        </div>
+
+        <div class="timeline__item timeline__item--left" style="--d-top: 2300px;">
+            <div class="timeline__node">2023</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 3: Growth</span></div>
+                <h2 class="timeline__title">Expansion & Acquisition</h2>
+                <p class="timeline__desc">A nutraceutical plant was established in Ahmedabad. Rebase Lifesciences was acquired, strengthening group capabilities.</p>
+            </div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" style="--d-top: 2600px;">
+            <div class="timeline__node">2024</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 3: Growth</span></div>
+                <h2 class="timeline__title">Dermatology Expansion</h2>
+                <p class="timeline__desc">Launch of “Rasavio & UNCAP” marked Alvio’s entry into dermocosmetics, integrating pharmaceutical science with skincare innovation.</p>
+            </div>
+        </div>
+
+        <div id="phase4" class="timeline__item timeline__item--left" style="--d-top: 2900px;">
+            <div class="timeline__node">2030</div>
+            <div class="timeline__card">
+                <div class="timeline__tag"><div class="timeline__tag-line"></div><span class="timeline__tag-text">Phase 4: Future</span></div>
+                <h2 class="timeline__title">Vision Ahead</h2>
+                <p class="timeline__desc">Alvio aims to achieve ₹500 Crores in revenue, with expansion across Cardio-diabetic, Dermatology, and Nutraceutical segments.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
+
+<script>
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// 1. Initialize Desktop SVG Paths
+document.querySelectorAll(".draw-path").forEach((path) => {
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+});
+
+// 2. Draw both desktop SVG AND mobile gradient line concurrently
+gsap.to([".draw-path", ".timeline__mobile-draw"], {
+    strokeDashoffset: 0,
+    height: "100%", 
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".timeline",
+        start: "top center", 
+        end: "bottom bottom", 
+        scrub: 1 
+    }
+});
+
+// 3. Responsive Card Animations via MatchMedia
+let mm = gsap.matchMedia();
+
+// Desktop Rules
+mm.add("(min-width: 993px)", () => {
+    gsap.utils.toArray(".timeline__card").forEach((card) => {
+        gsap.to(card, {
+            opacity: 1,
+            y: "-50%", 
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 80%", 
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+});
+
+// Mobile/Tablet Rules
+mm.add("(max-width: 992px)", () => {
+    gsap.utils.toArray(".timeline__card").forEach((card) => {
+        gsap.to(card, {
+            opacity: 1,
+            y: "0%", 
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%", 
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+});
+
+// 4. Tab Navigation Click Event (Smooth Scroll)
+document.querySelectorAll('.timeline-nav__btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        gsap.to(window, {
+            duration: 1.2,
+            scrollTo: { y: targetId, offsetY: window.innerHeight / 3 },
+            ease: "power4.inOut"
+        });
+    });
+});
+
+// 5. Dynamic Active Tab State Syncing on Scroll
+const sections = ["#phase1", "#phase2", "#phase3", "#phase4"];
+sections.forEach((id, index) => {
+    const nextId = sections[index + 1];
+    ScrollTrigger.create({
+        trigger: id,
+        start: "top center",
+        end: nextId ? "top center" : "bottom top", 
+        onToggle: (self) => {
+            if (self.isActive) {
+                document.querySelectorAll('.timeline-nav__btn').forEach(btn => btn.classList.remove('timeline-nav__btn--active'));
+                document.querySelector(`.timeline-nav__btn[data-target="${id}"]`).classList.add('timeline-nav__btn--active');
+            }
+        }
+    });
+});
+
+// 6. Show/Hide Navigation Menu bound to Timeline Section (Top & Bottom Fix)
+ScrollTrigger.create({
+    trigger: ".heritage-timeline",
+    start: "top center",    
+    end: "bottom center",   
+    toggleClass: { 
+        targets: ".timeline-nav", 
+        className: "is-visible" 
+    }
+});
+
+// 7. Auto-Active Timeline Nodes on Scroll
+gsap.utils.toArray(".timeline__item").forEach((item) => {
+    const node = item.querySelector(".timeline__node");
+    
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top 75%", // Jab item screen ke thoda andar aayega (75% height par)
+        onEnter: () => node.classList.add("is-active"), // Niche aate waqt active karega
+        onLeaveBack: () => node.classList.remove("is-active") // Wapas upar jane par deactivate karega
+    });
+});
+
+</script>
 
 @include('layouts.fronttop-footer')
 @include('layouts.frontfooter')

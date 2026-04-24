@@ -30,7 +30,7 @@
 .blo_imgs_noise_2 {
   position: absolute;
   bottom: -25%;
-  right: 40px;
+  right: 0;
 }
 
 .blogs {
@@ -58,3 +58,16 @@
 .blogs:hover .title-24 {
   color: var(--blue-heading);
 }
+
+.inner_hero
+{
+  position: relative;
+}
+
+.inner_hero_nav_link {
+    position: absolute;
+    bottom: 4.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

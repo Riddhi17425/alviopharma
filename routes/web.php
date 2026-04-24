@@ -44,9 +44,15 @@ use App\Http\Controllers\CaptchaController;
     Route::get('our-company', [dashboardController::class, 'ourCompany'])->name('our.company');
     Route::get('sustainability', [dashboardController::class, 'sustainability'])->name('sustainability');
     Route::get('therapeutic-area', [dashboardController::class, 'therapeuticArea'])->name('therapeutic.area');
+    Route::get('values-purpose', [dashboardController::class, 'valuesPurpose'])->name('values.purpose');
+
 
     Route::get('products', [dashboardController::class,'productlist'])->name('product');
+<<<<<<< HEAD
     Route::get('products-details/{url}', [dashboardController::class,'productdetail'])->name('product.detail');
+=======
+    Route::get('product-details/{id?}', [dashboardController::class,'productDetails'])->name('product.details');
+>>>>>>> e6828e12089ab55ed0fc306c4bc15bba39ce2fd7
     
 
     Route::get('/captcha-image', [CaptchaController::class, 'image'])->name('captcha.image');  

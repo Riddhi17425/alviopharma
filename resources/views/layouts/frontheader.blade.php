@@ -27,6 +27,8 @@
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- 1️⃣ Variables (colors, fonts, spacing) -->
     <link rel="stylesheet" href="{{ asset('public/front/css/style.css') }}">
@@ -46,6 +48,7 @@
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/sience-inno.css') }}">
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/blogs.css') }}">
     <link rel="stylesheet" href="{{ asset('public/front/css/pages/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/pages/value-purpose.css') }}">
 
     <!-- 6️⃣ Responsive (ALWAYS LAST) -->
     <link rel="stylesheet" href="{{ asset('public/front/css/responsive.css') }}">
@@ -105,16 +108,16 @@
                                     </span>
                                 </a>
                                 <div class="dropdown">
-                                    <a href="#">Cardiology</a>
-                                    <a href="#">Neurology</a>
-                                    <a href="#">Oncology</a>
+                                    <a href="therapeutic-area">Cardiology</a>
+                                    <a href="javascript:void(0)">Neurology</a>
+                                    <a href="javascript:void(0)">Oncology</a>
                                 </div>
                             </li>
                         </ul>
                     </nav>
-                    <a href="{{ route('contact')}}" class="commo-btn contact_btn">Contact Us</a>
+                    <a href="{{ route('contact')}}" class="commo-btn contact_btn">Get in Touch</a>
 
-                    <button class="menu-toggle-btn d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    <button class="menu-toggle-btn" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle menu">
 
                         <svg class="menu-icon-svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -139,140 +142,56 @@
     <div class="offcanvas offcanvas-bottom offcanvas-full com_bg_black" tabindex="-1" id="offcanvasRight"
         data-bs-scroll="true" data-bs-backdrop="false">
         <div class="offcanvas-body">
-            <div class="mega_menu">
-                <div class="mega_menu_tabs" id="v-pills-tab" role="tablist">
-                    <p class="text-white mb-4">Expertise</p>
+            <div class="mobile-menu-wrap p-x">
 
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-profile" type="button">
-                        <span>Home</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
+                <ul class="mobile-menu-list">
+                    <li><a href="{{ url('/') }}" data-bs-dismiss="offcanvas">Home</a></li>
+                    <li><a href="{{ route('manufacturing') }}" data-bs-dismiss="offcanvas">Manufacturing & Quality</a></li>
+                    <li><a href="{{ route('blogs') }}" data-bs-dismiss="offcanvas">Insights</a></li>
+                </ul>
 
-                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-home" type="button">
-                        <span> Who We Are</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
+                <div class="accordion mobile-menu-accordion" id="mobileMenuAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="mobileWhoWeAreHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mobileWhoWeAre" aria-expanded="false" aria-controls="mobileWhoWeAre">
+                                Who We Are
+                            </button>
+                        </h2>
+                        <div id="mobileWhoWeAre" class="accordion-collapse collapse" aria-labelledby="mobileWhoWeAreHeading"
+                            data-bs-parent="#mobileMenuAccordion">
+                            <div class="accordion-body">
+                                <ul class="mobile-submenu-list">
+                                    <!-- <li><a href="{{ route('our.company') }}" data-bs-dismiss="offcanvas">Our Company</a></li> -->
+                                    <li><a href="{{ route('board.directors') }}" data-bs-dismiss="offcanvas">Board of Directors</a></li>
+                                    <li><a href="{{ route('our.heritage') }}" data-bs-dismiss="offcanvas">Our Heritage</a></li>
+                                    <li><a href="{{ route('sustainability') }}" data-bs-dismiss="offcanvas">Sustainability & Responsibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-disabled" type="button">
-                        <span> Therapeutic Areas</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-
-                    </button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-messages" type="button">
-                        <span> Our Science & Innovation</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-settings" type="button">
-                        <span> Manufacturing & Quality</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
-
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="Insights" type="button">
-                        <span>Insights</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
-
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-settings" type="button">
-                        <span> Contact Us</span>
-                        <span>
-                            <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.949 43.2281C17.1146 43.449 17.9427 43.6146 18.7157 43.6146C19.8198 43.6146 22.1386 41.6823 28.9844 34.7813L37.8178 25.9479L28.9844 17.1146C21.0896 9.16458 19.9855 8.28125 18.4948 8.39167C17.1146 8.55729 16.7834 8.83334 16.673 10.1583C16.5073 11.5938 17.3355 12.6427 23.574 18.8813L30.6407 25.9479L23.574 33.0146C18.2188 38.3698 16.5625 40.3573 16.5625 41.4615C16.5625 42.2344 16.7282 43.0625 16.949 43.2281Z"
-                                    fill="white" />
-                            </svg>
-                    </button>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="mobileTherapyHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mobileTherapy" aria-expanded="false" aria-controls="mobileTherapy">
+                                Therapeutic Areas
+                            </button>
+                        </h2>
+                        <div id="mobileTherapy" class="accordion-collapse collapse" aria-labelledby="mobileTherapyHeading"
+                            data-bs-parent="#mobileMenuAccordion">
+                            <div class="accordion-body">
+                                <ul class="mobile-submenu-list">
+                                    <li><a href="#" data-bs-dismiss="offcanvas">Cardiology</a></li>
+                                    <li><a href="#" data-bs-dismiss="offcanvas">Neurology</a></li>
+                                    <li><a href="#" data-bs-dismiss="offcanvas">Oncology</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mega_menu_content">
-                    <!-- TAB CONTENT -->
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="tab-home">
-                            <p>About</p>
-                            <ul>
-                                <li>
-                                    <a href="#">Our Company</a>
-                                </li>
-                                <li>
-                                    <a href="#">Board of Directors</a>
-                                </li>
-                                <li>
-                                    <a href="#">Our Heritage</a>
-                                </li>
-                                <li>
-                                    <a href="#">Sustainability & Responsibility</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-profile">
-                            <h3>Profile</h3>
-                            <p>This is profile content.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-disabled">
-                            <h3>Disabled</h3>
-                            <p>This tab is disabled.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-messages">
-                            <h3>Messages</h3>
-                            <p>This is messages content.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-settings">
-                            <h3>Settings</h3>
-                            <p>This is settings content.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="insights">
-                            <h3>Insights</h3>
-                            <p>This is insights content.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="contact-us">
-                            <h3>Contact Us</h3>
-                            <p>This is contact us content.</p>
-                        </div>
-
-                    </div> 
-                </div>
+                <a href="{{ route('contact') }}" class="commo-btn mobile-contact-btn" data-bs-dismiss="offcanvas">Contact Us</a>
             </div>
         </div>
     </div>

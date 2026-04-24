@@ -23,7 +23,7 @@ footer {
 
 .subcription-form .form-floating > label {
   color: var(--white-color);
-  padding: 0 0.75rem;
+  padding: 0.75rem 10px ;
 }
 
 .subcription-form .form-floating > .form-control:focus ~ label {
@@ -31,11 +31,34 @@ footer {
 }
 
 .subcription-form .form-floating > .form-control:focus ~ label::after {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .subcription-form .form-control:focus {
   box-shadow: none;
+}
+
+/* Override autofill background */
+.subcription-form .form-control:-webkit-autofill,
+.subcription-form .form-control:-webkit-autofill:focus,
+.subcription-form .form-control:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--white-color) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  caret-color: var(--white-color) !important;
+}
+
+/* Remove autofill border color */
+.subcription-form .form-control:-webkit-autofill {
+  -webkit-border-after-color: var(--white-color) !important;
+}
+
+/* Transition delay to prevent autofill color flash */
+.subcription-form .form-control:-webkit-autofill {
+  -webkit-transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
 }
 
 .subcription-form form {
@@ -151,6 +174,7 @@ footer {
   font-size: 140px;
   position: relative;
   z-index: 2;
+  margin-bottom: 0;
 }
 
 .common-footer-wrapper {
@@ -213,4 +237,15 @@ footer {
 .common-footer-item:hover .common-footer-title {
   color: var(--white-color);
   transition: all 0.4s ease-in-out;
+}
+
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #ffffff !important; /* Yahan white ki jagah apna color daal dein (jaise Black ya Dark Blue) */
+}
+
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after {
+    background-color: transparent !important;
 }
