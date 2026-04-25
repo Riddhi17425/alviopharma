@@ -7,7 +7,7 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
+            <h1 class="title-34 text--white">Contact</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
     </div>
@@ -45,9 +45,9 @@
 
                         </span>
                         <p class="mb-0">
-                            <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">Registered & Corporate
-                                Office Block D, 10th Floor, Signature 2 Towers,
-                                Sarkhej-Sanand Crossing, Ahmedabad-382210,Gujarat, India</a>
+                            <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">Block D, 10th Floor, Signature 2 Towers,
+Sarkhej-Sanand Crossing, Ahmedabad-382210,
+Gujarat, India</a>
                         </p>
                     </div>
                     <div class="con_links">
@@ -92,7 +92,7 @@
 
                         </span>
                         <p class="mb-0">
-                            <a href="mailto:demo@gmail.com" target="_blank">demo@gmail.com</a>
+                            <a href="mailto:info@alviopharma.com" target="_blank">info@alviopharma.com</a>
                         </p>
                     </div>
                     <div class="con_links">
@@ -159,9 +159,7 @@
 
                             </span>
                             <p class="mb-0">
-                                <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">434, Kishanpur, Opp.
-                                    Pharma College of Roorkee, Bhagwanpur, Roorkee – 247667, Dist. – Haridwar,
-                                    Uttarakhand, India.</a>
+                                <a href="https://maps.app.goo.gl/8SYrh2rggxc96GXX7" target="_blank">434, Kishanpur, Opp. Pharma College of Roorkee, Bhagwanpur, Roorkee – 247667, Dist. – Haridwar, Uttarakhand, India.</a>
                             </p>
                         </div>
                         <div class="con_links">
