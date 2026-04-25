@@ -29,37 +29,50 @@ class HomeMapController extends Controller
         return view('admin.homemap.homemap-add');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         
-        $validatedData = $request->validate(
-            [
-                'description' => 'required',
-                'title' => 'required',
-            ],
-            [
-                'description.required' => 'Please Select a Title.',
-                'title.required' => 'Please enter a Title.',
- 
-            ]
-        );
-        // dd($request->all());
-        if(isset($request->image) && !empty($request->image)){
-            if ($request->hasFile('image')) {
-                $file = $request->file('image'); // Get the uploaded file
-                $fileName = $file->getClientOriginalName();
-                $file->move(public_path('homemapimage'), $fileName);
-                $homemap = [ 
-                    'description' => $request->description, 
-                    'title' => $request->title,
-                    'cat_type' => $request->cat_type, 
-                    'image'=>$fileName,
-                ];
-                HomeMap::create($homemap);
-            }
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'cat_type' => 'required',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ], [
+            'title.required' => 'Please enter a Title.',
+            'description.required' => 'Please enter Description.',
+        ]);
+
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'cat_type' => $request->cat_type,
+        ];
+
+        
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_main.' . $file->getClientOriginalExtension();
+            $file->move(public_path('homemapimage'), $filename);
+
+            $data['image'] = $filename;
         }
+
         
-        return redirect()->route('homemap.index')
-                        ->with('success','homemap created successfully');
+        if ($request->hasFile('state_image')) {
+            $file = $request->file('state_image');
+            $filename = time() . '_state.' . $file->getClientOriginalExtension();
+            $file->move(public_path('homemapimage'), $filename);
+
+            $data['state_image'] = $filename;
+        }
+
+        
+        HomeMap::create($data);
+
+        return redirect()
+            ->route('homemap.index')
+            ->with('success', 'HomeMap created successfully');
     }
 
     public function edit($id){
@@ -67,41 +80,49 @@ class HomeMapController extends Controller
         return view('admin.homemap.homemap-edit',compact('homemap'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         
-        $validatedData = $request->validate(
-            [
-                'description' => 'required',
-                'title' => 'required',
-              
-            ],
-            [
-                'description.required' => 'Please Select a Title.',
-                'title.required' => 'Please enter a Title.',
-               
-            ]
-        );
-        // dd($request->all());
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required',
+            'cat_type' => 'required',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ], [
+            'title.required' => 'Please enter a Title.',
+            'description.required' => 'Please enter Description.',
+        ]);
+
+    
+        $homemap = HomeMap::findOrFail($id);
+
+        $homemap->title = $request->title;
+        $homemap->description = $request->description;
+        $homemap->cat_type = $request->cat_type;
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $fileName = $file->getClientOriginalName();
-            $file->move(public_path('homemapimage'), $fileName);
-            $homemap = HomeMap::find($id);
-            $homemap->description = $request->description;
-            $homemap->title = $request->title;
-            $homemap->cat_type = $request->cat_type;
-            $homemap->image = $fileName;
-            $homemap->save();
-        }else{
-            $homemap = HomeMap::find($id);
-            $homemap->description = $request->description;
-            $homemap->title = $request->title;
-            $homemap->cat_type = $request->cat_type;
-            $homemap->save();
+            $filename = time() . '_main.' . $file->getClientOriginalExtension();
+            $file->move(public_path('homemapimage'), $filename);
+
+            $homemap->image = $filename;
         }
 
+        if ($request->hasFile('state_image')) {
+            $file = $request->file('state_image');
+            $filename = time() . '_state.' . $file->getClientOriginalExtension();
+            $file->move(public_path('homemapimage'), $filename);
 
-        return redirect()->route('homemap.index')->with('success','homemap updated successfully');
+            $homemap->state_image = $filename;
+        }
+
+        // ✅ Save once
+        $homemap->save();
+
+        return redirect()
+            ->route('homemap.index')
+            ->with('success', 'HomeMap updated successfully');
     }
 
     public function destroy($id)

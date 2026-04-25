@@ -10,8 +10,6 @@
             <div
                 class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                 <h3 class="fw-bold mb-0">HomeMap Add</h3>
-                <!--<button type="submit"-->
-                <!--    class="btn btn-primary py-2 px-5 text-uppercase btn-set-task w-sm-100">Save</button>-->
             </div>
         </div>
     </div> <!-- Row end  -->
@@ -25,42 +23,57 @@
                             <h6 class="mb-0 fw-bold ">HomeMap Details</h6>
                         </div>
                         <div class="card-body">
+                            <div class="row g-3 align-items-center">
                                 <div class="row g-3 align-items-center">
-                                <div class="row g-3 align-items-center">
-                                <div class="col-md-6">
-                                <label class="form-label">Select Main Title</label>
-                                <select class="form-select" name="cat_type" aria-label="Default select example">
-                                    <option value="homemap">homemap</option>
-                                    <option value="companymap">companymap</option>
-                                    
-                                    <option value="Others">Others</option>
-                                </select>
-                                @if ($errors->has('cat_type'))
-                                <span class="text-danger">{{ $errors->first('cat_type') }}</span>
-                                @endif
-                            </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Title</label>
-                                    <input type="text" id="title" name="title" class="form-control"
-                                        placeholder="HomeMap Title">
-                                    @if ($errors->has('title'))
-                                    <span class="text-danger">{{ $errors->first('title') }}</span>
-                                    @endif
-                                </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Select Main Title</label>
+                                        <select class="form-select" name="cat_type" aria-label="Default select example">
+                                            <option value="homemap">homemap</option>
+                                            <option value="companymap">companymap</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                        @if ($errors->has('cat_type'))
+                                        <span class="text-danger">{{ $errors->first('cat_type') }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" id="title" name="title" class="form-control"
+                                            placeholder="HomeMap Title">
+                                        @if ($errors->has('title'))
+                                            <span class="text-danger">{{ $errors->first('title') }}</span>
+                                        @endif
+                                    </div>
 
-                                <div class="col-md-12">
-                                    <label for="file" class="form-label">Images</label>
-                                    <input type="file" class="form-control" name="image" id="image">
-                                    @if ($errors->has('image'))
-                                    <span class="text-danger">{{ $errors->first('image') }}</span>
-                                    @endif
+                                    <div class="col-md-6">
+                                        <label for="image" class="form-label">Main Image</label>
+                                        <input type="file" class="form-control preview-input" name="image" id="image" data-preview="image_preview">
+
+                                        <img id="image_preview" 
+                                            style="margin-top:10px; max-width:150px; display:none;">
+                                        @if ($errors->has('image'))
+                                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="state_image" class="form-label">State Image</label>
+                                        <input type="file" class="form-control preview-input" name="state_image" id="state_image" data-preview="state_image_preview">
+
+                                        <img id="state_image_preview" 
+                                            style="margin-top:10px; max-width:150px; display:none;">
+                                        
+                                    </div>
+
+
+
+                                    <div class="col-md-12">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea id="description" name="description" class="form-control"
+                                            required></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <label for="description" class="form-label">Description</label>
-                                    <textarea id="description" name="description" class="form-control" required></textarea>
-                                </div>
-</div>
-</div>
+                            </div>
 
                         </div>
                     </div>
@@ -100,27 +113,6 @@
 </script>
 <script src="{!! asset('public/admin_public/dist/assets/bundles/dropify.bundle.js') !!}"></script>
 <script src="{!! asset('public/admin_public/dist/assets/bundles/dataTables.bundle.js') !!}"></script>
+<script src="{{ asset('public/admin_public/js/homemap.js') }}"></script>
 
-
-<script>
-$(document).ready(function() {
-    $('#description').summernote({
-        placeholder: 'Enter here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-});
-
-
-</script>
 @endpush

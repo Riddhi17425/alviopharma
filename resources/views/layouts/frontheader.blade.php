@@ -88,9 +88,10 @@
                                 </a>
                                 <div class="dropdown">
                                     <a href="{{ route('our.company')}}">Our Company</a>
-                                    <a href="{{ route('board.directors')}}">Board of Directors</a>
+                                    <a href="{{ route('board.directors')}}">Leadership</a>
+                                    <a href="{{ route('values.purpose') }}">Values & purpose</a>
                                     <a href="{{ route('our.heritage')}}">Our Heritage</a>
-                                    <a href="{{ route('sustainability')}}">Sustainability & Responsibility</a>
+                                    <a href="{{ route('sustainability')}}">Sustainability</a>
                                 </div>
                             </li>
 
@@ -107,10 +108,14 @@
 
                                     </span>
                                 </a>
+                                @php
+                                    $divisions =  \App\Models\Divisions::where('status' , 'Active')->get();    
+                                @endphp
                                 <div class="dropdown">
-                                    <a href="therapeutic-area">Cardiology</a>
-                                    <a href="javascript:void(0)">Neurology</a>
-                                    <a href="javascript:void(0)">Oncology</a>
+                                    @foreach ($divisions as $division)
+                                        <a href="{{ route('product', ['division' => $division->url]) }}#product-section">{{ $division->name }}</a>
+                                    @endforeach
+                                    
                                 </div>
                             </li>
                         </ul>

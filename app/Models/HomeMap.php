@@ -16,6 +16,7 @@ class HomeMap extends Model
         'description',
         'title',
         'image',
+        'state_image',
         'cat_type',
     ];
 }

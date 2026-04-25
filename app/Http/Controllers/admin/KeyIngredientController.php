@@ -47,12 +47,12 @@ class KeyIngredientController extends Controller
                     return $query->whereNull('deleted_at');
                 }),
             ],
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+            // 'image' => 'required|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
         ], [
             'title.required' => 'Please enter a title.',
             'description.required' => 'Please enter a description.',
             'url.required' => 'Please enter a URL.',
-            'image.required' => 'Please select an image.',
+            // 'image.required' => 'Please select an image.',
         ]);
 
         $data = new KeyIngredient();
@@ -91,7 +91,7 @@ class KeyIngredientController extends Controller
                     return $query->whereNull('deleted_at');
                 })->ignore($data->id),
             ],
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+            // 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
         ], [
             'title.required' => 'Please enter a title.',
             'description.required' => 'Please enter a description.',

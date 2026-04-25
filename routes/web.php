@@ -15,7 +15,9 @@ use App\Http\Controllers\admin\OurTeamController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\MilestoneController;
 use App\Http\Controllers\admin\BrandController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ClientelController;
+use App\Http\Controllers\admin\DivisionsController;
 use App\Http\Controllers\admin\KeyIngredientController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\CaptchaController;
@@ -49,7 +51,7 @@ use App\Http\Controllers\CaptchaController;
 
     Route::get('products', [dashboardController::class,'productlist'])->name('product');
     // Route::get('products-details/{url}', [dashboardController::class,'productdetail'])->name('product.detail');
-    Route::get('product-details/{id?}', [dashboardController::class,'productDetails'])->name('product.details');
+    Route::get('product-details/{url}', [dashboardController::class,'productDetails'])->name('product.details');
     
 
     Route::get('/captcha-image', [CaptchaController::class, 'image'])->name('captcha.image');  
@@ -75,6 +77,8 @@ use App\Http\Controllers\CaptchaController;
         Route::resource('brand', BrandController::class);
         Route::resource('clientel', ClientelController::class);
         Route::resource('keyingredient', KeyIngredientController::class)->except(['show']);
+        Route::resource('category', CategoryController::class);
+        Route::resource('divisions', DivisionsController::class);
         Route::resource('product', ProductController::class);
         Route::prefix('backend')->group(function () {
             // Route::get('home', [adminController::class, 'index'])->name('home');
