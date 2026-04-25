@@ -157,7 +157,7 @@
 <section class="principles-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-right">
-            <p>Our Purpose</p>
+            <p>Our Purp😄se</p>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-left">
             <h2 class="title-54 title--blue mb-40">Improving Lives</h2>

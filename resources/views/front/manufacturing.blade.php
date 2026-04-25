@@ -8,11 +8,10 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">{{ $menubanner->title }}</h1>
-            <p class="text-white page-header-para">Alvio Pharmaceuticals partners with Salud Care India Limited and
-                Rebase Lifesciences for pharmaceutical manufacturing, ensuring compliance-driven quality and
-                reliability. For nutraceutical, cosmetic, and herbal products, we collaborate with Stelvio Healthcare,
-                enabling us to deliver high-quality solutions across diverse healthcare segments.
+            <h1 class="title-34 text--white">Manufacturing & Quality</h1>
+            <p class="text-white page-header-para">At Alvio Pharma, quality is driven by robust systems and trusted
+                manufacturing partnerships. Our formulations are supported by compliance-led associates to ensure
+                consistency, safety, and reliability.
             </p>
         </div>
         <div class="page-header-btn">
@@ -39,26 +38,23 @@
             </p>
         </div>
 
-        <div class="col-xl-8 col-lg-7 col-md-12">
-            <h2 class="title-54 title--blue mb-40" data-aos="fade-right">Quality-Driven Manufacturing Through Trusted
+        <div class="col-xl-8 col-lg-7 col-md-12 bg-transparent">
+            <h2 class="title-54 title--blue mb-40" data-aos="fade-right">Quality Manufacturing Backed by Trusted
                 Partners
             </h2>
 
-            <p>Alvio Pharmaceuticals collaborates with a strong network of compliance-driven manufacturing partners to
-                ensure quality, scalability, and reliability. Our pharmaceutical formulations are supported by Salud
-                Care India Limited and Rebase Lifesciences, operating from WHO-GMP certified and PIC/S-compliant
-                facilities with robust quality and regulatory systems.
+            <p>Alvio Pharmaceuticals operates with a strong focus on ethical marketing and dependable product quality.
+                To ensure consistent supply and reliability, we collaborate with carefully evaluated manufacturing
+                partners who follow strict compliance and documentation standards.
 
             </p>
-            <p>For our nutraceutical, cosmetic, and herbal range, we partner with Stelvio Healthcare, enabling
-                innovative and consumer-focused formulations aligned with evolving wellness and skincare trends.</p>
-
-            <p>Together, this integrated ecosystem ensures consistent quality, multiple dosage capabilities, and
-                delivery of safe, effective, and market-ready products.</p>
+            <p>Our ecosystem includes Salud Care India Limited and Stelvio Healthcare, enabling us to support diverse
+                dosage forms and therapeutic requirements while maintaining high standards in process discipline and
+                batch-level quality control. </p>
 
         </div>
 
-    
+
         <div class="col-12 mt-40">
             <div class="featured-product-slider quality_driven_slider">
                 <div class="mx-2">

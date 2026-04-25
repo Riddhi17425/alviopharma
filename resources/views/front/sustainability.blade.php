@@ -4,7 +4,7 @@
 <section class="page-header">
     <div class="inner_hero">
        <img src="{{ asset('public/front/images/sustainability-banner.webp') }}" class="img-fluid" alt="page-header-img">
-        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Sustainability & Responsibility</p>
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Who We Are / Sustainability</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
@@ -36,40 +36,39 @@
             </div>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-left">
-            <h2 class="title-54 mb-40">Precision-led responsibility for long-term impact</h2>
+            <h2 class="title-54 mb-40">Responsible Practices. Reliable Healthcare. </h2>
 
-            <p>Our sustainability approach is structured, measurable, and aligned with responsible healthcare delivery. 
-                We focus on strengthening ethical governance, improving operational efficiency, and working with accountable 
-                partners across our supply network. By embedding responsible practices into planning, procurement, quality oversight,
-                 and distribution readiness, we aim to reduce environmental impact while upholding consistency, compliance, and patient trust.</p>
+            <p>Alvio Pharma integrates responsible practices across every stage of its operations—from sourcing and manufacturing partnerships to distribution and patient delivery. </p>
+            <p>We focus on ethical governance, operational efficiency, and working with trusted partners to ensure quality, compliance, and long-term sustainability in healthcare delivery. </p>
         </div>
 
         <div class="row gy-3 gy-lg-0 mt-40 gx-0 gx-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
                 <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Responsible Partner Standards</h4>
-                    <p class="mb-0">We work with carefully evaluated partners and emphasize documentation discipline,
-                        quality expectations, and continuous improvement—so responsible practices are strengthened
-                        across the ecosystem we rely on.</p>
+                    <h4 class="title-34 mb-40">Responsible Partnerships</h4>
+                    <p class="mb-0">We collaborate with certified manufacturing partners following strict quality and compliance standards. </p>
                 </div>
 
             </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Compliance & Governance</h4>
-                    <p class="mb-0">Our approach is anchored in ethical conduct and compliance-led processes. We focus
-                        on traceability, structured reviews, and transparent coordination to support consistent,
-                        dependable product delivery.</p>
+                    <h4 class="title-34 mb-40">Ethical Governance </h4>
+                    <p class="mb-0">Our operations are guided by transparency, compliance, and responsible decision-making. </p>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Value-Chain Sustainability</h4>
-                    <p class="mb-0">We take a practical view of impact across the value chain—from sourcing and
-                        packaging choices to logistics and distribution readiness—aiming to reduce waste while
-                        maintaining reliability and access.</p>
+                    <h4 class="title-34 mb-40">Quality & Compliance </h4>
+                    <p class="mb-0">We maintain defined quality systems across sourcing, documentation, and distribution. </p>
+                </div>
+            </div>
+
+             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="manu_card com_bg_light_blue">
+                    <h4 class="title-34 mb-40">Efficient Resource Use  </h4>
+                    <p class="mb-0">We aim to optimize processes and reduce operational impact across the value chain.  </p>
                 </div>
             </div>
 

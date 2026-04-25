@@ -67,7 +67,7 @@
                     <br>
                     <a href="tel:917966176465">M: +91 79 6617 7475</a>
                 </li>
-                <li><a href="mailto:info@alviopharma.com"></a>E: info@alviopharma.com</li>
+                <li><a href="mailto:info@alviopharma.com">E: info@alviopharma.com</a></li>
             </ul>
         </div>
 
@@ -85,7 +85,7 @@
                         src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp" class="me-3"></a>
             </div>
             <div class="footer-content ">
-                <p class="text-white mb-0">2026 Alvio Pharmaceuticals Pvt. Ltd. All Rights Reserved.</p>
+                <p class="text-white mb-0">© 2026 Alvio Pharmaceuticals Pvt. Ltd. All Rights Reserved.</p>
             </div>
             <div class="footer-content">
                 <p class="common-para text--white"><a href="javascript:void(0)">Privacy Policy</a></p>
