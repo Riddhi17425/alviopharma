@@ -277,7 +277,7 @@
                 
                <div class="our_respons">
                  <img src="{{ asset('public/ourproductionimage/'.$principles->image) }}" alt="{{ $principles->title }}" class="img-fluid">
-                 <p class="mb-0 font-weight-bold" id="principlesActiveLabel">Patient & HCP Confidence</p>
+                 <p class="mb-0 font-weight-bold" id="principlesActiveLabel">Patient & HCP Confidence</p>   
                </div>
                
                 <!-- <img src="{{ asset('public/front/images/new_test.png') }}" alt="images" class="img-fluid"> -->

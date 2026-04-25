@@ -289,6 +289,23 @@ iframe {
     height: 500px;
 }
 
+.bab-grid-container p
+{
+ font-size: 14px;
+         line-height: 20px;
+}
+
+.bab-item-believe .title-24 svg {
+    top: 10px;
+    left: -12em;
+    width: 230px;
+}
+
+.bab-item-behave .title-24 svg {
+     left: -12em;
+    width: 230px;
+}
+
 }
 
 /* ---------- 1441 ---------- */
@@ -563,7 +580,7 @@ iframe {
 }
 
 .bab-grid-container {
-    gap: 20px 30px;
+    gap: 0px 30px;
 }
 
 .bab-item-behave {
@@ -578,10 +595,8 @@ iframe {
 }
 
 .bab-item-believe .title-24 svg {
-    position: absolute;
-    top: 15px;
     left: -11em;
-    width: 186px;
+    width: 170px;
 }
 
     .timeline__node {
@@ -635,6 +650,15 @@ iframe {
     .search-wrapper {
     margin-top: 50px;
     margin-bottom: 30px;
+}
+
+.bab-text-block {
+    max-width: 300px;
+}
+
+.bab-item-adapt .title-24 svg {
+    left: 5em;
+    max-width: 314px;
 }
 
 }
