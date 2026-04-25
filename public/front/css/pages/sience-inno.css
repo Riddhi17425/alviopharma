@@ -5,10 +5,23 @@
 .mastering_img img {
   position: absolute;
   top: -10em;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 10px;
   z-index: -1;
   max-width: 560px;
+}
+
+.mastering_img img
+{
+  animation: mastering_img linear 25s infinite;
+}
+
+@keyframes mastering_img {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .modern-tabs .nav-tabs {

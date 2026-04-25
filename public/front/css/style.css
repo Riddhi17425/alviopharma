@@ -79,6 +79,14 @@ a {
   line-height: 28px;
 }
 
+.title-18 {
+  font-family: var(--para-font);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black-color);
+  line-height: 24px;
+}
+
 /*=========== Button part ============= */
 
 .commo-btn,

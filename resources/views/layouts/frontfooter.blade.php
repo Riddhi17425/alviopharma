@@ -73,7 +73,7 @@
                     <br>
                     <a href="tel:917966176465">M: +91 79 6617 7475</a>
                 </li>
-                <li><a href="mailto:info@alviopharma.com"></a>E: info@alviopharma.com</li>
+                <li><a href="mailto:info@alviopharma.com">E: info@alviopharma.com</a></li>
             </ul>
         </div>
 

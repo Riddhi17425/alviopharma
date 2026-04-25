@@ -532,7 +532,8 @@
 .bab-item-adapt .title-24 svg {
     position: absolute;
     top: 10px;
-    left: 8em;
+    left: 5em;
+    max-width: 380px;
 }
 
 .bab-item-believe .title-24 svg {
@@ -545,6 +546,11 @@ position: absolute;
     position: absolute;
     top: 10px;
     left: -13em;
+}
+
+.bab-grid-container p
+{
+    margin-bottom: 0;
 }
 
 

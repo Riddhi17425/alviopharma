@@ -9,8 +9,8 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white mb-3">{{ $menubanner->title }}</h1>
-            <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
+            <h1 class="title-34 text--white mb-3">Medical Insights & Clinical Perspectives </h1>
+            <p class="text-white page-header-para">Also keep a short subtext below highlighting evidence-based articles and healthcare insights. </p>
         </div>
         <div class="page-header-btn">
             <a href="{{ route('contact') }}" target="_blank">
