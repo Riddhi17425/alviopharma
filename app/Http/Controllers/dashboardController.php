@@ -135,7 +135,7 @@ class dashboardController extends Controller
         ->where('url', 'our-heritage')
         ->first();
 
-        $milestones = Milestone::orderBy('year','desc')->get();
+        $milestones = Milestone::orderBy('year','asc')->get();
 
         return view('front.our-heritage',compact('metatitle','metadescription','milestones','menubanner'));
     }

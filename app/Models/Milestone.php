@@ -14,9 +14,9 @@ class milestone extends Model
 
     protected $fillable = [
         'title',
-        'short_description',
+        'phase_title',
         'description',
-        
+        'phase_id',
         'year',
     ];
 }

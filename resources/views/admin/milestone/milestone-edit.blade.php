@@ -45,26 +45,15 @@
                                     @endif
                                 </div>
 
-                                <!-- <div class="col-md-6">
-                                    <label for="file" class="form-label">Images</label>
-                                    <input type="file" class="form-control" name="image" id="image">
-                                    @if ($errors->has('image'))
-                                    <span class="text-danger">{{ $errors->first('image') }}</span>
-                                    @endif
+                               <div class="col-md-6">
+                                    <label for="phase_title" class="form-label">Phase Title</label>
+                                    <input type="text" id="phase_title" class="form-control" value="{{ $milestone->phase_title }}" name="phase_title" placeholder="Phase Title Add." >
                                 </div>
                                 <div class="col-md-6">
-                                    @if($milestone->image)
-                                        <img 
-                                            src="{{ asset('public/milestoneImage/' . $milestone->image) }}" 
-                                            alt="Milestone Image"
-                                            style="width:120px; height:auto; border:1px solid #ddd; padding:5px;">
-                                    @endif
-
-                                </div> -->
-                                <div class="col-md-12">
-                                    <label for="short_description" class="form-label">Short Description</label>
-                                    <textarea id="short_description" name="short_description" class="form-control">{!! $milestone->short_description !!}</textarea>
+                                    <label for="phase_id" class="form-label">Phase ID</label>
+                                    <input type="number" id="phase_id" class="form-control" value="{{ $milestone->phase_id }}"  name="phase_id" placeholder="Phase Title id." >
                                 </div>
+
                                 <div class="col-md-12">
                                     <label for="description" class="form-label">Description</label>
                                     <textarea id="description" name="description" class="form-control">{!! $milestone->description !!}</textarea>
