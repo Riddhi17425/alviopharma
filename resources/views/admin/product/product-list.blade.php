@@ -50,6 +50,8 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Status</th>
+                            <th>Top Sellers/Fetatuerd</th>
                             <th>Image</th>
                             <th class="text-end">Action</th>
                         </tr>
@@ -62,9 +64,11 @@
                             <td>
                                 <strong>{{ $item->name }}</strong>
                             </td>
+                            <td>{{$item->status}}</td>
+                            <td>{{$item->top_sellers}}</td>
                             <td style="width:80px;">
                                 @if($item->front_image)
-                                    <img src="{{ asset('public/Product/front_image/'.$item->front_image) }}"
+                                    <img src="{{ asset('public/product/front_image/'.$item->front_image) }}"
                                          class="img-thumbnail"
                                          style="width:60px;height:60px;object-fit:cover;">
                                 @else

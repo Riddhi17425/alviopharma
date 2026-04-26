@@ -8,15 +8,6 @@
                 <p class="text--white" data-aos="fade-up">Alvio Pharmaceuticals Pvt. Ltd. delivers
                     high-quality, scientifically advanced formulations across Pharma, Nutraceuticals, and
                     Cosmeceuticals. Backed by ethical practices and global standards for India and beyond.</p>
-                <!-- <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.749996 13.478L13.4779 0.750116L0.749996 13.478ZM13.4779 0.750116H3.5784H13.4779ZM13.4779 0.750116V10.6496V0.750116Z"
-                            fill="#307ABD" />
-                        <path d="M0.749996 13.478L13.4779 0.750116M13.4779 0.750116H3.5784M13.4779 0.750116V10.6496"
-                            stroke="#307ABD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a> -->
             </div>
         </div>
         <div class="hero-section">
@@ -26,15 +17,7 @@
                 <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
                     support patients and physicians through dependable treatment solutions.
                 </p>
-                <!-- <a href="#" class="commo-btn-arrow text--white--bg"><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.749996 13.478L13.4779 0.750116L0.749996 13.478ZM13.4779 0.750116H3.5784H13.4779ZM13.4779 0.750116V10.6496V0.750116Z"
-                            fill="#307ABD" />
-                        <path d="M0.749996 13.478L13.4779 0.750116M13.4779 0.750116H3.5784M13.4779 0.750116V10.6496"
-                            stroke="#307ABD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a> -->
+                
             </div>
         </div>
         <div class="hero-section">
@@ -168,99 +151,50 @@
         </div>
     </div>
 </section>
-
+@if($featuredproducts->count())
 <section class="product-slider p-x mt-100" data-aos="fade-up">
-    <h2 class="title-54 text-center mb-40 " data-aos="fade-up" data-aos-delay="200">Featured Products</h2>
+    <h2 class="title-54 text-center mb-40" data-aos="fade-up" data-aos-delay="200">
+        Featured Products
+    </h2>
+
     <div class="featured-product-slider" data-aos="zoom-in" data-aos-delay="300">
-        <div class="slider-item" data-aos="fade-up" data-aos-delay="0">
-            <img src="{{ asset('public/front/images/Rasafin-Dusting-Powder.png') }}" alt="Rasafin Dusting Powder"
-                class="w-100">
-            <div class="slider-content">
-                <p class="mb-2">Rasavio</p>
-                <h5 class="title-24">Rasafin Dusting Powder</h5>
-            </div>
-            <a href="#" class="commo-btn-arrow"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white"></path>
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="slider-item">
-            <img src="{{ asset('public/front/images/anti-acne-pm-gel.webp') }}" alt="Anti Acne PM Gel" class="w-100">
-            <div class="slider-content">
-                <p class="mb-2">Rasavio</p>
-                <h5 class="title-24">Rasafin Dusting Powder</h5>
-            </div>
+        @foreach ($featuredproducts as $product)
+            <div class="slider-item" data-aos="fade-up">
+                
+                <img src="{{ asset('public/product/front_image/' . $product->front_image) }}"
+                     alt="{{ $product->name }}"
+                     class="w-100">
 
-            <a href="#" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white"></path>
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="slider-item">
-            <img src="{{ asset('public/front/images/alviroz-10F.webp') }}" alt="Alviroz 10F" class="w-100">
-            <div class="slider-content">
-                <p class="mb-2">Rasavio</p>
-                <h5 class="title-24">Rasafin Dusting Powder</h5>
-            </div>
+                <div class="slider-content">
+                    <p class="mb-2">
+                        {{ $product->category->name ?? 'N/A' }}
+                    </p>
 
-            <a href="#" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white"></path>
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="slider-item">
-            <img src="{{ asset('public/front/images/anti-acne-face-cleanser.webp') }}" alt="Anti Acne Face Cleanser"
-                class="w-100">
-            <div class="slider-content">
-                <p class="mb-2">Rasavio</p>
-                <h5 class="title-24">Rasafin Dusting Powder</h5>
-            </div>
+                    <h5 class="title-24">
+                        {{ $product->name }}
+                    </h5>
+                </div>
 
-            <a href="#" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white"></path>
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="slider-item">
-            <img src="{{ asset('public/front/images/rasamom.webp') }}" alt="Rasamom" class="w-100">
-            <div class="slider-content">
-                <p class="mb-2">Rasavio</p>
-                <h5 class="title-24">Rasafin Dusting Powder</h5>
-            </div>
+                {{-- 🔥 Top Seller Badge --}}
+                @if($product->top_seller == 'Yes')
+                    <span class="badge bg-danger position-absolute" style="top:10px; left:10px;">
+                        Top Seller
+                    </span>
+                @endif
 
-            <a href="#" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white"></path>
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
+                <a href="{{ route('product.details', ['url' => $product->url]) }}"
+                   class="commo-btn-arrow">
+                    <svg width="15" height="15" viewBox="0 0 15 15">
+                        <path d="M0.75 13.478L13.478 0.75M13.478 0.75H3.57M13.478 0.75V10.64"
+                            stroke="white" stroke-width="1.5"/>
+                    </svg>
+                </a>
+
+            </div>
+        @endforeach
     </div>
 </section>
-
+@endif
 <section class="explore-state mt-100" style="margin-top: 100px;"">
    <div class="p-x">
      <div class="row align-items-center">
@@ -281,8 +215,8 @@
                     @foreach($units as $unit)
 
                     @php
-                    $collapseId = "collapse".$loop->index;
-                    $headingId = "heading".$loop->index;
+                        $collapseId = "collapse".$loop->index;
+                        $headingId = "heading".$loop->index;
                     @endphp
 
                     <div class="accordion-item">

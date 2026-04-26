@@ -5,7 +5,7 @@
             <span class="logo-icon">
                 <i class="bi bi-bag-check-fill fs-4"></i>
             </span>
-            <span class="logo-text">{{ Auth::user()->name }}</span>
+            <span class="logo-text">Elvio</span>
         </a>
 
         <ul class="menu-list flex-grow-1 mt-3">
@@ -53,6 +53,29 @@
                 </a>
             </li>
 
+            <li>
+                <a class="m-link{{ Request::routeIs('keyingredient.*') ? ' active' : '' }}"
+                    href="{{ route('keyingredient.index') }}">
+                    <i class="icofont-users-social fs-5"></i>
+                    <span>Ingredient Descriptions</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="m-link{{ Request::routeIs('category.*') ? ' active' : '' }}"
+                    href="{{ route('category.index') }}">
+                    <i class="icofont-users-social fs-5"></i>
+                    <span>Category</span>
+                </a>
+            </li>
+            
+            <li>
+                <a class="m-link{{ Request::routeIs('divisions.*') ? ' active' : '' }}"
+                    href="{{ route('divisions.index') }}">
+                    <i class="icofont-users-social fs-5"></i>
+                    <span>Divisions</span>
+                </a>
+            </li>
 
             <li>
                 <a class="m-link{{ Request::routeIs('blog.index') ? ' active' : '' }}"

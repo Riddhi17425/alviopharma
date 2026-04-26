@@ -135,17 +135,18 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+           <div class="col-lg-6">
                 <div class="images-only">
 
                     @foreach($units as $unit)
 
-                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}"
+                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}" 
                         data-original-src="{{ asset('public/homemapimage/'.$unit->image) }}"
-                        data-alt-src="{{ asset('public/homemapimage/'.$unit->alt_image) }}" alt="{{ $unit->title }}"
-                        class="accordion-preview-img img-fluid" data-panel="collapse{{ $loop->index }}"
+                        data-alt-src="{{ asset('public/homemapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                        class="accordion-preview-img img-fluid" 
+                        data-panel="collapse{{ $loop->index }}"
                         style="cursor: pointer;">
-
+                        
                     @endforeach
 
                 </div>
@@ -390,7 +391,7 @@ if (accordionEl && exploreState && previewImgs.length) {
         }
     }
 
-    // NAYA CODE: Image click par toggle logic
+    
     previewImgs.forEach((img) => {
         img.addEventListener('click', function() {
             const currentSrc = this.getAttribute('src');

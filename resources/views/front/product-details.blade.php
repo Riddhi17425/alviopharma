@@ -4,17 +4,15 @@
     <div class="inner_hero">
         <img src="{{ asset('public/front/images/rasavio-banner.webp') }}" class="img-fluid" alt="page-header-img">
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> /<a href="{{ url('/') }}">
-                Therapeutic Areas </a> / DermaScience Division /Rasavio™ Nomo Spot Serum</p>
+                Therapeutic Areas </a> / {{ $productDetails->divisions->name }} / {{ $productDetails->category->name }}™ {{ $productDetails->name }}</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">Targeted Management of Hyperpigmentation & Uneven Skin Tone</h1>
-            <p class="text-white page-header-para">Lorem ipsum dolor sit amet consectetur. Vulputate ut dictum
-                ullamcorper hendrerit. Mattis pretium sit metus consectetur dictum nunc ullamcorper. Pretium turpis
-                dapibus mattis massa pretium pulvinar lacus. Mattis pulvinar urna urna iaculis pharetra ornare.</p>
+            <p class="text-white page-header-para">{!! $productDetails->short_description !!}</p>
         </div>
         <div class="page-header-btn">
-            <a href="#">
+            <a href="{{ route('contact') }}">
                 <p class="title-24 text--white">Contact us</p>
             </a>
             <a href="#" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -38,28 +36,20 @@
         <div class="col-md-8 ps-md-5" data-aos="fade-left">
             <div>
                 <p>Carefully chosen world class ingredients for</p>
-                <h2 class="title-54">Under Eye Care</h2>
-                <p> <b class="title--blue">Category:</b> Dermaceutical / Prescription-Supportive Topical</p>
+                <h2 class="title-54">{{ $productDetails->name }}</h2>
+                <p> <b class="title--blue">Divisions:</b> {{ $productDetails->divisions->name }}</p>
+                <p> <b class="title--blue">Category:</b> {{ $productDetails->category->name }}</p>
             </div>
-
-            <div class="my-4">
+            {!! $productDetails->description !!}
+            {{-- <div class="my-4">
                 <h5 class="title-24 title--blue">Key Benefits</h5>
-                <p>Gosulin Agave - 2% (Maltose Agave Tequilana Extract From Netherlands), Hyaluronic Acid - 1%, Sweet
-                    Almond Oil - 2%, Shea Butter - 1%, Jojoba Oil - 2%, Vitamin E - 0.2%, Coffee Arabica Seed Oil - 3%
-                    (From France) Under Eye Cream</p>
+                <p>{!! $productDetails->short_description !!}</p>
             </div>
 
             <div>
                 <h5 class="title-24 title--blue">Key Benefits</h5>
-                <ul>
-                    <li>Reduces dark circles
-                    </li>
-                    <li> Reduces tired eyes</li>
-                    <li> Reduces puffiness</li>
-                    <li> Enhances the skin moisture content</li>
-                    <li> Helps with dry skin and reduces signs of ageing</li>
-                </ul>
-            </div>
+                {!! $productDetails->description !!}
+            </div> --}}
         </div>
     </div>
 </section>
@@ -74,16 +64,17 @@
 
 
     <div class="row g-4 mt-40 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <div class="manu_card com_bg_light_blue">
-                <h4 class="title-34 mb-3">Gosulin Agave</h4>
-                <p class="mb-0">Reduces depth of wrinkles, smoothens the skin surface, effectively retains hydration,
-                    and provides a visible, much faster lifting effect.</p>
+        @foreach ($ingrediant_details as $ingrediant_detail)
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="manu_card com_bg_light_blue">
+                    <h4 class="title-34 mb-3">{{ $ingrediant_detail->title }}</h4>
+                    <p class="mb-0">{!! $ingrediant_detail->description  !!}</p>
+                </div>
             </div>
-        </div>
+        @endforeach
+       
 
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        {{-- <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="manu_card com_bg_light_blue">
                 <h4 class="title-34 mb-3">Hyaluronic Acid</h4>
                 <p class="mb-0">Acts as a potent anti-aging agent, reduces fine wrinkles, increases skin elasticity, and
@@ -121,7 +112,7 @@
                 <p class="mb-0">Helps smooth the skin, works on reducing scars and stretch marks, and provides deep
                     nourishment with essential Vitamin E.</p>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 

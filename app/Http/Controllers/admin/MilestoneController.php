@@ -14,7 +14,7 @@ class MilestoneController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-
+ 
         $milestone = Milestone::whereNull('deleted_at')
             ->when($search, function ($query) use ($search) {
                 $query->where('title', 'LIKE', "%$search%");
@@ -46,11 +46,12 @@ class MilestoneController extends Controller
          $milestone = [
                     'title' => $request->title,
                     'year' => $request->year, 
-                    'short_description' => $request->short_description, 
                     'description' => $request->description, 
+                    'phase_title' => $request->phase_title, 
+                    'phase_id' => $request->phase_id, 
                     
                 ];
-                Milestone::create($milestone);
+        Milestone::create($milestone);
         return redirect()->route('milestone.index')
                         ->with('success','Milestone created successfully');
     }
@@ -76,13 +77,12 @@ class MilestoneController extends Controller
         );
         // dd($request->all());
         $milestone = Milestone::find($id);
-            $milestone->title = $request->title;
-            $milestone->year = $request->year;
-            $milestone->short_description = $request->short_description;
-            $milestone->description = $request->description;
-            
-            $milestone->save();
-
+        $milestone->title = $request->title;
+        $milestone->year = $request->year;
+        $milestone->description = $request->description;
+        $milestone->phase_title = $request->phase_title;
+        $milestone->phase_id = $request->phase_id;
+        $milestone->save();
 
         return redirect()->route('milestone.index')->with('success','Milestone updated successfully');
     }

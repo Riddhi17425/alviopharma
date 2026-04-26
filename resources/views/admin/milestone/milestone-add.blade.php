@@ -10,8 +10,6 @@
             <div
                 class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                 <h3 class="fw-bold mb-0">Milestone Add</h3>
-                <!--<button type="submit"-->
-                <!--    class="btn btn-primary py-2 px-5 text-uppercase btn-set-task w-sm-100">Save</button>-->
             </div>
         </div>
     </div> <!-- Row end  -->
@@ -39,23 +37,21 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Year</label>
                                     <input type="text" id="year" name="year" class="form-control" 
-                                        placeholder="Select Year">
+                                        placeholder="add Year">
                                     @if ($errors->has('year'))
                                     <span class="text-danger">{{ $errors->first('year') }}</span>
                                     @endif
                                 </div>
 
-                                <!-- <div class="col-md-12">
-                                    <label for="file" class="form-label">Images</label>
-                                    <input type="file" class="form-control" name="image" id="image">
-                                    @if ($errors->has('image'))
-                                    <span class="text-danger">{{ $errors->first('image') }}</span>
-                                    @endif
-                                </div> -->
-                                <div class="col-md-12">
-                                    <label for="short_description" class="form-label">Short Description</label>
-                                    <textarea id="short_description" name="short_description" class="form-control"></textarea>
+                                <div class="col-md-6">
+                                    <label for="phase_title" class="form-label">Phase Title</label>
+                                    <input type="text" id="phase_title" class="form-control"  name="phase_title" placeholder="Phase Title Add." >
                                 </div>
+                                <div class="col-md-6">
+                                    <label for="phase_id" class="form-label">Phase ID</label>
+                                    <input type="number" id="phase_id" class="form-control"  name="phase_id" placeholder="Phase Title id." >
+                                </div>
+
                                 <div class="col-md-12">
                                     <label for="description" class="form-label">Description</label>
                                     <textarea id="description" name="description" class="form-control" ></textarea>

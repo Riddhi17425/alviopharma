@@ -310,9 +310,10 @@ Gujarat, India</a>
                         </div>
                         <div class="col-lg-12">
                             <div class="contact_items">
-                                <div class="btn_main">
-                                    <a href="{{ route('blogs') }}" class="commo-btn ">Submit</a>
-                                    <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15"
+                                <button class="btn_main border-0  ">
+                                    <span class="commo-btn">Submit</span>
+                                    
+                                    <span class="commo-btn-arrow "><svg width="15" height="15"
                                             viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
@@ -322,7 +323,7 @@ Gujarat, India</a>
                                                 stroke="white" stroke-width="1.5" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
