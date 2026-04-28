@@ -35,7 +35,7 @@
 
         <div class="col-md-8 ps-md-5" data-aos="fade-left">
             <div>
-                <p>Carefully chosen world class ingredients for</p>
+                <p>{!! $productDetails->short_description !!}</p>
                 <h2 class="title-54">{{ $productDetails->name }}</h2>
                 <p> <b class="title--blue">Divisions:</b> {{ $productDetails->divisions->name }}</p>
                 <p> <b class="title--blue">Category:</b> {{ $productDetails->category->name }}</p>
