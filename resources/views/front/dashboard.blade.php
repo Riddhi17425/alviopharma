@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="hero-section">
-            <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.webp') }}" alt="hero image">
+            <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.png') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
                 <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
@@ -168,6 +168,53 @@
         </div>
     </div>
 </section>
+
+<section class="intro-section p-x mt-100">
+    <div class="mb-40 d-flex align-items-center justify-content-between">
+        <div class="modern-tabs">
+            <ul class="nav nav-tabs m-auto" id="filledTabs" role="tablist">
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-1" data-bs-toggle="tab" data-id="1"
+                        data-bs-target="#tab-content-1" type="button" role="tab" aria-selected="true">
+                        People & Communities
+                    </button>
+                </li>
+
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-2" data-bs-toggle="tab" data-id="2" data-bs-target="#tab-content-2"
+                        type="button" role="tab" aria-selected="false">
+                        Environment & Value Chain
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-3" data-bs-toggle="tab" data-id="3" data-bs-target="#tab-content-3"
+                        type="button" role="tab" aria-selected="false">
+                        Governance & Integrity
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="tab-content" id="filledTabsContent">
+
+        <div class="tab-pane fade show active" id="tab-content-1" role="tabpanel" aria-labelledby="tab-1">
+           
+        </div>
+        <div class="tab-pane fade" id="tab-content-2" role="tabpanel" aria-labelledby="tab-2">
+          
+        </div>
+        <div class="tab-pane fade" id="tab-content-3" role="tabpanel" aria-labelledby="tab-3">
+           
+        </div>
+    </div>
+
+</section>
+
 
 <section class="product-slider p-x mt-100" data-aos="fade-up">
     <h2 class="title-54 text-center mb-40 " data-aos="fade-up" data-aos-delay="200">Featured Products</h2>

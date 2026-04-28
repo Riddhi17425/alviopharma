@@ -154,7 +154,7 @@
     </div>
 </section>
 
-<section class="principles-section p-x mt-100" data-aos="fade-up">
+<!-- <section class="principles-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-right">
             <p>Our Purp😄se</p>
@@ -202,7 +202,7 @@
         </div>
 
     </div>
-</section>
+</section> -->
 
 <section class="our_val_main p-x com_bg_light_blue mt-100 d-none">
     <div class="sco_wra_our_val" id="scrollWrapper">
