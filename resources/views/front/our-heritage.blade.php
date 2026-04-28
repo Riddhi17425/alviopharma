@@ -33,35 +33,50 @@
 <section class="heritage-timeline mt-100">
   
     <nav class="timeline-nav">
-        <button class="timeline-nav__btn timeline-nav__btn--active" data-target="#phase1">01. Foundation</button>
-        <button class="timeline-nav__btn" data-target="#phase2">02. Transformation</button>
+   @php
+        $groupedPhases = collect($milestones)->groupBy('phase_id')->values();
+    @endphp
+
+    @foreach ($groupedPhases as $index => $phaseGroup)
+        @php
+            $firstItem = $phaseGroup->first();
+        @endphp
+
+        <button 
+            class="timeline-nav__btn {{ $index == 0 ? 'timeline-nav__btn--active' : '' }}"
+            data-target="#phase{{ $firstItem->phase_id }}">
+            
+            {{ $index + 1 }}. {{ $firstItem->phase_title }}
+        </button>
+    @endforeach
+        {{-- <button class="timeline-nav__btn" data-target="#phase2">02. Transformation</button>
         <button class="timeline-nav__btn" data-target="#phase3">03. Growth</button>
         <button class="timeline-nav__btn" data-target="#phase4">04. Vision</button>
-        <button class="timeline-nav__btn" data-target="#phase5">05. Expansion</button>
+        <button class="timeline-nav__btn" data-target="#phase5">05. Expansion</button> --}}
 
     </nav>
 
-    <div class="timeline">
+    {{-- <div class="timeline">
 
         <div class="timeline__mobile-line"><div class="timeline__mobile-draw"></div></div>
 
         <svg class="timeline__svg-desktop" viewBox="0 0 1200 3200">
-    <defs>
-        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#307abd"/>
-            <stop offset="50%" stop-color="#307abd"/>
-            <stop offset="100%" stop-color="#307abd"/>
-        </linearGradient>
-    </defs>
-    
-    <path class="timeline__path-base" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
-    <path class="timeline__path-base" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
-    <path class="timeline__path-base" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
+            <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#307abd"/>
+                    <stop offset="50%" stop-color="#307abd"/>
+                    <stop offset="100%" stop-color="#307abd"/>
+                </linearGradient>
+            </defs>
+            
+            <path class="timeline__path-base" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+            <path class="timeline__path-base" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+            <path class="timeline__path-base" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
 
-    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
-    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
-    <path class="timeline__path-glow draw-path" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
-</svg>
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
+        </svg>
         
         <div id="phase1" class="timeline__item timeline__item--right" style="--d-top: 200px;">
             <div class="timeline__node">2003</div>
@@ -153,6 +168,64 @@
             </div>
         </div>
 
+    </div> --}}
+    <div class="timeline">
+
+        <div class="timeline__mobile-line">
+            <div class="timeline__mobile-draw"></div>
+        </div>
+
+        <svg class="timeline__svg-desktop" viewBox="0 0 1200 3200">
+            <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#307abd"/>
+                    <stop offset="50%" stop-color="#307abd"/>
+                    <stop offset="100%" stop-color="#307abd"/>
+                </linearGradient>
+            </defs>
+            
+            <path class="timeline__path-base" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+            <path class="timeline__path-base" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+            <path class="timeline__path-base" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
+
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 50, 900 100, 900 200 C 900 350, 300 350, 300 500 C 300 650, 900 650, 900 800 C 900 950, 300 950, 300 1100 C 300 1250, 900 1250, 900 1400 C 900 1550, 300 1550, 300 1700 C 300 1850, 900 1850, 900 2000 C 900 2150, 300 2150, 300 2300 C 300 2450, 900 2450, 900 2600 C 900 2750, 300 2750, 300 2900 C 300 3050, 600 3100, 600 3200"/>
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 60, 880 110, 880 200 C 880 340, 320 360, 320 500 C 320 640, 880 660, 880 800 C 880 940, 320 960, 320 1100 C 320 1240, 880 1260, 880 1400 C 880 1540, 320 1560, 320 1700 C 320 1840, 880 1860, 880 2000 C 880 2140, 320 2160, 320 2300 C 320 2440, 880 2460, 880 2600 C 880 2740, 320 2760, 320 2900 C 320 3040, 600 3090, 600 3200"/>
+            <path class="timeline__path-glow draw-path" d="M 600 0 C 600 70, 860 120, 860 200 C 860 330, 340 370, 340 500 C 340 630, 860 670, 860 800 C 860 930, 340 970, 340 1100 C 340 1230, 860 1270, 860 1400 C 860 1530, 340 1570, 340 1700 C 340 1830, 860 1870, 860 2000 C 860 2130, 340 2170, 340 2300 C 340 2430, 860 2470, 860 2600 C 860 2730, 340 2770, 340 2900 C 340 3030, 600 3080, 600 3200"/>
+        </svg>
+
+        @foreach ($milestones as $index => $milestone)
+            @php
+                $isRight = $index % 2 == 0; // alternate left-right
+                $top = 200 + ($index * 300); // dynamic spacing
+            @endphp
+
+            <div id="phase{{ $index + 1 }}"
+                class="timeline__item {{ $isRight ? 'timeline__item--right' : 'timeline__item--left' }}"
+                style="--d-top: {{ $top }}px;">
+
+                <div class="timeline__node">
+                    {{ $milestone->year ?? '' }}
+                </div>
+
+                <div class="timeline__card">
+                    <div class="timeline__tag">
+                        <div class="timeline__tag-line"></div>
+                        <span class="timeline__tag-text">
+                            Phase {{ $milestone->phase_id ?? ($index+1) }}: {{ $milestone->phase_title ?? '' }}
+                        </span>
+                    </div>
+
+                    <h2 class="timeline__title">
+                        {{ $milestone->title }}
+                    </h2>
+
+                    <p class="timeline__desc">
+                        {!! $milestone->description !!}
+                    </p>
+                </div>
+            </div>
+        @endforeach
+
     </div>
 </section>
 
@@ -229,21 +302,28 @@ document.querySelectorAll('.timeline-nav__btn').forEach(btn => {
 });
 
 // 5. Dynamic Active Tab State Syncing on Scroll
-const sections = ["#phase1", "#phase2", "#phase3", "#phase4"];
-sections.forEach((id, index) => {
-    const nextId = sections[index + 1];
+const items = gsap.utils.toArray(".timeline__item");
+const buttons = document.querySelectorAll('.timeline-nav__btn');
+
+items.forEach((item, index) => {
+
     ScrollTrigger.create({
-        trigger: id,
+        trigger: item,
         start: "top center",
-        end: nextId ? "top center" : "bottom top", 
-        onToggle: (self) => {
-            if (self.isActive) {
-                document.querySelectorAll('.timeline-nav__btn').forEach(btn => btn.classList.remove('timeline-nav__btn--active'));
-                document.querySelector(`.timeline-nav__btn[data-target="${id}"]`).classList.add('timeline-nav__btn--active');
-            }
-        }
+        end: "bottom center", // important fix
+        onEnter: () => setActive(index),
+        onEnterBack: () => setActive(index)
     });
+
 });
+
+function setActive(index) {
+    buttons.forEach(btn => btn.classList.remove('timeline-nav__btn--active'));
+    
+    if (buttons[index]) {
+        buttons[index].classList.add('timeline-nav__btn--active');
+    }
+}
 
 // 6. Show/Hide Navigation Menu bound to Timeline Section (Top & Bottom Fix)
 ScrollTrigger.create({

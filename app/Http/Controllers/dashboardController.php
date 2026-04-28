@@ -14,7 +14,10 @@ use App\Models\Contact;
 use App\Models\HomeMap;
 use App\Models\OurProduction;
 use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Clientel;
+use App\Models\Divisions;
+use App\Models\KeyIngredient;
 use App\Models\MenuBanner;
 use App\Models\Product;
 
@@ -37,7 +40,13 @@ class dashboardController extends Controller
         $metadescription = "";
         $units =  HomeMap::where('cat_type','homemap')->get();
         $blogs = Blog::whereNull('deleted_at')->orderBy('id', 'desc')->get();
-        return view('front.dashboard',compact('metatitle','metadescription','blogs','units'));
+        $featuredproducts = Product::where('top_sellers', 'Yes')
+            ->with(['category' => function ($q) {
+                $q->where('status', 'Active');
+            }])
+            ->get();
+        // return $featuredproducts;
+        return view('front.dashboard',compact('metatitle','metadescription','blogs','units','featuredproducts'));
     }
 
     public function manufacturing()
@@ -126,7 +135,7 @@ class dashboardController extends Controller
         ->where('url', 'our-heritage')
         ->first();
 
-        $milestones = Milestone::orderBy('year','desc')->get();
+        $milestones = Milestone::orderBy('year','asc')->get();
 
         return view('front.our-heritage',compact('metatitle','metadescription','milestones','menubanner'));
     }
@@ -139,8 +148,9 @@ class dashboardController extends Controller
         $clientels = Clientel::all();
         $units = HomeMap::where('cat_type','companymap')->get();
         $menubanner = MenuBanner::whereNull('deleted_at')
-        ->where('url', 'our-company')
-        ->first();
+            ->where('url', 'our-company')
+            ->first();
+        // return $units;
         return view('front.our-company',compact('metatitle','metadescription','clientels','units','menubanner'));
     }
 
@@ -170,50 +180,79 @@ class dashboardController extends Controller
 
 
     
-   public function productlist(Request $request)
+    public function productlist(Request $request)
     {
         $brands = Brand::orderBy('title', 'asc')->get();
-    
+        $allDivisions = Divisions::where('status' , 'Active')->get();
         $brandId = $request->brand;
+        $division = $request->division;   // ✅ NEW
         $sortOrder = $request->sort ?? 'asc';
         $letterFilter = $request->letter;
         $search = $request->search;
-    
-        $query = Product::with('brand');
-    
-        // Brand filter
+
+        $query = Product::with(['brand', 'divisions']); // load division
+
+        // ✅ Brand filter
         if ($brandId) {
             $query->where('brand_id', $brandId);
         }
-    
+
+        // ✅ Division filter (IMPORTANT)
+        if ($division) {
+            $query->where('divisions_url', $division);
+        }
+
         // Alphabet filter
         if ($letterFilter) {
             $query->where('name', 'like', $letterFilter . '%');
         }
-    
+
         // Search
         if ($search) {
             $query->where('name', 'like', '%' . $search . '%');
         }
-    
+
         // Sorting
         $query->orderBy('name', $sortOrder);
-    
+
         $products = $query->get();
-    
-        // Alphabet grouping
+
+        // Grouping
         $groupedProducts = $products->groupBy(function ($product) {
             return strtoupper(substr($product->name, 0, 1));
         });
-    
-        return view('front.product-list', compact('brands','groupedProducts','brandId',
-                        'sortOrder','letterFilter','search'));
+
+        return view('front.product-list', compact(
+            'groupedProducts',
+            'brandId',
+            'division', // pass for active state
+            'sortOrder',
+            'letterFilter',
+            'search',
+            'brands',
+            'allDivisions'
+        ));
     }
 
-    public function productDetails()
+    public function productDetails($url)
     {
-    
-        return view('front.product-details');
+        $productDetails = Product::with(['category', 'divisions'])
+            ->where('status', 'Active')
+            ->where('url', $url)
+            ->firstOrFail();
+
+        $metatitle = $productDetails->meta_title ?? '';
+        $metadescription = $productDetails->meta_description ?? '';
+
+
+        $ingrediant_details = $productDetails->keyIngredients()->get();
+
+        return view('front.product-details', compact(
+            'productDetails',
+            'metadescription',
+            'metatitle',
+            'ingrediant_details'
+        ));
     }
 
      public function valuesPurpose()
@@ -227,65 +266,6 @@ class dashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
  
 }

@@ -7,7 +7,7 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">Contact</h1>
+            <h1 class="title-34 text--white">Connect with Alvio</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
     </div>
@@ -45,9 +45,10 @@
 
                         </span>
                         <p class="mb-0">
-                            <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">Block D, 10th Floor, Signature 2 Towers,
-Sarkhej-Sanand Crossing, Ahmedabad-382210,
-Gujarat, India</a>
+                            <a href="https://maps.app.goo.gl/JjD2uffTsRv2aq7u7" target="_blank">Block D, 10th Floor,
+                                Signature 2 Towers,
+                                Sarkhej-Sanand Crossing, Ahmedabad-382210,
+                                Gujarat, India</a>
                         </p>
                     </div>
                     <div class="con_links">
@@ -159,7 +160,9 @@ Gujarat, India</a>
 
                             </span>
                             <p class="mb-0">
-                                <a href="https://maps.app.goo.gl/8SYrh2rggxc96GXX7" target="_blank">434, Kishanpur, Opp. Pharma College of Roorkee, Bhagwanpur, Roorkee – 247667, Dist. – Haridwar, Uttarakhand, India.</a>
+                                <a href="https://maps.app.goo.gl/8SYrh2rggxc96GXX7" target="_blank">434, Kishanpur, Opp.
+                                    Pharma College of Roorkee, Bhagwanpur, Roorkee – 247667, Dist. – Haridwar,
+                                    Uttarakhand, India.</a>
                             </p>
                         </div>
                         <div class="con_links">
@@ -244,7 +247,7 @@ Gujarat, India</a>
                     <h2 class="title-54 mb-40">Get in Touch</h2>
                     <p>If you are a medical professional, distributor, or institutional partner and would like to
                         connect with Alvio Pharmaceuticals, please reach out using the details below or submit the
-                        enquiry form. 
+                        enquiry form.
                     </p>
                 </div>
                 <form id="contactform" method="POST" action="{{ route('inquiry.submit') }}" novalidate>
@@ -310,10 +313,11 @@ Gujarat, India</a>
                         </div>
                         <div class="col-lg-12">
                             <div class="contact_items">
-                                <div class="btn_main">
-                                    <a href="{{ route('blogs') }}" class="commo-btn ">Submit</a>
-                                    <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15"
-                                            viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <button class="btn_main border-0  ">
+                                    <span class="commo-btn">Submit</span>
+
+                                    <span class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
                                                 fill="white" />
@@ -322,14 +326,14 @@ Gujarat, India</a>
                                                 stroke="white" stroke-width="1.5" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>
-                                    </a>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
+            </form>
         </div>
+    </div>
     </div>
 </section>
 <section class="p-x mt-100">

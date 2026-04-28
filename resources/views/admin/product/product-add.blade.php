@@ -1,20 +1,81 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Product Add')
+<style>
+    .ingredient-box {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.ingredient-box input {
+    display: none;
+}
+
+.ingredient-box.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.selected-box {
+    margin-top: 10px;
+}
+
+.selected-tag {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 5px;
+}
+.ingredient-box {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ingredient-box input {
+    display: none;
+}
+
+.ingredient-box.active {
+    background: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+/* Selected Preview */
+.selected-box span {
+    display: inline-block;
+    background: #198754;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+</style>
 @section('content')
 <div class="container-xxl">
     <div class="row align-items-center">
         <div class="border-0 mb-4">
-            <div
-                class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+            <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                 <h3 class="fw-bold mb-0">Product Add</h3>
             </div>
         </div>
     </div> <!-- Row end -->
 
     <div class="card-body">
-        <form method="post" enctype="multipart/form-data" action="{{ route('product.store') }}">
+        <form method="post" enctype="multipart/form-data" action="{{ route('product.store') }}" data-products-form>
             @csrf
             <div class="col-xl-12 col-lg-8">
                 <div class="card mb-3 p-3">
@@ -28,52 +89,190 @@
                             <select name="brand_id" class="form-control">
                                 <option value="">Select Brand</option>
                                 @foreach($brands as $brand)
-                                    <option value="{{ $brand->id }}">
-                                        {{ $brand->title }}
-                                    </option>
+                                <option value="{{ $brand->id }}">
+                                    {{ $brand->title }}
+                                </option>
                                 @endforeach
                             </select>
+                            @if ($errors->has('brand_id'))
+                            <span class="text-danger">{{ $errors->first('brand_id') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Category</label>
+                            <select name="category" class="form-control">
+                                <option value="">Select Category</option>
+                                @foreach($category as $data)
+                                <option value="{{ $data->url }}">
+                                    {{ $data->name }}
+                                </option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('category'))
+                            <span class="text-danger">{{ $errors->first('category') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Divisions</label>
+                            <select name="divisions" class="form-control">
+                                <option value="">Select Divisions</option>
+                                @foreach($divisions as $data)
+                                <option value="{{ $data->url }}">
+                                    {{ $data->name }}
+                                </option>
+                                @endforeach
+                            </select>
+                            @if ($errors->has('divisions'))
+                            <span class="text-danger">{{ $errors->first('divisions') }}</span>
+                            @endif
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Name</label>
-                            <input type="text" id="name" name="name"  class="form-control">
+                            <input type="text" id="name" name="name" class="form-control"
+                                placeholder="Enter Product Name" data-products-name>
+                            @if ($errors->has('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                            @endif
                         </div>
-                        
+
+                        <div class="col-md-6">
+                            <label class="form-label">Url</label>
+                            <input type="text" id="url" name="url" class="form-control" placeholder="enter-product-url"
+                                data-products-url>
+                            @if ($errors->has('url'))
+                            <span class="text-danger">{{ $errors->first('url') }}</span>
+                            @endif
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Meta Title</label>
+                            <input type="text" id="meta_title" name="meta_title" class="form-control"
+                                placeholder="Enter Meta Title" data-products-meta-title>
+                            @if ($errors->has('meta_title'))
+                            <span class="text-danger">{{ $errors->first('meta_title') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Front Image</label>
+                            <input type="file" id="front_image" name="front_image" class="form-control"
+                                accept="image/*">
+
+                            <img id="front_image_preview"
+                                src="{{ isset($data->front_image) ? asset('public/product_front_image/'.$data->front_image) : '' }}"
+                                style="margin-top:10px; max-width:150px; {{ isset($data->front_image) ? '' : 'display:none;' }}">
+                            @if ($errors->has('front_image'))
+                                <span class="text-danger">{{ $errors->first('front_image') }}</span>
+                            @endif
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label class="form-label">Detail Images</label>
+                            <input type="file" id="detail_images" name="detail_images[]" class="form-control" multiple
+                                accept="image/*">
+
+                            {{-- Preview container --}}
+                            <div id="detail_images_preview"
+                                style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+
+                                {{-- Edit mode: show existing images --}}
+                                @if(isset($data->detail_images))
+                                    @php $images = json_decode($data->detail_images, true); @endphp
+
+                                    @if(is_array($images))
+                                        @foreach($images as $img)
+                                            <img src="{{ asset('public/product_detail_files/'.$img) }}" style="max-width:100px;">
+                                        @endforeach
+                                    @endif
+                                @endif
+
+                            </div>
+                             @if ($errors->has('detail_images'))
+                                <span class="text-danger">{{ $errors->first('detail_images') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Satus</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="Active">Active</option>
+                                <option value="In-Active">In-Active</option>
+                            </select>
+                            @if ($errors->has('status'))
+                                <span class="text-danger">{{ $errors->first('status') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Top Seller / Featured</label>
+                            <select name="top_sellers" class="form-control">
+                                <option value="No" selected>No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+
+                            @if ($errors->has('top_sellers'))
+                                <span class="text-danger">{{ $errors->first('top_sellers') }}</span>
+                            @endif
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label class="form-label">Key Ingredients</label>
+
+                            <div id="ingredientBoxWrap">
+                                @foreach($key_ingredient as $ingredient)
+                                    <label class="ingredient-box">
+                                        <input type="checkbox" name="key_ingredients[]" value="{{ $ingredient->id }}">
+                                        <span>{{ $ingredient->title }}</span>
+                                    </label>
+                                @endforeach
+                            </div>
+                            
+                            {{-- Selected Label --}}
+                            <div class="mt-3">
+                                <strong>Selected:</strong>
+                            </div>
+                            {{-- Selected Preview --}}
+                            <div id="selectedIngredients" class="selected-box"></div>
+
+                            @if ($errors->has('key_ingredients'))
+                                <span class="text-danger">{{ $errors->first('key_ingredients') }}</span>
+                            @endif
+                        </div>
+
                         <div class="col-md-12">
                             <label for="short_description" class="form-label">Short description</label>
                             <textarea id="short_description" name="short_description" class="form-control"></textarea>
+                            @if ($errors->has('short_description'))
+                            <span class="text-danger">{{ $errors->first('short_description') }}</span>
+                            @endif
                         </div>
-                        
+
                         <div class="col-md-12">
                             <label for="description" class="form-label">Description</label>
                             <textarea id="description" name="description" class="form-control"></textarea>
+                            @if ($errors->has('description'))
+                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                            @endif
                         </div>
-                        
-                        <div class="col-md-6">
-                            <label class="form-label">Url</label>
-                            <input type="text" id="url" name="url"  class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="front_image">Front Image</label>
-                            <input type="file" id="front_image" name="front_image" class="form-control">
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <label class="form-label">Meta Title</label>
-                            <input type="text" id="meta_title" name="meta_title" class="form-control">
-                        </div>
+
                         <div class="col-md-12">
                             <label for="meta_description" class="form-label">Meta Description</label>
                             <textarea id="meta_description" name="meta_description" class="form-control"></textarea>
+                            @if ($errors->has('meta_description'))
+                            <span class="text-danger">{{ $errors->first('meta_description') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
+    
+            <button type="submit" class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase">Save</button>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase">Save</button>
-    </form>
-</div>
 </div>
 @endsection
 @push('styles')
@@ -99,263 +298,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
 <!-- Cropper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-<script src="{!! asset('public/admin_public/dist/assets/plugin/multi-select/js/jquery.multi-select.js') !!}"></script>
-<script src="{!! asset('public/admin_public/dist/assets/plugin/bootstrap-tagsinput/bootstrap-tagsinput.js') !!}">
-</script>
-<script src="{!! asset('public/admin_public/dist/assets/bundles/dropify.bundle.js') !!}"></script>
-<script src="{!! asset('public/admin_public/dist/assets/bundles/dataTables.bundle.js') !!}"></script>
+<script src="{{ asset('public/admin_public/js/products.js') }}"></script>
 
-
-<script>
-$(document).ready(function() {
-    $('#description').summernote({
-        placeholder: 'Enter Blog Description here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-    $('#short_description').summernote({
-        placeholder: 'Enter Blog Short Description here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-    
-    $('#meta_description').summernote({
-        placeholder: 'Enter Meta Description here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-   
-
-
-    var $modal = $('#modalCrop');
-    var image = document.getElementById('image');
-    var cropper;
-
-    $("body").on("change", ".image", function(e) {
-        var files = e.target.files;
-        var done = function(url) {
-            image.src = url;
-            $modal.modal('show');
-        };
-
-        if (files && files.length > 0) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                done(reader.result);
-            };
-            reader.readAsDataURL(files[0]);
-        }
-    });
-
-    $modal.on('shown.bs.modal', function() {
-        cropper = new Cropper(image, {
-            aspectRatio: 3 / 2,
-            viewMode: 3,
-        });
-    }).on('hidden.bs.modal', function() {
-        cropper.destroy();
-        cropper = null;
-    });
-
-    $("#crop").click(function() {
-        canvas = cropper.getCroppedCanvas({
-            width: 400,
-            height: 400,
-        });
-
-        canvas.toBlob(function(blob) {
-            url = URL.createObjectURL(blob);
-            var reader = new FileReader();
-            reader.readAsDataURL(blob);
-            reader.onloadend = function() {
-                var base64data = reader.result;
-                $modal.modal('hide');
-                $('#cropped_image').val(base64data);
-            };
-        });
-    });
-});
-$(document).ready(function() {
-    ClassicEditor.create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-
-    $('#myCartTable').addClass('nowrap').dataTable({
-        responsive: true,
-        columnDefs: [{
-            targets: [-1, -3],
-            className: 'dt-body-right'
-        }]
-    });
-
-    $('.deleterow').on('click', function() {
-        var tablename = $(this).closest('table').DataTable();
-        tablename.row($(this).parents('tr')).remove().draw();
-    });
-
-    $('#optgroup').multiSelect({
-        selectableOptgroup: true
-    });
-});
-$(function() {
-    $('.dropify').dropify();
-
-    var drEvent = $('#dropify-event').dropify();
-    drEvent.on('dropify.beforeClear', function(event, element) {
-        return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-    });
-
-    drEvent.on('dropify.afterClear', function(event, element) {
-        alert('File deleted');
-    });
-
-    $('.dropify-fr').dropify({
-        messages: {
-            default: 'Glissez-déposez un fichier ici ou cliquez',
-            replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-            remove: 'Supprimer',
-            error: 'Désolé, le fichier trop volumineux'
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.add-more').addEventListener('click', function() {
-        let row = document.querySelector('.template').cloneNode(true);
-        row.classList.remove('template');
-        row.style.display = 'flex';
-        document.querySelector('.wattage-price-container').appendChild(row);
-    });
-
-    document.querySelector('.wattage-price-container').addEventListener('click', function(e) {
-        if (e.target.classList.contains('remove-row')) {
-            e.target.closest('.wattage-price-row').remove();
-        }
-    });
-});
-</script>
-<script>
-    function addImageInput() {
-    const container = document.getElementById('imageInputs');
-    const div = document.createElement('div');
-    div.classList.add('row', 'mb-3');
-
-    const randomId = 'summernote-' + Math.floor(Math.random() * 100000);
-
-    div.innerHTML = `
-        <div class="col-md-6 mb-2">
-            <input type="file" name="cta_image[]" class="form-control">
-        </div>
-        <div class="col-md-6 mb-2">
-            <input type="text" name="cta_alt[]" class="form-control" placeholder="Enter Alt Here">
-        </div>
-        <div class="col-md-6 mb-2">
-            <input type="text" name="cta_title[]" class="form-control" placeholder="Enter CTA Title">
-        </div>
-        <div class="col-md-12 mb-2">
-            <textarea id="${randomId}" name="cta_description[]" class="form-control summernote" placeholder="Enter CTA Description" rows="2"></textarea>
-        </div>
-        <div class="col-md-12">
-            <button type="button" class="btn btn-danger" onclick="removeInput(this)">Remove</button>
-        </div>
-    `;
-
-    container.appendChild(div);
-
-    $('#' + randomId).summernote({
-        placeholder: 'Enter CTA Description here...',
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'hr']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']]
-        ]
-    });
-}
-function removeInput(button) {
-    const container = document.getElementById('imageInputs');
-    const rows = container.querySelectorAll('.row.mb-3');
-    if (rows.length > 1) {
-        button.closest('.row').remove();
-    } else {
-        alert("At least one CTA block must remain.");
-    }
-}
-</script>
 
 <script>
     $(document).ready(function () {
-        // Initialize Summernote
-        $('.summernote').summernote({
-            height: 200,
-            placeholder: 'Enter Description here...'
+        $('#description').summernote({
+            placeholder: 'Enter Description here...',
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
+        });
+        $('#short_description').summernote({
+            placeholder: 'Enter Short Description here...',
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
         });
 
-        // Add More
-        $('#addFaqBlock').click(function () {
-            let block = `
-                <div class="faqGroup border rounded p-3 mb-3">
-                    <div class="mb-3">
-                        <label class="form-label">Title </label>
-                        <input type="text" name="faq_title[]" class="form-control" >
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description </label>
-                        <textarea name="faq_description[]" class="form-control summernote" rows="4" ></textarea>
-                    </div>
-                    <div class="text-end">
-                        <button type="button" class="btn btn-danger removeFaq">Remove</button>
-                    </div>
-                </div>
-            `;
-            $('#faqRepeater').append(block);
-            
-            // Re-init summernote for new textareas
-            $('.summernote').summernote({
-                height: 200,
-                placeholder: 'Enter Description here...'
-            });
-        });
-
-        // Remove block
-        $(document).on('click', '.removeFaq', function () {
-            $(this).closest('.faqGroup').remove();
+        $('#meta_description').summernote({
+            placeholder: 'Enter Meta Description here...',
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
         });
     });
 </script>
