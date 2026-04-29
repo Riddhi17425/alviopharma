@@ -100,35 +100,27 @@
                     <div class="accordion" id="accordionExample">
 
                         @foreach($units as $unit)
-
                         @php
-                        $collapseId = "collapse".$loop->index;
-                        $headingId = "heading".$loop->index;
+                            $collapseId = "collapse".$loop->index;
+                            $headingId = "heading".$loop->index;
                         @endphp
-
                         <div class="accordion-item">
                             <h4 class="accordion-header" id="{{ $headingId }}">
                                 <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
                                     type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
                                     aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
                                     aria-controls="{{ $collapseId }}">
-
                                     {{ $unit->title }}
-
                                 </button>
                             </h4>
-
                             <div id="{{ $collapseId }}"
                                 class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                                 aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
-
                                 <div class="accordion-body">
                                     {!! $unit->description !!}
                                 </div>
-
                             </div>
                         </div>
-
                         @endforeach
 
                     </div>
@@ -137,18 +129,14 @@
 
            <div class="col-lg-6">
                 <div class="images-only">
-
                     @foreach($units as $unit)
-
                     <img src="{{ asset('public/homemapimage/'.$unit->image) }}" 
                         data-original-src="{{ asset('public/homemapimage/'.$unit->image) }}"
                         data-alt-src="{{ asset('public/homemapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
                         class="accordion-preview-img img-fluid" 
                         data-panel="collapse{{ $loop->index }}"
                         style="cursor: pointer;">
-                        
                     @endforeach
-
                 </div>
             </div>
         </div>

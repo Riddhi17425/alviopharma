@@ -196,7 +196,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label">Satus</label>
+                            <label class="form-label">Status</label>
                             <select name="status" id="status" class="form-control">
                                 <option value="Active">Active</option>
                                 <option value="In-Active">In-Active</option>

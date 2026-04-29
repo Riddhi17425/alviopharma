@@ -36,8 +36,8 @@ class HomeMapController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
             'cat_type' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|max:2048',
+            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|max:2048',
         ], [
             'title.required' => 'Please enter a Title.',
             'description.required' => 'Please enter Description.',
@@ -87,8 +87,8 @@ class HomeMapController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required',
             'cat_type' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|max:2048',
+            'state_image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|max:2048',
         ], [
             'title.required' => 'Please enter a Title.',
             'description.required' => 'Please enter Description.',

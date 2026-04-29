@@ -39,11 +39,11 @@
                 <li><a href="{{ route('manufacturing')}}">Manufacturing & Quality</a></li>
                 <li><a href="{{ route('blogs')}}">Insights</a></li>
                 <li><a href="{{ route('contact')}}">Contact Us</a></li>
-                <li><a href="therapeutic-area">Therapeutic Areas
-</a></li>
+                <li><a href="therapeutic-area">Therapeutic Areas</a></li>
+
             </ul>
         </div>
-        <div class="footer-item">
+        <div class="footer-item">`
             <h5 class="footer-title">Who We Are</h5>
             <ul class="footer-list">
                 <li><a href="{{ route('our.company')}}">Our Company</a></li>
