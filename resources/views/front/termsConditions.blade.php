@@ -28,16 +28,15 @@
 
 <section class="p-x mt-100">
     <div class="mb-40">
-        <h3 class="title-34">1. Use of the Website
+        <h3 class="title-34"> Use of the Website
         </h3>
 
-        <h5 class="title-24">A. Permitted Use </h5>
+      <b class="title--dark">A. Permitted Use</b>
         <p>You may access the website solely for professional purposes in accordance with these Terms.
         </p>
 
 
-        <h5 class="title-24">B. Prohibited Use
-        </h5>
+       <b class="title--dark">B. Prohibited Use</b>
         <p>You should not:
         </p>
 
@@ -61,7 +60,7 @@
 
 
     <div class="mb-40">
-        <h3 class="title-34">2. Healthcare Disclaimer
+        <h3 class="title-34">Healthcare Disclaimer
         </h3>
         <p>The information provided on the website is intended for general guidance and educational purposes. It is
             unsuitable for professional medical advice or diagnosis.
@@ -85,7 +84,7 @@
 
 
     <div class="mb-40">
-        <h3 class="title-34">3. Intellectual Property </h3>
+        <h3 class="title-34">Intellectual Property </h3>
         <p>All content, including but not limited to the logo, product names, text, graphics, brand name, images, and
             layout, is the exclusive property of Avio Pharmaceuticals Pvt. Ltd. and is safeguarded by applicable
             intellectual property laws.
@@ -108,7 +107,7 @@
 
 
     <div class="mb-40">
-        <h3 class="title-34">4. Submissions and Communications
+        <h3 class="title-34">Submissions and Communications
         </h3>
 
         <p>Any data, feedback, or material you submit via the website shall be deemed non-confidential. By submitting
@@ -120,7 +119,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">5. Changes to the Website and Terms </h3>
+        <h3 class="title-34"> Changes to the Website and Terms </h3>
 
         <p>Alvio Pharma reserves the right to:
         </p>

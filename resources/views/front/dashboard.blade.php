@@ -121,7 +121,7 @@
 
 <!-- new section update -->
 
-<section class="counter-section p-x mt-100">
+<section class="counter-section mt-100">
     <div class="main-layout">
 
         <!-- LEFT SIDE -->

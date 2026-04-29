@@ -74,6 +74,30 @@ class dashboardController extends Controller
         return view('front.contact',compact('metatitle','metadescription','menubanner'));
     }
 
+    public function privacy()
+    {
+        $metatitle = "";
+        $metadescription = "";
+
+        $menubanner = MenuBanner::whereNull('deleted_at')
+        ->where('url', 'privacy')
+        ->first();
+
+        return view('front.privacy',compact('metatitle','metadescription','menubanner'));
+    }
+
+     public function termsConditions()
+    {
+        $metatitle = "";
+        $metadescription = "";
+
+        $menubanner = MenuBanner::whereNull('deleted_at')
+        ->where('url', 'termsConditions')
+        ->first();
+
+        return view('front.termsConditions',compact('metatitle','metadescription','menubanner'));
+    }
+
     public function inquirystore(Request $request)
     {
         //echo "call"; die;

@@ -2,22 +2,19 @@
 
 <section class="page-header">
     <div class="inner_hero">
-        <img src="{{ asset('public/front/images/rasavio-banner.webp') }}" class="img-fluid" alt="page-header-img">
-        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> /<a href="{{ url('/') }}">
-                Therapeutic Areas </a> / DermaScience Division /Rasavio™ Nomo Spot Serum</p>
+        <img src="{{ asset('public/front/images/our-company-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Privacy Policy</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">Targeted Management of Hyperpigmentation & Uneven Skin Tone</h1>
-            <p class="text-white page-header-para">Lorem ipsum dolor sit amet consectetur. Vulputate ut dictum
-                ullamcorper hendrerit. Mattis pretium sit metus consectetur dictum nunc ullamcorper. Pretium turpis
-                dapibus mattis massa pretium pulvinar lacus. Mattis pulvinar urna urna iaculis pharetra ornare.</p>
+            <h1 class="title-34 text--white">Privacy Policy</h1>
+            <p class="text-white page-header-para">Alvio Pharmaceuticals Pvt. Ltd. is dedicated to protecting your privacy and ensuring transparency in how we collect, use, and safeguard your personal information. This Privacy Policy explains our practices regarding data collection, usage, and protection.</p>
         </div>
         <div class="page-header-btn">
-            <a href="#">
+            <a href="{{ route('contact') }}">
                 <p class="title-24 text--white">Contact us</p>
             </a>
-            <a href="#" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+            <a href="{{ route('contact') }}" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z"
                         fill="white" />
@@ -28,11 +25,11 @@
     </div>
 </section>
 
-<section class="p-x">
+<section class="p-x mt-100">
     <div class="mb-40">
-        <h3 class="title-34">1. Information We Collect</h3>
+        <h3 class="title-34">Information We Collect</h3>
 
-        <h5 class="title-24">A. Information you Provide Directly</h5>
+        <b class="title--dark">A. Information you Provide Directly</b>
         <p>We may collect personal information that you voluntarily submit to us, including but not limited to:
         </p>
 
@@ -44,7 +41,7 @@
             <li>Email address provided via newsletter or updates subscription</li>
         </ul>
 
-        <h5 class="title-24">B. Information Collected Automatically </h5>
+        <b class="title--dark">B. Information Collected Automatically </b>
         <p>When you visit our website, we automatically gather certain technical data, including:
         </p>
         <ul>
@@ -59,8 +56,8 @@
             </li>
         </ul>
 
-        <h5 class="title-24">C. Cookies and Tracking Technologies
-        </h5>
+        <b class="title--dark">C. Cookies and Tracking Technologies
+        </b>
         <p>
             We use cookies and similar tracking technologies to enhance your browsing experience, remember preferences,
             and analyse website performance. You may configure your browser to refuse cookies.
@@ -69,7 +66,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">2. How We Use Your Information
+        <h3 class="title-34">How We Use Your Information
         </h3>
         <p>Alvio Pharma utilises information for the following purposes:
         </p>
@@ -91,7 +88,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">3. Sharing and Information Disclosure
+        <h3 class="title-34">Sharing and Information Disclosure
         </h3>
         <p>Alvio Pharma does not rent, trade, or sell your personal data to third parties. We may share information
             under the following circumstances:
@@ -113,7 +110,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">4. Data Retention
+        <h3 class="title-34">Data Retention
         </h3>
         <p>
             We retain personal data only for as long as it is required to fulfil a purpose for which it was gathered, or
@@ -133,7 +130,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">5. Data Security
+        <h3 class="title-34">Data Security
         </h3>
         <p>
             We execute appropriate organisational and technical safety measures to safeguard personal information
@@ -148,7 +145,7 @@
     </div>
 
     <div class="mb-40">
-        <h3 class="title-34">6. Changes to The Privacy Policy
+        <h3 class="title-34">Changes to The Privacy Policy
         </h3>
         <p>
             We may update the Privacy Policy promptly to reflect changes in our practices, legal requirements, and any
