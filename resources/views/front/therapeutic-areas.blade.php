@@ -52,7 +52,7 @@
     </div>
 </section>
 
-<section class="intro-section p-x mt-100" data-aos="fade-up">
+<!-- <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-md-6" data-aos="fade-right">
             <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
@@ -89,70 +89,66 @@
 
         </div>
     </div>
-</section>
-
+</section> -->
 
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-6 pe-md-5" data-aos="fade-right">
-            <h2 class="title-54" style="color: var(--black-color);">Advanced Dermal Delivery & Barrier Integrity</h2>
-            <p>Our Derma Science division applies rigorous pharmaceutical standards to the science of skin health
-                and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
-                and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
-            </p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li> <b>Biological Empathy:</b> Patient-centric, high-absorption formulations.</li>
-                <li> <b>Algorithmic Precision:</b> Solu-Enhance Tech for deep molecular penetration.</li>
-                <li> <b>Transparent Innovation:</b> Bio-stable, oxidation-resistant delivery systems.</li>
-                <li> <b>Future-Proofing Care: </b> Aceelerating post-procedure dermal regeneration.</li>
-            </ul>
-            <div class="btn_main mt-40">
-                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
-                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                            fill="white" />
-                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
-
-        </div>
-
+    
         <div class="col-md-6" data-aos="fade-left">
             <img src="{{ asset('public/front/images/DermaScience.webp') }}" alt="images" class="img-fluid">
         </div>
 
+        <div class="col-md-6 pe-md-5" data-aos="fade-right">
+            <h2 class="title-54" style="color: var(--black-color);">The Science of Skin Integrity</h2>
+            <p>Skin is the body’s first line of defense and a reflection of overall wellness. Our Dermatology portfolio combines clinical rigor with aesthetic sensitivity, offering treatments that repair the dermal barrier while enhancing natural vitality through bioactive science.
+            </p>
+
+            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
+            <ul>
+                <li> Targeted repair for chronic inflammatory skin conditions.</li>
+                <li>High-purity cosmeceuticals for aesthetic skin rejuvenation.</li>
+                <li>Non-comedogenic formulations designed for sensitive profiles.</li>
+                <li>Integration of protective antioxidants and cellular hydrators.</li>
+            </ul>
+            <div class="btn_main mt-40">
+                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Dermatology & Cosmetology</a>
+                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                            fill="white" />
+                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+
     </div>
 </section>
 
-<section class="intro-section p-x mt-100" data-aos="fade-up">
+<!-- <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-md-6" data-aos="fade-right">
             <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
         </div>
 
         <div class="col-md-6 ps-md-5" data-aos="fade-left">
-            <h2 class="title-54" style="color: var(--black-color);">Mastering the Cardio-Metabolic Continuum</h2>
-            <p>CardioMet Care is dedicated to managing the interconnected nature of cardiovascular and metabolic
-                disorders through an integrated therapeutic approach. Rather than treating conditions in isolation, we
-                address the shared physiological pathways that link hypertension, diabetes, and dyslipidemia, enabling
-                more stable and sustainable long-term outcomes.</p>
+            <h2 class="title-54" style="color: var(--black-color);">Mastering Metabolic Equilibrium</h2>
+            <p>Diabetes management is a journey of constant adjustment. Alvio’s metabolic care suite focuses on glycemic predictability and metabolic harmony, utilizing advanced bioavailability to help patients manage Type 2 diabetes with fewer fluctuations and greater ease.</p>
 
             <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
             <ul>
-                <li> <b>Biological Empathy:</b> Unified management of the metabolic triad.</li>
-                <li> <b>Algorithmic Precision:</b> CPC Technology for steady-state stability.</li>
-                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
-                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
+                <li>  Enhanced insulin sensitivity through targeted oral formulations.</li>
+                <li> Strategies to mitigate long-term metabolic complications.</li>
+                <li>  Bioavailability-focused chemistry for consistent absorption.</li>
+                <li>  Support for weight-neutral metabolic management.</li>
             </ul>
             <div class="btn_main mt-40">
-                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Diabetology (Metabolic care)</a>
                 <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -165,30 +161,30 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
 
         <div class="col-md-6 pe-md-5" data-aos="fade-right">
-            <h2 class="title-54" style="color: var(--black-color);">Advanced Dermal Delivery & Barrier Integrity</h2>
-            <p>Our Derma Science division applies rigorous pharmaceutical standards to the science of skin health
+            <h2 class="title-54" style="color: var(--black-color);">Preventive Wellness, Redefined</h2>
+            <p>We believe that wellness begins at the cellular level. Our Nutraceutical division bridges the gap between pharmaceutical standards and daily nutrition, providing pure, evidence-backed supplements that optimize systemic health and strengthen the body’s natural defenses.
                 and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
                 and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
             </p>
 
             <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
             <ul>
-                <li> <b>Biological Empathy:</b> Patient-centric, high-absorption formulations.</li>
-                <li> <b>Algorithmic Precision:</b> Solu-Enhance Tech for deep molecular penetration.</li>
-                <li> <b>Transparent Innovation:</b> Bio-stable, oxidation-resistant delivery systems.</li>
-                <li> <b>Future-Proofing Care: </b> Aceelerating post-procedure dermal regeneration.</li>
+                <li> Ultra-pure sourcing of bioactive botanical extracts.</li>
+                <li>Micronutrient optimization for cognitive and immune support.</li>
+                <li>Clean-label formulations free from unnecessary fillers.</li>
+                <li>Synergy-based blending to maximize nutrient uptake.</li>
             </ul>
 
 
               <div class="btn_main mt-40">
-            <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
+            <a href="{{ route('blogs') }}" class="commo-btn ">Explore Nutraceuticals</a>
             <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -204,11 +200,11 @@
         </div>
 
         <div class="col-md-6" data-aos="fade-left">
-            <img src="{{ asset('public/front/images/DermaScience.webp') }}" alt="images" class="img-fluid">
+            <img src="{{ asset('public/front/images/Nutraceuticals.png') }}" alt="images" class="img-fluid">
         </div>
 
     </div>
-</section>
+</section> 
 
 
 
