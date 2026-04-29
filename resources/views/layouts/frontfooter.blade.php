@@ -39,6 +39,7 @@
                 <li><a href="{{ route('manufacturing')}}">Manufacturing & Quality</a></li>
                 <li><a href="{{ route('blogs')}}">Insights</a></li>
                 <li><a href="{{ route('contact')}}">Contact Us</a></li>
+                <li> <a href="therapeutic-area">Therapeutic Areas</a></li>
             </ul>
         </div>
         <div class="footer-item">
@@ -57,7 +58,7 @@
         @endphp
 
         <div class="footer-item">
-            <h5 class="footer-title"><a href="therapeutic-area">Therapeutic Areas</a></h5>
+            <h5 class="footer-title">Therapeutic Areas</h5>
             <ul class="footer-list">
                 @foreach ($divisions as $division)
                     <li><a href="{{ route('product', ['division' => $division->url]) }}#product-section"> {{ $division->name }} </a></li>

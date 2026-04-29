@@ -202,7 +202,7 @@
             <div class="state-content">
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
                 </h2>
-                <p>Alvio Pharma’s growing national presence is built on strong field execution and therapy-focused
+                <p>Alvio Pharma's growing national presence is built on strong field execution and therapy-focused
                     portfolios. With a team of <b>300+ trained professionals</b> and an expanding network across <b>16+
                         states</b>, we work to keep <b>quality, affordable formulations</b> accessible to the
                     communities we serve.
@@ -213,7 +213,6 @@
                 <div class="accordion" id="accordionExample">
 
                     @foreach($units as $unit)
-
                     @php
                         $collapseId = "collapse".$loop->index;
                         $headingId = "heading".$loop->index;
@@ -224,22 +223,16 @@
                             <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
                                 type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
                                 aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="{{ $collapseId }}">
-
                                 {{ $unit->title }}
-
                             </button>
                         </h4>
-
                         <div id="{{ $collapseId }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                             aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
-
                             <div class="accordion-body">
                                 {!! $unit->description !!}
                             </div>
-
                         </div>
                     </div>
-
                     @endforeach
 
                 </div>
@@ -248,13 +241,10 @@
 
         <div class="col-xl-6">
             <div class="images-only">
-
                 @foreach($units as $unit)
-
                 <img src="{{ asset('public/homemapimage/'.$unit->image) }}" alt="{{ $unit->title }}"
                     class="accordion-preview-img img-fluid" data-panel="collapse{{ $loop->index }}">
                 @endforeach
-
             </div>
         </div>
 
