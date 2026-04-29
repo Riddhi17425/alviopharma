@@ -422,8 +422,15 @@ if (accordionEl && exploreState && previewImgs.length) {
             setActiveImage(openPanel.id);
             exploreState.classList.add("accordion-open");
         } else {
-            clearActive();
-            exploreState.classList.remove("accordion-open");
+            // Show first image when all panels are closed
+            const firstImage = previewImgs[0];
+            if (firstImage) {
+                clearActive();
+                firstImage.classList.add("active");
+                firstImage.style.display = "block";
+                firstImage.setAttribute('src', firstImage.getAttribute('data-original-src'));
+                exploreState.classList.add("accordion-open");
+            }
         }
     });
 

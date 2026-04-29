@@ -295,7 +295,7 @@
 /* MAIN WRAPPER */
 .main-layout {
     display: grid;
-    grid-template-columns: 3fr 4fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0; /* 🔥 center gap removed */
 }
 
@@ -303,7 +303,13 @@
 .derma-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
+    gap: 5px;
+}
+
+.derma-section img
+{
+    height: 100%;
+    width: 100%;
 }
 
 .uncapped {
@@ -323,7 +329,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 0px;
+    gap: 5px;
+}
+
+.cardio-section img
+{
+    width: 100%;
+    height: 100%;
 }
 /* ---------- */
 

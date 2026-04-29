@@ -121,35 +121,35 @@
 
 <!-- new section update -->
 
-<section class="counter-section p-x mt-100 d-none">
+<section class="counter-section p-x mt-100">
     <div class="main-layout">
 
         <!-- LEFT SIDE -->
         <div class="derma-section">
             <div class="derma uncapped">
-                <img class=" img-fluid" src="public/front/images/darma-care-img_1.png">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_1.png"></a>
             </div>
             <div class="derma shampoo">
-                <img class=" img-fluid" src="public/front/images/darma-care-img_2.png">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_2.png"></a>
             </div>
             <div class="derma supplement">
-                <img class=" img-fluid" src="public/front/images/darma-care-img_3.png">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_3.png"></a>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="cardio-section">
             <div class="cardio cardiovascular">
-                <img class=" img-fluid" src="public/front/images/cardio-care-img_1.png">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
             </div>
             <div class="cardio diabetes">
-                <img class=" img-fluid" src="public/front/images/cardio-care-img_2.png">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
             </div>
             <div class="cardio urology">
-                <img class=" img-fluid" src="public/front/images/cardio-care-img_3.png">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
             </div>
             <div class="cardio chronic">
-                <img class=" img-fluid" src="public/front/images/cardio-care-img_4.png">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
             </div>
         </div>
 
@@ -160,7 +160,7 @@
 
 
 
-<section class="product-section mt-100" data-aos="fade-up">
+<section class="product-section mt-100 d-none" data-aos="fade-up">
     <div data-aos="fade-right">
         <img src="{{ asset('public/front/images/darma-care-img.webp') }}" alt="Darma Care" class="img-fluid">
         <div class="product-content-left">
@@ -376,8 +376,14 @@ if (accordionEl && exploreState && previewImgs.length) {
             setActiveImage(openPanel.id);
             exploreState.classList.add("accordion-open");
         } else {
-            clearActive();
-            exploreState.classList.remove("accordion-open");
+            // Show first image when all panels are closed
+            const firstImage = previewImgs[0];
+            if (firstImage) {
+                clearActive();
+                firstImage.classList.add("active");
+                firstImage.style.display = "block";
+                exploreState.classList.add("accordion-open");
+            }
         }
     });
 
