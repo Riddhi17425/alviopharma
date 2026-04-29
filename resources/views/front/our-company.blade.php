@@ -143,7 +143,7 @@
     </div>
 </section>
 
-<section class="principles-section p-x mt-100" data-aos="fade-up">
+<!-- <section class="principles-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-xl-4 col-lg-5 col-md-12" data-aos="fade-right">
             <p>Our Purp😄se</p>
@@ -191,7 +191,7 @@
         </div>
 
     </div>
-</section>
+</section> -->
 
 <section class="our_val_main p-x com_bg_light_blue mt-100 d-none">
     <div class="sco_wra_our_val" id="scrollWrapper">
@@ -234,7 +234,9 @@
 <section class="mt-100 p-x d-none">
     <div class="mb-40 text-center">
         <!-- <p>Our Values</p> -->
-        <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2>
+        <p class="title--blue title-24 ">Values driven</p>
+        <h3 class="vision-mission-title mb-3">Believe, Adapt, and Behave</h3>
+        {{-- <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2> --}}
         <p>We encapsulate our core values through B.A.B Believe,
             Adapt, and Behave, creating a dynamic and purpose-driven organizational culture.</p>
     </div>
@@ -282,7 +284,9 @@
 <section class="mt-100 p-x">
 
     <div class="mb-40 text-center">
-        <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2>
+        <p class="title--blue title-24 ">Values driven</p>
+        <h3 class="vision-mission-title mb-3">Believe, Adapt, and Behave</h3>
+        {{-- <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2> --}}
         <p class="mb-0">We encapsulate our core values through B.A.B Believe, Adapt, and Behave, creating a dynamic and
             purpose-driven organizational culture.</p>
     </div>
@@ -410,8 +414,15 @@ if (accordionEl && exploreState && previewImgs.length) {
             setActiveImage(openPanel.id);
             exploreState.classList.add("accordion-open");
         } else {
-            clearActive();
-            exploreState.classList.remove("accordion-open");
+            // Show first image when all panels are closed
+            const firstImage = previewImgs[0];
+            if (firstImage) {
+                clearActive();
+                firstImage.classList.add("active");
+                firstImage.style.display = "block";
+                firstImage.setAttribute('src', firstImage.getAttribute('data-original-src'));
+                exploreState.classList.add("accordion-open");
+            }
         }
     });
 
