@@ -25,7 +25,83 @@
     </div>
 </section>
 
+<section class="intro-section p-x mt-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-12 aos-init aos-animate" data-aos="fade-left">
+            <p>Our Purpose
+            </p>
+        </div>
+        <div class="col-xl-8 col-lg-7 col-md-12">
+            <h2 class="title-54 title--blue mb-40 aos-init aos-animate" data-aos="fade-right">Impr😄ving Lives
+            </h2>
 
+            <p>”Our purpose “Improving Lives”’ encapsulates our commitment to making a positive impact across various dimensions of our engagement, ranging from healthcare professionals to patients, channel partners, and our dedicated team. Through this ethos, we strive to contribute meaningfully to the well-being and betterment of individuals and communities, aligning our efforts with the broader goal of improving lives in every facet of our operations.” 
+            </p>
+        </div>
+
+    </div>
+
+    <div class="slider-wrapper mt-40">
+        <div class="my-carousel">
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives1.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <span class="title--blue">Reputation to Cure </span>
+                        <h3 class="title--dark">Doctors </h3>
+                        <p class="mb-0">To enhance doctors' professional reputation by providing pharmaceutical solutions that contribute to effective patient care and successful treatment outcomes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives2.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <span class="title--blue">Health </span>
+                        <h3 class="title--dark">Patients</h3>
+                        <p class="mb-0">To promote health and well-being, aiming to deliver high-quality medicines that contribute to improved health outcomes, offering patients the chance for a healthier & fulfilling life.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives3.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <span class="title--blue">Healthy Business</span>
+                        <h3 class="title--dark">Channel Partners  
+                        </h3>
+                        <p class="mb-0">To foster a healthy business relationship with our channel partners, providing products and support that meets their business objectives and contributes to the sustainability of their enterprises.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives4.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <span class="title--blue">Healthy Career</span>
+                        <h3 class="title--dark">Employees </h3>
+                        <p> To nurture a healthy and fulfilling career environment for our employees by creating a workplace that fosters personal and professional growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <section class="values-purpose-section p-x">
     <div class="values-container">
@@ -48,19 +124,19 @@
             <div class="tab-content-container">
                 <div id="desc-hunger" class="tab-pane active">
                     <p><strong>Health:</strong> Our health initiatives resonate with every stakeholder. Patients have access to quality and affordable treatment, while doctors improve patient health with skillful medical practices. Channel partners benefit from widely available channels, suppliers witness predictable and mutual growth, and employees thrive in a workplace encouraging continuous personal and professional development.
-</p>
+                    </p>
                 </div>
                 <div id="desc-excellence" class="tab-pane">
                     <p><strong>Excellence:</strong> Excellence is our commitment to all stakeholders. Patients receive high-quality medicines; Doctors gain trust in prescribing our medicines. Channel Partners experience excellence in business collaboration, Suppliers witness it in procurement, and Employees thrive in a culture that values and rewards excellence.
-</p>
+                    </p>
                 </div>
                 <div id="desc-accountability" class="tab-pane">
                     <p><strong>Accountability:</strong> Accountability extends to all interactions. Patients experience transparency in their treatment plans, Doctors find a trustworthy partner, and Channel Partners engage in accountable business practices. Suppliers benefit from responsible procurement, and Employees flourish in an environment where accountability is ingrained in every task.
-</p>
+                    </p>
                 </div>
                 <div id="desc-longevity" class="tab-pane">
                     <p><strong>Longevity:</strong> Longevity is our pledge to sustainable relationships. Patients trust in our medicines for long-term health; Doctors find a reliable partner in patient care. Channel Partners engage in enduring business relationships, Suppliers witness a commitment to long-term partnerships, and Employees build their careers in an organization focused on longevity and growth.
-</p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -108,91 +184,6 @@
 
     </div>
 </section>
-
-
-
-
-<section class="intro-section p-x">
-    <div class="row justify-content-center">
-        <div class="col-xl-4 col-lg-5 col-md-12 aos-init aos-animate" data-aos="fade-left">
-            <p>Our Purpose
-            </p>
-        </div>
-        <div class="col-xl-8 col-lg-7 col-md-12">
-            <h2 class="title-54 title--blue mb-40 aos-init aos-animate" data-aos="fade-right">Impr😄ving Lives
-            </h2>
-
-            <p>”Our purpose “Improving Lives”’ encapsulates our commitment to making a positive impact across various dimensions of our engagement, ranging from healthcare professionals to patients, channel partners, and our dedicated team. Through this ethos, we strive to contribute meaningfully to the well-being and betterment of individuals and communities, aligning our efforts with the broader goal of improving lives in every facet of our operations.” 
-            </p>
-        </div>
-
-    </div>
-
-    <div class="slider-wrapper mt-40">
-        <div class="my-carousel">
-
-            <div class="slide-item">
-                <div class="card">
-                    <div class="img-container">
-                        <img src="public/front/images/improving-lives1.webp" alt="Doctor Consultation">
-                    </div>
-                    <div class="card-content">
-                        <span class="title--blue">Reputation to Cure </span>
-                        <h3 class="title--dark">Doctors </h3>
-                        <p class="mb-0">To enhance doctors' professional reputation by providing pharmaceutical solutions that contribute to effective patient care and successful treatment outcomes.
-</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-item">
-                <div class="card">
-                    <div class="img-container">
-                        <img src="public/front/images/improving-lives2.webp" alt="Doctor Consultation">
-                    </div>
-                    <div class="card-content">
-                        <span class="title--blue">Health </span>
-                        <h3 class="title--dark">Patients</h3>
-                        <p class="mb-0">To promote health and well-being, aiming to deliver high-quality medicines that contribute to improved health outcomes, offering patients the chance for a healthier & fulfilling life.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-item">
-                <div class="card">
-                    <div class="img-container">
-                        <img src="public/front/images/improving-lives3.webp" alt="Doctor Consultation">
-                    </div>
-                    <div class="card-content">
-                        <span class="title--blue">Healthy Business</span>
-                        <h3 class="title--dark">Channel Partners  
-</h3>
-                        <p class="mb-0">To foster a healthy business relationship with our channel partners, providing products and support that meets their business objectives and contributes to the sustainability of their enterprises.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-item">
-                <div class="card">
-                    <div class="img-container">
-                        <img src="public/front/images/improving-lives4.webp" alt="Doctor Consultation">
-                    </div>
-                    <div class="card-content">
-                        <span class="title--blue">Healthy Career</span>
-                        <h3 class="title--dark">Employees </h3>
-                        <p> To nurture a healthy and fulfilling career environment for our employees by creating a workplace that fosters personal and professional growth.
-</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-</section>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
