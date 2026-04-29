@@ -140,22 +140,18 @@
                 <h2 class="title-54 mb-40">Salud Care
                 </h2>
 
-                <p>Lorem ipsum dolor sit amet consectetur. Quam arcu elementum donec malesuada mauris amet. Cursus odio
-                    fames enim adipiscing mi. Sed sociis massa id orci elit elit consectetur. Tortor dolor posuere purus
-                    turpis. Sed nullam a velit cursus feugiat egestas sociis tempor. Accumsan pellentesque penatibus
-                    curabitur nec enim risus a. Amet et massa semper dui velit morbi adipiscing amet. Faucibus phasellus
-                    interdum habitasse id leo. Aliquam nibh massa eros malesuada. Vel nec vestibulum arcu velit. Purus
-                    et nec est mus.
+                <p>Salud Care India Limited is a contract manufacturing company focused on delivering high-quality
+                    finished pharmaceutical formulations with affordability, consistency, and global compliance at the
+                    core of its operations. Since 2006, the company has steadily strengthened its infrastructure and
+                    aligned its manufacturing systems with PIC/S-driven standards to support wider healthcare access.
+
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur. Tellus sagittis ut ullamcorper at gravida turpis massa.
-                    Viverra sed volutpat hendrerit auctor eu commodo. Donec consequat in vitae tristique aenean ac
-                    mollis lacus. Sed sit faucibus imperdiet turpis nibh nunc. Mauris mauris duis faucibus augue id urna
-                    viverra turpis eget. Turpis viverra vulputate lectus libero felis convallis ac et pharetra. </p>
+
                 <div class="mt-40">
                     <div class="btn_main">
-                        <a href="{{ route('our.company') }}" target="_blank" class="commo-btn">Learn About Alvio Pharma
+                        <a href="https://saludcare.co.in" target="_blank" class="commo-btn"> Learn About Salud Care
                         </a>
-                        <a href="{{ route('our.company') }}" target="_blank" class="commo-btn-arrow"><svg width="15"
+                        <a href="https://saludcare.co.in" target="_blank" class="commo-btn-arrow"><svg width="15"
                                 height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
@@ -171,11 +167,56 @@
             </div>
 
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                adf
+                <h2 class="title-54 mb-40">Stelvio Health Care
+                </h2>
+
+                <p>Stelvio Health Care is an R&D-driven pharmaceutical organization engaged in the manufacturing and marketing of formulations for global customer and patient needs. Backed by an integrated R&D setup and a WHO-GMP-accredited manufacturing facility in Ahmedabad, India, the company supports a wide range of therapeutic categories across oral solids, injectables, liquids, and nutraceutical/cosmeceutical products, while continuing to build its presence through branded formulations, generics, and international market reach.
+
+                </p>
+
+                <div class="mt-40">
+                    <div class="btn_main">
+                        <a href="https://stelviohealthcare.com" target="_blank" class="commo-btn">  Learn About Stelvio Health Care
+                        </a>
+                        <a href="https://stelviohealthcare.com" target="_blank" class="commo-btn-arrow"><svg width="15"
+                                height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                                    fill="white" />
+                                <path
+                                    d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                adfasdwqr
+                <h2 class="title-54 mb-40">Rebase Lifescience Pvt. Ltd.
+                </h2>
+
+                <p>Rebase Lifescience Pvt. Ltd. is an integrated pharmaceutical company focused on developing, manufacturing, and marketing formulations for the pharmaceutical and nutraceutical sectors. With capabilities across softgel capsules, tablets, effervescent tablets, hard gelatin capsules, powders in sachets, and jellies, the company supports differentiated products and reliable outsourcing solutions through a focused, quality-driven approach.
+
+
+                </p>
+
+                <div class="mt-40">
+                    <div class="btn_main">
+                        <a href="https://rebaselifescience.com" target="_blank" class="commo-btn"> Learn About Rebase Lifescience Pvt. Ltd.
+                        </a>
+                        <a href="https://rebaselifescience.com" target="_blank" class="commo-btn-arrow"><svg width="15"
+                                height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
+                                    fill="white" />
+                                <path
+                                    d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

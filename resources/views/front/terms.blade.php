@@ -1,4 +1,32 @@
-<section class="p-x">
+
+@include('layouts.frontheader')
+
+<section class="page-header">
+    <div class="inner_hero">
+        <img src="{{ asset('public/front/images/our-company-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Terms and Conditions</p>
+    </div>
+    <div class="page-header-content p-x">
+        <div class="page-header-text com_bg_blue" data-aos="fade-up">
+            <h1 class="title-34 text--white">Terms and Conditions</h1>
+            <p class="text-white page-header-para">Welcome to Alvio Pharmaceuticals Pvt. Ltd. These Terms and Conditions outline the rules and regulations for the use of our website and services. By accessing and using this website, you accept and agree to be bound by these terms.</p>
+        </div>
+        <div class="page-header-btn">
+            <a href="{{ route('contact') }}">
+                <p class="title-24 text--white">Contact us</p>
+            </a>
+            <a href="{{ route('contact') }}" class="common-arrow-img"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75013 30.821L30.8213 0.749882ZM30.8213 0.749882H7.43255ZM30.8213 0.749882V24.1385Z"
+                        fill="white" />
+                    <path d="M0.75013 30.821L30.8213 0.749882M30.8213 0.749882H7.43255M30.8213 0.749882V24.1385"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
+        </div>
+    </div>
+</section>
+
+<section class="p-x mt-100">
     <div class="mb-40">
         <h3 class="title-34">1. Use of the Website
         </h3>
@@ -111,3 +139,6 @@
     </div>
 
 </section>
+
+@include('layouts.fronttop-footer')
+@include('layouts.frontfooter')

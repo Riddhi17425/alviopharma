@@ -11,13 +11,12 @@
             </div>
         </div>
         <div class="hero-section">
-            <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.webp') }}" alt="hero image">
+            <img class="img-fluid" src="{{ asset('public/front/images/Banner-2.png') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
                 <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
                     support patients and physicians through dependable treatment solutions.
                 </p>
-                
             </div>
         </div>
         <div class="hero-section">
@@ -120,7 +119,48 @@
 
 </section>
 
-<section class="product-section mt-100" data-aos="fade-up">
+<!-- new section update -->
+
+<section class="counter-section mt-100">
+    <div class="main-layout">
+
+        <!-- LEFT SIDE -->
+        <div class="derma-section">
+            <div class="derma uncapped">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_1.png"></a>
+            </div>
+            <div class="derma shampoo">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_2.png"></a>
+            </div>
+            <div class="derma supplement">
+                <a href="#"><img class="" src="public/front/images/darma-care-img_3.png"></a>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="cardio-section">
+            <div class="cardio cardiovascular">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
+            </div>
+            <div class="cardio diabetes">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
+            </div>
+            <div class="cardio urology">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
+            </div>
+            <div class="cardio chronic">
+                <a href="#"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- new section update -->
+
+
+
+<section class="product-section mt-100 d-none" data-aos="fade-up">
     <div data-aos="fade-right">
         <img src="{{ asset('public/front/images/darma-care-img.webp') }}" alt="Darma Care" class="img-fluid">
         <div class="product-content-left">
@@ -151,6 +191,8 @@
         </div>
     </div>
 </section>
+
+
 @if($featuredproducts->count())
 <section class="product-slider p-x mt-100" data-aos="fade-up">
     <h2 class="title-54 text-center mb-40" data-aos="fade-up" data-aos-delay="200">
@@ -159,45 +201,43 @@
 
     <div class="featured-product-slider" data-aos="zoom-in" data-aos-delay="300">
         @foreach ($featuredproducts as $product)
-            <div class="slider-item" data-aos="fade-up">
-                
-                <img src="{{ asset('public/product/front_image/' . $product->front_image) }}"
-                     alt="{{ $product->name }}"
-                     class="w-100">
+        <div class="slider-item" data-aos="fade-up">
 
-                <div class="slider-content">
-                    <p class="mb-2">
-                        {{ $product->category->name ?? 'N/A' }}
-                    </p>
+            <img src="{{ asset('public/product/front_image/' . $product->front_image) }}" alt="{{ $product->name }}"
+                class="w-100">
 
-                    <h5 class="title-24">
-                        {{ $product->name }}
-                    </h5>
-                </div>
+            <div class="slider-content">
+                <p class="mb-2">
+                    {{ $product->category->name ?? 'N/A' }}
+                </p>
 
-                {{-- 🔥 Top Seller Badge --}}
-                @if($product->top_seller == 'Yes')
-                    <span class="badge bg-danger position-absolute" style="top:10px; left:10px;">
-                        Top Seller
-                    </span>
-                @endif
-
-                <a href="{{ route('product.details', ['url' => $product->url]) }}"
-                   class="commo-btn-arrow">
-                    <svg width="15" height="15" viewBox="0 0 15 15">
-                        <path d="M0.75 13.478L13.478 0.75M13.478 0.75H3.57M13.478 0.75V10.64"
-                            stroke="white" stroke-width="1.5"/>
-                    </svg>
-                </a>
-
+                <h5 class="title-24">
+                    {{ $product->name }}
+                </h5>
             </div>
+
+            {{-- 🔥 Top Seller Badge --}}
+            @if($product->top_seller == 'Yes')
+            <span class="badge bg-danger position-absolute" style="top:10px; left:10px;">
+                Top Seller
+            </span>
+            @endif
+
+            <a href="{{ route('product.details', ['url' => $product->url]) }}" class="commo-btn-arrow">
+                <svg width="15" height="15" viewBox="0 0 15 15">
+                    <path d="M0.75 13.478L13.478 0.75M13.478 0.75H3.57M13.478 0.75V10.64" stroke="white"
+                        stroke-width="1.5" />
+                </svg>
+            </a>
+
+        </div>
         @endforeach
     </div>
 </section>
 @endif
 <section class="explore-state mt-100" style="margin-top: 100px;"">
-   <div class="p-x">
-     <div class="row align-items-center">
+   <div class=" p-x">
+    <div class="row align-items-center">
         <div class="col-xl-6">
             <div class="state-content">
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
@@ -214,8 +254,8 @@
 
                     @foreach($units as $unit)
                     @php
-                        $collapseId = "collapse".$loop->index;
-                        $headingId = "heading".$loop->index;
+                    $collapseId = "collapse".$loop->index;
+                    $headingId = "heading".$loop->index;
                     @endphp
 
                     <div class="accordion-item">
@@ -249,7 +289,7 @@
         </div>
 
     </div>
-   </div>
+    </div>
 </section>
 
 <section class="blog-section p-x mt-100">
@@ -326,8 +366,14 @@ if (accordionEl && exploreState && previewImgs.length) {
             setActiveImage(openPanel.id);
             exploreState.classList.add("accordion-open");
         } else {
-            clearActive();
-            exploreState.classList.remove("accordion-open");
+            // Show first image when all panels are closed
+            const firstImage = previewImgs[0];
+            if (firstImage) {
+                clearActive();
+                firstImage.classList.add("active");
+                firstImage.style.display = "block";
+                exploreState.classList.add("accordion-open");
+            }
         }
     });
 
