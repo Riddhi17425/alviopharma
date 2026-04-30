@@ -2,7 +2,7 @@
     <div class="common-footer-wrapper">
         <div class="common-footer-item">
             <a href="{{ route('manufacturing') }}">
-                <img src="{{ asset('public/front/images/divisions-img.webp') }}" class="common-footer-img" alt="Footer Icon">
+                <img src="{{ asset('public/front/images/Manufacturing_division.png') }}" class="common-footer-img" alt="Footer Icon">
                 <p class="common-footer-title">Manufacturing</p>
             </a>
         </div>

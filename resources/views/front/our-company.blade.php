@@ -234,7 +234,9 @@
 <section class="mt-100 p-x d-none">
     <div class="mb-40 text-center">
         <!-- <p>Our Values</p> -->
-        <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2>
+        <p class="title--blue title-24 ">Values driven</p>
+        <h3 class="vision-mission-title mb-3">Believe, Adapt, and Behave</h3>
+        {{-- <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2> --}}
         <p>We encapsulate our core values through B.A.B Believe,
             Adapt, and Behave, creating a dynamic and purpose-driven organizational culture.</p>
     </div>
@@ -282,7 +284,9 @@
 <section class="mt-100 p-x">
 
     <div class="mb-40 text-center">
-        <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2>
+        <p class="title--blue title-24 ">Values driven</p>
+        <h3 class="vision-mission-title mb-3">Believe, Adapt, and Behave</h3>
+        {{-- <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2> --}}
         <p class="mb-0">We encapsulate our core values through B.A.B Believe, Adapt, and Behave, creating a dynamic and
             purpose-driven organizational culture.</p>
     </div>
