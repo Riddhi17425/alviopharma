@@ -43,7 +43,7 @@
 
             </ul>
         </div>
-        <div class="footer-item">`
+        <div class="footer-item">
             <h5 class="footer-title">Who We Are</h5>
             <ul class="footer-list">
                 <li><a href="{{ route('our.company')}}">Our Company</a></li>

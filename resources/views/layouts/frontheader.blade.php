@@ -200,3 +200,22 @@
             </div>
         </div>
     </div>
+
+
+        <script>
+        // Hide header when offcanvas opens, show when closes
+        const offcanvasElement = document.getElementById('offcanvasRight');
+        const header = document.querySelector('.header.header-visible .header-hidden');
+
+        if (offcanvasElement && header) {
+            offcanvasElement.addEventListener('show.bs.offcanvas', function() {
+                header.style.transform = 'translateY(0%)';
+            });
+
+            offcanvasElement.addEventListener('hide.bs.offcanvas', function() {
+                header.style.transform = 'translateY(0)';
+            });
+        }
+    </script>
+
+    
