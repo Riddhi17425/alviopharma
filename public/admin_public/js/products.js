@@ -104,31 +104,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const checkboxes = document.querySelectorAll('#ingredientBoxWrap input');
-        const preview = document.getElementById('selectedIngredients');
+    
 
-        function updateSelected() {
-            preview.innerHTML = '';
 
-            checkboxes.forEach(cb => {
-                if (cb.checked) {
-                    const text = cb.nextElementSibling.innerText;
+    //// key ingreadiants code start heaer
+    document.addEventListener("DOMContentLoaded", function () {
 
-                    const span = document.createElement('span');
-                    span.innerText = text;
+        let wrapper = document.getElementById("ingredients-wrapper");
 
-                    preview.appendChild(span);
-                    cb.parentElement.classList.add('active');
-                } else {
-                    cb.parentElement.classList.remove('active');
-                }
+        if (!wrapper) return;
+
+        // 🔢 Get last index (important for edit mode)
+        let items = wrapper.querySelectorAll('.ingredient-item');
+        let index = items.length;
+
+        function initSummernote(element) {
+            if (!element) return;
+
+            // جلوگیری double init
+            if ($(element).next('.note-editor').length) return;
+
+            $(element).summernote({
+                height: 200,
+                placeholder: 'Enter Description...',
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline']],
+                    ['para', ['ul', 'ol']],
+                    ['insert', ['link', 'picture']],
+                    ['view', ['codeview']]
+                ]
             });
         }
 
-        checkboxes.forEach(cb => {
-            cb.addEventListener('change', updateSelected);
+        // ✅ INIT ALL EXISTING (Edit mode support)
+        wrapper.querySelectorAll('.summernote').forEach(function (el) {
+            initSummernote(el);
         });
 
-        updateSelected(); // initial load
+        // ➕ ADD MORE
+        document.getElementById("add-ingredient").addEventListener("click", function () {
+
+            let html = `
+                <div class="ingredient-item mb-4 border p-3 rounded">
+                    
+                    <div class="col-md-12 mb-2">
+                        <input type="text" name="ingredients[${index}][title]" 
+                            class="form-control" placeholder="Ingredient Title">
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <textarea name="ingredients[${index}][description]" 
+                            class="form-control summernote"></textarea>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                    </div>
+
+                </div>
+            `;
+
+            wrapper.insertAdjacentHTML("beforeend", html);
+
+            let newItem = wrapper.lastElementChild;
+            let textarea = newItem.querySelector('.summernote');
+
+            initSummernote(textarea);
+
+            index++;
+        });
+
+        // ❌ REMOVE
+        document.addEventListener("click", function (e) {
+            if (e.target.classList.contains("remove-ingredient")) {
+
+                let item = e.target.closest(".ingredient-item");
+
+                // destroy summernote safely
+                let editor = item.querySelector('.summernote');
+                if (editor && $(editor).next('.note-editor').length) {
+                    $(editor).summernote('destroy');
+                }
+
+                item.remove();
+            }
+        });
+
     });

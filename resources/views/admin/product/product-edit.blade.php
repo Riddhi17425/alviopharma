@@ -182,39 +182,6 @@
                             </select>
                         </div>
 
-                        <div class="col-md-12">
-                            <label class="form-label">Key Ingredients</label>
-
-                            @php
-                                $selectedIngredients = json_decode($data->key_ingredients, true) ?? [];
-                            @endphp
-
-                            <div id="ingredientBoxWrap">
-                                @foreach($key_ingredient as $ingredient)
-                                    <label class="ingredient-box 
-                                        {{ in_array($ingredient->id, $selectedIngredients) ? 'active' : '' }}">
-                                        
-                                        <input type="checkbox" 
-                                            name="key_ingredients[]" 
-                                            value="{{ $ingredient->id }}"
-                                            {{ in_array($ingredient->id, $selectedIngredients) ? 'checked' : '' }}>
-                                        
-                                        <span>{{ $ingredient->title }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-
-                            {{-- Selected Label --}}
-                            <div class="mt-2"><strong>Selected:</strong></div>
-
-                            {{-- Selected Preview --}}
-                            <div id="selectedIngredients" class="selected-box"></div>
-
-                            @if ($errors->has('key_ingredients'))
-                                <span class="text-danger">{{ $errors->first('key_ingredients') }}</span>
-                            @endif
-                        </div>
-
                         {{-- SHORT DESCRIPTION --}}
                         <div class="col-md-12">
                             <label class="form-label">Short Description</label>
@@ -237,6 +204,58 @@
                             <textarea name="meta_description" id="meta_description" class="form-control">
                                 {{ $data->meta_description }}
                             </textarea>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">Key Ingredients</label>
+
+                            @php
+                                $ingredients = json_decode($data->key_ingredients ?? '[]', true);
+                            @endphp
+
+                            <div id="ingredients-wrapper">
+                                @forelse($ingredients as $i => $item)
+                                    <div class="ingredient-item mb-4 border p-3 rounded">
+                                        
+                                        <div class="col-md-12 mb-2">
+                                            <input type="text" name="ingredients[{{ $i }}][title]" 
+                                                class="form-control" value="{{ $item['title'] ?? '' }}" placeholder="Ingredient Title">
+                                        </div>
+
+                                        <div class="col-md-12 mb-2">
+                                            <textarea name="ingredients[{{ $i }}][description]" 
+                                                class="form-control summernote">{{ $item['description'] ?? '' }}</textarea>
+                                        </div>
+
+                                        <div class="text-end">
+                                            <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                                        </div>
+
+                                    </div>
+                                @empty
+                                    {{-- DEFAULT --}}
+                                    <div class="ingredient-item mb-4 border p-3 rounded">
+                                        <div class="col-md-12 mb-2">
+                                            <input type="text" name="ingredients[0][title]" 
+                                                class="form-control" placeholder="Ingredient Title">
+                                        </div>
+
+                                        <div class="col-md-12 mb-2">
+                                            <textarea name="ingredients[0][description]" 
+                                                class="form-control summernote"></textarea>
+                                        </div>
+
+                                        <div class="text-end">
+                                            <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                                        </div>
+                                    </div>
+                                @endforelse
+                            </div>
+
+                            {{-- ADD MORE BUTTON --}}
+                            <button type="button" id="add-ingredient" class="btn btn-primary mt-2">
+                                + Add More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -279,7 +298,7 @@ $(document).ready(function() {
             ['view', ['fullscreen', 'codeview']],
             ['help', ['help']]
         ]
-    });
+    }); 
     $('#short_description').summernote({
         placeholder: 'Enter Short Description here...',
         height: 300,

@@ -214,7 +214,7 @@ class dashboardController extends Controller
         $letterFilter = $request->letter;
         $search = $request->search;
 
-        $query = Product::with(['brand', 'divisions']); // load division
+        $query = Product::with(['brand', 'divisions'])->where('status' , 'Active'); // load division
 
         // ✅ Brand filter
         if ($brandId) {
@@ -269,8 +269,7 @@ class dashboardController extends Controller
         $metadescription = $productDetails->meta_description ?? '';
 
 
-        $ingrediant_details = $productDetails->keyIngredients()->get();
-
+        $ingrediant_details = json_decode($productDetails->key_ingredients);
         return view('front.product-details', compact(
             'productDetails',
             'metadescription',

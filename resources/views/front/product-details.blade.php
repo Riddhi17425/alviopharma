@@ -41,15 +41,7 @@
                 <p> <b class="title--blue">Category:</b> {{ $productDetails->category->name }}</p>
             </div>
             {!! $productDetails->description !!}
-            {{-- <div class="my-4">
-                <h5 class="title-24 title--blue">Key Benefits</h5>
-                <p>{!! $productDetails->short_description !!}</p>
-            </div>
-
-            <div>
-                <h5 class="title-24 title--blue">Key Benefits</h5>
-                {!! $productDetails->description !!}
-            </div> --}}
+            
         </div>
     </div>
 </section>
