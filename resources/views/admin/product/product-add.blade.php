@@ -112,7 +112,7 @@
                             @if ($errors->has('category'))
                             <span class="text-danger">{{ $errors->first('category') }}</span>
                             @endif
-                        </div>
+                        </div> 
 
                         <div class="col-md-6">
                             <label class="form-label">Divisions</label>
@@ -219,29 +219,6 @@
                         </div>
 
 
-                        <div class="col-md-12">
-                            <label class="form-label">Key Ingredients</label>
-
-                            <div id="ingredientBoxWrap">
-                                @foreach($key_ingredient as $ingredient)
-                                    <label class="ingredient-box">
-                                        <input type="checkbox" name="key_ingredients[]" value="{{ $ingredient->id }}">
-                                        <span>{{ $ingredient->title }}</span>
-                                    </label>
-                                @endforeach
-                            </div>
-                            
-                            {{-- Selected Label --}}
-                            <div class="mt-3">
-                                <strong>Selected:</strong>
-                            </div>
-                            {{-- Selected Preview --}}
-                            <div id="selectedIngredients" class="selected-box"></div>
-
-                            @if ($errors->has('key_ingredients'))
-                                <span class="text-danger">{{ $errors->first('key_ingredients') }}</span>
-                            @endif
-                        </div>
 
                         <div class="col-md-12">
                             <label for="short_description" class="form-label">Short description</label>
@@ -265,6 +242,34 @@
                             @if ($errors->has('meta_description'))
                             <span class="text-danger">{{ $errors->first('meta_description') }}</span>
                             @endif
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">Key Ingredients</label>
+
+                            <div id="ingredients-wrapper">
+                                <div class="ingredient-item mb-4 border p-3 rounded">
+                                    
+                                    <div class="col-md-12 mb-2">
+                                        <input type="text" name="ingredients[0][title]" 
+                                            class="form-control" placeholder="Ingredient Title">
+                                    </div>
+
+                                    <div class="col-md-12 mb-2">
+                                        <textarea name="ingredients[0][description]" 
+                                            class="form-control summernote"></textarea>
+                                    </div>
+
+                                    <div class="text-end">
+                                        <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="button" id="add-ingredient" class="btn btn-primary mt-2">
+                                + Add More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -328,7 +333,7 @@
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']],
-                ['insert', ['link', 'picture', 'hr']],
+                ['insert', ['link', 'picture', 'hr']], 
                 ['view', ['fullscreen', 'codeview']],
                 ['help', ['help']]
             ]

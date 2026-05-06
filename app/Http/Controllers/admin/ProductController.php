@@ -63,13 +63,9 @@ class ProductController extends Controller
                 }),
             ],
 
-            'key_ingredients' => 'required|array',
-            'key_ingredients.*' => [
-                'integer',
-                Rule::exists('key_ingredient', 'id')->where(function ($query) {
-                    $query->whereNull('deleted_at');
-                }),
-            ],
+            'ingredients' => 'required|array|min:1',
+            'ingredients.*.title' => 'required|string|max:255',
+            'ingredients.*.description' => 'nullable|string',
 
             'brand_id' => 'nullable|exists:brand,id',
 
@@ -112,7 +108,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
-        $product->key_ingredients = json_encode($request->key_ingredients);
+        $product->key_ingredients = json_encode($request->ingredients);
         $product->top_sellers = $request->top_sellers;
 
         // ✅ FRONT IMAGE
@@ -177,13 +173,9 @@ class ProductController extends Controller
                 Rule::exists('divisions', 'url')->where(fn($q) => $q->whereNull('deleted_at'))
             ],
 
-            'key_ingredients' => 'required|array',
-            'key_ingredients.*' => [
-                'integer',
-                Rule::exists('key_ingredient', 'id')->where(function ($query) {
-                    $query->whereNull('deleted_at');
-                }),
-            ],
+           'ingredients' => 'required|array|min:1',
+            'ingredients.*.title' => 'required|string|max:255',
+            'ingredients.*.description' => 'nullable|string',
             
             'brand_id' => 'nullable|exists:brand,id',
 
@@ -219,7 +211,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
-        $product->key_ingredients = json_encode($request->key_ingredients);
+        $product->key_ingredients = json_encode($request->ingredients);
         $product->top_sellers = $request->top_sellers;
 
         // =========================
