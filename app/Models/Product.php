@@ -38,10 +38,12 @@ class Product extends Model
     public function divisions(){
         return $this->belongsTo(Divisions::class, 'divisions_url' , 'url');
     }
-    public function keyIngredients()
-    {
-        $ids = json_decode($this->key_ingredients, true) ?? [];
 
-        return KeyIngredient::whereIn('id', $ids);
-    }
+    // for backup if need in any future
+    // public function keyIngredients()
+    // {
+    //     $ids = json_decode($this->key_ingredients, true) ?? [];
+
+    //     return KeyIngredient::whereIn('id', $ids);
+    // }
 }
