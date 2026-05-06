@@ -29,63 +29,72 @@
 </section>
 @endif
 
-<section class="intro-section mastering_section p-x mt-100" data-aos="fade-up">
-    <div class="row align-items-center" data-aos="zoom-in" data-aos-delay="200">
+<section class="intro-section mastering_section p-x mt-100">
+    <div class="row align-items-center">
         <div class="col-xl-4 col-lg-4 col-md-12" data-aos="fade-right">
             <div class="mastering_img">
                 <img class="img-fluid" src="{{ asset('public/front/images/mastering.png') }}" alt="Mastering">
             </div>
         </div>
-        <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-left">
-            <h2 class="title-54 mb-40">Responsible Practices. Reliable Healthcare. </h2>
+        <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="title-54 mb-40" data-aos="fade-up" data-aos-delay="100">Responsible Practices. Reliable
+                Healthcare. </h2>
 
-            <p>Alvio Pharma integrates responsible practices across every stage of its operations—from sourcing and
+            <p data-aos="fade-up" data-aos-delay="300">Alvio Pharma integrates responsible practices across every stage
+                of its operations—from sourcing and
                 manufacturing partnerships to distribution and patient delivery. </p>
-            <p>We focus on ethical governance, operational efficiency, and working with trusted partners to ensure
+            <p data-aos="fade-up" data-aos-delay="400">We focus on ethical governance, operational efficiency, and
+                working with trusted partners to ensure
                 quality, compliance, and long-term sustainability in healthcare delivery. </p>
         </div>
 
-        <div class="row gy-3 gy-lg-0 mt-40 gx-0 gx-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-                <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Responsible Partnerships</h4>
-                    <p class="mb-0">We collaborate with certified manufacturing partners following strict quality and
-                        compliance standards. </p>
+        <div class="col-12">
+            <div class="row gy-3 gy-lg-0 mt-40" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-40">Responsible Partnerships</h4>
+                        <p class="mb-0">We collaborate with certified manufacturing partners following strict quality
+                            and
+                            compliance standards. </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-40">Ethical Governance </h4>
+                        <p class="mb-0">Our operations are guided by transparency, compliance, and responsible
+                            decision-making. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="800">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-40">Quality & Compliance </h4>
+                        <p class="mb-0">We maintain defined quality systems across sourcing, documentation, and
+                            distribution. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="900">
+                    <div class="manu_card com_bg_light_blue">
+                        <h4 class="title-34 mb-40">Efficient Resource Use </h4>
+                        <p class="mb-0">We aim to optimize processes and reduce operational impact across the value
+                            chain.
+                        </p>
+                    </div>
                 </div>
 
             </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Ethical Governance </h4>
-                    <p class="mb-0">Our operations are guided by transparency, compliance, and responsible
-                        decision-making. </p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Quality & Compliance </h4>
-                    <p class="mb-0">We maintain defined quality systems across sourcing, documentation, and
-                        distribution. </p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="manu_card com_bg_light_blue">
-                    <h4 class="title-34 mb-40">Efficient Resource Use </h4>
-                    <p class="mb-0">We aim to optimize processes and reduce operational impact across the value chain.
-                    </p>
-                </div>
-            </div>
-
         </div>
+
+
     </div>
 
 </section>
 
 <section class="intro-section p-x mt-100">
-    <div class="mb-40 d-flex align-items-center justify-content-between">
+    <div class="mb-40 d-lg-flex align-items-center justify-content-between">
         <h2 class="title-54">Our Impact </h2>
 
         <div class="modern-tabs">
@@ -116,13 +125,15 @@
 
         </div>
 
+       
+
     </div>
 
     <div class="tab-content" id="filledTabsContent">
 
         <div class="tab-pane fade show active" id="tab-content-1" role="tabpanel" aria-labelledby="tab-1">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/PEOPLE-COMMUNITIES.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
@@ -166,7 +177,7 @@
         </div>
         <div class="tab-pane fade" id="tab-content-2" role="tabpanel" aria-labelledby="tab-2">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6  mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/ENVIRONMENT-VALUE CHAIN.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
@@ -212,7 +223,7 @@
         </div>
         <div class="tab-pane fade" id="tab-content-3" role="tabpanel" aria-labelledby="tab-3">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6  mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/GOVERNANCE-INTEGRITY.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
@@ -483,6 +494,6 @@ if (accordionEl && exploreState && previewImgs.length) {
         exploreState.classList.add("accordion-open");
     }
 }
-</script>
+ </script>
 @include('layouts.fronttop-footer')
 @include('layouts.frontfooter')

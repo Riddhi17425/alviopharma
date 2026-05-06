@@ -59,6 +59,8 @@
             <div class="featured-product-slider quality_driven_slider">
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                        <img src="{{ asset('public/front/images/Tablets.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Tablets</h4>
                         <p>Precision-manufactured tablet formulations designed for consistent dosage, stability, and
                             patient convenience.</p>
@@ -67,6 +69,8 @@
 
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                         <img src="{{ asset('public/front/images/Capsules.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Capsules</h4>
                         <p>Carefully developed capsule formulations made for accurate delivery, reliable performance,
                             and ease of use.</p>
@@ -75,6 +79,8 @@
 
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                         <img src="{{ asset('public/front/images/Liquids.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Liquids</h4>
                         <p>High-quality liquid formulations created for smooth administration, precise dosing, and
                             dependable stability.</p>
@@ -83,6 +89,8 @@
 
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                         <img src="{{ asset('public/front/images/Ointments.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Ointments</h4>
                         <p>Topical ointment formulations prepared for effective application, product consistency, and
                             controlled performance.</p>
@@ -91,6 +99,8 @@
 
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                         <img src="{{ asset('public/front/images/Dry Powder.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Dry Powder</h4>
                         <p>Specialized dry powder formulations processed for uniformity, stability, and reliable
                             therapeutic delivery.</p>
@@ -99,6 +109,8 @@
 
                 <div class="mx-2">
                     <div class="manu_card com_bg_light_blue">
+                         <img src="{{ asset('public/front/images/Nasal Sprays & Drops.svg') }}" class="img-fluid mb-3"
+                            alt="image">
                         <h4 class="title-34 mb-3">Nasal Sprays & Drops</h4>
                         <p>Nasal formulations developed for accurate administration, product integrity, and convenient
                             patient use.</p>
@@ -170,13 +182,19 @@
                 <h2 class="title-54 mb-40">Stelvio Health Care
                 </h2>
 
-                <p>Stelvio Health Care is an R&D-driven pharmaceutical organization engaged in the manufacturing and marketing of formulations for global customer and patient needs. Backed by an integrated R&D setup and a WHO-GMP-accredited manufacturing facility in Ahmedabad, India, the company supports a wide range of therapeutic categories across oral solids, injectables, liquids, and nutraceutical/cosmeceutical products, while continuing to build its presence through branded formulations, generics, and international market reach.
+                <p>Stelvio Health Care is an R&D-driven pharmaceutical organization engaged in the manufacturing and
+                    marketing of formulations for global customer and patient needs. Backed by an integrated R&D setup
+                    and a WHO-GMP-accredited manufacturing facility in Ahmedabad, India, the company supports a wide
+                    range of therapeutic categories across oral solids, injectables, liquids, and
+                    nutraceutical/cosmeceutical products, while continuing to build its presence through branded
+                    formulations, generics, and international market reach.
 
                 </p>
 
                 <div class="mt-40">
                     <div class="btn_main">
-                        <a href="https://stelviohealthcare.com" target="_blank" class="commo-btn">  Learn About Stelvio Health Care
+                        <a href="https://stelviohealthcare.com" target="_blank" class="commo-btn"> Learn About Stelvio
+                            Health Care
                         </a>
                         <a href="https://stelviohealthcare.com" target="_blank" class="commo-btn-arrow"><svg width="15"
                                 height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,14 +214,19 @@
                 <h2 class="title-54 mb-40">Rebase Lifescience Pvt. Ltd.
                 </h2>
 
-                <p>Rebase Lifescience Pvt. Ltd. is an integrated pharmaceutical company focused on developing, manufacturing, and marketing formulations for the pharmaceutical and nutraceutical sectors. With capabilities across softgel capsules, tablets, effervescent tablets, hard gelatin capsules, powders in sachets, and jellies, the company supports differentiated products and reliable outsourcing solutions through a focused, quality-driven approach.
+                <p>Rebase Lifescience Pvt. Ltd. is an integrated pharmaceutical company focused on developing,
+                    manufacturing, and marketing formulations for the pharmaceutical and nutraceutical sectors. With
+                    capabilities across softgel capsules, tablets, effervescent tablets, hard gelatin capsules, powders
+                    in sachets, and jellies, the company supports differentiated products and reliable outsourcing
+                    solutions through a focused, quality-driven approach.
 
 
                 </p>
 
                 <div class="mt-40">
                     <div class="btn_main">
-                        <a href="https://rebaselifescience.com" target="_blank" class="commo-btn"> Learn About Rebase Lifescience Pvt. Ltd.
+                        <a href="https://rebaselifescience.com" target="_blank" class="commo-btn"> Learn About Rebase
+                            Lifescience Pvt. Ltd.
                         </a>
                         <a href="https://rebaselifescience.com" target="_blank" class="commo-btn-arrow"><svg width="15"
                                 height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -6,11 +6,18 @@ if (offcanvasEl && toggleBtn) {
     offcanvasEl.addEventListener("show.bs.offcanvas", () => {
         toggleBtn.classList.add("active");
         body.style.overflow = "hidden";
+        if (window.innerWidth < 768) {
+            header.style.transform = "translateY(0)";
+        }
+        
     });
 
     offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
         toggleBtn.classList.remove("active");
         body.style.overflow = "auto";
+        if (window.innerWidth < 768) {
+            header.style.transform = "";
+        }
     });
 }
 // ===== HEADER HIDE/SHOW ON SCROLL =====
@@ -208,44 +215,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(counterSection);
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Footer Wrapper Scroll with Cursor/Drag
+ document.addEventListener("DOMContentLoaded", () => {
     const footerWrapper = document.querySelector(".common-footer-wrapper");
+    const footerItems = document.querySelectorAll(".common-footer-item"); // Saare items ko select kiya
+    
     if (footerWrapper) {
-        // Center scroll on page load
-        setTimeout(() => {
-            const scrollWidth = footerWrapper.scrollWidth;
-            const clientWidth = footerWrapper.clientWidth;
-            footerWrapper.scrollLeft = (scrollWidth - clientWidth) / 2;
-        }, 100);
+        // 1. Seamless Infinite Loop
+        footerWrapper.innerHTML += footerWrapper.innerHTML;
 
         let isDown = false;
         let startX;
         let scrollLeft;
+        let autoScrollTimer;
+        const scrollSpeed = 0.5;
 
+        // 2. Auto Scroll Logic
+        const startAutoScroll = () => {
+            if(autoScrollTimer) clearInterval(autoScrollTimer);
+            
+            autoScrollTimer = setInterval(() => {
+                if (!isDown) {
+                    footerWrapper.scrollLeft += scrollSpeed;
+                    
+                    if (footerWrapper.scrollLeft >= (footerWrapper.scrollWidth / 2)) {
+                        footerWrapper.scrollLeft = 0;
+                    }
+                }
+            }, 20);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollTimer);
+        };
+
+        startAutoScroll();
+
+        // 3. SPECIFIC ITEM HOVER PAR STOP (Updated Logic)
+        // Hum wrapper ke bajaye har item par event listener laga rahe hain
+        footerWrapper.addEventListener("mouseover", (e) => {
+            if (e.target.closest('.common-footer-item')) {
+                stopAutoScroll();
+            }
+        });
+
+        footerWrapper.addEventListener("mouseout", (e) => {
+            if (e.target.closest('.common-footer-item')) {
+                if (!isDown) startAutoScroll();
+            }
+        });
+
+        // 4. Drag to Scroll Logic
         footerWrapper.addEventListener("mousedown", (e) => {
             isDown = true;
+            stopAutoScroll();
             footerWrapper.classList.add("active");
             startX = e.pageX - footerWrapper.offsetLeft;
             scrollLeft = footerWrapper.scrollLeft;
         });
 
-        footerWrapper.addEventListener("mouseleave", () => {
-            isDown = false;
-            footerWrapper.classList.remove("active");
-        });
-
         footerWrapper.addEventListener("mouseup", () => {
             isDown = false;
             footerWrapper.classList.remove("active");
+            startAutoScroll();
         });
 
         footerWrapper.addEventListener("mousemove", (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - footerWrapper.offsetLeft;
-            const walk = (x - startX) * 1.5; // Slightly faster scroll
+            const walk = (x - startX) * 1.5;
             footerWrapper.scrollLeft = scrollLeft - walk;
         });
     }

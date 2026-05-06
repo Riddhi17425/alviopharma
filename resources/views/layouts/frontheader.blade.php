@@ -202,7 +202,7 @@
     </div>
 
 
-        <script>
+        <!-- <script>
         // Hide header when offcanvas opens, show when closes
         const offcanvasElement = document.getElementById('offcanvasRight');
         const header = document.querySelector('.header.header-visible .header-hidden');
@@ -216,6 +216,6 @@
                 header.style.transform = 'translateY(0)';
             });
         }
-    </script>
+    </script> -->
 
     
