@@ -127,29 +127,29 @@
         <!-- LEFT SIDE -->
         <div class="derma-section">
             <div class="derma uncapped">
-                <a href="#"><img class="" src="public/front/images/darma-care-img_1.png"></a>
+                <a href="{{ route('product', ['division' => 'uncap']) }}#product-section"><img class="" src="public/front/images/darma-care-img_1.png"></a>
             </div>
             <div class="derma shampoo">
-                <a href="#"><img class="" src="public/front/images/darma-care-img_2.png"></a>
+                <a href="{{ route('product', ['division' => 'rasavio']) }}#product-section"><img class="" src="public/front/images/darma-care-img_2.png"></a>
             </div>
             <div class="derma supplement">
-                <a href="#"><img class="" src="public/front/images/darma-care-img_3.png"></a>
+                <a href="{{ route('product', ['division' => 'rasaglow']) }}#product-section"><img class="" src="public/front/images/darma-care-img_3.png"></a>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="cardio-section">
             <div class="cardio cardiovascular">
-                <a href="#"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
+                <a href="{{ route('product', ['division' => 'cardiovasascular']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
             </div>
             <div class="cardio diabetes">
-                <a href="#"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
+                <a href="{{ route('product', ['division' => 'anti-daibetes']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
             </div>
             <div class="cardio urology">
-                <a href="#"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
+                <a href="{{ route('product', ['division' => 'urology']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
             </div>
             <div class="cardio chronic">
-                <a href="#"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
+                <a href="{{ route('product', ['division' => 'chronic-supplements']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
             </div>
         </div>
 

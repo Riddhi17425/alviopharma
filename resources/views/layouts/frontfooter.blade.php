@@ -55,14 +55,14 @@
             </ul>
         </div>
         @php
-            $divisions =  \App\Models\Divisions::where('status' , 'Active')->get();    
+            $categorys =  \App\Models\Category::where('status' , 'Active')->get();    
         @endphp
 
         <div class="footer-item">
             <h5 class="footer-title">Therapeutic Areas</h5>
             <ul class="footer-list">
-                @foreach ($divisions as $division)
-                    <li><a href="{{ route('product', ['division' => $division->url]) }}#product-section"> {{ $division->name }} </a></li>
+                @foreach ($categorys as $category)
+                    <li><a href="{{ route('product', ['category' => $category->url]) }}#product-section"> {{ $category->name }} </a></li>
                 @endforeach
                 {{-- <li><a href="javascript:void(0)">Diabetology (Metabolic care) </a></li>
                 <li><a href="javascript:void(0)">Dermatology & Cosmetology</a></li>
