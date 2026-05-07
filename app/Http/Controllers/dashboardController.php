@@ -38,14 +38,14 @@ class dashboardController extends Controller
     {  
         $metatitle = "";
         $metadescription = "";
-        $units =  HomeMap::where('cat_type','homemap')->get();
+        $units =  HomeMap::where('cat_type','companymap')->get();
         $blogs = Blog::whereNull('deleted_at')->orderBy('id', 'desc')->get();
         $featuredproducts = Product::where('top_sellers', 'Yes')
             ->with(['category' => function ($q) {
                 $q->where('status', 'Active');
             }])
             ->get();
-        // return $featuredproducts;
+        
         return view('front.dashboard',compact('metatitle','metadescription','blogs','units','featuredproducts'));
     }
 

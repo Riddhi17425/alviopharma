@@ -89,7 +89,8 @@
                             <select name="brand_id" class="form-control">
                                 <option value="">Select Brand</option>
                                 @foreach($brands as $brand)
-                                <option value="{{ $brand->id }}">
+                                <option value="{{ $brand->id }}"
+                                    {{ old('brand_id') == $brand->id ? 'selected' : '' }}>
                                     {{ $brand->title }}
                                 </option>
                                 @endforeach
@@ -104,7 +105,8 @@
                             <select name="category" class="form-control">
                                 <option value="">Select Category</option>
                                 @foreach($category as $data)
-                                <option value="{{ $data->url }}">
+                                <option value="{{ $data->url }}"
+                                    {{ old('category') == $data->url ? 'selected' : '' }}>
                                     {{ $data->name }}
                                 </option>
                                 @endforeach
@@ -119,7 +121,8 @@
                             <select name="divisions" class="form-control">
                                 <option value="">Select Divisions</option>
                                 @foreach($divisions as $data)
-                                <option value="{{ $data->url }}">
+                                <option value="{{ $data->url }}"
+                                    {{ old('divisions') == $data->url ? 'selected' : '' }}>
                                     {{ $data->name }}
                                 </option>
                                 @endforeach
@@ -132,7 +135,7 @@
                         <div class="col-md-6">
                             <label class="form-label">Name</label>
                             <input type="text" id="name" name="name" class="form-control"
-                                placeholder="Enter Product Name" data-products-name>
+                                placeholder="Enter Product Name" data-products-name value="{{ old('name') }}">
                             @if ($errors->has('name'))
                             <span class="text-danger">{{ $errors->first('name') }}</span>
                             @endif
@@ -141,7 +144,7 @@
                         <div class="col-md-6">
                             <label class="form-label">Url</label>
                             <input type="text" id="url" name="url" class="form-control" placeholder="enter-product-url"
-                                data-products-url>
+                                data-products-url value="{{ old('url') }}">
                             @if ($errors->has('url'))
                             <span class="text-danger">{{ $errors->first('url') }}</span>
                             @endif
@@ -149,7 +152,7 @@
                         <div class="col-md-6">
                             <label class="form-label">Meta Title</label>
                             <input type="text" id="meta_title" name="meta_title" class="form-control"
-                                placeholder="Enter Meta Title" data-products-meta-title>
+                                placeholder="Enter Meta Title" data-products-meta-title value="{{ old('meta_title') }}">
                             @if ($errors->has('meta_title'))
                             <span class="text-danger">{{ $errors->first('meta_title') }}</span>
                             @endif
@@ -198,8 +201,8 @@
                         <div class="col-md-6">
                             <label class="form-label">Status</label>
                             <select name="status" id="status" class="form-control">
-                                <option value="Active">Active</option>
-                                <option value="In-Active">In-Active</option>
+                                <option value="Active" {{ old('status') == 'Active' ? 'selected' : '' }}>Active</option>
+                                <option value="In-Active" {{ old('status') == 'In-Active' ? 'selected' : '' }}>In-Active</option>
                             </select>
                             @if ($errors->has('status'))
                                 <span class="text-danger">{{ $errors->first('status') }}</span>
@@ -209,8 +212,8 @@
                         <div class="col-md-6">
                             <label class="form-label">Top Seller / Featured</label>
                             <select name="top_sellers" class="form-control">
-                                <option value="No" selected>No</option>
-                                <option value="Yes">Yes</option>
+                                <option value="No" {{ old('top_sellers') == 'No' ? 'selected' : '' }}>No</option>
+                                <option value="Yes" {{ old('top_sellers') == 'Yes' ? 'selected' : '' }}>Yes</option>
                             </select>
 
                             @if ($errors->has('top_sellers'))
@@ -222,7 +225,7 @@
 
                         <div class="col-md-12">
                             <label for="short_description" class="form-label">Short description</label>
-                            <textarea id="short_description" name="short_description" class="form-control"></textarea>
+                            <textarea id="short_description" name="short_description" class="form-control">{{ old('short_description') }}</textarea>
                             @if ($errors->has('short_description'))
                             <span class="text-danger">{{ $errors->first('short_description') }}</span>
                             @endif
@@ -230,7 +233,7 @@
 
                         <div class="col-md-12">
                             <label for="description" class="form-label">Description</label>
-                            <textarea id="description" name="description" class="form-control"></textarea>
+                            <textarea id="description" name="description" class="form-control">{{ old('description') }}</textarea>
                             @if ($errors->has('description'))
                             <span class="text-danger">{{ $errors->first('description') }}</span>
                             @endif
@@ -238,7 +241,7 @@
 
                         <div class="col-md-12">
                             <label for="meta_description" class="form-label">Meta Description</label>
-                            <textarea id="meta_description" name="meta_description" class="form-control"></textarea>
+                            <textarea id="meta_description" name="meta_description" class="form-control">{{ old('meta_description') }}</textarea>
                             @if ($errors->has('meta_description'))
                             <span class="text-danger">{{ $errors->first('meta_description') }}</span>
                             @endif

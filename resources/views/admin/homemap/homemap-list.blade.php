@@ -51,6 +51,7 @@
                             <th>Id</th>
                             <th>Image</th>
                             <th>HomeMap Name</th>
+                            <th>Page</th>
                             <th class="text-end">Action</th>
                         </tr>
                     </thead>
@@ -74,6 +75,10 @@
                                 <strong>{{ $item->title }}</strong>
                             </td>
 
+
+                            <td>
+                                <strong>{{ $item->cat_type }}</strong>
+                            </td>
                     
 
                             <!-- Action -->

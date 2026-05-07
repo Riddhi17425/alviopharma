@@ -282,8 +282,12 @@
         <div class="col-xl-6">
             <div class="images-only">
                 @foreach($units as $unit)
-                <img src="{{ asset('public/homemapimage/'.$unit->image) }}" alt="{{ $unit->title }}"
-                    class="accordion-preview-img img-fluid" data-panel="collapse{{ $loop->index }}">
+                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}" 
+                        data-original-src="{{ asset('public/homemapimage/'.$unit->image) }}"
+                        data-alt-src="{{ asset('public/homemapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                        class="accordion-preview-img img-fluid" 
+                        data-panel="collapse{{ $loop->index }}"
+                        style="cursor: pointer;">
                 @endforeach
             </div>
         </div>
@@ -346,10 +350,28 @@ if (accordionEl && exploreState && previewImgs.length) {
         clearActive();
         const img = document.querySelector('.accordion-preview-img[data-panel="' + panelId + '"]');
         if (img) {
+            // Naya accordion open hone par image ko wapas original set karein
+            img.setAttribute('src', img.getAttribute('data-original-src'));
             img.classList.add("active");
             img.style.display = "block";
         }
     }
+
+    
+    previewImgs.forEach((img) => {
+        img.addEventListener('click', function() {
+            const currentSrc = this.getAttribute('src');
+            const originalSrc = this.getAttribute('data-original-src');
+            const altSrc = this.getAttribute('data-alt-src');
+
+            // Agar image currently original hai, toh doosri (alt) dikhayein, nahi toh original wapas le aein
+            if (currentSrc === originalSrc) {
+                this.setAttribute('src', altSrc);
+            } else {
+                this.setAttribute('src', originalSrc);
+            }
+        });
+    });
 
     accordionEl.addEventListener("shown.bs.collapse", function(e) {
         const id = e.target.id;
@@ -372,6 +394,7 @@ if (accordionEl && exploreState && previewImgs.length) {
                 clearActive();
                 firstImage.classList.add("active");
                 firstImage.style.display = "block";
+                firstImage.setAttribute('src', firstImage.getAttribute('data-original-src'));
                 exploreState.classList.add("accordion-open");
             }
         }
