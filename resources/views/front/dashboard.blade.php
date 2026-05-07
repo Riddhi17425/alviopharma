@@ -37,6 +37,15 @@
                 </a> -->
             </div>
         </div>
+        <div class="hero-section">
+            <img class="img-fluid" src="{{ asset('public/front/images/Banner-4.webp') }}" alt="hero image">
+            <div class="hero-content">
+                <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
+                <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
+                    support patients and physicians through dependable treatment solutions.
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="hero_arrow">
