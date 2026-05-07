@@ -202,14 +202,6 @@
                             </textarea>
                         </div>
 
-                        {{-- DESCRIPTION --}}
-                        {{-- <div class="col-md-12">
-                            <label class="form-label">Description</label>
-                            <textarea name="description" id="description" class="form-control">
-                                {{ $data->description }}
-                            </textarea>
-                        </div> --}}
-
                         {{-- META DESCRIPTION --}}
                         <div class="col-md-12">
                             <label class="form-label">Meta Description</label>
@@ -226,45 +218,68 @@
                             @endphp
 
                             <div id="ingredients-wrapper">
+
                                 @forelse($ingredients as $i => $item)
+
                                     <div class="ingredient-item mb-4 border p-3 rounded">
-                                        
-                                        <div class="col-md-12 mb-2">
-                                            <input type="text" name="ingredients[{{ $i }}][title]" 
-                                                class="form-control" value="{{ $item['title'] ?? '' }}" placeholder="Ingredient Title">
-                                        </div>
 
-                                        <div class="col-md-12 mb-2">
-                                            <textarea name="ingredients[{{ $i }}][description]" 
-                                                class="form-control summernote">{{ $item['description'] ?? '' }}</textarea>
-                                        </div>
+                                        <input type="text"
+                                            name="ingredients[{{ $i }}][title]"
+                                            class="form-control mb-2"
+                                            value="{{ $item['title'] ?? '' }}">
 
-                                        <div class="text-end">
-                                            <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                                        <textarea name="ingredients[{{ $i }}][description]"
+                                            class="form-control summernote mb-2">
+                                            {{ $item['description'] ?? '' }}
+                                        </textarea>
+
+                                        <input type="file"
+                                            name="ingredients[{{ $i }}][image]"
+                                            class="form-control ingredient-image mb-2 mt-3  ">
+
+                                        {{-- old image preview --}}
+                                        @if(!empty($item['image']))
+                                            <img src="{{ asset('public/product/ingredients/'.$item['image']) }}"
+                                                class="old-preview"
+                                                style="max-width:120px; margin-top:10px;">
+                                        @endif
+
+                                        <img class="img-preview"
+                                            style="max-width:120px; display:none; margin-top:10px;">
+
+                                        <div class="text-end mt-2">
+                                            <button type="button" class="btn btn-danger remove-ingredient">
+                                                Remove
+                                            </button>
                                         </div>
 
                                     </div>
+
                                 @empty
-                                    {{-- DEFAULT --}}
+
+                                    {{-- fallback same as add --}}
                                     <div class="ingredient-item mb-4 border p-3 rounded">
-                                        <div class="col-md-12 mb-2">
-                                            <input type="text" name="ingredients[0][title]" 
-                                                class="form-control" placeholder="Ingredient Title">
+
+                                        <input type="text" name="ingredients[0][title]" class="form-control mb-2">
+
+                                        <textarea name="ingredients[0][description]" class="form-control summernote mb-2"></textarea>
+
+                                        <input type="file" name="ingredients[0][image]" class="form-control ingredient-image mb-2 mt-3">
+
+                                        <img class="img-preview" style="max-width:120px; display:none;">
+
+                                        <div class="text-end mt-2">
+                                            <button type="button" class="btn btn-danger remove-ingredient">
+                                                Remove
+                                            </button>
                                         </div>
 
-                                        <div class="col-md-12 mb-2">
-                                            <textarea name="ingredients[0][description]" 
-                                                class="form-control summernote"></textarea>
-                                        </div>
-
-                                        <div class="text-end">
-                                            <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
-                                        </div>
                                     </div>
+
                                 @endforelse
+
                             </div>
 
-                            {{-- ADD MORE BUTTON --}}
                             <button type="button" id="add-ingredient" class="btn btn-primary mt-2">
                                 + Add More
                             </button>

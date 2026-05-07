@@ -46,7 +46,6 @@ class ProductController extends Controller
         // ✅ VALIDATION (WITH SOFT DELETE CHECK)
         // $request->validate([
         //     'name' => 'required|string|max:255',
-
         //     // Check category exists (not deleted)
         //     'category' => [
         //         'required',
@@ -97,7 +96,7 @@ class ProductController extends Controller
         //     'url.unique' => 'This URL already exists.',
         // ]);
 
-        // ✅ CREATE PRODUCT
+        //  CREATE PRODUCT
         $product = new Product();
         $product->name = $request->name;
         $product->url = $request->url;
@@ -106,15 +105,41 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;   // storing URL
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        // $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
-        $product->key_ingredients = json_encode($request->ingredients);
+
+        $ingredients = [];
+
+        if ($request->ingredients) {
+
+            foreach ($request->ingredients as $item) {
+
+                $imageName = null;
+
+                if (isset($item['image']) && $item['image'] instanceof \Illuminate\Http\UploadedFile) {
+
+                    $file = $item['image'];
+
+                    $imageName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+                    $file->move(public_path('product/ingredients/'), $imageName);
+                }
+
+                $ingredients[] = [
+                    'title' => $item['title'] ?? null,
+                    'description' => $item['description'] ?? null,
+                    'image' => $imageName
+                ];
+            }
+        }
+
+        $product->key_ingredients = json_encode($ingredients);
+
         $product->key_ingredients_details = $request->key_ingredients_details;
         $product->key_benefits = $request->key_benefits;
         $product->top_sellers = $request->top_sellers;
 
-        // ✅ FRONT IMAGE
+        // FRONT IMAGE
         if ($request->hasFile('front_image')) {
             $file = $request->file('front_image');
             $filename = time() . '_front.' . $file->getClientOriginalExtension();
@@ -122,7 +147,7 @@ class ProductController extends Controller
             $product->front_image = $filename;
         }
 
-        // ✅ DETAIL IMAGES (MULTIPLE)
+        //  DETAIL IMAGES (MULTIPLE)
         if ($request->hasFile('detail_images')) {
             $images = [];
 
@@ -154,7 +179,6 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::findOrFail($id);
-
         // ✅ Generate slug
         // $request->merge([
         //     'url' => Str::slug($request->input('url') ?: $request->input('name'))
@@ -201,7 +225,7 @@ class ProductController extends Controller
 
         // ]);
 
-        // ✅ BASIC DATA
+        //  BASIC DATA
         $product->name = $request->name;
         $product->url = $request->url;
         $product->brand_id = $request->brand_id;
@@ -209,21 +233,46 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        // $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
         $product->key_ingredients_details = $request->key_ingredients_details;
-        $product->key_benefits = $request->key_benefits;
-        $product->key_ingredients = json_encode($request->ingredients);
-        $product->top_sellers = $request->top_sellers;
+        $ingredients = [];
+        $oldIngredients = json_decode($product->key_ingredients, true) ?? [];
 
+        foreach ($request->ingredients as $index => $item) {
+
+            $imageName = $oldIngredients[$index]['image'] ?? null;
+
+            // IF NEW IMAGE UPLOADED
+            if (isset($item['image']) && $item['image'] instanceof \Illuminate\Http\UploadedFile) {
+
+                // delete old image if exists
+                if (!empty($imageName) && file_exists(public_path('product/ingredients/' . $imageName))) {
+                    unlink(public_path('product/ingredients/' . $imageName));
+                }
+
+                $file = $item['image'];
+                $imageName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('product/ingredients/'), $imageName);
+            }
+
+            $ingredients[] = [
+                'title' => $item['title'] ?? null,
+                'description' => $item['description'] ?? null,
+                'image' => $imageName
+            ];
+        }
+
+        $product->key_ingredients = json_encode($ingredients);
+        $product->top_sellers = $request->top_sellers;
+        $product->key_benefits = $request->key_benefits;
         // =========================
-        // ✅ FRONT IMAGE UPDATE
+        //  FRONT IMAGE UPDATE
         // =========================
         if ($request->hasFile('front_image')) {
 
             // delete old image
-            if ($product->front_image && file_exists(public_path('product_front_image/' . $product->front_image))) {
+            if ($product->front_image && file_exists(public_path('product/front_image/' . $product->front_image))) {
                 unlink(public_path('product/front_image/' . $product->front_image));
             }
 
@@ -235,7 +284,7 @@ class ProductController extends Controller
         }
 
         // =========================
-        // ✅ DETAIL IMAGES UPDATE
+        //  DETAIL IMAGES UPDATE
         // =========================
         if ($request->hasFile('detail_images')) {
 

@@ -60,6 +60,9 @@
         @foreach ($ingrediant_details as $ingrediant_detail)
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                 <div class="manu_card com_bg_light_blue">
+                    @if(!empty($ingrediant_detail->image))
+                        <img src="{{ asset('public/product/ingredients/' . $ingrediant_detail->image) }}" alt="{{ $ingrediant_detail->title }}" class="mb-3 img-fluid">
+                    @endif
                     <h4 class="title-34 mb-3">{{ $ingrediant_detail->title }}</h4>
                     <p class="mb-0">{!! $ingrediant_detail->description  !!}</p>
                 </div>
