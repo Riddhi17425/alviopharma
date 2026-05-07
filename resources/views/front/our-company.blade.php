@@ -306,7 +306,7 @@
                 needs, and evolving our practices to stay at the forefront of pharmaceutical innovation.</p>
         </div>
 
-        <div class="bab-center-image">
+        <div class="bab-center-image my-4 my-lg-0">
             <img src="public/front/images/believe_adapt.png" alt="Believe, Adapt, and Behave Core Values Diagram">
         </div>
 

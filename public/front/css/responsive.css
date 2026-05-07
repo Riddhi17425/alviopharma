@@ -66,6 +66,7 @@ iframe {
 
     .common-footer-title {
         font-size: 120px;
+        line-height: 120px;
     }
 
     .footer-item {
@@ -705,6 +706,7 @@ iframe {
 
     .common-footer-title {
         font-size: 70px;
+        line-height: 70px;
     }
 
     .common-footer-wrapper {
@@ -990,10 +992,6 @@ iframe {
 
     .hero-section {
         min-height: 72vh;
-    }
-
-    .hero_arrow {
-        display: none;
     }
 
     .hero-content {
@@ -1372,6 +1370,7 @@ iframe {
 
     .common-footer-title {
         font-size: 52px;
+        line-height: 52px;
     }
 
     .common-footer-wrapper {
@@ -1389,6 +1388,43 @@ iframe {
 
 /* ---------- 768 ---------- */
 @media (max-width: 768px) {
+
+    .card-content {
+    padding: 20px 20px 20px 20px;
+}
+
+.tab-pane
+{
+   text-align: start;
+}
+
+.nav-tabs
+{
+    flex-wrap: nowrap;
+}
+
+.nav-tabs {
+    gap: 4px;
+}
+
+    .values-purpose-section .mb-100
+    {
+        margin-bottom: 30px;
+    }
+    .hero_arrow {
+        right: 50%;
+        bottom: 30px;
+        transform: translate(50%, -30px);
+        flex-direction: row;
+        gap: 20px;
+
+    }
+
+    .derma-section,
+    .cardio-section {
+        gap: 3px;
+    }
+
     .p-x {
         padding: 0 12px;
     }
@@ -1529,7 +1565,7 @@ iframe {
     }
 
     .brand_item_lt {
-        flex-direction: column;
+        /* flex-direction: column; */
         gap: 10px;
     }
 
@@ -1539,8 +1575,8 @@ iframe {
     }
 
     .brand_item_rt {
-        flex-direction: column;
-        align-items: flex-start;
+        /* flex-direction: column;
+        align-items: flex-start; */
     }
 
     .brand_item_rt a {
@@ -1605,6 +1641,7 @@ iframe {
 
     .common-footer-title {
         font-size: 42px;
+        line-height: 42px;
     }
 
     .common-footer-wrapper {
@@ -1651,7 +1688,7 @@ iframe {
     }
 
     .timeline {
-        padding: 0px 20px 100px 20px;
+        padding: 0px 20px 0px 20px;
     }
 
     .timeline__node {
@@ -1694,7 +1731,7 @@ iframe {
     }
 
     .values-purpose-section {
-        margin-top: 2em;
+        margin-top: 5em;
         margin-bottom: 6em;
     }
     .values-container {
@@ -1768,7 +1805,7 @@ iframe {
 
     .commo-btn,
     .com_btn2 {
-        padding: 8px 12px;
+        padding: 8px 20px;
         font-size: 11px;
     }
 
@@ -1815,7 +1852,7 @@ iframe {
     }
 
     .find_abc_top {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        /* grid-template-columns: repeat(5, minmax(0, 1fr)); */
     }
 
     .brand_item {
@@ -2007,11 +2044,12 @@ iframe {
 
     .common-footer-title {
         font-size: 36px;
+        line-height: 36px;
     }
 
     .common-footer-wrapper {
         height: 130px;
-        gap: 8px;
+        /* gap: 8px; */
     }
 
     .hero-section {
@@ -2019,9 +2057,10 @@ iframe {
     }
 
     .hero_slider img {
-        height: 100vh;
+        height: 85vh;
         object-fit: cover;
         object-position: center;
+        filter: brightness(0.5);
     }
 
     .product-section {

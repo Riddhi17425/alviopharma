@@ -167,7 +167,7 @@
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-6 pe-md-5" data-aos="fade-right">
+        <div class="col-md-6 pe-md-5 mb-4 order-1 order-lg-0" data-aos="fade-right">
             <h2 class="title-54" style="color: var(--black-color);">Preventive Wellness, Redefined</h2>
             <p>We believe that wellness begins at the cellular level. Our Nutraceutical division bridges the gap between pharmaceutical standards and daily nutrition, providing pure, evidence-backed supplements that optimize systemic health and strengthen the body’s natural defenses.
                 and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
@@ -199,7 +199,7 @@
 
         </div>
 
-        <div class="col-md-6" data-aos="fade-left">
+        <div class="col-md-6 mb-4 mb-lg-0" data-aos="fade-left">
             <img src="{{ asset('public/front/images/Nutraceuticals.png') }}" alt="images" class="img-fluid">
         </div>
 

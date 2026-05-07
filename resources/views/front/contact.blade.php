@@ -16,6 +16,7 @@
 <section class="contact p-x mt_80">
     <div class="row gx-0">
         <div class="col-lg-5" data-aos="fade-right">
+              <h2 class="title-54 mb-40 d-lg-none text-center">Get in Touch</h2>
             <div class="contact_left com_bg_light_blue">
                 <div class="contact_left_child">
                     <h5 class="title-24 title--blue">Registered & Corporate Office</h5>
@@ -240,11 +241,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-7 mt-5 mt-lg-0">
             <div class="contact_right">
 
                 <div class="col-lg-12">
-                    <h2 class="title-54 mb-40">Get in Touch</h2>
+                    <h2 class="title-54 mb-40 d-none d-lg-block">Get in Touch</h2>
                     <p>If you are a medical professional, distributor, or institutional partner and would like to
                         connect with Alvio Pharmaceuticals, please reach out using the details below or submit the
                         enquiry form.
@@ -313,7 +314,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="contact_items">
-                                <button class="btn_main border-0  ">
+                                <button class="btn_main border-0 bg-transparent">
                                     <span class="commo-btn">Submit</span>
 
                                     <span class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
@@ -350,7 +351,7 @@
 .error {
     color: #dc3545;
     font-size: 13px;
-    display: block;
+    /* display: block; */
     margin-top: 5px;
     min-height: 18px;
 }
