@@ -208,6 +208,7 @@ class dashboardController extends Controller
     {
         $brands = Brand::orderBy('title', 'asc')->get();
         $allDivisions = Divisions::where('status' , 'Active')->get();
+        $allCategoryes = Category::where('status' , 'Active')->get();
         $brandId = $request->brand;
         $division = $request->division;   
         $category = $request->category;   
@@ -226,7 +227,7 @@ class dashboardController extends Controller
             $query->where('divisions_url', $division);
         }
 
-        if ($category) {
+        if ($category) { 
             $query->where('category_url', $category);
         }
 
@@ -258,7 +259,8 @@ class dashboardController extends Controller
             'letterFilter',
             'search',
             'brands',
-            'allDivisions'
+            'allDivisions',
+            'allCategoryes'
         ));
     }
 
