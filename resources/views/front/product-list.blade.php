@@ -138,7 +138,7 @@
                             <div class="brand_item_lt">
                                 <div class="brand_item_img">
                                     <img class="img-fluid"
-                                        src="{{ asset('public/Product/front_image/'.$product->front_image) }}"
+                                        src="{{ asset('public/product/front_image/'.$product->front_image) }}"
                                         alt="{{ $product->name }}">
 
                                 </div>

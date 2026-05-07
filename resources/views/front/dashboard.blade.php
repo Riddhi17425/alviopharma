@@ -252,7 +252,7 @@
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
                 </h2>
                 <p>Alvio Pharma's growing national presence is built on strong field execution and therapy-focused
-                    portfolios. With a team of <b>300+ trained professionals</b> and an expanding network across <b>16+
+                    portfolios. With a team of <b>300+ trained professionals</b> and an expanding network across <b>11+
                         states</b>, we work to keep <b>quality, affordable formulations</b> accessible to the
                     communities we serve.
                 </p>
@@ -278,7 +278,7 @@
                         <div id="{{ $collapseId }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                             aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {!! $unit->description !!}
+                                <a href="javascript:void(0);">{!! $unit->description !!}</a>
                             </div>
                         </div>
                     </div>
@@ -291,9 +291,9 @@
         <div class="col-xl-6">
             <div class="images-only">
                 @foreach($units as $unit)
-                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}" 
-                        data-original-src="{{ asset('public/homemapimage/'.$unit->image) }}"
-                        data-alt-src="{{ asset('public/homemapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                    <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}" 
+                        data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
+                        data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
                         class="accordion-preview-img img-fluid" 
                         data-panel="collapse{{ $loop->index }}"
                         style="cursor: pointer;">
@@ -380,6 +380,23 @@ if (accordionEl && exploreState && previewImgs.length) {
                 this.setAttribute('src', originalSrc);
             }
         });
+    });
+
+    // City name (inside accordion body) click should show city map
+    accordionEl.addEventListener('click', function(e) {
+        const cityItem = e.target.closest('.accordion-body li, .accordion-body a');
+        if (!cityItem) return;
+
+        const panel = cityItem.closest('.accordion-collapse');
+        if (!panel || !panel.id) return;
+
+        const img = document.querySelector('.accordion-preview-img[data-panel="' + panel.id + '"]');
+        if (!img) return;
+
+        clearActive();
+        img.classList.add("active");
+        img.style.display = "block";
+        img.setAttribute('src', img.getAttribute('data-alt-src'));
     });
 
     accordionEl.addEventListener("shown.bs.collapse", function(e) {
