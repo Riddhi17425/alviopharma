@@ -108,87 +108,95 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     //// key ingreadiants code start heaer
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        let wrapper = document.getElementById("ingredients-wrapper");
+    let wrapper = document.getElementById("ingredients-wrapper");
+    if (!wrapper) return;
 
-        if (!wrapper) return;
+    let index = wrapper.querySelectorAll('.ingredient-item').length;
 
-        // 🔢 Get last index (important for edit mode)
-        let items = wrapper.querySelectorAll('.ingredient-item');
-        let index = items.length;
+    // INIT SUMMERNOTE
+    function initSummernote(el) {
+        if (!el) return;
+        if ($(el).next('.note-editor').length) return;
 
-        function initSummernote(element) {
-            if (!element) return;
-
-            // جلوگیری double init
-            if ($(element).next('.note-editor').length) return;
-
-            $(element).summernote({
-                height: 200,
-                placeholder: 'Enter Description...',
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'italic', 'underline']],
-                    ['para', ['ul', 'ol']],
-                    ['insert', ['link', 'picture']],
-                    ['view', ['codeview']]
-                ]
-            });
-        }
-
-        // ✅ INIT ALL EXISTING (Edit mode support)
-        wrapper.querySelectorAll('.summernote').forEach(function (el) {
-            initSummernote(el);
+        $(el).summernote({
+            height: 180
         });
+    }
 
-        // ➕ ADD MORE
-        document.getElementById("add-ingredient").addEventListener("click", function () {
+    wrapper.querySelectorAll('.summernote').forEach(initSummernote);
 
-            let html = `
-                <div class="ingredient-item mb-4 border p-3 rounded">
-                    
-                    <div class="col-md-12 mb-2">
-                        <input type="text" name="ingredients[${index}][title]" 
-                            class="form-control" placeholder="Ingredient Title">
-                    </div>
+    // IMAGE PREVIEW
+    function bindImage(input) {
+        input.addEventListener('change', function () {
+            let file = this.files[0];
+            let preview = this.closest('.ingredient-item').querySelector('.img-preview');
 
-                    <div class="col-md-12 mb-2">
-                        <textarea name="ingredients[${index}][description]" 
-                            class="form-control summernote"></textarea>
-                    </div>
-
-                    <div class="text-end">
-                        <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
-                    </div>
-
-                </div>
-            `;
-
-            wrapper.insertAdjacentHTML("beforeend", html);
-
-            let newItem = wrapper.lastElementChild;
-            let textarea = newItem.querySelector('.summernote');
-
-            initSummernote(textarea);
-
-            index++;
-        });
-
-        // ❌ REMOVE
-        document.addEventListener("click", function (e) {
-            if (e.target.classList.contains("remove-ingredient")) {
-
-                let item = e.target.closest(".ingredient-item");
-
-                // destroy summernote safely
-                let editor = item.querySelector('.summernote');
-                if (editor && $(editor).next('.note-editor').length) {
-                    $(editor).summernote('destroy');
-                }
-
-                item.remove();
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
             }
         });
+    }
 
+    wrapper.querySelectorAll('.ingredient-image').forEach(bindImage);
+
+    // ADD NEW ROW
+    document.getElementById("add-ingredient").addEventListener("click", function () {
+
+        let html = `
+        <div class="ingredient-item mb-4 border p-3 rounded">
+
+            <input type="text"
+                name="ingredients[${index}][title]"
+                class="form-control mb-2"
+                placeholder="Ingredient Title">
+
+            <textarea name="ingredients[${index}][description]"
+                class="form-control summernote mb-2"></textarea>
+
+            <input type="file"
+                name="ingredients[${index}][image]"
+                class="form-control ingredient-image mb-2 mt-3">
+
+            <img class="img-preview"
+                style="max-width:120px; display:none; margin-top:10px;">
+
+            <div class="text-end mt-2">
+                <button type="button" class="btn btn-danger remove-ingredient">
+                    Remove
+                </button>
+            </div>
+
+        </div>`;
+
+        wrapper.insertAdjacentHTML("beforeend", html);
+
+        let newItem = wrapper.lastElementChild;
+
+        initSummernote(newItem.querySelector('.summernote'));
+        bindImage(newItem.querySelector('.ingredient-image'));
+
+        index++;
     });
+
+    // REMOVE ITEM
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-ingredient")) {
+            let item = e.target.closest(".ingredient-item");
+
+            let editor = item.querySelector('.summernote');
+            if (editor && $(editor).next('.note-editor').length) {
+                $(editor).summernote('destroy');
+            }
+
+            item.remove();
+        }
+    });
+
+});
