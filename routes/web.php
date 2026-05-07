@@ -52,7 +52,7 @@ use App\Http\Controllers\CaptchaController;
      Route::get('termsConditions', [dashboardController::class, 'termsConditions'])->name('termsConditions');
 
 
-    Route::get('products', [dashboardController::class,'productlist'])->name('product');
+    Route::get('products/{category}', [dashboardController::class,'productlist'])->name('product');
     // Route::get('products-details/{url}', [dashboardController::class,'productdetail'])->name('product.detail');
     Route::get('product-details/{url}', [dashboardController::class,'productDetails'])->name('product.details');
     

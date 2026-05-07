@@ -77,17 +77,29 @@
 
 
 <section id="product-section" class="find_brand p-x mt-100 mb-100">
-    <h2 class="title-54 title--dark">Find by Brand</h2>
-
-        <form method="GET" action="{{ route('product') }}#product-section">
-            <div class="search-wrapper">
-                <input type="search" name="search" class="search-input" placeholder="Search product"
-                    value="{{ request('search') }}">
-
+    <h2 class="title-54 title--dark">Find by Brand Or Product Name</h2>
+        <form method="GET" action="{{ route('product', ['category' => $currentCategory ?? request()->route('category') ?? 'all']) }}#product-section">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="search-wrapper">
+                        <input type="search" name="search" class="search-input" placeholder="Search Product Or Brand" value="{{ request('search') }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select name="division" class="search-wrapper" onchange="this.form.submit()">
+                        <option value="">Select All</option>
+                        @foreach($allDivisions as $division)
+                            <option value="{{ $division->url }}"
+                                {{ request('division') == $division->url ? 'selected' : '' }}>
+                                {{ $division->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
         </form>
 
-        <div class="find_abc">
+        {{-- <div class="find_abc">
             <div class="find_abc_top">
                 @foreach(range('A','Z') as $letter)
                     <a href="{{ route('product',['letter'=>$letter]) }}#product-section">
@@ -108,7 +120,6 @@
                         </svg>
                     </span>
             </a>
-    
             <ul class="dropdown-menu">
                 <li>
                     <a class="dropdown-item"
@@ -123,8 +134,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
-
+        </div> --}}
 
         <div class="brand-listing">
         

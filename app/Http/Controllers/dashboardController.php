@@ -204,14 +204,14 @@ class dashboardController extends Controller
 
 
     
-    public function productlist(Request $request)
+    public function productlist(Request $request, $category)
     {
         $brands = Brand::orderBy('title', 'asc')->get();
         $allDivisions = Divisions::where('status' , 'Active')->get();
         $allCategoryes = Category::where('status' , 'Active')->get();
         $brandId = $request->brand;
         $division = $request->division;   
-        $category = $request->category;   
+        $currentCategory = $category;
         $sortOrder = $request->sort ?? 'asc';
         $letterFilter = $request->letter;
         $search = $request->search;
@@ -227,8 +227,11 @@ class dashboardController extends Controller
             $query->where('divisions_url', $division);
         }
 
-        if ($category) { 
-            $query->where('category_url', $category);
+        if ($currentCategory && $currentCategory !== 'all') {
+            $query->where('category_url', $currentCategory);
+        } elseif ($currentCategory === 'all' && $request->filled('category')) {
+            // Backward compatibility: /products/all?category=some-category
+            $query->where('category_url', $request->category);
         }
 
         // Alphabet filter
@@ -238,29 +241,37 @@ class dashboardController extends Controller
 
         // Search
         if ($search) {
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%')
+                ->orWhereHas('brand', function ($brandQuery) use ($search) {
+                    $brandQuery->where('title', 'like', '%' . $search . '%');
+                });
+            });
         }
 
         // Sorting
         $query->orderBy('name', $sortOrder);
 
         $products = $query->get();
-
         // Grouping
         $groupedProducts = $products->groupBy(function ($product) {
             return strtoupper(substr($product->name, 0, 1));
         });
 
+        $divisions = Divisions::where('status', 'Active')->get();
+
         return view('front.product-list', compact(
             'groupedProducts',
             'brandId',
             'division', // pass for active state
+            'currentCategory',
             'sortOrder',
             'letterFilter',
             'search',
             'brands',
             'allDivisions',
-            'allCategoryes'
+            'allCategoryes',
+            'divisions'
         ));
     }
 
