@@ -232,10 +232,18 @@
                         </div>
 
                         <div class="col-md-12">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea id="description" name="description" class="form-control">{{ old('description') }}</textarea>
-                            @if ($errors->has('description'))
-                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                            <label for="key_ingredients_details" class="form-label">Key Ingredients Details</label>
+                            <textarea id="key_ingredients_details" name="key_ingredients_details" class="form-control">{{ old('key_ingredients') }}</textarea>
+                            @if ($errors->has('key_ingredients_details'))
+                            <span class="text-danger">{{ $errors->first('key_ingredients_details') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="key_benefits" class="form-label">Key Benefits</label>
+                            <textarea id="key_benefits" name="key_benefits" class="form-control">{{ old('key_benefits') }}</textarea>
+                            @if ($errors->has('key_benefits'))
+                            <span class="text-danger">{{ $errors->first('key_benefits') }}</span>
                             @endif
                         </div>
 
@@ -311,8 +319,23 @@
 
 <script>
     $(document).ready(function () {
-        $('#description').summernote({
-            placeholder: 'Enter Description here...',
+        $('#key_ingredients_details').summernote({
+            placeholder: 'Enter Key Ingredients Details here...',
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
+        });
+        $('#key_benefits').summernote({
+            placeholder: 'Enter Key Benefits here...',
             height: 300,
             toolbar: [
                 ['style', ['style']],

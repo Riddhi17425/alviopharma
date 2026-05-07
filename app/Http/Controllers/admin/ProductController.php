@@ -87,7 +87,8 @@ class ProductController extends Controller
             'detail_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
 
             'short_description' => 'nullable|string',
-            'description' => 'nullable|string',
+            'key_ingredients_details' => 'nullable|string',
+            'key_benefits' => 'nullable|string',
             'meta_title' => 'required|string|max:255',
             'meta_description' => 'required|string',
         ], [
@@ -109,6 +110,8 @@ class ProductController extends Controller
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
         $product->key_ingredients = json_encode($request->ingredients);
+        $product->key_ingredients_details = $request->key_ingredients_details;
+        $product->key_benefits = $request->key_benefits;
         $product->top_sellers = $request->top_sellers;
 
         // ✅ FRONT IMAGE
@@ -211,6 +214,8 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
+        $product->key_ingredients_details = $request->key_ingredients_details;
+        $product->key_benefits = $request->key_benefits;
         $product->key_ingredients = json_encode($request->ingredients);
         $product->top_sellers = $request->top_sellers;
 
