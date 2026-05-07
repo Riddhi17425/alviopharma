@@ -203,12 +203,12 @@
                         </div>
 
                         {{-- DESCRIPTION --}}
-                        <div class="col-md-12">
+                        {{-- <div class="col-md-12">
                             <label class="form-label">Description</label>
                             <textarea name="description" id="description" class="form-control">
                                 {{ $data->description }}
                             </textarea>
-                        </div>
+                        </div> --}}
 
                         {{-- META DESCRIPTION --}}
                         <div class="col-md-12">

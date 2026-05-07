@@ -39,63 +39,63 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // ✅ Generate slug
-        $request->merge([
-            'url' => Str::slug($request->input('url') ?: $request->input('name'))
-        ]);
+        // $request->merge([
+        //     'url' => Str::slug($request->input('url') ?: $request->input('name'))
+        // ]);
 
         // ✅ VALIDATION (WITH SOFT DELETE CHECK)
-        $request->validate([
-            'name' => 'required|string|max:255',
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
 
-            // Check category exists (not deleted)
-            'category' => [
-                'required',
-                Rule::exists('category', 'url')->where(function ($query) {
-                    $query->whereNull('deleted_at');
-                }),
-            ],
+        //     // Check category exists (not deleted)
+        //     'category' => [
+        //         'required',
+        //         Rule::exists('category', 'url')->where(function ($query) {
+        //             $query->whereNull('deleted_at');
+        //         }),
+        //     ],
 
-            // Check division exists (not deleted)
-            'divisions' => [
-                'required',
-                Rule::exists('divisions', 'url')->where(function ($query) {
-                    $query->whereNull('deleted_at');
-                }),
-            ],
+        //     // Check division exists (not deleted)
+        //     'divisions' => [
+        //         'required',
+        //         Rule::exists('divisions', 'url')->where(function ($query) {
+        //             $query->whereNull('deleted_at');
+        //         }),
+        //     ],
 
-            'ingredients' => 'required|array|min:1',
-            'ingredients.*.title' => 'required|string|max:255',
-            'ingredients.*.description' => 'nullable|string',
+        //     'ingredients' => 'required|array|min:1',
+        //     'ingredients.*.title' => 'required|string|max:255',
+        //     'ingredients.*.description' => 'nullable|string',
 
-            'brand_id' => 'nullable|exists:brand,id',
+        //     'brand_id' => 'nullable|exists:brand,id',
 
-            'status' => 'required|in:Active,In-Active',
+        //     'status' => 'required|in:Active,In-Active',
 
-            // Unique slug (ignore soft deleted)
-            'url' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product', 'url')->where(function ($query) {
-                    return $query->whereNull('deleted_at');
-                }),
-            ],
+        //     // Unique slug (ignore soft deleted)
+        //     'url' => [
+        //         'required',
+        //         'string',
+        //         'max:255',
+        //         Rule::unique('product', 'url')->where(function ($query) {
+        //             return $query->whereNull('deleted_at');
+        //         }),
+        //     ],
 
-            // Images
-            'front_image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'detail_images' => 'required',
-            'detail_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
+        //     // Images
+        //     'front_image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+        //     'detail_images' => 'required',
+        //     'detail_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
 
-            'short_description' => 'nullable|string',
-            'key_ingredients_details' => 'nullable|string',
-            'key_benefits' => 'nullable|string',
-            'meta_title' => 'required|string|max:255',
-            'meta_description' => 'required|string',
-        ], [
-            'category.exists' => 'Selected category is invalid.',
-            'divisions.exists' => 'Selected division is invalid.',
-            'url.unique' => 'This URL already exists.',
-        ]);
+        //     'short_description' => 'nullable|string',
+        //     'key_ingredients_details' => 'nullable|string',
+        //     'key_benefits' => 'nullable|string',
+        //     'meta_title' => 'required|string|max:255',
+        //     'meta_description' => 'required|string',
+        // ], [
+        //     'category.exists' => 'Selected category is invalid.',
+        //     'divisions.exists' => 'Selected division is invalid.',
+        //     'url.unique' => 'This URL already exists.',
+        // ]);
 
         // ✅ CREATE PRODUCT
         $product = new Product();
@@ -106,7 +106,7 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;   // storing URL
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        $product->description = $request->description;
+        // $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
         $product->key_ingredients = json_encode($request->ingredients);
@@ -156,52 +156,50 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         // ✅ Generate slug
-        $request->merge([
-            'url' => Str::slug($request->input('url') ?: $request->input('name'))
-        ]);
+        // $request->merge([
+        //     'url' => Str::slug($request->input('url') ?: $request->input('name'))
+        // ]);
 
         // ✅ VALIDATION
-        $request->validate([
-            'name' => 'required|string|max:255',
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
 
-            // category exists (not soft deleted)
-            'category' => [
-                'required',
-                Rule::exists('category', 'url')->where(fn($q) => $q->whereNull('deleted_at'))
-            ],
+        //     // category exists (not soft deleted)
+        //     'category' => [
+        //         'required',
+        //         Rule::exists('category', 'url')->where(fn($q) => $q->whereNull('deleted_at'))
+        //     ],
 
-            // division exists (not soft deleted)
-            'divisions' => [
-                'required',
-                Rule::exists('divisions', 'url')->where(fn($q) => $q->whereNull('deleted_at'))
-            ],
+        //     // division exists (not soft deleted)
+        //     'divisions' => [
+        //         'required',
+        //         Rule::exists('divisions', 'url')->where(fn($q) => $q->whereNull('deleted_at'))
+        //     ],
 
-           'ingredients' => 'required|array|min:1',
-            'ingredients.*.title' => 'required|string|max:255',
-            'ingredients.*.description' => 'nullable|string',
-            
-            'brand_id' => 'nullable|exists:brand,id',
+        //   'ingredients' => 'required|array|min:1',
+        //     'ingredients.*.title' => 'required|string|max:255',
+        //     'ingredients.*.description' => 'nullable|string',
+        //     'brand_id' => 'nullable|exists:brand,id',
+        //     'status' => 'required|in:Active,In-Active',
 
-            'status' => 'required|in:Active,In-Active',
+        //     // unique slug (ignore current + soft delete)
+        //     'url' => [
+        //         'required',
+        //         'string',
+        //         'max:255',
+        //         Rule::unique('product', 'url')
+        //             ->ignore($product->id)
+        //             ->where(fn($q) => $q->whereNull('deleted_at'))
+        //     ],
 
-            // unique slug (ignore current + soft delete)
-            'url' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('product', 'url')
-                    ->ignore($product->id)
-                    ->where(fn($q) => $q->whereNull('deleted_at'))
-            ],
+        //     // images optional in update
+        //     'front_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        //     'detail_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
-            // images optional in update
-            'front_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'detail_images.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        //     'meta_title' => 'required|string|max:255',
+        //     'meta_description' => 'required|string',
 
-            'meta_title' => 'required|string|max:255',
-            'meta_description' => 'required|string',
-
-        ]);
+        // ]);
 
         // ✅ BASIC DATA
         $product->name = $request->name;
@@ -211,7 +209,7 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        $product->description = $request->description;
+        // $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
         $product->key_ingredients_details = $request->key_ingredients_details;

@@ -40,8 +40,9 @@
                 <p> <b class="title--blue">Divisions:</b> {{ $productDetails->divisions->name }}</p>
                 <p> <b class="title--blue">Category:</b> {{ $productDetails->category->name }}</p>
             </div>
-            {!! $productDetails->description !!}
-            
+            <p> <b class="title--blue">Key Ingredients:</b> </br>
+                {!! $productDetails->key_ingredients_details !!}</p>
+            <p> <b class="title--blue">Key Benefits:</b> {!! $productDetails->key_benefits !!}</p>
         </div>
     </div>
 </section>
@@ -65,7 +66,6 @@
             </div>
         @endforeach
        
-
         {{-- <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="manu_card com_bg_light_blue">
                 <h4 class="title-34 mb-3">Hyaluronic Acid</h4>
