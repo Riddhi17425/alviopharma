@@ -30,7 +30,13 @@
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
         <div class="col-md-4" data-aos="fade-right">
-            <img src="{{ asset('public/front/images/product-detail.png') }}" alt="images" class="img-fluid">
+            {{-- <img src="{{ asset('public/product/details_image/'.$productDetails->details_image) }}" alt="images" class="img-fluid"> --}}
+            @php $images = json_decode($productDetails->detail_images, true); @endphp
+            @if(is_array($images))
+                @foreach($images as $img)
+                    <img src="{{ asset('public/product/details_image/'.$img) }}" alt="{{ $productDetails->name }}" class="img-fluid">
+                @endforeach
+            @endif
         </div>
 
         <div class="col-md-8 ps-md-5" data-aos="fade-left">
