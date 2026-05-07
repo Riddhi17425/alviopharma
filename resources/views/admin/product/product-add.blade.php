@@ -251,23 +251,35 @@
                             <label class="form-label">Key Ingredients</label>
 
                             <div id="ingredients-wrapper">
+
                                 <div class="ingredient-item mb-4 border p-3 rounded">
-                                    
-                                    <div class="col-md-12 mb-2">
-                                        <input type="text" name="ingredients[0][title]" 
-                                            class="form-control" placeholder="Ingredient Title">
-                                    </div>
 
-                                    <div class="col-md-12 mb-2">
-                                        <textarea name="ingredients[0][description]" 
-                                            class="form-control summernote"></textarea>
-                                    </div>
+                                    {{-- Title --}}
+                                    <input type="text"
+                                        name="ingredients[0][title]"
+                                        class="form-control mb-2"
+                                        placeholder="Ingredient Title">
 
-                                    <div class="text-end">
-                                        <button type="button" class="btn btn-danger remove-ingredient">Remove</button>
+                                    {{-- Description --}}
+                                    <textarea name="ingredients[0][description]"
+                                        class="form-control summernote mb-2"></textarea>
+
+                                    {{-- Image --}}
+                                    <input type="file"
+                                        name="ingredients[0][image]"
+                                        class="form-control ingredient-image mb-2 mt-3">
+
+                                    <img class="img-preview"
+                                        style="max-width:120px; display:none; margin-top:10px;">
+
+                                    <div class="text-end mt-2">
+                                        <button type="button" class="btn btn-danger remove-ingredient">
+                                            Remove
+                                        </button>
                                     </div>
 
                                 </div>
+
                             </div>
 
                             <button type="button" id="add-ingredient" class="btn btn-primary mt-2">
