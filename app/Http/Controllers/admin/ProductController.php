@@ -87,7 +87,8 @@ class ProductController extends Controller
             'detail_images.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048',
 
             'short_description' => 'nullable|string',
-            'description' => 'nullable|string',
+            'key_ingredients_details' => 'nullable|string',
+            'key_benefits' => 'nullable|string',
             'meta_title' => 'required|string|max:255',
             'meta_description' => 'required|string',
         ], [
@@ -105,7 +106,7 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;   // storing URL
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        $product->description = $request->description;
+        
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
 
@@ -136,7 +137,8 @@ class ProductController extends Controller
 
         $product->key_ingredients = json_encode($ingredients);
 
-
+        $product->key_ingredients_details = $request->key_ingredients_details;
+        $product->key_benefits = $request->key_benefits;
         $product->top_sellers = $request->top_sellers;
 
         // FRONT IMAGE
@@ -236,9 +238,9 @@ class ProductController extends Controller
         $product->divisions_url = $request->divisions;
         $product->status = $request->status;
         $product->short_description = $request->short_description;
-        $product->description = $request->description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
+        $product->key_ingredients_details = $request->key_ingredients_details;
         $ingredients = [];
         $oldIngredients = json_decode($product->key_ingredients, true) ?? [];
 
@@ -268,7 +270,7 @@ class ProductController extends Controller
 
         $product->key_ingredients = json_encode($ingredients);
         $product->top_sellers = $request->top_sellers;
-
+        $product->key_benefits = $request->key_benefits;
         // =========================
         //  FRONT IMAGE UPDATE
         // =========================

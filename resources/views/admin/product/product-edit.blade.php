@@ -189,14 +189,20 @@
                                 {{ $data->short_description }}
                             </textarea>
                         </div>
-
-                        {{-- DESCRIPTION --}}
                         <div class="col-md-12">
-                            <label class="form-label">Description</label>
-                            <textarea name="description" id="description" class="form-control">
-                                {{ $data->description }}
+                            <label class="form-label">Key Ingredients Details</label>
+                            <textarea name="key_ingredients_details" id="key_ingredients_details" class="form-control">
+                                {{ $data->key_ingredients_details }}
                             </textarea>
                         </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Key Benefits</label>
+                            <textarea name="key_benefits" id="key_benefits" class="form-control">
+                                {{ $data->key_benefits }}
+                            </textarea>
+                        </div>
+
+                       
 
                         {{-- META DESCRIPTION --}}
                         <div class="col-md-12">
@@ -307,8 +313,23 @@
 <script>
 $(document).ready(function() {
     $('.dropify').dropify();
-    $('#description').summernote({
-        placeholder: 'Enter Description here...',
+    $('#key_ingredients_details').summernote({
+        placeholder: 'Enter Key Ingredients Details here...',
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['link', 'picture', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]
+        ]
+    }); 
+    $('#key_benefits').summernote({
+        placeholder: 'Enter Key Benefits here...',
         height: 300,
         toolbar: [
             ['style', ['style']],
