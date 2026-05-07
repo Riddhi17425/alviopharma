@@ -60,10 +60,10 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu">
-                    @foreach($allDivisions as $divisions)
+                    @foreach($allCategoryes as $category)
                         <li>
                             <a class="dropdown-item"
-                                href="{{ route('product',['divisions'=>$divisions->url]) }}#product-section">{{ $divisions->name }}
+                                href="{{ route('product',['category'=>$category->url]) }}#product-section">{{ $category->name }}
                             </a>
                         </li>
                     @endforeach

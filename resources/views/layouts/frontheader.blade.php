@@ -109,11 +109,11 @@
                                     </span>
                                 </a>
                                 @php
-                                    $divisions =  \App\Models\Divisions::where('status' , 'Active')->get();    
+                                    $categorys =  \App\Models\Category::where('status' , 'Active')->get();    
                                 @endphp
                                 <div class="dropdown">
-                                    @foreach ($divisions as $division)
-                                        <a href="{{ route('product', ['division' => $division->url]) }}#product-section">{{ $division->name }}</a>
+                                    @foreach ($categorys as $category)
+                                        <a href="{{ route('product', ['category' => $category->url]) }}#product-section">{{ $category->name }}</a>
                                     @endforeach
                                     
                                 </div>
