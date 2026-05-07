@@ -28,9 +28,9 @@
                                     <div class="col-md-6">
                                         <label class="form-label">Select Main Title</label>
                                         <select class="form-select" name="cat_type" aria-label="Default select example">
-                                            <option value="homemap">homemap</option>
+                                            {{-- <option value="homemap">homemap</option> --}}
                                             <option value="companymap">companymap</option>
-                                            <option value="Others">Others</option>
+                                            {{-- <option value="Others">Others</option> --}}
                                         </select>
                                         @if ($errors->has('cat_type'))
                                         <span class="text-danger">{{ $errors->first('cat_type') }}</span>
