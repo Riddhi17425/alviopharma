@@ -48,7 +48,7 @@
 @foreach($therapeuticAreas as $index => $area)
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0 align-items-center" data-aos="zoom-in" data-aos-delay="200">
-        @if($index % 2 == 0)
+        @if($index % 2 != 0)
             <div class="col-md-6" data-aos="fade-right">
                 <img src="{{ asset('public/therapeutical_images/'.$area->image) }}" alt="{{ optional($area->category)->name ?? $area->title }}" class="img-fluid">
             </div>
