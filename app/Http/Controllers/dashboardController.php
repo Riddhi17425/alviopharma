@@ -20,6 +20,7 @@ use App\Models\Divisions;
 use App\Models\KeyIngredient;
 use App\Models\MenuBanner;
 use App\Models\Product;
+use App\Models\TherapeuticArea;
 
 class dashboardController extends Controller
 {
@@ -44,7 +45,7 @@ class dashboardController extends Controller
             ->with(['category' => function ($q) {
                 $q->where('status', 'Active');
             }])
-            ->get();
+            ->latest()->take(10)->get();
         
         return view('front.dashboard',compact('metatitle','metadescription','blogs','units','featuredproducts'));
     }
@@ -199,7 +200,47 @@ class dashboardController extends Controller
         ->where('url', 'therapeutic-area')
         ->first();
 
-        return view('front.therapeutic-areas',compact('metatitle','metadescription','menubanner'));
+        $therapeuticAreas = TherapeuticArea::where('status', 'Active')
+            ->whereNull('deleted_at')
+            ->with('category')
+            ->orderBy('id', 'asc')
+            ->take(4)
+            ->get();
+
+        if ($therapeuticAreas->isEmpty()) {
+            $therapeuticAreas = collect([
+                (object) [
+                    'title' => 'Cardiology & Chronic Care',
+                    'sub_title' => 'Restoring Vitality through Precision',
+                    'sort_description' => "Managing cardiovascular and chronic conditions requires therapeutic consistency, patient safety, and dependable treatment support. Alvio's focused formulations are designed to support long-term care management with confidence.",
+                    'approach_description' => "Advanced formulations designed for chronic care support.\nFocused therapeutic strategies for long-term management.\nPatient-centric solutions aligned with treatment continuity.\nReliable quality standards across every formulation.",
+                    'button_text' => 'Explore Cardiology & Chronic Care',
+                ],
+                (object) [
+                    'title' => 'Dermatology & Cosmetology',
+                    'sub_title' => 'The Science of Skin Integrity',
+                    'sort_description' => 'Healthy skin requires targeted care backed by science and formulation expertise. Our dermatology portfolio is designed to support skin balance, barrier protection, and visible skin wellness through clinically focused solutions.',
+                    'approach_description' => "Targeted formulations for acne-prone and sensitive skin.\nBarrier-supportive ingredients for skin wellness.\nNon-comedogenic and skin-friendly compositions.\nDesigned for visible skin comfort and care.",
+                    'button_text' => 'Explore Dermatology & Cosmetology',
+                ],
+                (object) [
+                    'title' => 'Diabetology & Metabolic Care',
+                    'sub_title' => 'Mastering Metabolic Equilibrium',
+                    'sort_description' => "Effective metabolic care depends on consistency, therapeutic balance, and patient-focused innovation. Alvio's diabetology range supports modern treatment pathways through quality-driven formulations.",
+                    'approach_description' => "Formulations designed to support metabolic balance.\nPatient-focused therapeutic care strategies.\nReliable quality for long-term treatment support.\nScience-backed approach across diabetic care solutions.",
+                    'button_text' => 'Explore Diabetology & Metabolic Care',
+                ],
+                (object) [
+                    'title' => 'Nutraceuticals',
+                    'sub_title' => 'Preventive Wellness, Redefined',
+                    'sort_description' => "Wellness today requires proactive nutritional support backed by science and quality assurance. Alvio's nutraceutical portfolio is developed to support daily wellness, immunity, and lifestyle-focused health needs.",
+                    'approach_description' => "Carefully selected wellness-focused ingredients.\nQuality-driven formulations for daily health support.\nScience-backed nutritional supplementation.\nDesigned to support modern preventive wellness.",
+                    'button_text' => 'Explore Nutraceuticals',
+                ],
+            ]);
+        }
+
+        return view('front.therapeutic-areas',compact('metatitle','metadescription','menubanner', 'therapeuticAreas'));
     }
 
 
@@ -218,7 +259,6 @@ class dashboardController extends Controller
 
         $query = Product::with(['brand', 'divisions'])->where('status' , 'Active'); // load division
 
-        // ✅ Brand filter
         if ($brandId) {
             $query->where('brand_id', $brandId);
         }

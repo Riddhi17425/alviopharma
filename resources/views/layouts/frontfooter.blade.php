@@ -39,7 +39,7 @@
                 <li><a href="{{ route('manufacturing')}}">Manufacturing & Quality</a></li>
                 <li><a href="{{ route('blogs')}}">Insights</a></li>
                 <li><a href="{{ route('contact')}}">Contact Us</a></li>
-                {{-- <li><a href="therapeutic-area">Therapeutic Areas</a></li> --}}
+                <li><a href="therapeutic-area">Therapeutic Areas</a></li>
 
             </ul>
         </div>

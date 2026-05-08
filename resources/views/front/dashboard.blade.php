@@ -40,9 +40,8 @@
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-4.webp') }}" alt="hero image">
             <div class="hero-content">
-                <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
-                <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
-                    support patients and physicians through dependable treatment solutions.
+                <h1 class="title-68" data-aos="fade-right">Science-Led Solutions for Everyday Skin Concerns </h1>
+                <p class="text--white" data-aos="fade-up">With a strong focus on science-backed skincare, Uncap supports patients and dermatologists through reliable and effective treatment solutions.
                 </p>
             </div>
         </div>
@@ -136,29 +135,29 @@
         <!-- LEFT SIDE -->
         <div class="derma-section">
             <div class="derma uncapped">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'uncap']) }}#product-section"><img class="" src="public/front/images/darma-care-img_1.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'uncap']) }}"><img class="" src="public/front/images/darma-care-img_1.png"></a>
             </div>
             <div class="derma shampoo">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasavio']) }}#product-section"><img class="" src="public/front/images/darma-care-img_2.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasavio']) }}"><img class="" src="public/front/images/darma-care-img_2.png"></a>
             </div>
             <div class="derma supplement">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasaglow']) }}#product-section"><img class="" src="public/front/images/darma-care-img_3.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasaglow']) }}"><img class="" src="public/front/images/darma-care-img_3.png"></a>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="cardio-section">
             <div class="cardio cardiovascular">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'cardiovasascular']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'cardiovascular']) }}"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
             </div>
             <div class="cardio diabetes">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'anti-daibetes']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'anti-diabetes']) }}"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
             </div>
             <div class="cardio urology">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'urology']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'urology']) }}"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
             </div>
             <div class="cardio chronic">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'chronic-supplements']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'chronic-supplements']) }}"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
             </div>
         </div>
 
@@ -166,8 +165,6 @@
 </section>
 
 <!-- new section update -->
-
-
 
 <section class="product-section mt-100 d-none" data-aos="fade-up">
     <div data-aos="fade-right">

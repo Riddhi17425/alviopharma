@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\ClientelController;
 use App\Http\Controllers\admin\DivisionsController;
 use App\Http\Controllers\admin\KeyIngredientController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\TherapeuticAreaController;
 use App\Http\Controllers\CaptchaController;
 
 /*
@@ -83,6 +84,7 @@ use App\Http\Controllers\CaptchaController;
         Route::resource('category', CategoryController::class);
         Route::resource('divisions', DivisionsController::class);
         Route::resource('product', ProductController::class);
+        Route::resource('therapeuticarea', TherapeuticAreaController::class);
         Route::prefix('backend')->group(function () {
             // Route::get('home', [adminController::class, 'index'])->name('home');
         });
