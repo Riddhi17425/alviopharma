@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <select name="division" class="search-wrapper" onchange="this.form.submit()">
+                    <select name="division" class="search-wrapper search-wrapper-select" onchange="this.form.submit()">
                         <option value="">Select All</option>
                         @foreach($allDivisions as $division)
                             <option value="{{ $division->url }}"
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                             <div class="brand_item_rt">
-                                <p class="title-24 mb-2">{{ $product->brand->title ?? '' }}</p>
+                                <p class="title-24 mb-lg-2">{{ $product->brand->title ?? '' }}</p>
                                     <a href="{{ route('product.details' ,['url'=>$product->url]) }}"
                                         class="title-24">
                                         <span class="text--para">View details</span>

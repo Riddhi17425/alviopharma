@@ -341,3 +341,25 @@ a {
   width: 100%;
    height: 700px;
 }
+
+
+.thank-you
+{
+  position: relative;
+}
+
+.thank-you img
+{
+   /* filter: brightness(50%); */
+}
+
+.thank-you .thank-you-content
+{
+  position: absolute;
+  top: 13em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white-color);
+}
+
