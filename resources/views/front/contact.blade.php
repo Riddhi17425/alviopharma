@@ -2,12 +2,12 @@
 @if($menubanner)
 <section class="page-header">
     <div class="inner_hero">
-        <img src="{{ asset('public/front/images/contact-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <img src="{{ asset('public/menubannerimage/' . $menubanner->image) }}" class="img-fluid" alt="page-header-img">
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">Connect with Alvio</h1>
+            <h1 class="title-34 text--white">{{ $menubanner->title ?? 'Connect with Alvio'}}</h1>
             <p class="text-white page-header-para">{!! $menubanner->description !!}</p>
         </div>
     </div>

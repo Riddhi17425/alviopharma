@@ -3,8 +3,8 @@
 @if($menubanner)
 <section class="page-header">
     <div class="inner_hero">
-        <img src="{{ asset('public/front/images/therapeutic-banner.webp') }}" class="img-fluid" alt="page-header-img">
-        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Contact</p>
+        <img src="{{ asset('public/menubannerimage/' . $menubanner->image) }}" class="img-fluid" alt="page-header-img">
+        <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Therapeutic Area</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
@@ -33,180 +33,66 @@
             <p>Browse by therapeutic area and find brands faster.</p>
         </div>
         <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-up">
-            <h1 class="title-54 title--blue mb-40">Therapeutic Areas That Help You Navigate Our Portfolio</h1>
+            <h1 class="title-54 title--blue mb-40">Therapeutic Areas That Shape Meaningful Care</h1>
 
-            <p>Alvio Pharma’s range of <b>finished pharmaceutical formulations</b> is built around therapy-led
-                divisions—so
-                the right products are easier to find, compare, and reference. Each division brings together brands
-                designed for routine practice needs, patient preferences, and long-term care priorities across diverse
-                markets.</p>
+            <p>Alvio Pharmaceuticals delivers targeted formulations developed around practical clinical needs, patient well-being, and long-term therapeutic value. Each division is built to support focused treatment pathways with quality, consistency, and scientific precision.</p>
 
-            <p>Whether you’re looking for <b>Derma Care, Cardio Care, Anti-Diabetes, Urology</b>, or <b>Chronic
-                    Supplements</b>, this page helps
-                you move from therapeutic area to brand with minimal effort. Use the sections below to explore the
-                portfolio and
-                access the information you need—clearly and efficiently.
+            <p>From cardiometabolic care to dermatology, nutraceuticals, and chronic care management, our portfolio is designed to support better treatment outcomes across multiple healthcare segments.
             </p>
         </div>
     </div>
     </div>
 </section>
+<!-- Start from here -->
 
-<!-- <section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
-        <div class="col-md-6" data-aos="fade-right">
-            <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
-        </div>
-
-        <div class="col-md-6 ps-md-5" data-aos="fade-left">
-            <h2 class="title-54" style="color: var(--black-color);">Mastering the Cardio-Metabolic Continuum</h2>
-            <p>CardioMet Care is dedicated to managing the interconnected nature of cardiovascular and metabolic
-                disorders through an integrated therapeutic approach. Rather than treating conditions in isolation, we
-                address the shared physiological pathways that link hypertension, diabetes, and dyslipidemia, enabling
-                more stable and sustainable long-term outcomes.</p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li> <b>Biological Empathy:</b> Unified management of the metabolic triad.</li>
-                <li> <b>Algorithmic Precision:</b> CPC Technology for steady-state stability.</li>
-                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
-                <li> <b>Schedule M Compliant:</b> Strict adherence to Indian FDA regulatory requirements.</li>
-            </ul>
-
-
-            <div class="btn_main mt-40">
-                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Cosmeceutical Portfolio</a>
-                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                            fill="white" />
-                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section> -->
-
+@foreach($therapeuticAreas as $index => $area)
 <section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
-
-    
-        <div class="col-md-6" data-aos="fade-left">
-            <img src="{{ asset('public/front/images/DermaScience.webp') }}" alt="images" class="img-fluid">
-        </div>
-
-        <div class="col-md-6 pe-md-5" data-aos="fade-right">
-            <h2 class="title-54" style="color: var(--black-color);">The Science of Skin Integrity</h2>
-            <p>Skin is the body’s first line of defense and a reflection of overall wellness. Our Dermatology portfolio combines clinical rigor with aesthetic sensitivity, offering treatments that repair the dermal barrier while enhancing natural vitality through bioactive science.
-            </p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li> Targeted repair for chronic inflammatory skin conditions.</li>
-                <li>High-purity cosmeceuticals for aesthetic skin rejuvenation.</li>
-                <li>Non-comedogenic formulations designed for sensitive profiles.</li>
-                <li>Integration of protective antioxidants and cellular hydrators.</li>
-            </ul>
-            <div class="btn_main mt-40">
-                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Dermatology & Cosmetology</a>
-                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                            fill="white" />
-                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
+    <div class="row gy-3 gy-lg-0 align-items-center" data-aos="zoom-in" data-aos-delay="200">
+        @if($index % 2 != 0)
+            <div class="col-md-6" data-aos="fade-right">
+                <img src="{{ asset('public/therapeutical_images/'.$area->image) }}" alt="{{ optional($area->category)->name ?? $area->title }}" class="img-fluid">
             </div>
-
-        </div>
-
-
+            <div class="col-md-6 ps-md-5" data-aos="fade-left">
+                <h2 class="title-54" style="color: var(--black-color);">{{ optional($area->category)->name ?? $area->title }}</h2>
+                <h5>{{ $area->sub_title }}</h5>
+                <p>{{ $area->sort_description }}</p>
+                <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
+                {!! $area->approach_description !!}
+                <div class="btn_main mt-40">
+                    <a href="{{ route('product', ['category' => optional($area->category)->url ?? 'all']) }}" class="commo-btn ">{{ $area->button_text }}</a>
+                    <a href="{{ route('product', ['category' => optional($area->category)->url ?? 'all']) }}" class="commo-btn-arrow ">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z" fill="white" />
+                            <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        @else
+            <div class="col-md-6 pe-md-5 order-1 order-lg-0" data-aos="fade-right">
+                <h2 class="title-54" style="color: var(--black-color);">{{ optional($area->category)->name ?? $area->title }}</h2>
+                <h5>{{ $area->sub_title }}</h5>
+                <p>{{ $area->sort_description }}</p>
+                <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
+                {!! $area->approach_description !!}
+                <div class="btn_main mt-40">
+                    <a href="{{ route('product', ['category' => optional($area->category)->url ?? 'all']) }}" class="commo-btn ">{{ $area->button_text }}</a>
+                    <a href="{{ route('product', ['category' => optional($area->category)->url ?? 'all']) }}" class="commo-btn-arrow ">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z" fill="white" />
+                            <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0" data-aos="fade-left">
+                <img src="{{ asset('public/therapeutical_images/'.$area->image) }}" alt="{{ optional($area->category)->name ?? $area->title }}" class="img-fluid">
+            </div>
+        @endif
     </div>
 </section>
-
-<!-- <section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
-        <div class="col-md-6" data-aos="fade-right">
-            <img src="{{ asset('public/front/images/CardioMet.webp') }}" alt="images" class="img-fluid">
-        </div>
-
-        <div class="col-md-6 ps-md-5" data-aos="fade-left">
-            <h2 class="title-54" style="color: var(--black-color);">Mastering Metabolic Equilibrium</h2>
-            <p>Diabetes management is a journey of constant adjustment. Alvio’s metabolic care suite focuses on glycemic predictability and metabolic harmony, utilizing advanced bioavailability to help patients manage Type 2 diabetes with fewer fluctuations and greater ease.</p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li>  Enhanced insulin sensitivity through targeted oral formulations.</li>
-                <li> Strategies to mitigate long-term metabolic complications.</li>
-                <li>  Bioavailability-focused chemistry for consistent absorption.</li>
-                <li>  Support for weight-neutral metabolic management.</li>
-            </ul>
-            <div class="btn_main mt-40">
-                <a href="{{ route('blogs') }}" class="commo-btn ">Explore Diabetology (Metabolic care)</a>
-                <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                            fill="white" />
-                        <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row" data-aos="zoom-in" data-aos-delay="200">
-
-        <div class="col-md-6 pe-md-5 mb-4 order-1 order-lg-0" data-aos="fade-right">
-            <h2 class="title-54" style="color: var(--black-color);">Preventive Wellness, Redefined</h2>
-            <p>We believe that wellness begins at the cellular level. Our Nutraceutical division bridges the gap between pharmaceutical standards and daily nutrition, providing pure, evidence-backed supplements that optimize systemic health and strengthen the body’s natural defenses.
-                and barrier recovery. We recognize that refactory skin conditions - such as Psoriasis, Dermatitis,
-                and severe Acne require more than just topical coverage; they require deep-layer molecular intervention.
-            </p>
-
-            <h5 class="title-24" style="color: var(--blue-heading);">Our Approach</h5>
-            <ul>
-                <li> Ultra-pure sourcing of bioactive botanical extracts.</li>
-                <li>Micronutrient optimization for cognitive and immune support.</li>
-                <li>Clean-label formulations free from unnecessary fillers.</li>
-                <li>Synergy-based blending to maximize nutrient uptake.</li>
-            </ul>
-
-
-              <div class="btn_main mt-40">
-            <a href="{{ route('blogs') }}" class="commo-btn ">Explore Nutraceuticals</a>
-            <a href="{{ route('blogs') }}" class="commo-btn-arrow "><svg width="15" height="15" viewBox="0 0 15 15"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0.750118 13.478L13.478 0.750116L0.750118 13.478ZM13.478 0.750116H3.57852H13.478ZM13.478 0.750116V10.6496V0.750116Z"
-                        fill="white" />
-                    <path d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-
-
-        </div>
-
-        <div class="col-md-6 mb-4 mb-lg-0" data-aos="fade-left">
-            <img src="{{ asset('public/front/images/Nutraceuticals.png') }}" alt="images" class="img-fluid">
-        </div>
-
-    </div>
-</section> 
-
-
+@endforeach
+<!-- Ednded Here  -->
 
 <section class="mt-100 mb-100" data-aos="fade-up">
     <div class="p-x">
@@ -214,11 +100,7 @@
             <div class="col-md-7">
                 <div class="state-content">
                     <h2 class="title-54 title--blue mb-4">A Framework for Evidence-Led Therapeutic Decisions</h2>
-                    <p>Every molecule within the Alvio Pharma portfolio is selected through a structured clinical
-                        evaluation model designed to balance efficacy, safety, and real-world usability. Our selection
-                        matrix integrates gap analysis, pathway synergy, and adherence science to ensure that each
-                        therapy addresses unmet clinical needs while supporting long-term treatment success in chronic
-                        disease management.</p>
+                    <p>Every Alvio formulation is developed through a focused evaluation of clinical relevance, patient requirements, ingredient quality, and therapeutic purpose. Our approach supports meaningful healthcare solutions designed for practical clinical application.</p>
                 </div>
                 <div class="state-accordion mt-40">
                     <div class="accordion" id="accordionExample">
@@ -234,8 +116,7 @@
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>Targeting molecules where existing therapies show suboptimal bioavailability or
-                                        inconsistent outcomes.</p>
+                                    <p>Identifying therapeutic opportunities to support evolving patient and practitioner needs.</p>
                                 </div>
                             </div>
                         </div>
@@ -251,7 +132,7 @@
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>Alvio Pharma’s national operations are the foundation of our growth story.</p>
+                                    <p>Formulations designed to support treatment consistency and patient convenience.</p>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +148,7 @@
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>Alvio Pharma’s national operations are the foundation of our growth story.</p>
+                                    <p>Balanced ingredient strategies aligned with therapeutic effectiveness.</p>
                                 </div>
                             </div>
                         </div>

@@ -62,7 +62,7 @@
             <h5 class="footer-title">Therapeutic Areas</h5>
             <ul class="footer-list">
                 @foreach ($categorys as $category)
-                    <li><a href="{{ route('product', ['category' => $category->url]) }}#product-section"> {{ $category->name }} </a></li>
+                    <li><a href="{{ route('product', ['category' => $category->url]) }}"> {{ $category->name }} </a></li>
                 @endforeach
                 {{-- <li><a href="javascript:void(0)">Diabetology (Metabolic care) </a></li>
                 <li><a href="javascript:void(0)">Dermatology & Cosmetology</a></li>

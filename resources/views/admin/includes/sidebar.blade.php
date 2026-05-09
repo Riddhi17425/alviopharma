@@ -106,6 +106,13 @@
                     <span>Product</span>
                 </a>
             </li>
+            <li>
+                <a class="m-link{{ Request::routeIs('therapeuticarea.*') ? ' active' : '' }}"
+                    href="{{ route('therapeuticarea.index') }}">
+                    <i class="icofont-heart-beat fs-5"></i>
+                    <span>Therapeutic Areas</span>
+                </a>
+            </li>
 
         </ul>
 

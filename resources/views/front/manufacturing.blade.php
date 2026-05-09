@@ -3,15 +3,13 @@
 @if($menubanner)
 <section class="page-header">
     <div class="inner_hero">
-        <img src="{{ asset('public/front/images/manufacturing-banner.webp') }}" class="img-fluid" alt="page-header-img">
+        <img src="{{ asset('public/menubannerimage/' . $menubanner->image) }}" class="img-fluid" alt="page-header-img">
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> / Manufacturing</p>
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">Manufacturing & Quality</h1>
-            <p class="text-white page-header-para">At Alvio Pharma, quality is driven by robust systems and trusted
-                manufacturing partnerships. Our formulations are supported by compliance-led associates to ensure
-                consistency, safety, and reliability.
+            <h1 class="title-34 text--white">{{ $menubanner->title ?? 'Manufacturing & Quality'}}</h1>
+            <p class="text-white page-header-para">{!! $menubanner->description !!}
             </p>
         </div>
         <div class="page-header-btn">

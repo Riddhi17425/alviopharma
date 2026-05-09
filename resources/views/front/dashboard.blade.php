@@ -40,9 +40,8 @@
         <div class="hero-section">
             <img class="img-fluid" src="{{ asset('public/front/images/Banner-4.webp') }}" alt="hero image">
             <div class="hero-content">
-                <h1 class="title-68" data-aos="fade-right">Addressing the Growing Burden of Chronic Diseases </h1>
-                <p class="text--white" data-aos="fade-up">With a strong focus on long-term therapies, we aim to
-                    support patients and physicians through dependable treatment solutions.
+                <h1 class="title-68" data-aos="fade-right">Science-Led Solutions for Everyday Skin Concerns </h1>
+                <p class="text--white" data-aos="fade-up">With a strong focus on science-backed skincare, Uncap supports patients and dermatologists through reliable and effective treatment solutions.
                 </p>
             </div>
         </div>
@@ -136,29 +135,29 @@
         <!-- LEFT SIDE -->
         <div class="derma-section">
             <div class="derma uncapped">
-                <a href="{{ route('product', ['division' => 'uncap']) }}#product-section"><img class="" src="public/front/images/darma-care-img_1.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'uncap']) }}"><img class="" src="public/front/images/darma-care-img_1.png"></a>
             </div>
             <div class="derma shampoo">
-                <a href="{{ route('product', ['division' => 'rasavio']) }}#product-section"><img class="" src="public/front/images/darma-care-img_2.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasavio']) }}"><img class="" src="public/front/images/darma-care-img_2.png"></a>
             </div>
             <div class="derma supplement">
-                <a href="{{ route('product', ['division' => 'rasaglow']) }}#product-section"><img class="" src="public/front/images/darma-care-img_3.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'rasaglow']) }}"><img class="" src="public/front/images/darma-care-img_3.png"></a>
             </div>
         </div>
 
         <!-- RIGHT SIDE -->
         <div class="cardio-section">
             <div class="cardio cardiovascular">
-                <a href="{{ route('product', ['division' => 'cardiovasascular']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'cardiovascular']) }}"><img class="" src="public/front/images/cardio-care-img_1.png"></a>
             </div>
             <div class="cardio diabetes">
-                <a href="{{ route('product', ['division' => 'anti-daibetes']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'anti-diabetes']) }}"><img class="" src="public/front/images/cardio-care-img_2.png"></a>
             </div>
             <div class="cardio urology">
-                <a href="{{ route('product', ['division' => 'urology']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'urology']) }}"><img class="" src="public/front/images/cardio-care-img_3.png"></a>
             </div>
             <div class="cardio chronic">
-                <a href="{{ route('product', ['division' => 'chronic-supplements']) }}#product-section"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'chronic-supplements']) }}"><img class="" src="public/front/images/cardio-care-img_4.png"></a>
             </div>
         </div>
 
@@ -166,8 +165,6 @@
 </section>
 
 <!-- new section update -->
-
-
 
 <section class="product-section mt-100 d-none" data-aos="fade-up">
     <div data-aos="fade-right">
@@ -252,7 +249,7 @@
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
                 </h2>
                 <p>Alvio Pharma's growing national presence is built on strong field execution and therapy-focused
-                    portfolios. With a team of <b>300+ trained professionals</b> and an expanding network across <b>16+
+                    portfolios. With a team of <b>300+ trained professionals</b> and an expanding network across <b>11+
                         states</b>, we work to keep <b>quality, affordable formulations</b> accessible to the
                     communities we serve.
                 </p>
@@ -278,7 +275,7 @@
                         <div id="{{ $collapseId }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                             aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                {!! $unit->description !!}
+                                <a href="javascript:void(0);">{!! $unit->description !!}</a>
                             </div>
                         </div>
                     </div>
@@ -291,9 +288,9 @@
         <div class="col-xl-6">
             <div class="images-only">
                 @foreach($units as $unit)
-                    <img src="{{ asset('public/homemapimage/'.$unit->image) }}" 
-                        data-original-src="{{ asset('public/homemapimage/'.$unit->image) }}"
-                        data-alt-src="{{ asset('public/homemapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                    <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}" 
+                        data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
+                        data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
                         class="accordion-preview-img img-fluid" 
                         data-panel="collapse{{ $loop->index }}"
                         style="cursor: pointer;">
@@ -380,6 +377,23 @@ if (accordionEl && exploreState && previewImgs.length) {
                 this.setAttribute('src', originalSrc);
             }
         });
+    });
+
+    // City name (inside accordion body) click should show city map
+    accordionEl.addEventListener('click', function(e) {
+        const cityItem = e.target.closest('.accordion-body li, .accordion-body a');
+        if (!cityItem) return;
+
+        const panel = cityItem.closest('.accordion-collapse');
+        if (!panel || !panel.id) return;
+
+        const img = document.querySelector('.accordion-preview-img[data-panel="' + panel.id + '"]');
+        if (!img) return;
+
+        clearActive();
+        img.classList.add("active");
+        img.style.display = "block";
+        img.setAttribute('src', img.getAttribute('data-alt-src'));
     });
 
     accordionEl.addEventListener("shown.bs.collapse", function(e) {
