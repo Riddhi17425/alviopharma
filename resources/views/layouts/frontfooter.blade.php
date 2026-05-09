@@ -7,16 +7,13 @@
                 accessibility, and long-term healthcare impact across India.</p>
             <div class="subcription-form pt-lg-5">
                 <form>
-
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="">
                         <label for="floatingInput">Enter your email</label>
                     </div>
                     <div class="form-check d-flex align-items-center gap-3">
-                        <span><input type="checkbox" class="form-check-input" id="exampleCheck1"
-                                placeholder=" Enter your email "></span>
-                        <label class="form-check-label" for="exampleCheck1">Subscribe to get updates on new launches,
-                            <br /> insights , & events. </label>
+                        <span><input type="checkbox" class="form-check-input" id="exampleCheck1" placeholder=" Enter your email "></span>
+                        <label class="form-check-label" for="exampleCheck1">Subscribe to get updates on new launches,<br /> insights , & events. </label>
                     </div>
                     <button type="submit" class="btn"><svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +36,7 @@
                 <li><a href="{{ route('manufacturing')}}">Manufacturing & Quality</a></li>
                 <li><a href="{{ route('blogs')}}">Insights</a></li>
                 <li><a href="{{ route('contact')}}">Contact Us</a></li>
-                <li><a href="therapeutic-area">Therapeutic Areas</a></li>
+                <li><a href="{{ route('therapeutic.area')}}">Therapeutic Areas</a></li>
 
             </ul>
         </div>

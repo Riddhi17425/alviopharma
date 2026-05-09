@@ -41,7 +41,7 @@ use App\Http\Controllers\CaptchaController;
     Route::get('contact', [dashboardController::class, 'contact'])->name('contact');
     Route::post('/inquiry-submit', [dashboardController::class, 'inquirystore'])->name('inquiry.submit');
     Route::get('blogs', [dashboardController::class,'blogs'])->name('blogs');
-    Route::get('blogs/{url}', [dashboardController::class, 'blogsdetail'])->name('blogdetail');
+    Route::get('blog/{url}', [dashboardController::class, 'blogsdetail'])->name('blogdetail');
     Route::get('board-directors', [dashboardController::class, 'boardDirectors'])->name('board.directors');
     Route::get('our-heritage', [dashboardController::class, 'ourHeritage'])->name('our.heritage');
     Route::get('our-company', [dashboardController::class, 'ourCompany'])->name('our.company');
