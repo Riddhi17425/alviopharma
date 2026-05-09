@@ -368,8 +368,7 @@ class dashboardController extends Controller
             ]
         );
 
-        // $adminEmail = config('mail.from.address', 'info@alviopharma.com');
-        $adminEmail = 'webdeveloper9.intelliworkz@gmail.com';
+        $adminEmail = config('mail.from.address', 'info@alviopharma.com');
         $fromEmail  = $adminEmail;
         $fromName   = config('mail.from.name', 'Alvio Pharma');
 
