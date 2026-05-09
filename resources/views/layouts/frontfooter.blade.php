@@ -83,14 +83,14 @@
     <div class="bottom-footer">
         <div class="bottom-footer-wrapper p-x">
             <div class="social-icons">
-                <a href="https://in.linkedin.com/company/alviopharma" rel="nofollow"><img
+                <a href="https://in.linkedin.com/company/alviopharma" rel="nofollow" target="_blank"><img
                         src="{{ asset('public/front/images/linkedin-icon.svg') }}" alt="LinkedIn" class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img src="{{ asset('public/front/images/insta-icon.svg') }}"
-                        alt="Instagram" class="me-3"></a>
-                <a href="https://www.facebook.com/alviopharma" rel="nofollow"><img
+                <!--<a href="javascript:void(0)" rel="nofollow" target="_blank"><img src="{{ asset('public/front/images/insta-icon.svg') }}"-->
+                <!--        alt="Instagram" class="me-3"></a>-->
+                <a href="https://www.facebook.com/alviopharma" rel="nofollow" target="_blank"><img
                         src="{{ asset('public/front/images/facebook-icon.svg') }}" alt="Facebook" class="me-3"></a>
-                <a href="javascript:void(0)" rel="nofollow"><img
-                        src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp" class="me-3"></a>
+                <!--<a href="javascript:void(0)" rel="nofollow" target="_blank"><img-->
+                <!--        src="{{ asset('public/front/images/whatsapp-icon.svg') }}" alt="WhatsApp" class="me-3"></a>-->
             </div>
             <div class="footer-content ">
                 <p class="text-white mb-0">© {{ date('Y') }} Alvio Pharmaceuticals Pvt. Ltd. All Rights Reserved.   </p>

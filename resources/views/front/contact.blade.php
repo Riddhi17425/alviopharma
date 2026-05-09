@@ -122,7 +122,7 @@
                         <p class="mb-0">
                             <a href="tel:+917966176465" target="_blank">+91 79 6617 6465</a><br>
                             <a href="tel:+917926893010" target="_blank">+91 79 2689 3010</a><br>
-                            <a href="tel:+917926893010" target="_blank">+91 79 2689 3010</a>
+                            <a href="tel:+917966177475" target="_blank">+91 79 6617 7475</a>
                         </p>
                     </div>
                 </div>

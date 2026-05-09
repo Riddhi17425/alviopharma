@@ -137,7 +137,7 @@
         </div> --}}
 
         <div class="brand-listing">
-        
+        @if(isset($groupedProducts) && is_countable($groupedProducts) && count($groupedProducts) > 0)
             @foreach($groupedProducts as $letter => $products)
                 <div class="mt-100">
                     <h3 class="title-54 mb-40">
@@ -182,6 +182,9 @@
                     @endforeach
                 </div>
             @endforeach
+        @else
+            <div class="text-center"><image src="{{ asset('public/front/images/product-not-found.png') }}" class="img-fluid" alt="no-data-found"></div>
+        @endif
         </div>
 </section>
 
