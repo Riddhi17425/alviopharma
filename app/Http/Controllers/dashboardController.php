@@ -21,6 +21,7 @@ use App\Models\KeyIngredient;
 use App\Models\MenuBanner;
 use App\Models\Product;
 use App\Models\TherapeuticArea;
+use App\Models\NewsletterSubscription;
 
 class dashboardController extends Controller
 {
@@ -339,6 +340,68 @@ class dashboardController extends Controller
     {
     
         return view('front.values-purpose');
+    }
+
+    /**
+     * Handle newsletter subscription form submission.
+     */
+    public function newsletterSubscribe(Request $request)
+    {
+        // Laravel validation
+        $request->validate([
+            'newsletter_email'   => 'required|email|max:255',
+            'newsletter_consent' => 'accepted',
+        ], [
+            'newsletter_email.required'   => 'Please enter your email address.',
+            'newsletter_email.email'      => 'Please enter a valid email address.',
+            'newsletter_consent.accepted' => 'You must agree to subscribe.',
+        ]);
+
+        $email = $request->newsletter_email;
+
+        // Store or update subscription
+        $subscription = NewsletterSubscription::updateOrCreate(
+            ['email' => $email],
+            [
+                'is_subscribed' => true,
+                'ip_address'    => $request->ip(),
+            ]
+        );
+
+        // $adminEmail = config('mail.from.address', 'info@alviopharma.com');
+        $adminEmail = 'webdeveloper9.intelliworkz@gmail.com';
+        $fromEmail  = $adminEmail;
+        $fromName   = config('mail.from.name', 'Alvio Pharma');
+
+        // Mail to admin
+        Mail::send([], [], function ($message) use ($email, $adminEmail, $fromEmail, $fromName) {
+            $htmlBody = '<h2 style="font-family:sans-serif;color:#1a3c5e;">New Newsletter Subscription</h2>'
+                      . '<p style="font-family:sans-serif;">A new user has subscribed to the Alvio Pharma newsletter.</p>'
+                      . '<p style="font-family:sans-serif;"><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>'
+                      . '<p style="font-family:sans-serif;">Please add them to your mailing list.</p>';
+
+            $message->to($adminEmail)
+                    ->from($fromEmail, $fromName)
+                    ->subject('New Newsletter Subscription')
+                    ->setBody($htmlBody, 'text/html');
+        });
+
+        // Mail to subscriber
+        Mail::send([], [], function ($message) use ($email, $fromEmail, $fromName) {
+            $htmlBody = '<div style="font-family:sans-serif;max-width:600px;margin:auto;">'
+                      . '<h2 style="color:#1a3c5e;">Thank You for Subscribing!</h2>'
+                      . '<p>Dear Subscriber,</p>'
+                      . '<p>Thank you for subscribing to the <strong>Alvio Pharma</strong> newsletter.</p>'
+                      . '<p>If you did not subscribe, please ignore this email.</p>'
+                      . '<br><p style="color:#888;">Warm regards,<br>Team Alvio Pharmaceuticals</p>'
+                      . '</div>';
+
+            $message->to($email)->from($fromEmail, $fromName)
+                    ->subject('Thank You for Subscribing - Alvio Pharma')
+                    ->setBody($htmlBody, 'text/html');
+        });
+
+        return redirect()->route('thank-you')->with('success', 'Thank you for subscribing! Please check your inbox.');
     }
 
     /**

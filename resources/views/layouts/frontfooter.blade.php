@@ -6,16 +6,47 @@
             <p class="text--white pt-3">Delivering high-quality pharmaceutical solutions with a strong focus on trust,
                 accessibility, and long-term healthcare impact across India.</p>
             <div class="subcription-form pt-lg-5">
-                <form>
+
+                {{-- Success Message --}}
+                @if(session('newsletter_success'))
+                    <div class="alert alert-success py-2 px-3 mb-3" style="background:rgba(255,255,255,0.15);border:1px solid #a3e635;color:#fff;border-radius:8px;font-size:14px;">
+                        {{ session('newsletter_success') }}
+                    </div>
+                @endif
+
+                <form id="newsletterForm" action="{{ route('newsletter.subscribe') }}" method="POST" novalidate>
+                    @csrf
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="">
+                        <input type="email" class="form-control @error('newsletter_email') is-invalid @enderror"
+                               id="floatingInput" name="newsletter_email"
+                               placeholder=""
+                               value="{{ old('newsletter_email') }}">
                         <label for="floatingInput">Enter your email</label>
+                        @error('newsletter_email')
+                            <div class="invalid-feedback" style="color:#fca5a5;font-size:13px;">{{ $message }}</div>
+                        @enderror
+                        <div class="newsletter-email-error" style="color:#fca5a5;font-size:13px;display:none;margin-top:4px;"></div>
                     </div>
                     <div class="form-check d-flex align-items-center gap-3">
-                        <span><input type="checkbox" class="form-check-input" id="exampleCheck1" placeholder=" Enter your email "></span>
-                        <label class="form-check-label" for="exampleCheck1">Subscribe to get updates on new launches,<br /> insights , & events. </label>
+                        <span>
+                            <input type="checkbox"
+                                   class="form-check-input @error('newsletter_consent') is-invalid @enderror"
+                                   id="newsletterConsent"
+                                   name="newsletter_consent"
+                                   value="1"
+                                   {{ old('newsletter_consent') ? 'checked' : '' }}>
+                        </span>
+                        <label class="form-check-label" for="newsletterConsent">
+                            Subscribe to get updates on new launches,<br /> insights , &amp; events.
+                        </label>
                     </div>
-                    <button type="submit" class="btn"><svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                    @error('newsletter_consent')
+                        <div style="color:#fca5a5;font-size:13px;margin-top:4px;">{{ $message }}</div>
+                    @enderror
+                    <div class="newsletter-consent-error" style="color:#fca5a5;font-size:13px;display:none;margin-top:4px;"></div>
+
+                    <button type="submit" class="btn" id="newsletterSubmitBtn">
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0.75001 7.75001L18.75 7.75001ZM18.75 7.75001L11.75 0.749999ZM18.75 7.75001L11.75 14.75Z"
@@ -124,5 +155,58 @@ AOS.init({
 
 <!-- Project JS (depends on vendor libraries) -->
 <script src="{{ asset('public/front/js/main.js') }}"></script>
+
+<script>
+$(document).ready(function () {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    $('#newsletterForm').on('submit', function (e) {
+        var isValid = true;
+
+        // Reset errors
+        $('.newsletter-email-error').hide().text('');
+        $('.newsletter-consent-error').hide().text('');
+        $('#floatingInput').removeClass('is-invalid');
+        $('#newsletterConsent').removeClass('is-invalid');
+
+        var email   = $.trim($('#floatingInput').val());
+        var consent = $('#newsletterConsent').is(':checked');
+
+        // Email: required
+        if (email === '') {
+            $('.newsletter-email-error').text('Please enter your email address.').show();
+            $('#floatingInput').addClass('is-invalid');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            // Email: valid format
+            $('.newsletter-email-error').text('Please enter a valid email address.').show();
+            $('#floatingInput').addClass('is-invalid');
+            isValid = false;
+        }
+
+        // Checkbox: required
+        if (!consent) {
+            $('.newsletter-consent-error').text('You must agree to subscribe.').show();
+            $('#newsletterConsent').addClass('is-invalid');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+
+    // Live clear errors
+    $('#floatingInput').on('input', function () {
+        $(this).removeClass('is-invalid');
+        $('.newsletter-email-error').hide().text('');
+    });
+
+    $('#newsletterConsent').on('change', function () {
+        $(this).removeClass('is-invalid');
+        $('.newsletter-consent-error').hide().text('');
+    });
+});
+</script>
 
 </html>

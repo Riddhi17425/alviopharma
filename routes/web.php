@@ -58,6 +58,7 @@ use App\Http\Controllers\CaptchaController;
     Route::get('product-details/{url}', [dashboardController::class,'productDetails'])->name('product.details');
     
 
+    Route::post('/newsletter-subscribe', [dashboardController::class, 'newsletterSubscribe'])->name('newsletter.subscribe');
     Route::get('/captcha-image', [CaptchaController::class, 'image'])->name('captcha.image');  
     Route::get('/thank-you', [dashboardController::class, 'thankyou'])->name('thank-you');
 
