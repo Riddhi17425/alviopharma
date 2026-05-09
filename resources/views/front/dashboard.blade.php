@@ -100,25 +100,25 @@
 
 <section class="counter-section p-x mt-100">
     <div class="row">
-        <div class="col-xl-3 " data-aos="flip-left" data-aos-duration="800" data-aos-delay="0">
+        <div class="col-md-6 col-xl-3 " data-aos="flip-left" data-aos-duration="800" data-aos-delay="0">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="10">10+</h3>
                 <p class="title-24 title--light-blue">Years of Excellence </p>
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
+        <div class="col-md-6 col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="400">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="350">350+</h3>
                 <p class="title-24 title--light-blue">Team Members </p>
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="700">
+        <div class="col-md-6 col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="700">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="300">300+</h3>
                 <p class="title-24 title--light-blue">Molecules in Portfolio</p>
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="1000">
+        <div class="col-md-6 col-xl-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="1000">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="35">35K+</h3>
                 <p class="title-24 title--light-blue">Healthcare professionals connected</p>
@@ -246,7 +246,7 @@
 @endif
 <section class="explore-state mt-100" style="margin-top: 100px;"">
    <div class=" p-x">
-    <div class="row align-items-center">
+    <div class="row gy-4 gy-lg-0 align-items-center">
         <div class="col-xl-6">
             <div class="state-content">
                 <h2 class="title-54 mb-3">Expanding Reach, Improving Lives Across India.
