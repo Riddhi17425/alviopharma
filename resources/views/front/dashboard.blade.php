@@ -209,8 +209,8 @@
         @foreach ($featuredproducts as $product)
         <div class="slider-item" data-aos="fade-up">
 
-            <a href="{{ route('product.details', ['url' => $product->url]) }}"><img src="{{ asset('public/product/front_image/' . $product->front_image) }}" alt="{{ $product->name }}"
-                class="w-100"></a>
+            <img src="{{ asset('public/product/front_image/' . $product->front_image) }}" alt="{{ $product->name }}"
+                class="w-100">
 
             <div class="slider-content">
                 <p class="mb-2">
@@ -218,11 +218,11 @@
                 </p>
 
                 <h5 class="title-24">
-                    <a href="{{ route('product.details', ['url' => $product->url]) }}">{{ $product->name }}</a>
+                    {{ $product->name }}
                 </h5>
             </div>
 
-            {{-- ðŸ”¥ Top Seller Badge --}}
+            {{-- 🔥 Top Seller Badge --}}
             @if($product->top_seller == 'Yes')
             <span class="badge bg-danger position-absolute" style="top:10px; left:10px;">
                 Top Seller
