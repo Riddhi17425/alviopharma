@@ -371,34 +371,38 @@ class dashboardController extends Controller
         $adminEmail = config('mail.from.address', 'info@alviopharma.com');
         $fromEmail  = $adminEmail;
         $fromName   = config('mail.from.name', 'Alvio Pharma');
+        try {
+            // Mail to admin
+            Mail::send([], [], function ($message) use ($email, $adminEmail, $fromEmail, $fromName) {
+                $htmlBody = '<h2 style="font-family:sans-serif;color:#1a3c5e;">New Newsletter Subscription</h2>'
+                        . '<p style="font-family:sans-serif;">A new user has subscribed to the Alvio Pharma newsletter.</p>'
+                        . '<p style="font-family:sans-serif;"><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>'
+                        . '<p style="font-family:sans-serif;">Please add them to your mailing list.</p>';
 
-        // Mail to admin
-        Mail::send([], [], function ($message) use ($email, $adminEmail, $fromEmail, $fromName) {
-            $htmlBody = '<h2 style="font-family:sans-serif;color:#1a3c5e;">New Newsletter Subscription</h2>'
-                      . '<p style="font-family:sans-serif;">A new user has subscribed to the Alvio Pharma newsletter.</p>'
-                      . '<p style="font-family:sans-serif;"><strong>Email:</strong> ' . htmlspecialchars($email) . '</p>'
-                      . '<p style="font-family:sans-serif;">Please add them to your mailing list.</p>';
+                $message->to($adminEmail)
+                        ->from($fromEmail, $fromName)
+                        ->subject('New Newsletter Subscription')
+                        ->setBody($htmlBody, 'text/html');
+            });
 
-            $message->to($adminEmail)
-                    ->from($fromEmail, $fromName)
-                    ->subject('New Newsletter Subscription')
-                    ->setBody($htmlBody, 'text/html');
-        });
+            // Mail to subscriber
+            Mail::send([], [], function ($message) use ($email, $fromEmail, $fromName) {
+                $htmlBody = '<div style="font-family:sans-serif;max-width:600px;margin:auto;">'
+                        . '<h2 style="color:#1a3c5e;">Thank You for Subscribing!</h2>'
+                        . '<p>Dear Subscriber,</p>'
+                        . '<p>Thank you for subscribing to the <strong>Alvio Pharma</strong> newsletter.</p>'
+                        . '<p>If you did not subscribe, please ignore this email.</p>'
+                        . '<br><p style="color:#888;">Warm regards,<br>Team Alvio Pharmaceuticals</p>'
+                        . '</div>';
 
-        // Mail to subscriber
-        Mail::send([], [], function ($message) use ($email, $fromEmail, $fromName) {
-            $htmlBody = '<div style="font-family:sans-serif;max-width:600px;margin:auto;">'
-                      . '<h2 style="color:#1a3c5e;">Thank You for Subscribing!</h2>'
-                      . '<p>Dear Subscriber,</p>'
-                      . '<p>Thank you for subscribing to the <strong>Alvio Pharma</strong> newsletter.</p>'
-                      . '<p>If you did not subscribe, please ignore this email.</p>'
-                      . '<br><p style="color:#888;">Warm regards,<br>Team Alvio Pharmaceuticals</p>'
-                      . '</div>';
-
-            $message->to($email)->from($fromEmail, $fromName)
-                    ->subject('Thank You for Subscribing - Alvio Pharma')
-                    ->setBody($htmlBody, 'text/html');
-        });
+                $message->to($email)->from($fromEmail, $fromName)
+                        ->subject('Thank You for Subscribing - Alvio Pharma')
+                        ->setBody($htmlBody, 'text/html');
+            });
+        }catch (\Exception $e) {
+            // Log or handle the exception
+            \Log::info($e->getMessage());
+        }
 
         return redirect()->route('thank-you')->with('success', 'Thank you for subscribing! Please check your inbox.');
     }
