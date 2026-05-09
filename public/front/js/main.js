@@ -317,3 +317,17 @@ $(document).ready(function () {
         ],
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const offcanvas = document.getElementById('offcanvasRight');
+    if (offcanvas) {
+        offcanvas.addEventListener('show.bs.offcanvas', function () {
+            document.body.classList.add('no-scroll');
+        });
+        offcanvas.addEventListener('hide.bs.offcanvas', function () {
+            document.body.classList.remove('no-scroll');
+        });
+    }
+});

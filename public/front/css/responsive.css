@@ -9,6 +9,10 @@ body {
     overflow-x: hidden;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 img,
 svg,
 video,
@@ -1021,7 +1025,7 @@ iframe {
         font-size: 48px;
     }
 
-    .blog-header,
+    
     .find_abc,
     .leaders-wrapper,
     .testimonial-container,
@@ -1316,12 +1320,7 @@ iframe {
         width: calc(100% - 52px);
     }
 
-    .contact .form_group {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch !important;
-        gap: 14px !important;
-    }
+
 
     .contact .form_group > div,
     .contact .form_group .contact_items {
@@ -1387,7 +1386,12 @@ iframe {
 }
 
 /* ---------- 768 ---------- */
-@media (max-width: 768px) {
+@media (max-width: 839px) {
+    
+    .no-scroll .header.scrolled
+    {
+       background-color: transparent !important;
+    }
 
     .card-content {
     padding: 20px 20px 20px 20px;
@@ -1502,6 +1506,7 @@ iframe {
         height: 420px;
         object-fit: cover;
         object-position: center;
+         filter: brightness(0.5);
     }
 
     .hero-content {
@@ -1512,9 +1517,7 @@ iframe {
         margin: 10px 0;
     }
 
-    .counter-section .row {
-        row-gap: 12px;
-    }
+
 
     .intro-section .btn_main {
         gap: 6px;
@@ -1771,12 +1774,42 @@ iframe {
 
     .hero-content {
         padding: 0 14px;
-        top: 20px;
+        top: 120px;
     }
+
+        .counter-section .row {
+        row-gap: 22px;
+    }
+
+       .page-header img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .inner_hero_nav_link
+    {
+        text-align: center;
+            width: 95%;
+    }
+
+    .footer-wrapper
+    {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+     .contact .form_group {
+        align-items: stretch !important;
+    }
+
+  
 }
 
-/* ---------- 480 ---------- */
-@media (max-width: 480px) {
+/* ---------- 530px  ---------- */
+@media (max-width: 530px) {
+
+    .hero-content {
+        top: 20px;
+    }
     body {
         font-size: 14px;
         line-height: 22px;
@@ -2022,10 +2055,6 @@ iframe {
         height: 300px;
     }
 
-    .footer-wrapper {
-        grid-template-columns: 1fr;
-    }
-
     .footer-wrapper .footer-item,
     .footer-wrapper .footer-item:first-child,
     .footer-wrapper .footer-item:last-child {
@@ -2097,13 +2126,10 @@ iframe {
 
     .page-header img {
         height: 200px;
-        object-fit: cover;
     }
 
     .inner_hero_nav_link {
         bottom: 0.5em;
-        width: 100%;
-        text-align: center;
         padding: 0 3px;
     }
 
@@ -2136,5 +2162,21 @@ iframe {
 
     .year-info-section {
         padding: 13px;
+    }
+
+        .counter-section .row {
+        row-gap: 12px;
+    }
+
+      .blog-header
+    {
+      flex-direction: column;
+    }
+
+        .contact .form_group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 14px !important;
     }
 }

@@ -33,11 +33,11 @@
     </div>
     <div class="row gx-lg-5 blogs_details" data-aos="zoom-in" data-aos-delay="200">
 
-        <div class="col-md-6 col-lg-5 mb-3 mb-md-0" data-aos="fade-right">
+        <div class="col-md-12 col-lg-5 mb-3 text-center" data-aos="fade-right">
             <img src="{{ asset('public/Blogs/detail_image/'.$blogsdetail->detail_image) }}" alt="{{  str_replace(['-', '_'],' ', pathinfo($blogsdetail->detail_image, PATHINFO_FILENAME)) }}" class="img-fluid">
         </div>
 
-        <div class="col-md-6 col-lg-7" data-aos="fade-left">
+        <div class="col-md-12 col-lg-7" data-aos="fade-left">
            {!! $blogsdetail->short_description !!}
         </div>
 
