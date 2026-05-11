@@ -23,6 +23,7 @@ class CreateProductTable extends Migration
             $table->string('product_image');
             $table->string('meta_title');
             $table->string('meta_description');
+            $table->string('ingredients_description');
             $table->string('is_delete');
             $table->timestamps();
         });

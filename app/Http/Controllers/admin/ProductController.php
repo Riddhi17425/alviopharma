@@ -107,7 +107,7 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
-
+        $product->ingredients_description = $request->ingredients_description;
         $ingredients = [];
 
         if ($request->ingredients) {
@@ -235,6 +235,7 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->meta_title = $request->meta_title;
         $product->meta_description = $request->meta_description;
+        $product->ingredients_description = $request->ingredients_description;
         $product->key_ingredients_details = $request->key_ingredients_details;
         $ingredients = [];
         $oldIngredients = json_decode($product->key_ingredients, true) ?? [];
