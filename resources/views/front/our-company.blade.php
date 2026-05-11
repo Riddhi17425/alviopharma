@@ -51,7 +51,7 @@
     </div>
 
     <div class="row gy-3 gy-lg-0 counter-section">
-        <div class="col-xl-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="0">
             <div class="counter-item company-counter-item com_bg_light_blue">
 
                 <h3 class="counter-number" data-target="10">10+</h3>
@@ -59,19 +59,19 @@
 
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="350">350+</h3>
                 <p class="title-24 title--light-blue">Team Members </p>
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="300">300+</h3>
                 <p class="title-24 title--light-blue">Molecules in Portfolio</p>
             </div>
         </div>
-        <div class="col-xl-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
             <div class="counter-item company-counter-item com_bg_light_blue">
                 <h3 class="counter-number" data-target="35">35K+</h3>
                 <p class="title-24 title--light-blue">Healthcare professionals connected</p>

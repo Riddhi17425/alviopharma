@@ -49,10 +49,10 @@
 <section class="intro-section p-x mt-100" data-aos="fade-up">
     <div class="row gy-3 gy-lg-0 align-items-center" data-aos="zoom-in" data-aos-delay="200">
         @if($index % 2 != 0)
-            <div class="col-md-6" data-aos="fade-right">
+            <div class="col-lg-6" data-aos="fade-right">
                 <img src="{{ asset('public/therapeutical_images/'.$area->image) }}" alt="{{ optional($area->category)->name ?? $area->title }}" class="img-fluid">
             </div>
-            <div class="col-md-6 ps-md-5" data-aos="fade-left">
+            <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
                 <h2 class="title-54" style="color: var(--black-color);">{{ optional($area->category)->name ?? $area->title }}</h2>
                 <h5>{{ $area->sub_title }}</h5>
                 <p>{{ $area->sort_description }}</p>
@@ -69,7 +69,7 @@
                 </div>
             </div>
         @else
-            <div class="col-md-6 pe-md-5 order-1 order-lg-0" data-aos="fade-right">
+            <div class="col-lg-6 pe-lg-5 order-1 order-lg-0" data-aos="fade-right">
                 <h2 class="title-54" style="color: var(--black-color);">{{ optional($area->category)->name ?? $area->title }}</h2>
                 <h5>{{ $area->sub_title }}</h5>
                 <p>{{ $area->sort_description }}</p>
@@ -85,7 +85,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 mb-4 mb-lg-0" data-aos="fade-left">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-left">
                 <img src="{{ asset('public/therapeutical_images/'.$area->image) }}" alt="{{ optional($area->category)->name ?? $area->title }}" class="img-fluid">
             </div>
         @endif
@@ -156,7 +156,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-5 col-lg-4">
                 <div class="vision-mission-item">
                     <div class="svg-wrapper">
                         <svg width="591" height="600" viewBox="0 0 591 600" fill="none"
