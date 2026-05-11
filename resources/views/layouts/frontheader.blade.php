@@ -56,7 +56,9 @@
 </head>
 
 <body>
-
+@php
+    $categorys =  \App\Models\Category::where('status' , 'Active')->get();    
+@endphp
     <header class="header">
         <div class="p-x">
             <div class="header_container">
@@ -108,9 +110,6 @@
 
                                     </span>
                                 </a>
-                                @php
-                                    $categorys =  \App\Models\Category::where('status' , 'Active')->get();    
-                                @endphp
                                 <div class="dropdown">
                                     @foreach ($categorys as $category)
                                         <a href="{{ route('product', ['category' => $category->url]) }}"">{{ $category->name }}</a>
@@ -150,9 +149,9 @@
             <div class="mobile-menu-wrap p-x">
 
                 <ul class="mobile-menu-list">
-                    <li><a href="{{ url('/') }}" data-bs-dismiss="offcanvas">Home</a></li>
-                    <li><a href="{{ route('manufacturing') }}" data-bs-dismiss="offcanvas">Manufacturing & Quality</a></li>
-                    <li><a href="{{ route('blogs') }}" data-bs-dismiss="offcanvas">Insights</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ route('manufacturing') }}">Manufacturing & Quality</a></li>
+                    <li><a href="{{ route('blogs') }}">Insights</a></li>
                 </ul>
 
                 <div class="accordion mobile-menu-accordion" id="mobileMenuAccordion">
@@ -167,10 +166,10 @@
                             data-bs-parent="#mobileMenuAccordion">
                             <div class="accordion-body">
                                 <ul class="mobile-submenu-list">
-                                    <!-- <li><a href="{{ route('our.company') }}" data-bs-dismiss="offcanvas">Our Company</a></li> -->
-                                    <li><a href="{{ route('board.directors') }}" data-bs-dismiss="offcanvas">Board of Directors</a></li>
-                                    <li><a href="{{ route('our.heritage') }}" data-bs-dismiss="offcanvas">Our Heritage</a></li>
-                                    <li><a href="{{ route('sustainability') }}" data-bs-dismiss="offcanvas">Sustainability & Responsibility</a></li>
+                                    <!-- <li><a href="{{ route('our.company') }}">Our Company</a></li> -->
+                                    <li><a href="{{ route('board.directors') }}">Board of Directors</a></li>
+                                    <li><a href="{{ route('our.heritage') }}">Our Heritage</a></li>
+                                    <li><a href="{{ route('sustainability') }}">Sustainability & Responsibility</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -187,9 +186,11 @@
                             data-bs-parent="#mobileMenuAccordion">
                             <div class="accordion-body">
                                 <ul class="mobile-submenu-list">
-                                    <li><a href="#" data-bs-dismiss="offcanvas">Cardiology</a></li>
-                                    <li><a href="#" data-bs-dismiss="offcanvas">Neurology</a></li>
-                                    <li><a href="#" data-bs-dismiss="offcanvas">Oncology</a></li>
+                                    @foreach ($categorys as $category)
+                                        <li><a href="{{ route('product', ['category' => $category->url]) }}">{{ $category->name }}</a></li>
+                                    @endforeach
+                                    {{-- <li><a href="#">Neurology</a></li>
+                                    <li><a href="#">Oncology</a></li> --}}
                                 </ul>
                             </div>
                         </div>
