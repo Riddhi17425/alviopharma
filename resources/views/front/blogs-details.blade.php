@@ -31,7 +31,7 @@
         <p>{{ \Carbon\Carbon::parse($blogsdetail->date)->format('F d, Y') }}</p>
         <h2 class="title-54">{{ $blogsdetail->title }}</h2>
     </div>
-    <div class="row gx-lg-5 blogs_details" data-aos="zoom-in" data-aos-delay="200">
+    <div class="row gx-lg-5 blogs_detail_main" data-aos="zoom-in" data-aos-delay="200">
 
         <div class="col-md-12 col-lg-5 mb-3 text-center" data-aos="fade-right">
             <img src="{{ asset('public/Blogs/detail_image/'.$blogsdetail->detail_image) }}" alt="{{  str_replace(['-', '_'],' ', pathinfo($blogsdetail->detail_image, PATHINFO_FILENAME)) }}" class="img-fluid">

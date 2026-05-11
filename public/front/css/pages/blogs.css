@@ -3,10 +3,6 @@
   margin-top: 24px;
 }
 
-.blogs_details .title-24 {
-  margin-top: 40px;
-}
-
 .blogs_details_bg {
   /* background: url(../../images/noise-2.svg);
   background-size: cover; */
@@ -70,4 +66,15 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.blogs_detail_main h3
+{
+    font-family: var(--para-font);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black-color);
+    line-height: 28px;
+    margin-top: 40px;
+}
+
 
