@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="hero-section">
-            <img class="img-fluid" src="{{ asset('public/front/images/Banner-4.webp') }}" alt="hero image">
+            <img class="img-fluid" src="{{ asset('public/front/images/Banner-4.jpg') }}" alt="hero image">
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Science-Led Solutions for Everyday Skin Concerns </h1>
                 <p class="text--white" data-aos="fade-up">With a strong focus on science-backed skincare, Uncap supports patients and dermatologists through reliable and effective treatment solutions.

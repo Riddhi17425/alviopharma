@@ -143,10 +143,6 @@ iframe {
         width: 150px;
     }
 
-    .blogs_details .title-24 {
-        margin-top: 30px;
-    }
-
     .counter-item {
         padding: 25px;
         border-radius: 10px;
@@ -321,6 +317,15 @@ iframe {
     height: 120px;
 }
 
+.blogs_detail_main h3 {
+    margin-top: 40px;
+}
+
+  .blogs_detail_main h3 {
+    margin-top: 20px;
+    font-size:18px;
+}
+
 }
 
 /* ---------- 1441 ---------- */
@@ -471,10 +476,6 @@ iframe {
     }
 
     .blogs_details_bg .com_btn2 {
-        margin-top: 20px;
-    }
-
-    .blogs_details .title-24 {
         margin-top: 20px;
     }
 
