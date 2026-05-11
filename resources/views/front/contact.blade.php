@@ -1,4 +1,10 @@
 @include('layouts.frontheader')
+
+<style>
+.btn_main:hover {
+    background: var(--black-color) !important;
+}
+</style>
 @if($menubanner)
 <section class="page-header">
     <div class="inner_hero">
@@ -292,7 +298,7 @@
                             </div>
                         </div>
                         <div class="form_group d-flex align-items-end gap-4">
-                            <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                            <div style=" display: flex; align-items: center; gap: 12px;">
                                 <span id="captcha-text" style="font-size: 20px; font-weight: bold; letter-spacing: 6px; padding: 8px 18px;
                             background: #f8f8f8; border: 1px solid #aaa; border-radius: 8px;
                             user-select: none; cursor: pointer; min-width: 140px; text-align: center;">
@@ -324,6 +330,7 @@
                                                 stroke="white" stroke-width="1.5" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>
+                                    </span>
                                 </button>
                             </div>
                         </div>
