@@ -39,7 +39,7 @@
                                     <label class="form-label">URL</label>
                                     <input type="text" id="url" name="url" class="form-control"
                                         data-category-url
-                                        value="{{ old('url', $data->url) }}" placeholder="category-url">
+                                        value="{{ old('url', $data->url) }}" placeholder="category-url" readonly>
                                     @if ($errors->has('url'))
                                     <span class="text-danger">{{ $errors->first('url') }}</span>
                                     @endif

@@ -256,6 +256,14 @@
                         </div>
 
                         <div class="col-md-12">
+                            <label for="ingredients_description" class="form-label">Ingredients Description</label>
+                            <textarea id="ingredients_description" name="ingredients_description" class="form-control">{{ old('ingredients_description') }}</textarea>
+                            @if ($errors->has('ingredients_description'))
+                            <span class="text-danger">{{ $errors->first('ingredients_description') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-md-12">
                             <label class="form-label">Key Ingredients</label>
 
                             <div id="ingredients-wrapper">
@@ -392,6 +400,22 @@
                 ['help', ['help']]
             ]
         });
+        $('#ingredients_description').summernote({
+            placeholder: 'Enter Ingredients Description here...',
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
+        });
+        
     });
 </script>
 @endpush

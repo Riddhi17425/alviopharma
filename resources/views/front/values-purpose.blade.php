@@ -112,7 +112,7 @@
             <h3 class="title-54">H. E. A. L.</h3>
 
             <div class="nav-tabs">
-                <span class="tab-link active" data-target="hunger">Hunger</span>
+                <span class="tab-link active" data-target="health">Health</span>
                 <span class="separator">&bull;</span>
                 <span class="tab-link" data-target="excellence">Excellence</span>
                 <span class="separator">&bull;</span>
@@ -122,7 +122,7 @@
             </div>
 
             <div class="tab-content-container">
-                <div id="desc-hunger" class="tab-pane active">
+                <div id="desc-health" class="tab-pane active">
                     <p><strong>Health:</strong> Our health initiatives resonate with every stakeholder. Patients have access to quality and affordable treatment, while doctors improve patient health with skillful medical practices. Channel partners benefit from widely available channels, suppliers witness predictable and mutual growth, and employees thrive in a workplace encouraging continuous personal and professional development.
                     </p>
                 </div>
@@ -144,16 +144,16 @@
         <div class="graphic-content">
             <div class="bg-arc-circle"></div>
 
-            <div class="letter-circle letter-h interactive-item active" data-target="hunger">H</div>
+            <div class="letter-circle letter-h interactive-item active" data-target="health">H</div>
             <div class="letter-circle letter-e interactive-item" data-target="excellence">E</div>
             <div class="letter-circle letter-l interactive-item" data-target="longevity">L</div>
             <div class="letter-circle letter-a interactive-item" data-target="accountability">A</div>
 
             <div class="clover-grid">
-                <div class="petal petal-top interactive-item active" id="petal-hunger" data-target="hunger">
+                <div class="petal petal-top interactive-item active" id="petal-health" data-target="health">
                     <div class="petal-content">
-                        <h4 class="title-24">Hunger</h4>
-                        <p class="mb-0">Hunger to do better </p>
+                        <h4 class="title-24">Health</h4>
+                        <p class="mb-0">Health to do better </p>
                     </div>
                 </div>
 

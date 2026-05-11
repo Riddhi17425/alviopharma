@@ -72,12 +72,9 @@
             <h2 class="title-54 mb-40">Alvio Pharma Built on Trust. Driven by Quality.
             </h2>
 
-            <p>Alvio Pharmaceuticals is engaged in the marketing of Finished Pharmaceutical Formulations, with a clear
-                focus on delivering reliable and effective healthcare solutions.
+            <p>Alvio Pharma, a subsidiary of <b>SALUD CARE INDIA LIMITED</b>, is built upon a strong foundation of pharmaceutical manufacturing excellence, quality assurance, and scientific integrity. With the support of an experienced manufacturing ecosystem and stringent quality control practices, we are committed to delivering reliable, effective, and high-quality healthcare solutions.
             </p>
-            <p>We collaborate with carefully evaluated manufacturing partners and maintain stringent quality standards
-                across sourcing, documentation, and batch review - ensuring consistency, safety, and trust in every
-                product. </p>
+            <p>Our operations are driven by robust manufacturing standards, comprehensive documentation systems, and strict batch review processes to ensure consistency, safety, and trust in every product. Backed by the expertise and infrastructure of <b>SALUD CARE INDIA LIMITED</b>, Alvio Pharma represents a seamless integration of manufacturing strength, product quality, and patient-focused innovation.</p>
             <div class="mt-40">
                 <div class="btn_main">
                     <a href="{{ route('our.company') }}" target="_blank" class="commo-btn">Learn About Alvio Pharma

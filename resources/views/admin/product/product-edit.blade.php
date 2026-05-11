@@ -211,6 +211,13 @@
                         </div>
 
                         <div class="col-md-12">
+                            <label class="form-label">Ingredients Description</label>
+                            <textarea name="ingredients_description" id="ingredients_description" class="form-control">
+                                {{ $data->ingredients_description }}
+                            </textarea>
+                        </div>
+
+                        <div class="col-md-12">
                             <label class="form-label">Key Ingredients</label>
 
                             @php
@@ -359,6 +366,21 @@ $(document).ready(function() {
    
     $('#meta_description').summernote({
         placeholder: 'Enter Meta Description here...',
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['link', 'picture', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]
+        ]
+    });
+    $('#ingredients_description').summernote({
+        placeholder: 'Enter Ingredients Description here...',
         height: 300,
         toolbar: [
             ['style', ['style']],
