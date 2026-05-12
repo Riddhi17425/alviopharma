@@ -296,9 +296,9 @@ class dashboardController extends Controller
         $products = $query->get();
         // Grouping
         $groupedProducts = $products->groupBy(function ($product) {
-            return strtoupper(substr($product->name, 0, 1));
+            return ucfirst($product->divisions->name);
         });
-        echo "<pre>"; print_r($groupedProducts); die;
+        
         $divisions = Divisions::where('status', 'Active')->get();
 
         return view('front.product-list', compact(

@@ -141,7 +141,7 @@
             @foreach($groupedProducts as $letter => $products)
                 <div class="mt-100">
                     <h3 class="title-54 mb-40">
-                        {{ $letter }} s
+                        {{ $letter }}
                     </h3>
                     @foreach($products as $product)
                         <div class="brand_item">
