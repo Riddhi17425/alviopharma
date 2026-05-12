@@ -53,7 +53,7 @@ class HomeMapController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_main.' . $file->getClientOriginalExtension();
-            $file->move(public_path('homemapimage'), $filename);
+            $file->move(public_path('HomeMapimage'), $filename);
 
             $data['image'] = $filename;
         }
@@ -62,7 +62,7 @@ class HomeMapController extends Controller
         if ($request->hasFile('state_image')) {
             $file = $request->file('state_image');
             $filename = time() . '_state.' . $file->getClientOriginalExtension();
-            $file->move(public_path('homemapimage'), $filename);
+            $file->move(public_path('HomeMapimage'), $filename);
 
             $data['state_image'] = $filename;
         }
@@ -104,7 +104,7 @@ class HomeMapController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_main.' . $file->getClientOriginalExtension();
-            $file->move(public_path('homemapimage'), $filename);
+            $file->move(public_path('HomeMapimage'), $filename);
 
             $homemap->image = $filename;
         }
@@ -112,7 +112,7 @@ class HomeMapController extends Controller
         if ($request->hasFile('state_image')) {
             $file = $request->file('state_image');
             $filename = time() . '_state.' . $file->getClientOriginalExtension();
-            $file->move(public_path('homemapimage'), $filename);
+            $file->move(public_path('HomeMapimage'), $filename);
 
             $homemap->state_image = $filename;
         }
@@ -129,6 +129,6 @@ class HomeMapController extends Controller
     {
         $homemap = HomeMap::findOrFail($id);
         $homemap->delete(); 
-        return redirect()->route('homemap.index')->with('success','Industry deleted successfully');
+        return redirect()->route('homemap.index')->with('success','HomeMap deleted successfully');
     }
 }
