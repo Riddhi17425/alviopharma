@@ -1,5 +1,4 @@
 (function () {
-    console.log("dsfdsfd")
     function slugify(value) {
         return value
             .toString()

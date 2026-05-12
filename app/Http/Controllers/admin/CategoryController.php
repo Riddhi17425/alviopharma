@@ -95,7 +95,7 @@ class CategoryController extends Controller
         ]);
 
         $data->name = $request->input('name');
-        $data->url = $request->input('url');
+        $data->url = $request->input('url') ?? '';
         $data->status = $request->input('status');
         $data->save();
 

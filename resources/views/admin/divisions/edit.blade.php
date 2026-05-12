@@ -38,7 +38,7 @@
                                 <div class="col-md-6">
                                     <label class="form-label">URL</label>
                                     <input type="text" id="url" name="url" class="form-control"
-                                        data-divisions-url
+                                        data-divisions-url_edit
                                         value="{{ old('url', $data->url) }}" placeholder="divisions-url" readonly>
                                     @if ($errors->has('url'))
                                     <span class="text-danger">{{ $errors->first('url') }}</span>

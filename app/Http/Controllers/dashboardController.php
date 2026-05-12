@@ -298,7 +298,7 @@ class dashboardController extends Controller
         $groupedProducts = $products->groupBy(function ($product) {
             return strtoupper(substr($product->name, 0, 1));
         });
-
+        echo "<pre>"; print_r($groupedProducts); die;
         $divisions = Divisions::where('status', 'Active')->get();
 
         return view('front.product-list', compact(
