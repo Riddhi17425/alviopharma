@@ -147,10 +147,14 @@
                         <div class="brand_item">
                             <div class="brand_item_lt">
                                 <div class="brand_item_img">
-                                    <img class="img-fluid"
+                                    @if (str_contains(strtolower($product->divisions_url), 'cardio'))
+                                    @php $firstTwoLetters = substr($product->name, 0, 2); @endphp
+                                        <h1 style="border:1px solid #ccc; padding:15px;">{{$firstTwoLetters}}</h1>
+                                    @else
+                                        <img class="img-fluid"
                                         src="{{ asset('public/product/front_image/'.$product->front_image) }}"
                                         alt="{{ $product->name }}">
-
+                                    @endif         
                                 </div>
                                 <div class="brand_item_content">
                                     <h4 class="title-34" style="color:var(--black-color);">
@@ -162,8 +166,12 @@
                             </div>
                             <div class="brand_item_rt">
                                 <p class="title-24 mb-lg-2">{{ $product->brand->title ?? '' }}</p>
+                                @if (str_contains(strtolower($product->divisions_url), 'cardio'))
+                                    <a href="{{ asset('public/cardio_products.pdf') }}" class="title-24" target="_blank">
+                                @else
                                     <a href="{{ route('product.details' ,['url'=>$product->url]) }}"
                                         class="title-24">
+                                @endif
                                         <span class="text--para">View details</span>
                                          <span class="ms-3">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
