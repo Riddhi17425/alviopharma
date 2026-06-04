@@ -2,8 +2,8 @@
 <section class="hero">
     <div class="hero_slider">
         <div class="hero-section">
-            <picture>
-                <source media="(min-width: 465px)" srcset="{{ asset('public/front/images/Banner-1.webp') }}">
+             <picture>
+                <source media="(min-width: 830px)" srcset="{{ asset('public/front/images/Banner-1.webp') }}">
 
                 <img class="img-fluid" src="{{ asset('public/front/images/Banner-phone-1.webp') }}" alt="hero image">
             </picture>
@@ -15,9 +15,8 @@
             </div>
         </div>
         <div class="hero-section">
-
             <picture>
-                <source media="(min-width: 465px)" srcset="{{ asset('public/front/images/Banner-2.png') }}">
+                <source media="(min-width: 830px)" srcset="{{ asset('public/front/images/Banner-2.png') }}">
 
                 <img class="img-fluid" src="{{ asset('public/front/images/Banner-phone-2.webp') }}" alt="hero image">
             </picture>
@@ -29,13 +28,11 @@
             </div>
         </div>
         <div class="hero-section">
-            <picture>
-                <source media="(min-width: 465px)" srcset="{{ asset('public/front/images/Banner-3.webp') }}">
+             <picture>
+                <source media="(min-width: 830px)" srcset="{{ asset('public/front/images/Banner-3.webp') }}">
 
                 <img class="img-fluid" src="{{ asset('public/front/images/Banner-phone-3.webp') }}" alt="hero image">
             </picture>
-
-
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Redefining Skin Health & Aesthetic Care</h1>
                 <p class="text--white" data-aos="fade-up"> Spanning dermatology, cosmetology, and
@@ -54,15 +51,13 @@
         </div>
         <div class="hero-section">
             <picture>
-                <source media="(min-width: 465px)" srcset="{{ asset('public/front/images/Banner-4.webp') }}">
+                <source media="(min-width: 830px)" srcset="{{ asset('public/front/images/Banner-4.webp') }}">
 
                 <img class="img-fluid" src="{{ asset('public/front/images/Banner-phone-4.webp') }}" alt="hero image">
             </picture>
-
             <div class="hero-content">
                 <h1 class="title-68" data-aos="fade-right">Science-Led Solutions for Everyday Skin Concerns </h1>
-                <p class="text--white" data-aos="fade-up">With a strong focus on science-backed skincare, Uncap supports
-                    patients and dermatologists through reliable and effective treatment solutions.
+                <p class="text--white" data-aos="fade-up">With a strong focus on science-backed skincare, Uncap supports patients and dermatologists through reliable and effective treatment solutions.
                 </p>
             </div>
         </div>
@@ -93,15 +88,9 @@
             <h2 class="title-54 mb-40">Alvio Pharma Built on Trust. Driven by Quality.
             </h2>
 
-            <p>Alvio Pharma, a subsidiary of <b>SALUD CARE INDIA LIMITED</b>, is built upon a strong foundation of
-                pharmaceutical manufacturing excellence, quality assurance, and scientific integrity. With the support
-                of an experienced manufacturing ecosystem and stringent quality control practices, we are committed to
-                delivering reliable, effective, and high-quality healthcare solutions.
+            <p>Alvio Pharma, a subsidiary of Salud Care India Limited, is built upon a strong foundation of pharmaceutical manufacturing excellence, quality assurance, and scientific integrity. With the support of an experienced manufacturing ecosystem and stringent quality control practices, we are committed to delivering reliable, effective, and high-quality healthcare solutions.
             </p>
-            <p>Our operations are driven by robust manufacturing standards, comprehensive documentation systems, and
-                strict batch review processes to ensure consistency, safety, and trust in every product. Backed by the
-                expertise and infrastructure of <b>SALUD CARE INDIA LIMITED</b>, Alvio Pharma represents a seamless
-                integration of manufacturing strength, product quality, and patient-focused innovation.</p>
+            <p>Our operations are driven by robust manufacturing standards, comprehensive documentation systems, and strict batch review processes to ensure consistency, safety, and trust in every product. Backed by the expertise and infrastructure of Salud Care India Limited, Alvio Pharma represents a seamless integration of manufacturing strength, product quality, and patient-focused innovation.</p>
             <div class="mt-40">
                 <div class="btn_main">
                     <a href="{{ route('our.company') }}" target="_blank" class="commo-btn">Learn About Alvio Pharma
@@ -178,10 +167,10 @@
                 <a href="{{ route('product', ['category' => 'all', 'division' => 'anti-diabetes']) }}"><img class="" src="{{ asset('public/front/images/cardio-care-img_2.webp')}}"></a>
             </div>
             <div class="cardio urology">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'urology']) }}"><img class="" src="{{ asset('public/front/images/cardio-care-img_3.png')}}"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'urology']) }}"><img class="" src="{{ asset('public/front/images/cardio-care-img_3.webp')}}"></a>
             </div>
             <div class="cardio chronic">
-                <a href="{{ route('product', ['category' => 'all', 'division' => 'chronic-supplements']) }}"><img class="" src="{{ asset('public/front/images/cardio-care-img_4.png')}}"></a>
+                <a href="{{ route('product', ['category' => 'all', 'division' => 'chronic-supplements']) }}"><img class="" src="{{ asset('public/front/images/cardio-care-img_4.webp')}}"></a>
             </div>
         </div>
 
@@ -238,7 +227,8 @@
 
             <div class="slider-content">
                 <p class="mb-2">
-                    {{ $product->category->name ?? 'N/A' }}
+                    <!--{{ $product->category->name ?? 'N/A' }}-->
+                     {{ $product->divisions->name ?? 'N/A' }}
                 </p>
 
                 <h5 class="title-24">
@@ -312,11 +302,12 @@
         <div class="col-xl-6">
             <div class="images-only">
                 @foreach($units as $unit)
-                <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
-                    data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
-                    data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
-                    class="accordion-preview-img img-fluid" data-panel="collapse{{ $loop->index }}"
-                    style="cursor: pointer;">
+                    <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}" 
+                        data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
+                        data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                        class="accordion-preview-img img-fluid" 
+                        data-panel="collapse{{ $loop->index }}"
+                        style="cursor: pointer;">
                 @endforeach
             </div>
         </div>
@@ -386,7 +377,7 @@ if (accordionEl && exploreState && previewImgs.length) {
         }
     }
 
-
+    
     previewImgs.forEach((img) => {
         img.addEventListener('click', function() {
             const currentSrc = this.getAttribute('src');

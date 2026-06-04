@@ -49,7 +49,7 @@
         </div>
 
         <div class="col-12">
-            <div class="row gy-3 gy-lg-0 mt-40" data-aos="fade-up" data-aos-delay="500">
+            <div class="row gy-4 gy-lg-0 mt-40" data-aos="fade-up" data-aos-delay="500">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
                     <div class="manu_card com_bg_light_blue">
                         <h4 class="title-34 mb-40">Responsible Partnerships</h4>
@@ -133,12 +133,12 @@
 
         <div class="tab-pane fade show active" id="tab-content-1" role="tabpanel" aria-labelledby="tab-1">
             <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0">
+                <div class="col-lg-6 mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/PEOPLE-COMMUNITIES.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
 
-                <div class="col-md-6 ps-md-5">
+                <div class="col-lg-6 ps-lg-5">
                     <div class="mb-40">
                         <h2 class="title-54 title--dark mb-3">Improving lives by strengthening access, awareness, and
                             support.
@@ -177,12 +177,12 @@
         </div>
         <div class="tab-pane fade" id="tab-content-2" role="tabpanel" aria-labelledby="tab-2">
             <div class="row">
-                <div class="col-md-6  mb-4 mb-lg-0">
+                <div class="col-lg-6  mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/ENVIRONMENT-VALUE CHAIN.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
 
-                <div class="col-md-6 ps-md-5">
+                <div class="col-lg-6 ps-lg-5">
                     <div class="mb-40">
                         <h2 class="title-54 title--dark mb-3">Practical sustainability across sourcing, packaging, and
                             distribution.
@@ -223,12 +223,12 @@
         </div>
         <div class="tab-pane fade" id="tab-content-3" role="tabpanel" aria-labelledby="tab-3">
             <div class="row">
-                <div class="col-md-6  mb-4 mb-lg-0">
+                <div class="col-lg-6  mb-4 mb-lg-0">
                     <img src="{{ asset('public/front/images/GOVERNANCE-INTEGRITY.webp') }}" alt="images"
                         class="img-fluid">
                 </div>
 
-                <div class="col-md-6 ps-md-5">
+                <div class="col-lg-6 ps-lg-5">
                     <div class="mb-40">
                         <h2 class="title-54 title--dark mb-3">Accountability that protects trust in healthcare.
                         </h2>
@@ -262,7 +262,7 @@
 <section class="our_principles com_bg_pink mt-100" style="background-color: #f0f0f0;">
     <div class="p-x">
         <div class="row justify-content-between align-items-center">
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <div class="state-content">
                     <h2 class="title-54 title--blue mb-5">The Impact of Our Responsibility</h2>
                     <p>At Alvio Pharma, responsibility is action-driven. As an ethical marketing company for finished
@@ -304,7 +304,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
 
                 <div class="our_respons">
                     <video autoplay="autoplay" muted="muted" loop="auto" style="width: 100%; height: auto; ">
@@ -331,7 +331,7 @@
 <section class=" mt-100 mb-100">
     <div class="p-x">
         <div class="row justify-content-between align-items-center">
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <div class="state-content">
                     <h2 class="title-54 title--blue mb-4">A Culture Built on Responsibility</h2>
                     <p>At Alvio Pharma, responsibility is part of our everyday culture, not a one-time commitment. It
@@ -370,7 +370,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="vision-mission-item">
                     <div class="svg-wrapper">
                         <svg width="591" height="600" viewBox="0 0 591 600" fill="none"

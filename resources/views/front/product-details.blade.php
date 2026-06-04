@@ -6,7 +6,7 @@
         <p class="text-white inner_hero_nav_link"><a href="{{ url('/') }}">Home</a> /<a href="{{ url('/') }}">
                 Therapeutic Areas </a> / {{ $productDetails->divisions->name }} / {{ $productDetails->category->name }}™ {{ $productDetails->name }}</p>
     </div>
-    <div class="page-header-content p-x">
+    <div class="page-header-content p-x text-white">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
             <h1 class="title-34 text--white">Targeted Management of Hyperpigmentation & Uneven Skin Tone</h1>
             <p class="text-white page-header-para">{!! $productDetails->short_description !!}</p>
@@ -28,8 +28,8 @@
 
 
 <section class="intro-section p-x mt-100" data-aos="fade-up">
-    <div class="row gy-3 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
-        <div class="col-md-4" data-aos="fade-right">
+    <div class="row gy-4 gy-lg-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-lg-4" data-aos="fade-right">
             {{-- <img src="{{ asset('public/product/details_image/'.$productDetails->details_image) }}" alt="images" class="img-fluid"> --}}
             @php $images = json_decode($productDetails->detail_images, true); @endphp
             @if(is_array($images))
@@ -39,7 +39,7 @@
             @endif
         </div>
 
-        <div class="col-md-8 ps-md-5" data-aos="fade-left">
+        <div class="col-lg-8 ps-lg-5" data-aos="fade-left">
             <div>
                 <p>{!! $productDetails->short_description !!}</p>
                 <h2 class="title-54">{{ $productDetails->name }}</h2>
@@ -56,9 +56,9 @@
 <section class="intro-section p-x mt-100 mb-100 text-center">
     <h2 class="title-54">Ingredient Descriptions</h2>
     <div class="mt-40">
-        <p>Rasavio™ Nomo Spot Serum is indicated for the management of pigmentation disorders associated with melanin
-            dysregulation, inflammatory processes, and environmental exposure. It may be recommended as a standalone
-            topical or as part of combination dermatological therapy.</p>
+        <!--<p>Rasavio™ Nomo Spot Serum is indicated for the management of pigmentation disorders associated with melanin-->
+        <!--    dysregulation, inflammatory processes, and environmental exposure. It may be recommended as a standalone-->
+        <!--    topical or as part of combination dermatological therapy.</p>-->
     </div>
 
 

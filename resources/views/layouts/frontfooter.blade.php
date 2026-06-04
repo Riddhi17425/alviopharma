@@ -56,6 +56,7 @@
                         </svg>
                     </button>
                 </form>
+                <!--<a href="{{ route('contact')}}" class="commo-btn contact_btn">Get in Touch</a>-->
             </div>
         </div>
         <div class="footer-item">
@@ -65,17 +66,19 @@
                 <!-- <li><a href="#">Our Science & Innovation</a></li> -->
                 <li><a href="{{ route('manufacturing')}}">Manufacturing & Quality</a></li>
                 <li><a href="{{ route('blogs')}}">Insights</a></li>
-                <li><a href="{{ route('contact')}}">Contact Us</a></li>
                 <li><a href="{{ route('therapeutic.area')}}">Therapeutic Areas</a></li>
+                <!--<li><a href="{{ route('contact')}}">Contact Us</a></li>-->
+                
 
             </ul>
+            <a href="{{ route('contact')}}" class="commo-btn contact_btn" style="border:none!important;">Get in Touch</a>
         </div>
         <div class="footer-item">
             <h5 class="footer-title">Who We Are</h5>
             <ul class="footer-list">
                 <li><a href="{{ route('our.company')}}">Our Company</a></li>
                 <li><a href="{{ route('board.directors') }}">Leadership</a></li>
-                <li><a href="{{ route('values.purpose') }}">Values & purpose</a></li>
+                <!--<li><a href="{{ route('values.purpose') }}">Values & purpose</a></li>-->
                 <!-- <li><a href="{{ route('board.directors')}}">Board of Directors</a></li> -->
                 <li><a href="{{ route('our.heritage')}}">Our Heritage</a></li>
                 <li><a href="{{ route('sustainability')}}">Sustainability</a></li>
@@ -127,6 +130,7 @@
                     <a class="ms-2" href="tel:917966176465"> +91 79 6617 6465</a>
 
                     </span>
+                     
 
 
                 </li>
@@ -204,6 +208,7 @@
                         <a class="ms-2" href="mailto:info@alviopharma.com"> info@alviopharma.com</a>
                     </span>
                 </li>
+                
             </ul>
         </div>
 
