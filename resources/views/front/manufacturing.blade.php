@@ -41,14 +41,8 @@
                 Partners
             </h2>
 
-            <p>Alvio Pharmaceuticals operates with a strong focus on ethical marketing and dependable product quality.
-                To ensure consistent supply and reliability, we collaborate with carefully evaluated manufacturing
-                partners who follow strict compliance and documentation standards.
-
-            </p>
-            <p>Our ecosystem includes Salud Care India Limited and Stelvio Healthcare, enabling us to support diverse
-                dosage forms and therapeutic requirements while maintaining high standards in process discipline and
-                batch-level quality control. </p>
+            <p>Alvio Pharmaceuticals, as a subsidiary company, operates with a strong focus on ethical marketing, dependable product quality, and long-term healthcare partnerships. Backed by its own integrated manufacturing ecosystem, Alvio ensures consistent supply reliability through closely associated manufacturing units that follow strict compliance, quality, and documentation standards.</p>
+            <p>Our manufacturing network includes Salud Care India Limited, Stelvio Healthcare, and Rebase Lifesciences, enabling us to support diverse dosage forms and therapeutic requirements while maintaining high standards in process discipline, regulatory compliance, and batch-level quality control. </p>
 
         </div>
 
@@ -147,7 +141,7 @@
         </div>
         <div class="tab-content tabs_right" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <h2 class="title-54 mb-40">Salud Care
+                <h2 class="title-54 mb-40">Salud Care India Limited
                 </h2>
 
                 <p>Salud Care India Limited is a contract manufacturing company focused on delivering high-quality

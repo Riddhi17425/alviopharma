@@ -294,11 +294,12 @@ class dashboardController extends Controller
         $query->orderBy('name', $sortOrder);
 
         $products = $query->get();
+        
         // Grouping
         $groupedProducts = $products->groupBy(function ($product) {
-            return strtoupper(substr($product->name, 0, 1));
+            return ucfirst($product->divisions->name ?? '');
         });
-
+        
         $divisions = Divisions::where('status', 'Active')->get();
 
         return view('front.product-list', compact(

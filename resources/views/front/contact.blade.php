@@ -21,7 +21,7 @@
 @endif
 <section class="contact p-x mt_80">
     <div class="row gx-0 gy-4 gy-lg-0">
-        <div class="col-lg-5" data-aos="fade-right">
+        <div class="col-12 col-lg-5" data-aos="fade-right">
             <h2 class="title-54 mb-40 d-lg-none text-center">Get in Touch</h2>
             <div class="contact_left com_bg_light_blue">
                 <div class="contact_left_child">
@@ -247,7 +247,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-12 col-lg-7">
             <div class="contact_right">
                 <h2 class="title-54 mb-40 d-none d-lg-block">Get in Touch</h2>
                 <p>If you are a medical professional, distributor, or institutional partner and would like to
@@ -298,7 +298,7 @@
                             </div>
                         </div>
                         <div class="form_group d-flex align-items-end gap-4">
-                            <div style=" display: flex; align-items: center; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
                                 <span id="captcha-text" style="font-size: 20px; font-weight: bold; letter-spacing: 6px; padding: 8px 18px;
                             background: #f8f8f8; border: 1px solid #aaa; border-radius: 8px;
                             user-select: none; cursor: pointer; min-width: 140px; text-align: center;">
@@ -329,8 +329,7 @@
                                                 d="M0.750118 13.478L13.478 0.750116M13.478 0.750116H3.57852M13.478 0.750116V10.6496"
                                                 stroke="white" stroke-width="1.5" stroke-linecap="round"
                                                 stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
+                                        </svg></span>
                                 </button>
                             </div>
                         </div>
@@ -338,7 +337,7 @@
             </div>
             </form>
         </div>
-    </div>
+         </div>
     </div>
 </section>
 <section class="p-x mt-100">

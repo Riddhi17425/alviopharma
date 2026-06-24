@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="row gy-3 gy-lg-0 counter-section">
+    <div class="row gy-4 gy-lg-0 counter-section">
         <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="0">
             <div class="counter-item company-counter-item com_bg_light_blue">
 
@@ -80,68 +80,169 @@
     </div>
 </section>
 
-@include('layouts.vision-mission')
+<section class="intro-section p-x mt-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-12 aos-init aos-animate" data-aos="fade-left">
+            <p>Our Purpose
+            </p>
+        </div>
+        <div class="col-xl-8 col-lg-7 col-md-12">
+            <h2 class="title-54 title--blue mb-40 aos-init aos-animate" data-aos="fade-right">Impr😄ving Lives
+            </h2>
 
-<section class="explore-state mt-100" data-aos="fade-up">
-    <div class="p-x">
-        <div class="row align-items-center" data-aos="zoom-in" data-aos-delay="200">
+            <p>”Our purpose “Improving Lives”’ encapsulates our commitment to making a positive impact across various dimensions of our engagement, ranging from healthcare professionals to patients, channel partners, and our dedicated team. Through this ethos, we strive to contribute meaningfully to the well-being and betterment of individuals and communities, aligning our efforts with the broader goal of improving lives in every facet of our operations.” 
+            </p>
+        </div>
 
-            <div class="col-lg-6">
-                <h2 class="title-54 mb-40" data-aos="fade-right">Expanding Access. Strengthening Healthcare Across
-                    India.</h2>
-                <p class="mb-3" data-aos="fade-up">Alvio Pharma's national operations form the foundation of our growth.
-                    With a team of 350+
-                    professionals and a strong network reaching over 35,000 healthcare providers, we are committed to
-                    making
-                    advanced and affordable healthcare accessible across India.</p>
-                <p>Our approach is guided by ethical practices, compliance, and a deep understanding of regional
-                    healthcare needs-ensuring consistent delivery and long-term impact. </p>
-                <div class="state-accordion mt-40">
-                    <div class="accordion" id="accordionExample">
+    </div>
 
-                        @foreach($units as $unit)
-                        @php
-                            $collapseId = "collapse".$loop->index;
-                            $headingId = "heading".$loop->index;
-                        @endphp
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="{{ $headingId }}">
-                                <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
-                                    aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
-                                    aria-controls="{{ $collapseId }}">
-                                    {{ $unit->title }}
-                                </button>
-                            </h4>
-                            <div id="{{ $collapseId }}"
-                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
-                                aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <a href="javascript:void(0);">{!! $unit->description !!}</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+    <div class="slider-wrapper mt-40">
+        <div class="my-carousel">
 
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives1.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <!--<span class="title--blue">Reputation to Cure </span>-->
+                        <h3 class="title--dark">Doctors </h3>
+                        <p class="mb-0">To enhance doctors' professional reputation by providing pharmaceutical solutions that contribute to effective patient care and successful treatment outcomes.
+                        </p>
                     </div>
                 </div>
             </div>
 
-           <div class="col-lg-6">
-                <div class="images-only">
-                    @foreach($units as $unit)
-                    <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}" 
-                        data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
-                        data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
-                        class="accordion-preview-img img-fluid" 
-                        data-panel="collapse{{ $loop->index }}"
-                        style="cursor: pointer;">
-                    @endforeach
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives2.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <!--<span class="title--blue">Health </span>-->
+                        <h3 class="title--dark">Patients</h3>
+                        <p class="mb-0">To promote health and well-being, aiming to deliver high-quality medicines that contribute to improved health outcomes, offering patients the chance for a healthier & fulfilling life.</p>
+                    </div>
                 </div>
             </div>
-        </div> 
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives3.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <!--<span class="title--blue">Healthy Business</span>-->
+                        <h3 class="title--dark">Channel Partners  
+                        </h3>
+                        <p class="mb-0">To foster a healthy business relationship with our channel partners, providing products and support that meets their business objectives and contributes to the sustainability of their enterprises.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <div class="card">
+                    <div class="img-container">
+                        <img src="public/front/images/improving-lives4.webp" alt="Doctor Consultation">
+                    </div>
+                    <div class="card-content">
+                        <!--<span class="title--blue">Healthy Career</span>-->
+                        <h3 class="title--dark">Employees </h3>
+                        <p> To nurture a healthy and fulfilling career environment for our employees by creating a workplace that fosters personal and professional growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
+
+@include('layouts.vision-mission')
+
+<section class="values-purpose-section p-x">
+    <div class="values-container">
+
+        <div class="text-content">
+            <h2 class="title-54 mb-100">Our Values</h2>
+
+            <h3 class="title-54">H. E. A. L.</h3>
+
+            <div class="nav-tabs">
+                <span class="tab-link active" data-target="hunger">Hunger</span>
+                <span class="separator">&bull;</span>
+                <span class="tab-link" data-target="excellence">Excellence</span>
+                <span class="separator">&bull;</span>
+                <span class="tab-link" data-target="accountability">Accountability</span>
+                <span class="separator">&bull;</span>
+                <span class="tab-link" data-target="longevity">Longevity</span>
+            </div>
+
+            <div class="tab-content-container">
+                <div id="desc-hunger" class="tab-pane active">
+                    <p><strong>Hunger:</strong> Our Hunger resonates across all our stakeholders where Patients have access to qualitative & affordable treatments; Doctors improve their medical practice through easily available quality medicines; Channel Partners benefit from qualitative and widely available products; Suppliers witness predictable and mutual growth and Employees have a workplace that encourages continuous personal & professional growth.
+                    </p>
+                </div>
+                <div id="desc-excellence" class="tab-pane">
+                    <p><strong>Excellence:</strong> Excellence is our commitment to all stakeholders. Patients receive high-quality medicines; Doctors gain trust in prescribing our medicines. Channel Partners experience excellence in business collaboration, Suppliers witness it in procurement, and Employees thrive in a culture that values and rewards excellence.
+                    </p>
+                </div>
+                <div id="desc-accountability" class="tab-pane">
+                    <p><strong>Accountability:</strong> Accountability extends to all interactions. Patients experience transparency in their treatment plans, Doctors find a trustworthy partner, and Channel Partners engage in accountable business practices. Suppliers benefit from responsible procurement, and Employees flourish in an environment where accountability is ingrained in every task.
+                    </p>
+                </div>
+                <div id="desc-longevity" class="tab-pane">
+                    <p><strong>Longevity:</strong> Longevity is our pledge to sustainable relationships. Patients trust in our medicines for long-term health; Doctors find a reliable partner in patient care. Channel Partners engage in enduring business relationships, Suppliers witness a commitment to long-term partnerships, and Employees build their careers in an organization focused on longevity and growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="graphic-content">
+            <div class="bg-arc-circle"></div>
+
+            <div class="letter-circle letter-h interactive-item active" data-target="hunger">H</div>
+            <div class="letter-circle letter-e interactive-item" data-target="excellence">E</div>
+            <div class="letter-circle letter-l interactive-item" data-target="longevity">L</div>
+            <div class="letter-circle letter-a interactive-item" data-target="accountability">A</div>
+
+            <div class="clover-grid">
+                <div class="petal petal-top interactive-item active" id="petal-hunger" data-target="hunger">
+                    <div class="petal-content">
+                        <h4 class="title-24">Hunger</h4>
+                        <p class="mb-0">Hunger to do better </p>
+                    </div>
+                </div>
+
+                <div class="petal petal-right interactive-item" id="petal-excellence" data-target="excellence">
+                    <div class="petal-content">
+                        <h4 class="title-24">Excellence </h4>
+                        <p class="mb-0">High standards, better outcomes</p>
+                    </div>
+                </div>
+
+                <div class="petal petal-left interactive-item" id="petal-longevity" data-target="longevity">
+                    <div class="petal-content">
+                        <h4 class="title-24">Longevity  </h4>
+                        <p class="mb-0">Enduring care, sustainable growth
+                        </p>
+                    </div>
+                </div>
+
+                <div class="petal petal-bottom interactive-item" id="petal-accountability" data-target="accountability">
+                    <div class="petal-content">
+                        <h4 class="title-24">Accountability</h4>
+                        <p class="mb-0">Built on trust, transparency
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
 
 <!-- <section class="principles-section p-x mt-100" data-aos="fade-up">
     <div class="row" data-aos="zoom-in" data-aos-delay="200">
@@ -200,7 +301,7 @@
                 <h2 class="title-54 title--blue">Our Values</h2>
                 <h3>H. E. A. L.</h3>
                 <div class="nav-links">
-                    <span id="nav-0" class="active">Health</span> &bull;
+                    <span id="nav-0" class="active">Hunger</span> &bull;
                     <span id="nav-1">Excellence</span> &bull;
                     <span id="nav-2">Accountability</span> &bull;
                     <span id="nav-3">Longevity</span>
@@ -213,7 +314,7 @@
                 </div>
                 <div class="right-side" id="rightContent">
                     <div class="title-24 title--blue mb-2" id="displayNum">01</div>
-                    <div class="title-54 mb-40 title--dark" id="displayTitle">Health</div>
+                    <div class="title-54 mb-40 title--dark" id="displayTitle">Hunger</div>
                     <div class="description" id="displayDesc">
                         Our health initiatives resonate with every stakeholder. Patients have access to quality and
                         affordable treatment, while doctors improve patient health with skillful medical practices.
@@ -228,8 +329,6 @@
     </div>
 
 </section>
-
-
 
 <section class="mt-100 p-x d-none">
     <div class="mb-40 text-center">
@@ -284,11 +383,11 @@
 <section class="mt-100 p-x">
 
     <div class="mb-40 text-center">
-        <p class="title--blue title-24 ">Values driven</p>
-        <h3 class="vision-mission-title mb-3">Believe, Adapt, and Behave</h3>
+        <p class="title--blue title-24 ">Values Drivers</p>
+        <h3 class="vision-mission-title mb-3"><b>B.A.B</b></h3>
         {{-- <h2 class="title-54 title--blue mb-2">Believe, Adapt, and Behave</h2> --}}
-        <p class="mb-0">We encapsulate our core values through B.A.B Believe, Adapt, and Behave, creating a dynamic and
-            purpose-driven organizational culture.</p>
+        <p class="mb-0">We encapsulate our core values through B.A.B — Believe, Adapt and Behave, creating a dynamic and
+purpose-driven organizational culture.</p>
     </div>
 
     <div class="bab-grid-container">
@@ -301,9 +400,7 @@
                         fill="#307ABD" />
                 </svg>
             </h3>
-            <p class="mb-0">We adapt to the ever-changing healthcare landscape, embracing new technologies, responding
-                to market
-                needs, and evolving our practices to stay at the forefront of pharmaceutical innovation.</p>
+            <p class="mb-0">We foster a culture that encourages everyone to Adapt to our values. This adaptability ensures that our values remain relevant and impactful, guiding us through the dynamic challenges of our industry.</p>
         </div>
 
         <div class="bab-center-image my-4 my-lg-0">
@@ -319,8 +416,7 @@
                 </svg>
 
             </h3>
-            <p>We believe in the power of healthcare to transform lives. Our conviction drives us to develop and deliver
-                medicines that make a real difference in patient outcomes.</p>
+            <p>Our values are not mere statements; they are convictions that resonate within each team member. We encourage every individual to internalize and Believe in the transformative power of our values.</p>
         </div>
 
         <div class="bab-text-block bab-item-behave">
@@ -332,9 +428,7 @@
                 </svg>
 
             </h3>
-            <p class="mb-0">We behave with integrity, ethics, and professionalism in all our interactions. Our conduct
-                reflects our
-                values and builds trust with every stakeholder we engage with.</p>
+            <p class="mb-0">Living our values is not just a choice but a way of life. We champion a Behave-first approach, where every action aligns with our values. From leadership decisions to daily interactions, our teams are empowered to Behave in a manner that upholds our commitment to our purpose of “Improving Lives”..</p>
         </div>
 
     </div>
@@ -342,7 +436,66 @@
 
 <!-- <img src="public/front/images/believe_adapt.svg" alt="Believe, Adapt, and Behave Core Values Diagram"> -->
 
+<section class="explore-state mt-100">
+    <div class="p-x">
+        <div class="row align-items-center">
 
+            <div class="col-lg-6">
+                <h2 class="title-54 mb-40">Expanding Access. Strengthening Healthcare Across
+                    India.</h2>
+                <p class="mb-3">Alvio Pharma's national operations form the foundation of our growth.
+                    With a team of 350+
+                    professionals and a strong network reaching over 35,000 healthcare providers, we are committed to
+                    making
+                    advanced and affordable healthcare accessible across India.</p>
+                <p>Our approach is guided by ethical practices, compliance, and a deep understanding of regional
+                    healthcare needs-ensuring consistent delivery and long-term impact. </p>
+                <div class="state-accordion mt-40">
+                    <div class="accordion" id="accordionExample">
+
+                        @foreach($units as $unit)
+                        @php
+                            $collapseId = "collapse".$loop->index;
+                            $headingId = "heading".$loop->index;
+                        @endphp
+                        <div class="accordion-item">
+                            <h4 class="accordion-header" id="{{ $headingId }}">
+                                <button class="accordion-button title-34 {{ $loop->first ? '' : 'collapsed' }}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
+                                    aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                    aria-controls="{{ $collapseId }}">
+                                    {{ $unit->title }}
+                                </button>
+                            </h4>
+                            <div id="{{ $collapseId }}"
+                                class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <a href="javascript:void(0);">{!! $unit->description !!}</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+
+           <div class="col-lg-6">
+                <div class="images-only">
+                    @foreach($units as $unit)
+                    <img src="{{ asset('public/HomeMapimage/'.$unit->image) }}" 
+                        data-original-src="{{ asset('public/HomeMapimage/'.$unit->image) }}"
+                        data-alt-src="{{ asset('public/HomeMapimage/'.$unit->state_image) }}" alt="{{ $unit->title }}"
+                        class="accordion-preview-img img-fluid" 
+                        data-panel="collapse{{ $loop->index }}"
+                        style="cursor: pointer;">
+                    @endforeach
+                </div>
+            </div>
+        </div> 
+    </div>
+</section>
 <section class="mt-100 p-x d-none">
     <div class="mb-40 text-center">
         <h2 class="title-54 title--blue mb-2">Our Group of Companies</h2>
@@ -485,12 +638,44 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all elements that can trigger a change (Tabs, Petals, Letters)
+    const triggers = document.querySelectorAll('.tab-link, .interactive-item');
+
+    // Function to change the active state everywhere
+    function setActive(targetName) {
+        // 1. Remove active class from everything
+        document.querySelectorAll('.tab-link').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.interactive-item').forEach(el => el.classList.remove('active'));
+
+        // 2. Add active class to the selected target elements
+        document.querySelector(`.tab-link[data-target="${targetName}"]`).classList.add('active');
+        document.getElementById(`desc-${targetName}`).classList.add('active');
+
+        // Add active to the specific Petal and Letter
+        document.querySelectorAll(`.interactive-item[data-target="${targetName}"]`).forEach(el => {
+            el.classList.add('active');
+        });
+    }
+
+    // Attach click event to all triggers
+    triggers.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetName = item.getAttribute('data-target');
+            setActive(targetName);
+        });
+    });
+});
+</script>
+
 
 <script>
 const healData = [{
         letter: "H",
         num: "01",
-        title: "Health",
+        title: "Hunger",
         desc: "Our health initiatives resonate with every stakeholder. Patients have access to quality and affordable treatment, while doctors improve patient health with skillful medical practices. Channel partners benefit from widely available channels, suppliers witness predictable and mutual growth, and employees thrive in a workplace encouraging continuous personal and professional development.",
     },
     {

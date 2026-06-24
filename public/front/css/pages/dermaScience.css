@@ -10,7 +10,7 @@
 }
 
 .search-wrapper {
-    position: relative;
+    /*position: relative;*/
     display: flex;
     align-items: center;
     padding: 18px 24px;
@@ -18,7 +18,8 @@
     transition: all 0.3s ease;
     border-radius: 100px;
     margin-top: 10px;
-    /* margin-bottom: 40px; */
+    /*margin-bottom: 40px;*/
+   
 
 }
 
@@ -58,7 +59,6 @@
 .search-input:focus::placeholder {
     color: #bbb;
 }
-
 
 
 .search-wrapper-select {
@@ -152,3 +152,15 @@
  height: 140px;
 }
 
+
+.brand_item_img h2
+{
+    width: 140px;
+    height: 140px;
+    text-align:center;
+    place-content: center;
+    /*border:1px solid #DDD;*/
+        color: var(--blue-heading);
+     font-size: 52px;
+    
+}

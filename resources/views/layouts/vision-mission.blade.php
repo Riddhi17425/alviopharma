@@ -17,7 +17,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="vision-mission-item d-none d-lg-block">
+            <div class="vision-mission-item">
                 <div class="vision-mission-svg">
                     <!-- <img src="./images/our-company-images/ring-image.png" class="img-fluid vision-icon" alt="Vision Icon"> -->
                     <div class="svg-wrapper">

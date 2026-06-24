@@ -342,7 +342,6 @@ a {
    height: 700px;
 }
 
-
 .thank-you
 {
   position: relative;
@@ -350,7 +349,7 @@ a {
 
 .thank-you img
 {
-   /* filter: brightness(50%); */
+    /*filter: brightness(50%); */
 }
 
 .thank-you .thank-you-content
@@ -362,4 +361,5 @@ a {
   text-align: center;
   color: var(--white-color);
 }
+
 

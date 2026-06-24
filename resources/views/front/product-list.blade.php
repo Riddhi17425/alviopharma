@@ -7,10 +7,8 @@
     </div>
     <div class="page-header-content p-x">
         <div class="page-header-text com_bg_blue" data-aos="fade-up">
-            <h1 class="title-34 text--white">Get in Touch</h1>
-            <p class="text-white page-header-para">If you are a medical professional, distributor, or institutional
-                partner and would like to connect with Alvio Pharmaceuticals, please reach out using the details below
-                or submit the enquiry form.</p>
+            <h1 class="title-34 text--white">Explore Our Product Portfolio</h1>
+            <p class="text-white page-header-para">Discover Alvio Pharmaceuticals’ range of healthcare and skincare formulations developed to support everyday wellness, therapeutic care, and clinical requirements.</p>
         </div>
         <div class="page-header-btn">
             <a href="{{ route('contact') }}">
@@ -34,23 +32,13 @@
         </div>
 
         <div class="col-xl-8 col-lg-7 col-md-12" data-aos="fade-right">
-            <h2 class="title-54 title--blue mb-40">Advanced Manufacturing Facilities Designed for Global Healthcare</h2>
-             <p>Our manufacturing infrastructure is designed to meet the demands of modern pharmaceutical production
-                while maintaining absolute consistency, safety, and scalability. Each facility integrates automated
-                systems, precision-controlled environments, and validated production lines that support high-quality
-                formulation development across multiple therapeutic segments.</p>
-
-            <p>Every stage — from material handling and formulation to packaging and dispatch — is executed within
-                strictly monitored environments. Automation minimizes variability, enhances accuracy, and ensures that
-                every batch produced reflects uniformity, reliability, and compliance with international manufacturing
-                benchmarks.</p>
-
-            <p>Beyond capacity and technology, our infrastructure reflects a long-term commitment to responsible
-                manufacturing. Built with future-ready systems and sustainability-focused operations, our facilities
-                enable us to scale efficiently while maintaining uncompromised quality standards.</p>
+            <h2 class="title-54 title--blue mb-40">Product Solutions Designed for Modern Healthcare Needs</h2>
+            <p>Alvio Pharmaceuticals offers a focused product portfolio developed for healthcare professionals, distributors, and institutional partners across multiple therapeutic and wellness segments. Each product is created with attention to quality, usability, and patient-focused outcomes.</p>
+            <p>Our range includes formulations across dermatology, wellness, personal care, and clinical support categories, helping meet the growing needs of modern healthcare and consumer wellness. From product selection to packaging and supply readiness, every detail is aligned with consistency and professional standards.</p>
+            <p>With a commitment to reliable product quality and responsible pharmaceutical practices, Alvio continues to build a portfolio that supports doctors, patients, and partners with dependable healthcare solutions.</p>
             <div class="mt-40">
                 <a href="#" class="commo-btn bg-black btn-color-white" data-bs-toggle="dropdown">
-                    <span>Find by Area</span>
+                    <span>Find by Category</span>
                     <span><svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -80,12 +68,12 @@
     <h2 class="title-54 title--dark">Find by Brand Or Product Name</h2>
         <form method="GET" action="{{ route('product', ['category' => $currentCategory ?? request()->route('category') ?? 'all']) }}#product-section">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7 col-lg-10">
                     <div class="search-wrapper">
                         <input type="search" name="search" class="search-input" placeholder="Search Product Or Brand" value="{{ request('search') }}">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class=" col-md-2 col-lg-2">
                     <select name="division" class="search-wrapper search-wrapper-select" onchange="this.form.submit()">
                         <option value="">Select All</option>
                         @foreach($allDivisions as $division)
@@ -141,16 +129,20 @@
             @foreach($groupedProducts as $letter => $products)
                 <div class="mt-100">
                     <h3 class="title-54 mb-40">
-                        {{ $letter }} s
+                        {{ $letter }}
                     </h3>
                     @foreach($products as $product)
                         <div class="brand_item">
                             <div class="brand_item_lt">
                                 <div class="brand_item_img">
-                                    <img class="img-fluid"
+                                    @if (str_contains(strtolower($product->divisions_url), 'cardio'))
+                                    @php $firstTwoLetters = substr($product->name, 0, 2); @endphp
+                                        <h2 class="com_bg_light_blue">{{$firstTwoLetters}}</h2>
+                                    @else
+                                        <img class="img-fluid"
                                         src="{{ asset('public/product/front_image/'.$product->front_image) }}"
                                         alt="{{ $product->name }}">
-
+                                    @endif         
                                 </div>
                                 <div class="brand_item_content">
                                     <h4 class="title-34" style="color:var(--black-color);">

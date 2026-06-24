@@ -8,7 +8,7 @@
     <title>{!! $metatitle ?? 'Alviopharma' !!}</title>
    <meta name="description" content="{!! html_entity_decode(strip_tags($metadescription ?? '')) !!}">
    <meta name="base-url" content="{{ url('/') }}">
-   
+   <meta name="robots" content="nofollow, noindex"/>
    <link rel="canonical" href="{{ url()->current() }}"/>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,7 @@
                                 <div class="dropdown">
                                     <a href="{{ route('our.company')}}">Our Company</a>
                                     <a href="{{ route('board.directors')}}">Leadership</a>
-                                    <a href="{{ route('values.purpose') }}">Values & purpose</a>
+                                    <!--<a href="{{ route('values.purpose') }}">Values & purpose</a>-->
                                     <a href="{{ route('our.heritage')}}">Our Heritage</a>
                                     <a href="{{ route('sustainability')}}">Sustainability</a>
                                 </div>

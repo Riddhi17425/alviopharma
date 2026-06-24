@@ -98,7 +98,7 @@ if ($heroSlider.length) {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         arrows: false,
         dots: false,
         fade: true,
@@ -316,18 +316,4 @@ $(document).ready(function () {
             },
         ],
     });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const offcanvas = document.getElementById('offcanvasRight');
-    if (offcanvas) {
-        offcanvas.addEventListener('show.bs.offcanvas', function () {
-            document.body.classList.add('no-scroll');
-        });
-        offcanvas.addEventListener('hide.bs.offcanvas', function () {
-            document.body.classList.remove('no-scroll');
-        });
-    }
 });

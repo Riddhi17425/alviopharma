@@ -97,7 +97,7 @@
 <section class="mt-100 mb-100" data-aos="fade-up">
     <div class="p-x">
         <div class="row justify-content-between align-items-center" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <div class="state-content">
                     <h2 class="title-54 title--blue mb-4">A Framework for Evidence-Led Therapeutic Decisions</h2>
                     <p>Every Alvio formulation is developed through a focused evaluation of clinical relevance, patient requirements, ingredient quality, and therapeutic purpose. Our approach supports meaningful healthcare solutions designed for practical clinical application.</p>
@@ -156,7 +156,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5 col-lg-4">
+            <div class="col-lg-4">
                 <div class="vision-mission-item">
                     <div class="svg-wrapper">
                         <svg width="591" height="600" viewBox="0 0 591 600" fill="none"
